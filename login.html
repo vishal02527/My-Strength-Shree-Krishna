@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discussion Forum - Shree Krishna</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h2::selection, label::selection{
+  background-color: rgb(237, 204, 133);
+  color: #000; 
+}
+      main {
+        padding: 20px;
+      }
+      .login-form {
+        max-width: 400px;
+        margin: 150px auto 0px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+      h2 {
+        color: #ab9353;
+        margin-top: 0;
+        text-align: center;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+      }
+      input {
+        width: 93%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input:focus {
+        border: 2px solid #ffc107;
+        outline: 0;
+      }
+      button {
+        background: linear-gradient(269deg, #0048ff, #0096ff);
+        color: #fff;
+        padding: 10px 20px;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-left: 150px;
+      }
+      
+      @media (max-width: 768px) {
+        .login-form {
+          max-width: 280px;
+        }
+        label {
+          font-size: 14px;
+        }
+
+        .login-form h2 {
+          font-size: 20px;
+        }
+        button {
+          margin-left: 65px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="login-form" id="loginForm">
+        <h2>Login</h2>
+        <form id="form" action="./discussion-forum.html" method="GET">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <!-- Change the button type to "submit" -->
+          <button>Login</button>
+        </form>
+      </div>
+      <p style="text-align: center;">&copy; All rights reserved 2023</p>
+    </main>
+
+    <script>
+      document
+        .getElementById("form")
+        .addEventListener("submit", function (event) {
+          // Retrieve stored username and password from localStorage
+          const storedUsername = localStorage.getItem("username");
+          const storedPassword = localStorage.getItem("password");
+
+          // Get user input
+          const enteredUsername = document.getElementById("username").value;
+          const enteredPassword = document.getElementById("password").value;
+
+          // Check if the entered username and password match the stored values
+          if (
+            enteredUsername === storedUsername &&
+            enteredPassword === storedPassword
+          ) {
+            // Successful login - allow the form submission
+
+            // Set 'isLoggedIn' to true upon successful login
+            localStorage.setItem("isLoggedIn", "true");
+            // Redirect to discussion forum with username
+            window.location.href = "./discussion-forum.html";
+          } else {
+            // Prevent form submission if login fails
+            event.preventDefault();
+            alert("Invalid username or password. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>

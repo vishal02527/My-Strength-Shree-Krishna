@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Narsi: A Devotee's Journey of Unconditional Love</title>
+    <script
+      src="https://kit.fontawesome.com/d74f12bccc.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+      p::selection {
+        background-color: rgb(237, 204, 133);
+        color: #000;
+      }
+      main h1 {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 900;
+        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .header {
+        text-align: center;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0px 6px 10px #ccc;
+      }
+
+      .navigation {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navigation .homeDiv #homeBtn {
+        align-items: center;
+        background-image: linear-gradient(
+          144deg,
+          #af40ff,
+          #5b42f3 50%,
+          #00ddeb
+        );
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: flex;
+        font-family: Phantomsans, sans-serif;
+        justify-content: center;
+        line-height: 0.8em;
+        max-width: 100%;
+        min-width: 110px;
+        padding: 3px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .navigation .homeDiv #homeBtn:active,
+      .navigation .homeDiv #homeBtn:hover {
+        outline: 0;
+      }
+
+      .navigation .homeDiv #homeBtn a {
+        background-color: rgb(5, 6, 45);
+        color: #fff;
+        font-size: 16px;
+        padding: 16px 24px;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+        text-decoration: none;
+      }
+
+      .navigation .homeDiv #homeBtn:hover a {
+        background: none;
+      }
+
+      .navigation .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 8px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: ease-in 0.3s;
+        border: 2px solid #fff;
+        padding: 10px 15px;
+        border-radius: 20px;
+      }
+
+      .navigation .navbar a:hover {
+        color: rgb(250, 219, 153);
+        border: 2px solid rgb(250, 219, 153);
+      }
+      main {
+        padding: 20px;
+      }
+      .content {
+        max-width: 900px;
+        margin: 70px auto 100px;
+        padding: 20px 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      #translateBtnDiv {
+        position: relative;
+        top: 50px;
+        left: 250px;
+      }
+
+      #translateBtn {
+        border: 0;
+        padding: 15px 25px;
+        color: #fff;
+        background-image: linear-gradient(
+          to right,
+          #314755 0%,
+          #26a0da 51%,
+          #314755 100%
+        );
+        background-size: 200% auto;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #translateBtn:hover {
+        background-position: right center;
+      }
+
+      footer {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0px 10px 0px 60px;
+      }
+
+      .footer-section {
+        margin-bottom: 20px;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 10px;
+        color: #f39c12;
+      }
+
+      .footer-section p {
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .social-icons a i {
+        color: #ecf0f1;
+        margin: 0 8px;
+        font-size: 30px;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .social-icons a i:hover {
+        color: rgb(241, 203, 120);
+      }
+
+      .creatorDiv {
+        margin-top: 10px;
+      }
+      
+
+      .creatorDiv p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .header {
+          position: unset;
+          padding: 10px;
+        }
+        main h1 {
+          font-size: 22px;
+        }
+
+        .navigation {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navigation .navbar {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+        }
+
+        .navigation .navbar a {
+          margin: 10px 0;
+          font-size: 12px;
+        }
+
+        .navigation .homeDiv #homeBtn {
+          min-width: 80px;
+        }
+
+        .navigation .homeDiv #homeBtn a {
+          font-size: 14px;
+        }
+
+        .content {
+          max-width: 260px;
+          margin: 60px auto;
+          padding: 10px 15px;
+        }
+        #translateBtnDiv {
+          left: 5px;
+        }
+        .content p {
+          font-size: 14px;
+        }
+
+        #translateBtn {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          margin: 0px 40px 0px 0px;
+        }
+
+        .footer-section p {
+          font-size: 14px;
+        }
+
+        .social-icons a i {
+          font-size: 22px;
+          margin: 5px;
+        }
+
+        .footer-section {
+          margin-bottom: 0;
+        }
+
+        .creatorDiv {
+          margin-top: 20px;
+          margin-right: 30px;
+        }
+
+        .creatorDiv p {
+          font-size: 12px;
+        }
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="navigation">
+        <div class="homeDiv">
+          <button id="homeBtn"><a href="./index.html">Home</a></button>
+        </div>
+        
+        <div class="navbar">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <h1>Narsi: A Devotee's Journey of Unconditional Love</h1>
+      <div id="translateBtnDiv">
+        <button onclick="toggleLanguage()" id="translateBtn">
+          हिंदी में पढ़ें
+        </button>
+      </div>
+      <div class="content">
+        <div id="content-english">
+            <p>
+              Narsi, a name etched in the annals of devotion, embarked on a profound spiritual journey
+              that mirrored the simplicity and purity of true Bhakti. His life, an ode to unwavering love
+              for Shree Krishna, unfolded in the rustic landscapes of devotion, leaving an enduring
+              legacy of humility and surrender.
+            </p>
+            <p>
+              Born in a humble village, Narsi's early years were marked by an innate sense of curiosity
+              and a deep-seated love for the divine. His heart resonated with the melodies of Krishna's
+              flute, and from a tender age, he sought to make his life an offering at the feet of the
+              Supreme Lord.
+            </p>
+            <p>
+              Narsi's devotional journey found expression in the simplicity of his actions. His days were
+              spent immersed in prayer, his nights in soulful kirtans that echoed through the serene
+              surroundings. The fragrance of devotion permeated every facet of his existence, drawing
+              fellow seekers and common villagers into the magnetic field of his divine love.
+            </p>
+            <p>
+              The defining moment of Narsi's life occurred in the presence of a traveling saint. As the
+              saint narrated the tales of Krishna's leelas and the transformative power of surrender,
+              Narsi felt an indescribable surge of devotion. In that moment, he pledged his heart entirely
+              to Shree Krishna, embracing a life of simplicity, humility, and unwavering faith.
+            </p>
+            <p>
+              Narsi's devotional compositions, sung in the local dialect, became a source of inspiration
+              for generations to come. His bhajans, infused with the sweetness of divine love, carried
+              the essence of his intimate communion with Shree Krishna. The lyrics, often simple yet
+              profound, touched the hearts of listeners, inviting them to partake in the blissful journey
+              of devotion.
+            </p>
+            <p>
+              Narsi's life exemplifies the transformative power of devotion, emphasizing that the path to
+              God is paved with sincerity, love, and unwavering faith. His devotional journey, like a
+              radiant beacon, continues to guide seekers on the path of Bhakti, reminding them of the
+              boundless grace that awaits those who surrender with a pure and open heart.
+            </p>
+        </div>
+        <div id="content-hindi" style="display: none">
+            <p>
+                नरसी, एक नाम जो भक्ति के इतिहास में सजा हुआ है, ने असली भक्ति की सादगी और
+                निर्विकार प्रेम की ओर एक गहरे आध्यात्मिक सफर पर प्रवृत्त किया जो भगवान श्रीकृष्ण
+                के प्रति अनवरत प्रेम को परिचित कराता है। उसका जीवन, सच्चे भक्ति की उदाहरणीय भूमिका
+                निभाते हुए गुहरे भक्ति के दृष्टिकोण से है, जिसने विनम्रता और आत्मनिवेदन की एक
+                बनावट का चित्रण किया।
+              </p>
+              <p>
+                एक विनम्र गाँव में पैदा हुआ, नरसी के प्रारंभिक वर्षों में जिज्ञासा और भगवान के
+                प्रति एक गहरे प्रेम का आत्मचिन्ह था। उसका ह्रदय कृष्ण के बाँसुरी के सुरों के साथ
+                ध्वनित हो रहा था, और एक कोमल आयु से ही उसने अपने जीवन को सर्वोत्तम परमेश्वर के पैरों
+                में अर्पित करने का प्रयास किया।
+              </p>
+              <p>
+                नरसी की भक्ति यात्रा ने उसके क्रियाओं की सरलता में अभिव्यक्ति पाई। उसके दिन
+                प्रार्थना में व्यस्त रहते थे, उसकी रातें उदार कीर्तनों में बितती थीं जो शांति
+                से भरे आस-पास दृश्यों के माध्यम से गूँथी गईं। भक्ति की खुशबू ने उसके अस्तित्व
+                के प्रत्येक पहलुओं को बहुत्वक्षेत्र में ले आया, उसके दिव्य प्रेम की माधुर्य
+                मेंढ़ भूतों और सामान्य गाँववालों को अपनी शरण में आकर्षित करने में।
+              </p>
+              <p>
+                नरसी के जीवन का महत्वपूर्ण पल एक यात्री संत के सामने आया। जब संत ने कृष्ण के
+                लीलाओं की कहानियों और आत्मनिवेदन की शक्ति की कथाएँ सुनाई, तो नरसी ने एक
+                अवर्णनीय भक्ति की ऊँचाई की अनुभूति की। उस क्षण में, उसने अपने हृदय को पूरी तरह
+                से श्रीकृष्ण को समर्पित कर दिया, सरलता, विनम्रता, और अनवरत विश्वास की एक जीवन
+                अपनाकर।
+              </p>
+              <p>
+                नरसी के भक्ति रचनाएँ, स्थानीय बोलचाल में गाई जाने वाली, पीड़ारी भरी दिव्य प्रेम
+                के साथ, उसकी श्रीकृष्ण के साथ आत्मीय संबंध की रसभरी प्रतिबिंब लेती थीं। बोल,
+                अक्सर सरल होते हुए भी गहरे थे, उन्होंने सुनने वालों के दिलों को छूने के लिए
+                अपने प्रेम भरे संबंध की सौभाग्यशाली यात्रा में भाग करने के लिए आमंत्रित किया।
+              </p>
+              <p>
+                नरसी का जीवन सादगी, प्रेम, और अनवरत विश्वास की शक्ति की मिसाल है, जिससे प्रकट
+                होता है कि भगवान की ओर जाने का मार्ग सत्य, प्रेम, और अनविकल्पित विश्वास के साथ
+                है। उसकी भक्ति यात्रा, एक प्रकाशमय प्रवाह की भांति, आसक्तों को भक्ति के मार्ग पर
+                मार्गदर्शन करना जारी रखती है, उन्हें पुनः सरल और खुले हृदय के साथ आत्मनिवेदन की
+                अनगिनत कृपा की यात्रा में रूपांतरित करती है।
+              </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Your description about the website and its purpose.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" target="_blank" title="Github"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="#" target="_blank" title="Codepen"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+            <a href="#" target="_blank" title="LinkedIn"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="creatorDiv">
+        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

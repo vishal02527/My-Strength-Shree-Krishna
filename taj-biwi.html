@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taj Biwi: A Tapestry of Devotion Woven in Love</title>
+    <script
+      src="https://kit.fontawesome.com/d74f12bccc.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+      p::selection {
+        background-color: rgb(237, 204, 133);
+        color: #000;
+      }
+      main h1 {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 900;
+        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .header {
+        text-align: center;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0px 6px 10px #ccc;
+      }
+
+      .navigation {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navigation .homeDiv #homeBtn {
+        align-items: center;
+        background-image: linear-gradient(
+          144deg,
+          #af40ff,
+          #5b42f3 50%,
+          #00ddeb
+        );
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: flex;
+        font-family: Phantomsans, sans-serif;
+        justify-content: center;
+        line-height: 0.8em;
+        max-width: 100%;
+        min-width: 110px;
+        padding: 3px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .navigation .homeDiv #homeBtn:active,
+      .navigation .homeDiv #homeBtn:hover {
+        outline: 0;
+      }
+
+      .navigation .homeDiv #homeBtn a {
+        background-color: rgb(5, 6, 45);
+        color: #fff;
+        font-size: 16px;
+        padding: 16px 24px;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+        text-decoration: none;
+      }
+
+      .navigation .homeDiv #homeBtn:hover a {
+        background: none;
+      }
+
+      .navigation .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 8px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: ease-in 0.3s;
+        border: 2px solid #fff;
+        padding: 10px 15px;
+        border-radius: 20px;
+      }
+
+      .navigation .navbar a:hover {
+        color: rgb(250, 219, 153);
+        border: 2px solid rgb(250, 219, 153);
+      }
+
+      main {
+        padding: 20px;
+      }
+      .content {
+        max-width: 900px;
+        margin: 70px auto 100px;
+        padding: 20px 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      #translateBtnDiv {
+        position: relative;
+        top: 50px;
+        left: 250px;
+      }
+
+      #translateBtn {
+        border: 0;
+        padding: 15px 25px;
+        color: #fff;
+        background-image: linear-gradient(
+          to right,
+          #314755 0%,
+          #26a0da 51%,
+          #314755 100%
+        );
+        background-size: 200% auto;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #translateBtn:hover {
+        background-position: right center;
+      }
+
+      footer {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0px 10px 0px 60px;
+      }
+
+      .footer-section {
+        margin-bottom: 20px;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 10px;
+        color: #f39c12;
+      }
+
+      .footer-section p {
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .social-icons a i {
+        color: #ecf0f1;
+        margin: 0 8px;
+        font-size: 30px;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .social-icons a i:hover {
+        color: rgb(241, 203, 120);
+      }
+
+      .creatorDiv {
+        margin-top: 10px;
+      }
+
+      .creatorDiv p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      
+      @media screen and (max-width: 600px) {
+        .header {
+          position: unset;
+          padding: 10px;
+        }
+        main h1 {
+          font-size: 22px;
+        }
+
+        .navigation {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navigation .navbar {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+        }
+
+        .navigation .navbar a {
+          margin: 10px 0;
+          font-size: 12px;
+        }
+
+        .navigation .homeDiv #homeBtn {
+          min-width: 80px;
+        }
+
+        .navigation .homeDiv #homeBtn a {
+          font-size: 14px;
+        }
+
+        .content {
+          max-width: 260px;
+          margin: 60px auto;
+          padding: 10px 15px;
+        }
+        #translateBtnDiv {
+          left: 5px;
+        }
+        .content p {
+          font-size: 14px;
+        }
+
+        #translateBtn {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          margin: 0px 40px 0px 0px;
+        }
+
+        .footer-section p {
+          font-size: 14px;
+        }
+
+        .social-icons a i {
+          font-size: 22px;
+          margin: 5px;
+        }
+
+        .footer-section {
+          margin-bottom: 0;
+        }
+
+        .creatorDiv {
+          margin-top: 20px;
+          margin-right: 30px;
+        }
+
+        .creatorDiv p {
+          font-size: 12px;
+        }
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="navigation">
+        <div class="homeDiv">
+          <button id="homeBtn"><a href="./index.html">Home</a></button>
+        </div>
+        
+        <div class="navbar">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <h1>Taj Biwi: A Tapestry of Devotion Woven in Love</h1>
+      <div id="translateBtnDiv">
+        <button onclick="toggleLanguage()" id="translateBtn">
+          हिंदी में पढ़ें
+        </button>
+      </div>
+      <div class="content">
+        <div id="content-english">
+          <p>
+            Taj Biwi, a name that resonates with divine love and unwavering
+            devotion, embarked on a spiritual journey that unfolded against the
+            backdrop of Mughal splendor. Born in the royal courts, her life took
+            an extraordinary turn as she surrendered herself at the feet of
+            Shree Krishna, transcending the boundaries of worldly opulence.
+          </p>
+          <p>
+            The love story between Taj Biwi and Shree Krishna is woven with
+            threads of profound dedication and surrender. In the opulent palaces
+            of the Mughal era, Taj Biwi, adorned with jewels and surrounded by
+            luxury, felt a magnetic pull toward the simplicity of divine love.
+            Her heart, like an untamed bird, sought refuge in the sacred groves
+            where Krishna's melodies echoed.
+          </p>
+          <p>
+            The devotional journey of Taj Biwi was marked by a series of divine
+            encounters with Shree Krishna. Legends speak of her evenings spent
+            in ecstatic kirtans, dancing to the celestial tunes that played in
+            her heart. The grandeur of the imperial court faded in comparison to
+            the divine splendor she witnessed in the presence of her beloved
+            Lord.
+          </p>
+          <p>
+            Taj Biwi's love for Krishna transcended societal norms and material
+            attachments. Her devotion was not confined by the walls of the
+            palace but soared to the ethereal realms where the soul unites with
+            the Supreme. Through trials and triumphs, she remained steadfast in
+            her commitment, finding solace in the divine connection that
+            surpassed worldly allurements.
+          </p>
+          <p>
+            The legacy of Taj Biwi's devotion echoes through the annals of
+            history, reminding seekers that true wealth lies in the treasures of
+            the heart. Her story inspires generations to seek the sublime,
+            urging them to adorn the inner chambers with the jewels of love for
+            Shree Krishna.
+          </p>
+          <p>
+            Taj Biwi's devotional journey is a testament to the transformative
+            power of divine love, proving that in the tapestry of devotion,
+            every thread woven with sincerity creates a masterpiece that
+            transcends time and echoes through eternity.
+          </p>
+        </div>
+        <div id="content-hindi" style="display: none">
+          <p>
+            ताज बीवी, एक ऐसा नाम जो दिव्य प्रेम और अटूट भक्ति को प्रतिबिंबित
+            करता है, ने एक आध्यात्मिक यात्रा शुरू की जो मुगल वैभव की पृष्ठभूमि
+            में सामने आई। शाही दरबार में जन्मी, उनके जीवन में एक असाधारण मोड़
+            आया जब उन्होंने सांसारिक ऐश्वर्य की सीमाओं को पार करते हुए खुद को
+            श्री कृष्ण के चरणों में समर्पित कर दिया।
+          </p>
+
+          <p>
+            ताज बीवी और श्री कृष्ण के बीच की प्रेम कहानी गहन समर्पण और समर्पण के
+            धागों से बुनी गई है। मुगल काल के भव्य महलों में, गहनों से सजी और
+            विलासिता से घिरी ताज बीवी को दिव्य प्रेम की सादगी की ओर एक चुंबकीय
+            खिंचाव महसूस हुआ। उसका हृदय, एक अदम्य पक्षी की तरह, पवित्र उपवनों
+            में शरण चाहता था जहाँ कृष्ण की धुनें गूँजती थीं।
+          </p>
+
+          <p>
+            ताज बीवी की भक्ति यात्रा को श्री कृष्ण के साथ दिव्य मुठभेड़ों की एक
+            श्रृंखला द्वारा चिह्नित किया गया था। किंवदंतियाँ उनकी शामों को
+            परमानंद कीर्तन में बिताने, उनके दिल में बजने वाली दिव्य धुनों पर
+            नृत्य करने के बारे में बताती हैं। शाही दरबार की भव्यता उस दिव्य वैभव
+            की तुलना में फीकी पड़ गई जो उसने अपने प्रिय भगवान की उपस्थिति में
+            देखा था।
+          </p>
+
+          <p>
+            ताज बीवी का कृष्ण के प्रति प्रेम सामाजिक मानदंडों और भौतिक लगाव से
+            परे था। उनकी भक्ति महल की दीवारों तक ही सीमित नहीं थी, बल्कि ईथर
+            मंडल तक पहुंच गई जहां आत्मा सर्वोच्च के साथ एकजुट हो जाती है।
+            परीक्षणों और विजयों के माध्यम से, वह अपनी प्रतिबद्धता पर दृढ़ रही और
+            सांसारिक आकर्षणों से परे दैवीय संबंध में सांत्वना पाई।
+          </p>
+
+          <p>
+            ताज बीवी की भक्ति की विरासत इतिहास के पन्नों में गूँजती है, और
+            साधकों को याद दिलाती है कि सच्ची दौलत दिल के ख़ज़ाने में निहित है।
+            उनकी कहानी पीढ़ियों को उत्कृष्टता की तलाश करने के लिए प्रेरित करती
+            है, और उन्हें श्री कृष्ण के लिए प्रेम के गहनों से आंतरिक कक्षों को
+            सजाने का आग्रह करती है।
+          </p>
+
+          <p>
+            ताज बीवी की भक्ति यात्रा दिव्य प्रेम की परिवर्तनकारी शक्ति का एक
+            प्रमाण है, जो साबित करती है कि भक्ति की टेपेस्ट्री में, ईमानदारी से
+            बुना गया हर धागा एक उत्कृष्ट कृति बनाता है जो समय को पार करता है और
+            अनंत काल तक गूँजता है।
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Your description about the website and its purpose.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" target="_blank" title="Github"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="#" target="_blank" title="Codepen"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+            <a href="#" target="_blank" title="LinkedIn"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="creatorDiv">
+        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
