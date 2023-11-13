@@ -1,112 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devotional Resources: Shree Krishna</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <script
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devotional Resources: Shree Krishna</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
     ></script>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-      color: #333;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      overflow-x: hidden;
-    }
-     p::selection, h2::selection{
-  background-color: rgb(237, 204, 133);
-  color: #000; 
-}
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+      p::selection,
+      h2::selection {
+        background-color: rgb(237, 204, 133);
+        color: #000;
+      }
 
-    /* Header styles */
+      /* Header styles */
 
-    .header {
-      text-align: center;
-      background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0px 6px 10px #ccc;
-    }
+      .header {
+        text-align: center;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0px 6px 10px #ccc;
+      }
 
-    .navigation {
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+      .navigation {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-    .navigation .homeDiv #homeBtn {
-      align-items: center;
-      background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
-      border: 0;
-      border-radius: 8px;
-      box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-      box-sizing: border-box;
-      color: #ffffff;
-      display: flex;
-      font-family: Phantomsans, sans-serif;
-      justify-content: center;
-      line-height: 0.8em;
-      max-width: 100%;
-      min-width: 110px;
-      padding: 3px;
-      text-decoration: none;
-      cursor: pointer;
-    }
+      .navigation .homeDiv #homeBtn {
+        align-items: center;
+        background-image: linear-gradient(
+          144deg,
+          #af40ff,
+          #5b42f3 50%,
+          #00ddeb
+        );
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: flex;
+        font-family: Phantomsans, sans-serif;
+        justify-content: center;
+        line-height: 0.8em;
+        max-width: 100%;
+        min-width: 110px;
+        padding: 3px;
+        text-decoration: none;
+        cursor: pointer;
+      }
 
-    .navigation .homeDiv #homeBtn:active,
-    .navigation .homeDiv #homeBtn:hover {
-      outline: 0;
-    }
+      .navigation .homeDiv #homeBtn:active,
+      .navigation .homeDiv #homeBtn:hover {
+        outline: 0;
+      }
 
-    .navigation .homeDiv #homeBtn a {
-      background-color: rgb(5, 6, 45);
-      color: #fff;
-      font-size: 16px;
-      padding: 16px 24px;
-      border-radius: 6px;
-      width: 100%;
-      height: 100%;
-      transition: 300ms;
-      text-decoration: none;
-    }
+      .navigation .homeDiv #homeBtn a {
+        background-color: rgb(5, 6, 45);
+        color: #fff;
+        font-size: 16px;
+        padding: 16px 24px;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+        text-decoration: none;
+      }
 
-    .navigation .homeDiv #homeBtn:hover a {
-      background: none;
-    }
+      .navigation .homeDiv #homeBtn:hover a {
+        background: none;
+      }
 
-    .navigation .navbar a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 8px;
-      font-size: 16px;
-      font-weight: 500;
-      transition: ease-in 0.3s;
-      border: 2px solid #fff;
-      padding: 10px 15px;
-      border-radius: 20px;
-    }
+      .navigation .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 8px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: ease-in 0.3s;
+        border: 2px solid #fff;
+        padding: 10px 15px;
+        border-radius: 20px;
+      }
 
-    .navigation .navbar a:hover {
+      .navigation .navbar a:hover {
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
       }
 
-    /* Main content styles */
+      /* Main content styles */
 
-    main {
-      padding: 20px;
-    }
+      main {
+        padding: 20px;
+      }
 
-    .content {
+      .content {
         padding: 20px 120px;
         margin-bottom: 50px;
       }
@@ -121,267 +130,291 @@
         -webkit-text-fill-color: transparent;
       }
 
-    .resource-card {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .resource-card h2 {
-      color: #ab9353;
-      margin-top: 0;
-    }
-
-    .resource-card p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #333;
-      margin-bottom: 15px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: linear-gradient(269deg, #0048ff, #0096ff);
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 20px;
-      margin-top: 0px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    /* Footer styles */
-
-    footer {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      max-width: 1200px;
-      margin: 0px 10px 0px 60px;
-    }
-
-    .footer-section {
-      margin-bottom: 20px;
-    }
-
-    .footer-section h3 {
-      margin-bottom: 10px;
-      color: #f39c12;
-    }
-
-    .footer-section p {
-      font-size: 16px;
-      margin-top: 0;
-      margin-bottom: 0;
-      color: #fff;
-    }
-
-    .social-icons a i {
-      color: #ecf0f1;
-      margin: 0 8px;
-      font-size: 30px;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .social-icons a i:hover {
-      color: rgb(241, 203, 120);
-    }
-
-    .creatorDiv {
-      margin-top: 10px;
-    }
-
-    .creatorDiv p {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 14px;
-      color: #fff;
-    }
-    
-    @media screen and (max-width: 600px) {
-      .content {
-          padding: 20px 15px;
-        }
-        .content h1{
-          font-size: 22px;
-        }
       .resource-card {
-      width: 90%;
-      margin-left: -10px;
-    }
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
       .resource-card h2 {
-      font-size: 20px;
-    }
-    .resource-card p {
-      font-size: 14px;
-    }
-    .cta-button {
-      font-size: 14px;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
-    }
-
-      .header {
-        position: unset;
-        padding: 10px;
+        color: #ab9353;
+        margin-top: 0;
       }
 
-      .navigation {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .resource-card p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 15px;
       }
 
-      .navigation .navbar {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(269deg, #0048ff, #0096ff);
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin-top: 0px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
       }
 
-      .navigation .navbar a {
-        margin: 10px 0;
-        font-size: 12px;
-      }
+      /* Footer styles */
 
-      .navigation .homeDiv #homeBtn {
-        min-width: 80px;
-      }
-
-      .navigation .homeDiv #homeBtn a {
-        font-size: 14px;
+      footer {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
       }
 
       .footer-content {
-        flex-direction: column;
-        align-items: center;
-        margin: 0px 40px 0px 0px;
-      }
-
-      .footer-section p {
-        font-size: 14px;
-      }
-
-      .social-icons a i {
-        font-size: 22px;
-        margin: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0px 10px 0px 60px;
       }
 
       .footer-section {
+        margin-bottom: 20px;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 10px;
+        color: #f39c12;
+      }
+
+      .footer-section p {
+        font-size: 16px;
+        margin-top: 0;
         margin-bottom: 0;
+        color: #fff;
+      }
+
+      .social-icons a i {
+        color: #ecf0f1;
+        margin: 0 8px;
+        font-size: 30px;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .social-icons a i:hover {
+        color: rgb(241, 203, 120);
       }
 
       .creatorDiv {
-        margin-top: 20px;
-        margin-right: 30px;
+        margin-top: 10px;
       }
 
       .creatorDiv p {
-        font-size: 12px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+        color: #fff;
       }
-      
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <div class="navigation">
-      <div class="homeDiv">
-        <button id="homeBtn"><a href="./index.html">Home</a></button>
-      </div>
-      
-      <div class="navbar">
-        <a href="scriptures.html">Scriptures</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-        <a href="devotional-resources.html">Devotional Resources</a>
-      </div>
-    </div>
-  </div>
 
-  <main>
-    <div class="content">
-      <h1>Devotional Resources</h1>
-    <!-- Resource 1 Card -->
-    <div class="resource-card">
-      <h2>Bhagavad Gita PDF</h2>
-      <p>
-        Download a PDF version of the Bhagavad Gita for easy access to its
-        divine verses. Dive into the teachings of Shree Krishna anytime,
-        anywhere.
-      </p>
-      <a href="./pdf_files/Bhagavad-gita-hindi.pdf" class="cta-button" download>Download Now</a>
-    </div>
+      @media screen and (max-width: 600px) {
+        .content {
+          padding: 20px 15px;
+        }
+        .content h1 {
+          font-size: 22px;
+        }
+        .resource-card {
+          width: 90%;
+          margin-left: -10px;
+        }
+        .resource-card h2 {
+          font-size: 20px;
+        }
+        .resource-card p {
+          font-size: 14px;
+        }
+        .cta-button {
+          font-size: 14px;
+          padding: 10px;
+          margin-top: 5px;
+          border-radius: 5px;
+        }
 
-    <!-- Resource 2 Card -->
-    <div class="resource-card">
-      <h2>Stories of devotees</h2>
-      <p>
-        Immerse yourself in the divine love of devotees with their beloved Shree Krishna with our
-        collection of awesome stories.
-      </p>
-      <a href="./stories-of-devotees.html" class="cta-button">Read Now</a>
-    </div>
+        .header {
+          position: unset;
+          padding: 10px;
+        }
 
-    <!-- Resource 3 Card -->
-    <div class="resource-card">
-      <h2>Morning Mantras Audio</h2>
-      <p>
-        Start your day with the soothing chants and mantras dedicated to Shree
-        Krishna. Listen to the divine vibrations and bring positivity to your
-        mornings.
-      </p>
-      <a href="./morning-mantra-audio.html" class="cta-button">Listen Now</a>
-    </div>
-    <div class="resource-card">
-      <h2>Shri Radha Chalisa PDF</h2>
-      <p>
-        Blessed your life with the reading of Shree Radhika Chalisa.
-      </p>
-      <a href="./pdf_files/Shree-Radha-Chalisa.pdf" class="cta-button" download>Download Now</a>
-    </div>
-  </div>
-  </main>
+        .navigation {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>About Us</h3>
-        <p>Your description about the website and its purpose.</p>
-      </div>
+        .navigation .navbar {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+        }
 
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>Email: info@example.com</p>
-        <p>Phone: +1 234 567 890</p>
-      </div>
+        .navigation .navbar a {
+          margin: 10px 0;
+          font-size: 12px;
+        }
 
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" target="_blank" title="Github"><i class="fab fa-github"></i></a>
-          <a href="#" target="_blank" title="Codepen"><i class="fab fa-codepen"></i></a>
-          <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        .navigation .homeDiv #homeBtn {
+          min-width: 80px;
+        }
+
+        .navigation .homeDiv #homeBtn a {
+          font-size: 14px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          margin: 0px 40px 0px 0px;
+        }
+
+        .footer-section p {
+          font-size: 14px;
+        }
+
+        .social-icons a i {
+          font-size: 22px;
+          margin: 5px;
+        }
+
+        .footer-section {
+          margin-bottom: 0;
+        }
+
+        .creatorDiv {
+          margin-top: 20px;
+          margin-right: 30px;
+        }
+
+        .creatorDiv p {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="navigation">
+        <div class="homeDiv">
+          <button id="homeBtn"><a href="./index.html">Home</a></button>
+        </div>
+
+        <div class="navbar">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
         </div>
       </div>
     </div>
-    <div class="creatorDiv">
-      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-</body>
+
+    <main>
+      <div class="content">
+        <h1>Devotional Resources</h1>
+        <!-- Resource 1 Card -->
+        <div class="resource-card">
+          <h2>Bhagavad Gita PDF</h2>
+          <p>
+            Download a PDF version of the Bhagavad Gita for easy access to its
+            divine verses. Dive into the teachings of Shree Krishna anytime,
+            anywhere.
+          </p>
+          <a
+            href="./pdf_files/Bhagavad-gita-hindi.pdf"
+            class="cta-button"
+            download
+            >Download Now</a
+          >
+        </div>
+
+        <!-- Resource 2 Card -->
+        <div class="resource-card">
+          <h2>Stories Of Devotees</h2>
+          <p>
+            Immerse yourself in the divine love of devotees with their beloved
+            Shree Krishna with our collection of awesome stories.
+          </p>
+          <a href="./stories-of-devotees.html" class="cta-button">Read Now</a>
+        </div>
+
+        <!-- Resource 2 Card -->
+        <div class="resource-card">
+          <h2>Spiritual Collection</h2>
+          <p>
+            Dive into the transcendental realm with our curated collection of pad, bhajans, devotional thoughts and daily spiritual quotes, each note resonating with the divine energy of Krishna. These soul-stirring melodies have been carefully selected to elevate your spiritual experience and foster a deeper connection with the divine.
+          </p>
+          <a href="#" class="cta-button">Visit Now</a>
+        </div>
+
+        <!-- Resource 3 Card -->
+        <div class="resource-card">
+          <h2>Morning Mantras Audio</h2>
+          <p>
+            Start your day with the soothing chants and mantras dedicated to
+            Shree Krishna. Listen to the divine vibrations and bring positivity
+            to your mornings.
+          </p>
+          <a href="./morning-mantra-audio.html" class="cta-button"
+            >Listen Now</a
+          >
+        </div>
+        <div class="resource-card">
+          <h2>Shri Radha Chalisa PDF</h2>
+          <p>Blessed your life with the reading of Shree Radhika Chalisa.</p>
+          <a
+            href="./pdf_files/Shree-Radha-Chalisa.pdf"
+            class="cta-button"
+            download
+            >Download Now</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Your description about the website and its purpose.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" target="_blank" title="Github"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="#" target="_blank" title="Codepen"
+              ><i class="fab fa-codepen"></i
+            ></a>
+            <a href="#" target="_blank" title="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="creatorDiv">
+        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
