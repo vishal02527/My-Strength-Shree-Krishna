@@ -40,7 +40,7 @@ function fadeOutAndChangeImage() {
 krishnaImage.onload = () => {
   setTimeout(() => {
     fadeOutAndChangeImage();
-  }, 5000); // Add a delay to allow the first image to display
+  }, 5000); 
 };
 
 function openLightbox(imagePath) {
@@ -92,32 +92,34 @@ document.addEventListener("DOMContentLoaded", function () {
         "devotional resources": "./devotional-resources.html",
         "bhagwad geeta": "./devotional-resources.html",
         "geeta pdf": "./devotional-resources.html",
-        "geeta": "./devotional-resources.html",
-        "pdf": "./devotional-resources.html",
+        geeta: "./devotional-resources.html",
+        pdf: "./devotional-resources.html",
         "radha chalisa": "./devotional-resources.html",
-        "radha": "./devotional-resources.html",
+        "krishna padawali": "./devotional-resources.html",
+        "padawali": "./devotional-resources.html",
+        radha: "./devotional-resources.html",
         "discussion forum": "./discussion-forum.html",
-        "discussion": "./discussion-forum.html",
-        "forum": "./discussion-forum.html",
+        discussion: "./discussion-forum.html",
+        forum: "./discussion-forum.html",
         "stories of devotees": "./stories-of-devotees.html",
-        "stories": "./stories-of-devotees.html",
+        stories: "./stories-of-devotees.html",
         "devotees stories": "./stories-of-devotees.html",
         "meera bai": "./meera-bai.html",
-        "meerabai": "./meera-bai.html",
-        "meera": "./meera-bai.html",
+        meerabai: "./meera-bai.html",
+        meera: "./meera-bai.html",
         "karmaiti bai": "./karmati-bai.html",
-        "karmaitibai": "./karmati-bai.html",
-        "karmaiti": "./karmati-bai.html",
-        "narsi": "./narsi.html",
-        "surdas": "./surdas.html",
+        karmaitibai: "./karmati-bai.html",
+        karmaiti: "./karmati-bai.html",
+        narsi: "./narsi.html",
+        surdas: "./surdas.html",
         "dhanna jatt": "./dhanna-jatt.html",
-        "dhanna": "./dhanna-jatt.html",
+        dhanna: "./dhanna-jatt.html",
         "taj biwi": "./taj-biwi.html",
-        "tajbiwi": "./taj-biwi.html",
+        tajbiwi: "./taj-biwi.html",
         "taj begum": "./taj-biwi.html",
-        "raidas": "./raidas.html",
-        "ravidas": "./raidas.html",
-        "audio": "./morning-mantra-audio.html",
+        raidas: "./raidas.html",
+        ravidas: "./raidas.html",
+        audio: "./morning-mantra-audio.html",
       };
 
       // Check if a direct match exists
