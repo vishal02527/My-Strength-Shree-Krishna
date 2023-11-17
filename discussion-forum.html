@@ -150,16 +150,15 @@
         word-wrap: break-word;
         font-size: 16px;
       }
-      .user-BtnDiv {
+      
+      .logDeleteBtnDiv {
         max-width: 800px;
+        margin-top: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         align-content: center;
-        margin-left: 23%;
-      }
-      .logDeleteBtnDiv {
-        margin-top: 20px;
+        margin-left: 23.3%;
       }
       .logout-btn,
       .delete-btn {
@@ -176,7 +175,6 @@
       }
       .logout-btn {
         background-color: #85888e;
-        margin-right: 10px;
       }
       .logout-btn:hover {
         background-color: #2c3e50;
@@ -216,6 +214,10 @@
         border: 2px solid #ffc107;
         outline: 0;
       }
+      main h3{
+          text-align: center;
+          margin-bottom: 80px;
+        }
 
       .newPost-button {
         margin: 10px;
@@ -359,7 +361,7 @@
         }
         .newPost-button {
           margin-top: 20px;
-          margin-left: 80px;
+          margin-left: 100px;
           padding: 15px;
         }
         .post h2 {
@@ -383,21 +385,22 @@
         .post-form h2 {
           font-size: 20px;
         }
-        .user-BtnDiv {
-          flex-direction: column;
-          margin-left: 0%;
+        main h3{
+          margin-top: 50px;
+          margin-bottom: 50px;
         }
+        
         .logDeleteBtnDiv {
           margin-top: 0;
+          margin-left: 0%;
+          max-width: 280px;
         }
         .logout-btn,
         .delete-btn {
           padding: 10px 12px;
           font-size: 14px;
         }
-        .logout-btn {
-          margin-right: 90px;
-        }
+        
         .footer-content {
           flex-direction: column;
           align-items: center;
@@ -444,8 +447,9 @@
         <h1>Discussion Forum</h1>
         <p>We're happy to have you here.</p>
       </div>
+      <h3 id="user"><!-- username will be dynamically added here --></h3>
       <div class="user-BtnDiv">
-        <h3 id="user"><!-- username will be dynamically added here --></h3>
+        
         <div class="logDeleteBtnDiv">
           <button class="logout-btn" onclick="logout()">Logout</button>
           <button class="delete-btn" onclick="deleteAccount()">
