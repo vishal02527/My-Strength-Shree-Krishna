@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "krishna wallpaper":"./divine-wallpapers.html",
         "wallpapers":"./divine-wallpapers.html",
         "wallpaper":"./divine-wallpapers.html",
-
       };
 
       // Check if a direct match exists
