@@ -19,7 +19,7 @@ function toggleLanguage() {
 
 const krishnaImage = document.getElementById("krishnaImage");
 const imagePaths = [
-  "./images/krishna-img1.jpg",
+  "./images/krishna-home-image.jpg",
   "./images/krishna-img2.jpg",
   "./images/krishna-img3.jpg",
   "./images/krishna-img4.jpg",
@@ -120,6 +120,21 @@ document.addEventListener("DOMContentLoaded", function () {
         raidas: "./raidas.html",
         ravidas: "./raidas.html",
         audio: "./morning-mantra-audio.html",
+        "morning mantra audio": "./morning-mantra-audio.html",
+        "mantra audio": "./morning-mantra-audio.html",
+        "krishna arti": "./morning-mantra-audio.html",
+        "krishna ashtakam": "./morning-mantra-audio.html",
+        "krishna chants": "./morning-mantra-audio.html",
+        "morning bliss": "./morning-mantra-audio.html",
+        mantra: "./morning-mantra-audio.html",
+        "divine wallpapers":"./divine-wallpapers.html",
+        "divine wallpaper":"./divine-wallpapers.html",
+        "beautiful wallpapers":"./divine-wallpapers.html",
+        "krishna wallpapers":"./divine-wallpapers.html",
+        "krishna wallpaper":"./divine-wallpapers.html",
+        "wallpapers":"./divine-wallpapers.html",
+        "wallpaper":"./divine-wallpapers.html",
+
       };
 
       // Check if a direct match exists
