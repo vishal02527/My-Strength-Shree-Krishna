@@ -14,7 +14,7 @@ This website is based on devotional content. Many resources and references are t
 </div>
 
 
-## Authors
+## Author
 
 - [@VishalKumar](https://github.com/vishal02527)
 
