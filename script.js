@@ -17,6 +17,94 @@ function toggleLanguage() {
   isHindi = !isHindi;
 }
 
+// const krishnaImage = document.getElementById("krishnaImage");
+// const imagePaths = [
+//   "./images/krishna-home-image.jpg",
+//   "./images/krishna-img2.jpg",
+//   "./images/krishna-img3.jpg",
+//   "./images/krishna-img4.jpg",
+// ];
+// let currentImageIndex = 0;
+
+// // Function to fade out the current image and change to the next image
+// function fadeOutAndChangeImage() {
+//   krishnaImage.classList.add("fade");
+//   setTimeout(() => {
+//     currentImageIndex = (currentImageIndex + 1) % imagePaths.length;
+//     krishnaImage.src = imagePaths[currentImageIndex];
+//     krishnaImage.classList.remove("fade");
+//   }, 2000);
+// }
+
+// // Preload and start the fading effect after the first image is loaded
+// krishnaImage.onload = () => {
+//   setTimeout(() => {
+//     fadeOutAndChangeImage();
+//   }, 5000); 
+// };
+
+// const krishnaImage = document.getElementById("krishnaImage");
+// const imagePaths = [
+//   "./images/krishna-home-image.jpg",
+//   "./images/krishna-img2.jpg",
+//   "./images/krishna-img3.jpg",
+//   "./images/krishna-img4.jpg",
+// ];
+// let currentImageIndex = 0;
+
+// // Select buttons
+// const prevBtn = document.getElementById("prevBtn");
+// const nextBtn = document.getElementById("nextBtn");
+
+// // Function to update the image
+// function updateImage() {
+//   krishnaImage.classList.add("fade");
+//   setTimeout(() => {
+//     krishnaImage.src = imagePaths[currentImageIndex];
+//     krishnaImage.classList.remove("fade");
+//   }, 3000); // 1 second for fade transition
+// }
+
+// // Function to go to the next image
+// function goToNextImage() {
+//   currentImageIndex = (currentImageIndex + 1) % imagePaths.length;
+//   updateImage();
+// }
+
+// // Function to go to the previous image
+// function goToPrevImage() {
+//   currentImageIndex =
+//     (currentImageIndex - 1 + imagePaths.length) % imagePaths.length;
+//   updateImage();
+// }
+
+// // Auto-change image every 5 seconds
+// let autoSlideInterval = setInterval(goToNextImage, 5000);
+
+// // Pause auto-slide when the user interacts
+// function pauseAutoSlide() {
+//   clearInterval(autoSlideInterval);
+//   autoSlideInterval = setTimeout(() => {
+//     autoSlideInterval = setInterval(goToNextImage, 5000);
+//   }, 10000); // Resume auto-slide after 10 seconds
+// }
+
+// // Event listeners for the buttons
+// nextBtn.addEventListener("click", () => {
+//   pauseAutoSlide();
+//   goToNextImage();
+// });
+
+// prevBtn.addEventListener("click", () => {
+//   pauseAutoSlide();
+//   goToPrevImage();
+// });
+
+// // Preload the first image and start auto-slide
+// krishnaImage.onload = () => {
+//   setInterval(goToNextImage, 5000);
+// };
+
 const krishnaImage = document.getElementById("krishnaImage");
 const imagePaths = [
   "./images/krishna-home-image.jpg",
@@ -26,22 +114,70 @@ const imagePaths = [
 ];
 let currentImageIndex = 0;
 
-// Function to fade out the current image and change to the next image
-function fadeOutAndChangeImage() {
+// Select buttons
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+// Function to update the image with fade effect
+function updateImage() {
   krishnaImage.classList.add("fade");
   setTimeout(() => {
-    currentImageIndex = (currentImageIndex + 1) % imagePaths.length;
     krishnaImage.src = imagePaths[currentImageIndex];
     krishnaImage.classList.remove("fade");
-  }, 2000);
+  }, 1000); // Duration matches the CSS transition (1s)
 }
 
-// Preload and start the fading effect after the first image is loaded
-krishnaImage.onload = () => {
-  setTimeout(() => {
-    fadeOutAndChangeImage();
-  }, 5000); 
-};
+// Function to go to the next image
+function goToNextImage() {
+  currentImageIndex = (currentImageIndex + 1) % imagePaths.length;
+  updateImage();
+}
+
+// Function to go to the previous image
+function goToPrevImage() {
+  currentImageIndex =
+    (currentImageIndex - 1 + imagePaths.length) % imagePaths.length;
+  updateImage();
+}
+
+// Auto-change image every 5 seconds
+let autoSlideInterval = setInterval(goToNextImage, 5000);
+
+// Pause auto-slide when the user interacts
+function pauseAutoSlide() {
+  clearInterval(autoSlideInterval);
+  // Resume auto-slide after 10 seconds of inactivity
+  clearTimeout(autoSlideTimeout);
+  autoSlideTimeout = setTimeout(() => {
+    autoSlideInterval = setInterval(goToNextImage, 5000);
+  }, 10000);
+}
+
+let autoSlideTimeout;
+
+// Event listeners for the buttons
+nextBtn.addEventListener("click", () => {
+  pauseAutoSlide();
+  goToNextImage();
+});
+
+prevBtn.addEventListener("click", () => {
+  pauseAutoSlide();
+  goToPrevImage();
+});
+
+// Optional: Add keyboard navigation for accessibility
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowRight") {
+    pauseAutoSlide();
+    goToNextImage();
+  } else if (event.key === "ArrowLeft") {
+    pauseAutoSlide();
+    goToPrevImage();
+  }
+});
+
+
 
 function openLightbox(imagePath) {
   document.getElementById("lightbox-img").src = imagePath;
