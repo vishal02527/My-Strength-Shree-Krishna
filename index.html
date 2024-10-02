@@ -96,7 +96,6 @@
         color: #ab9353;
       }
 
-
       @media (max-width: 768px) {
         .header {
           padding: 10px;
@@ -139,7 +138,6 @@
         justify-content: space-between;
         align-items: center;
         justify-content: center;
-
       }
 
       .navigation .homeDiv #homeBtn {
@@ -189,7 +187,7 @@
       .navigation {
         justify-content: space-between;
       }
-      .navigation .navbar{
+      .navigation .navbar {
         display: flex;
       }
       .navigation .navbar a {
@@ -291,10 +289,9 @@
         font-size: 14px;
       }
 
-
-        /* tablet  Responsive Styles */
-        @media (max-width: 1100px){
-          .header {
+      /* tablet  Responsive Styles */
+      @media (max-width: 1100px) {
+        .header {
           position: unset;
         }
         .navigation {
@@ -309,16 +306,13 @@
           justify-content: space-between;
           margin-top: 20px;
         }
-        .navbar .navbar-up{
+        .navbar .navbar-up {
           gap: 20px;
-          display: flex ;
-          
+          display: flex;
         }
-        .navbar .navbar-down{
-      
-          display: flex ;
+        .navbar .navbar-down {
+          display: flex;
           gap: 20px;
-          
         }
         .navigation .navbar a {
           margin: 10px 0;
@@ -375,8 +369,7 @@
           padding: 9px 15px;
           font-size: 15px;
         }
-
-        }
+      }
       /* Mobile Responsive Styles */
       @media (max-width: 668px) {
         .header {
@@ -397,18 +390,15 @@
           margin: 10px 0;
           font-size: 12px;
         }
-        .navbar .navbar-up{
+        .navbar .navbar-up {
           gap: 20px;
-          display: flex ;
+          display: flex;
           flex-direction: column;
-          
         }
-        .navbar .navbar-down{
-      
-          display: flex ;
+        .navbar .navbar-down {
+          display: flex;
           gap: 20px;
           flex-direction: column;
-          
         }
         .navigation .homeDiv #homeBtn {
           min-width: 80px;
@@ -460,7 +450,79 @@
           font-size: 15px;
         }
       }
-     
+
+      /* FAQ seciton css */
+
+      /* faq section */
+      .faq-section {
+          max-width: 900px;
+          margin: 50px auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-heading {
+          font-size: 24px;
+          text-align: center;
+          margin-bottom: 20px;
+          color: #333;
+        }
+
+        .faq-container {
+          width: 100%;
+        }
+
+        .faq-item {
+          margin-bottom: 15px;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 10px;
+        }
+
+        .faq-question {
+          width: 100%;
+          padding: 15px;
+          text-align: left;
+          background-color: #f7f7f7;
+          border: none;
+          font-size: 18px;
+          font-weight: bold;
+          color: #333;
+          cursor: pointer;
+          outline: none;
+          transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+          background-color: #e6e6e6;
+        }
+
+        .faq-answer {
+          display: none;
+          padding: 10px 15px;
+          font-size: 16px;
+          color: #555;
+        }
+
+        .faq-answer p {
+          line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+          .faq-question {
+            font-size: 16px;
+          }
+
+          .faq-answer {
+            font-size: 14px;
+          }
+
+          .faq-heading {
+            font-size: 20px;
+          }
+        }
     </style>
   </head>
   <body>
@@ -488,8 +550,6 @@
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
           </div>
-         
-    
         </div>
       </div>
     </div>
@@ -825,6 +885,56 @@
         </div>
       </div>
     </div>
+
+    <!--FAQ section-->
+    <section id="faq" class="faq-section">
+      <h2 class="faq-heading">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Who is Lord Sri Krishna?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Sri Krishna is a major deity in Hinduism, worshipped as the eighth
+              avatar of Vishnu and the supreme god.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What are the teachings of Sri Krishna in the Bhagavad Gita?
+          </button>
+          <div class="faq-answer">
+            <p>
+              The teachings include concepts of duty (dharma), devotion
+              (bhakti), and the nature of reality.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is the significance of the name ‘Krishna’?
+          </button>
+          <div class="faq-answer">
+            <p>The name ‘Krishna’ means ‘all-attractive.’ It signifies the supreme personality of God, who attracts all living beings with His divine qualities of love, compassion, wisdom, and beauty.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How can we incorporate the teachings of Lord Krishna into our daily life?
+          </button>
+          <div class="faq-answer">
+            <p>Incorporating Lord Krishna's teachings into daily life involves practicing devotion, selflessness, and detachment from material results. Through meditation, prayer, reading the Bhagavad Gita, and offering selfless service, one can connect with Krishna’s divine presence and live a more spiritual life.</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
     <footer>
       <div class="footer-content">
         <div class="footer-section">
