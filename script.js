@@ -1,3 +1,4 @@
+
 let isHindi = false;
 const button = document.getElementById("translateBtn");
 
