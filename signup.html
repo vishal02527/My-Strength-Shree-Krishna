@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discussion Forum - Shree Krishna</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h2::selection,
+      label::selection {
+        background-color: rgb(237, 204, 133);
+        color: #000;
+      }
+      main {
+        padding: 20px;
+      }
+      .signup-form {
+        max-width: 400px;
+        margin: 100px auto 0px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+      h2 {
+        color: #ab9353;
+        margin-top: 0;
+        text-align: center;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+      }
+      input {
+        width: 93%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input:focus {
+        border: 2px solid #ffc107;
+        outline: 0;
+      }
+      button {
+        background: linear-gradient(269deg, #0048ff, #0096ff);
+        color: #fff;
+        padding: 10px 20px;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-left: 150px;
+      }
+
+      @media (max-width: 768px) {
+        .signup-form {
+          max-width: 280px;
+        }
+        label {
+          font-size: 14px;
+        }
+
+        .signup-form h2 {
+          font-size: 20px;
+        }
+        button {
+          margin-left: 90px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="signup-form" id="signupForm">
+        <h2>Sign Up</h2>
+        <form id="form" action="./discussion-forum.html" method="GET">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button onclick="saveUsername()">Sign Up</button>
+        </form>
+      </div>
+      <p style="text-align: center">&copy; All rights reserved 2023</p>
+    </main>
+
+    <script>
+      function saveUsername() {
+        // Save username and password in sessionStorage
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+      }
+    </script>
+  </body>
+</html>
