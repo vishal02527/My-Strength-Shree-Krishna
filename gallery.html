@@ -165,6 +165,39 @@
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
       }
+
+      .searchInput {
+        box-sizing: border-box;
+        width: 300px;
+        height: 35px;
+        padding: 5px 20px;
+        border-radius: 50px;
+        border: 0;
+      }
+      .searchInput:focus {
+        outline: 0;
+      }
+      .searchForm button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        position: relative;
+        top: 2px;
+        right: 55px;
+      }
+      .searchForm button i {
+        color: #555;
+        padding: 9px 15px;
+
+        font-size: 16px;
+        cursor: pointer;
+        transition: linear 0.16s;
+      }
+      .searchForm button i:hover {
+        color: #23d1c8;
+      }
+
+
       footer {
         background-color: #2c3e50;
         color: #ecf0f1;
@@ -304,6 +337,7 @@
         .creatorDiv p {
           font-size: 12px;
         }
+
       }
     </style>
   </head>
@@ -313,7 +347,14 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-
+        <form class="searchForm">
+          <input
+            type="text"
+            class="searchInput"
+            placeholder="Search all the content"
+          />
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
         <div class="navbar">
           <a href="scriptures.html">Scriptures</a>
           <a href="gallery.html" id="active">Gallery</a>
