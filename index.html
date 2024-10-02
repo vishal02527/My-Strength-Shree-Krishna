@@ -6,8 +6,13 @@
     <title>Shree Krishna: My Strength</title>
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous" ></script>
+      <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"rel="stylesheet"/>
+
+<!-- Bootstrap JavaScript (required for carousel) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <style>
@@ -75,15 +80,6 @@
       }
       #translateBtn:hover {
         background-position: right center;
-      }
-      .krishna-image {
-        margin: 10px 0px 10px 550px;
-        width: 27%;
-        height: 480px;
-        transition: opacity 5s ease-in-out;
-      }
-      .krishna-image.fade {
-        opacity: 0;
       }
       .indexMain p {
         font-size: 16px;
@@ -315,7 +311,6 @@
           
         }
         .navbar .navbar-down{
-      
           display: flex ;
           gap: 20px;
           
@@ -460,7 +455,26 @@
           font-size: 15px;
         }
       }
-     
+
+.carousel-item img {
+  display: block; /* Ensure the image behaves like a block element */
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 750px;
+  max-width: 750px;
+  object-fit: cover; /* Ensures images cover the carousel area */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background for next/prev buttons */
+  border-radius: 50%;
+}
+
+.krishna-image {
+  max-width: 100%; 
+  margin-bottom: 20px;
+}
+
     </style>
   </head>
   <body>
@@ -496,12 +510,112 @@
     <div class="indexMain">
       <div class="headDiv">
         <h1>Shree Krishna - My Strength</h1>
-        <img
-          src="./images/krishna-home-image.jpg"
-          id="krishnaImage"
-          class="krishna-image"
-          alt="Shree Krishna"
-        />
+            <!-- Image Carousel -->
+            <div id="krishnaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+              <!-- Carousel Indicators -->
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+                
+              </div>
+        
+              <!-- Carousel Inner -->
+              <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                  <img
+                    src="./images/krishna-home-image.jpg"
+                    class="d-block w-100"
+                    alt="Krishna Image 1"
+                  />
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                  <img
+                    src="./images/krishna-img1.jpg"
+                    class="d-block w-100"
+                    alt="Krishna Image 2"
+                  />
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                  <img
+                    src="./images/krishna-img2.jpg"
+                    class="d-block w-100"
+                    alt="Krishna Image 3"
+                  />
+                </div>
+        
+                <!-- Slide 4 -->
+                <div class="carousel-item">
+                  <img
+                    src="./images/krishna-img3.jpg"
+                    class="d-block w-100"
+                    alt="Krishna Image 4"
+                  />
+                </div>
+                  <!-- Slide 5 -->
+                  <div class="carousel-item">
+                    <img
+                      src="./images/krishna-img4.jpg"
+                      class="d-block w-100"
+                      alt="Krishna Image 5"
+                    />
+                  </div>
+                </div>
+          </div>
+              <!-- Carousel Controls (Next/Previous) -->
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#krishnaCarousel"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#krishnaCarousel"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
