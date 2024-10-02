@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stories of devotees: Shree Krishna</title>
+    <title>About Us</title>
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
@@ -12,15 +12,18 @@
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
         padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
+        margin: 0;
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        padding: 20px;
+        flex-grow: 1;
       }
       h1 {
-        margin-top: 20px;
-        margin-bottom: 40px;
         text-align: center;
         font-size: 36px;
         font-weight: 900;
@@ -30,7 +33,29 @@
         -webkit-text-fill-color: transparent;
       }
 
-      .header {
+      .about-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-section h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .about-section p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      /* Navbar Styles */
+      .galleryMain {
         text-align: center;
         background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
         padding: 10px 20px;
@@ -48,7 +73,6 @@
       }
 
       .navigation .homeDiv #homeBtn {
-        align-items: center;
         background-image: linear-gradient(
           144deg,
           #af40ff,
@@ -57,23 +81,13 @@
         );
         border: 0;
         border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
+        color: #fff;
         display: flex;
-        font-family: Phantomsans, sans-serif;
         justify-content: center;
         line-height: 0.8em;
-        max-width: 100%;
         min-width: 110px;
         padding: 3px;
-        text-decoration: none;
         cursor: pointer;
-      }
-
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
       }
 
       .navigation .homeDiv #homeBtn a {
@@ -82,14 +96,8 @@
         font-size: 16px;
         padding: 16px 24px;
         border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
         text-decoration: none;
-      }
-
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
+        transition: 300ms;
       }
 
       .navigation .navbar a {
@@ -98,7 +106,6 @@
         margin: 0 8px;
         font-size: 16px;
         font-weight: 500;
-        transition: ease-in 0.3s;
         border: 2px solid #fff;
         padding: 10px 15px;
         border-radius: 20px;
@@ -106,48 +113,21 @@
 
       .navigation .navbar a:hover {
         color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
+        border-color: rgb(250, 219, 153);
+      }
+      #active {
+        color: rgb(250, 219, 153);
+        border-color: rgb(250, 219, 153);
       }
 
-      main {
-        padding: 20px;
-        margin: 50px auto;
-      }
-
-      .devotee-list {
-        list-style: none;
-        padding: 0;
-        margin-left: 33%;
-        max-width: 500px;
-      }
-
-      .devotee-list-item {
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 10px;
-      }
-
-      .devotee-name {
-        color: #ab9353;
-        margin: 0;
-        padding: 10px;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color linear 0.2s;
-      }
-
-      .devotee-name:hover {
-        background-color: #f39c12;
-        color: #fff;
-      }
+      /* Footer Styles */
       footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
         text-align: center;
-        position: relative;
-        bottom: 0;
         width: 100%;
+        margin-top: auto;
       }
 
       .footer-content {
@@ -155,7 +135,7 @@
         flex-wrap: wrap;
         justify-content: space-around;
         max-width: 1200px;
-        margin: 0px 10px 0px 60px;
+        margin: 0 auto;
       }
 
       .footer-section {
@@ -169,20 +149,13 @@
 
       .footer-section p {
         font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
+        margin: 0;
       }
 
       .social-icons a i {
         color: #ecf0f1;
         margin: 0 8px;
         font-size: 30px;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .social-icons a i:hover {
-        color: rgb(241, 203, 120);
       }
 
       .creatorDiv {
@@ -190,86 +163,41 @@
       }
 
       .creatorDiv p {
-        margin-top: 0;
-        margin-bottom: 0;
         font-size: 14px;
       }
 
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
+      /* Responsive Styles */
+      @media (max-width: 768px) {
         h1 {
           font-size: 22px;
         }
-
+        .about-section h2 {
+          font-size: 22px;
+        }
+        .about-section p {
+          font-size: 16px;
+        }
+        .navigation {
+          flex-direction: column;
+          align-items: center;
+        }
+        .navigation .navbar {
+          flex-direction: column;
+          margin-top: 20px;
+        }
         .navigation .navbar a {
           margin: 10px 0;
-          font-size: 12px;
-        }
-
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
-
-        .navigation .homeDiv #homeBtn a {
           font-size: 14px;
         }
-
         .footer-content {
           flex-direction: column;
           align-items: center;
-          margin: 0px 40px 0px 0px;
-        }
-
-        .footer-section p {
-          font-size: 14px;
-        }
-
-        .social-icons a i {
-          font-size: 22px;
-          margin: 5px;
-        }
-
-        .footer-section {
-          margin-bottom: 0;
-        }
-
-        .creatorDiv {
-          margin-top: 20px;
-          margin-right: 30px;
-        }
-
-        .creatorDiv p {
-          font-size: 12px;
-        }
-
-        .devotee-list {
-          margin-left: 0px;
-          max-width: 280px;
-        }
-        .devotee-name {
-          font-size: 16px;
         }
       }
     </style>
   </head>
-
   <body>
-    <div class="header">
+    <div class="galleryMain">
       <div class="navigation">
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
@@ -278,85 +206,45 @@
         <div class="navbar">
           <a href="scriptures.html">Scriptures</a>
           <a href="gallery.html">Gallery</a>
-
           <a href="aboutus.html" id="active">About Us</a>
           <a href="contactus.html">Contact Us</a>
-
-          
-          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+          <a href="signup.html">Discussion Forum</a>
           <a href="devotional-resources.html">Devotional Resources</a>
         </div>
       </div>
     </div>
 
-    <main>
-      <h1>Devotees of Shree Krishna</h1>
-      <ul class="devotee-list">
-        <li class="devotee-list-item">
-          <h2
-            class="devotee-name"
-            onclick="redirectToDevoteeStory('karmati-bai')"
-          >
-            Karmati Bai
-          </h2>
-        </li>
+    <div class="content">
+      <h1>About Us</h1>
+      <div class="about-section">
+        <h2>Welcome to Our Spiritual Hub</h2>
+        <p>
+          We are a community dedicated to sharing the timeless teachings of
+          Lord Krishna and the richness of Hindu scriptures. Our mission is to
+          spread devotion, knowledge, and the values of spirituality through
+          engaging content, discussions, and devotional resources.
+        </p>
+        <p>
+          Our platform provides access to sacred scriptures, divine images,
+          insightful articles, and a supportive discussion forum where you can
+          connect with like-minded individuals. Whether you are seeking
+          knowledge, inspiration, or spiritual growth, we are here to guide you
+          on this sacred journey.
+        </p>
+      </div>
+    </div>
 
-        <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('surdas')">
-            Surdas
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('taj-biwi')">
-            Taj Biwi
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('raidas')">
-            Raidas
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2
-            class="devotee-name"
-            onclick="redirectToDevoteeStory('meera-bai')"
-          >
-            Meera Bai
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2
-            class="devotee-name"
-            onclick="redirectToDevoteeStory('dhanna-jatt')"
-          >
-            Dhanna Jatt
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('narsi')">
-            Narsi
-          </h2>
-        </li>
-      </ul>
-    </main>
     <footer>
       <div class="footer-content">
         <div class="footer-section">
           <h3>About Us</h3>
           <p>Your description about the website and its purpose.</p>
         </div>
-
         <div class="footer-section">
           <h3>Contact Us</h3>
           <p>Email: info@example.com</p>
           <p>Phone: +1 234 567 890</p>
         </div>
-
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
@@ -376,12 +264,7 @@
         <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
-    <script>
-      function redirectToDevoteeStory(devoteeName) {
-        const devoteeFileName = `${devoteeName}.html`;
-        window.location.href = devoteeFileName;
-      }
-    </script>
   </body>
 </html>
+
+  
