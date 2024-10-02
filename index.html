@@ -19,6 +19,13 @@
         overflow-x: hidden;
       }
 
+      .headDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
       .content h1::selection,
       p::selection,
       h2::selection {
@@ -46,17 +53,16 @@
         -webkit-text-fill-color: transparent;
       }
       .content {
-        max-width: 900px;
-        margin: 100px auto;
         padding: 20px 40px;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
       #translateBtnDiv {
-        position: relative;
-        top: 70px;
-        left: 270px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
       }
 
       #translateBtn {
@@ -77,10 +83,11 @@
         background-position: right center;
       }
       .krishna-image {
-        margin: 10px 0px 10px 550px;
-        width: 27%;
         height: 480px;
         transition: opacity 5s ease-in-out;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #000;
       }
       .krishna-image.fade {
         opacity: 0;
@@ -105,7 +112,7 @@
           font-size: 22px;
         }
         .content {
-          width: 90%;
+          width: 100%;
           margin: 80px auto;
           padding: 10px 15px;
         }
@@ -487,9 +494,7 @@
           <div class="navbar-down">
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
-          </div>
-         
-    
+          </div>    
         </div>
       </div>
     </div>
