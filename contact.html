@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			color: #333;
+		}
+		.page {
+			background-image: url("https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg");
+			height: 100vh;
+			width: 100%;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container {
+			width: 100%;
+			max-width: 600px;
+			height: auto;
+			background-color: #fff;
+			padding-left: 5px;
+			padding-right: 20px;
+			padding-block: 20px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 12px;
+		}
+		main {
+			position: relative;
+		}
+
+		.container main img {
+			height: 200px;
+			position: absolute;
+			user-select: none;
+		}
+
+		main h2 {
+			z-index: 150;
+			position: relative;
+			top: 56px;
+			left: 125px;
+			font-size: 55px;
+            color: #a74315;
+		}
+		.container form {
+			margin-top: 140px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+		.form-item {
+			display: flex;
+			flex-direction: column;
+			margin-block: 20px;
+			gap: 7px;
+		}
+		.form-item label {
+			font-size: 20px;
+			font-weight: 500;
+            color: #555;
+		}
+		.form-item input {
+			font-size: 20px;
+			width: 100%;
+			filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+				drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+			border: 1px solid #d1d5db;
+			border-radius: 0.375rem;
+			padding-block: 0.875rem;
+			padding-inline: 1rem;
+		}
+
+		.form-item input:focus {
+			outline: none; /* Remove default browser outline */
+			box-shadow: 0 0 0 3px orange;
+		}
+		form button {
+			display: block;
+			background: linear-gradient(269deg, #0048ff, #0096ff);
+			color: #fff;
+			padding: 12px 40px;
+			border: 0;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			margin-inline: auto;
+			margin-top: 40px;
+            margin-bottom: 20px;
+			font-size: 20px;
+			font-weight: 600;
+			letter-spacing: 1px;
+            transition: all 0.2s ease;
+		}
+        button:hover {
+            background: linear-gradient(269deg, #0037cc, #007acc); /* Darker on hover */
+        }
+        button:active {
+            transform: scale(0.95); /* Shrinks the button */
+            background: linear-gradient(269deg, #002fa1, #0064a1); /* Darker gradient when clicked */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow on click */
+        }
+
+		h2::selection,
+		label::selection {
+			background-color: rgb(237, 204, 133);
+			color: #000;
+		}
+	</style>
+	<body>
+		<div class="page">
+			<div class="container">
+				<main>
+					<img src="./myImages/flute.jpg" alt="" />
+					<h2>Contact Us</h2>
+				</main>
+				<form action="">
+					<div class="form-item">
+						<label for="name">Name: </label>
+						<input type="text" id="name" required />
+					</div>
+					<div class="form-item">
+						<label for="email">Email: </label>
+						<input type="email" id="email" required />
+					</div>
+					<div class="form-item">
+						<label for="message">Message: </label>
+						<input
+							type="text"
+							id="message"
+							style="padding-block: 30px"
+							required
+						/>
+					</div>
+					<button type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
