@@ -1,6 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/Post');
+const Post = require('../models/post');
+
+//debuggnig purposes
+router.get('/', async (req, res) => {
+  return res.json({ message: 'Hello from the backend!' });
+  
+});
+
 
 // Create a new post
 router.post('/', async (req, res) => {

@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const postRoutes = require('./routes/posts');
+const postRoutes = require('./routes/post');
 require('dotenv').config();
 
 const app = express();
@@ -15,8 +15,6 @@ app.use(bodyParser.json());
 app.use('/api/posts', postRoutes);
 
 // Connect to MongoDB
-
-
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
