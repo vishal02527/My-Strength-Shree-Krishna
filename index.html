@@ -17,8 +17,14 @@
         padding: 0;
         margin: 0;
         overflow-x: hidden;
+        position: relative;
       }
+      
 
+    .content {
+      position: relative; 
+      z-index: 2; 
+    }
       .content h1::selection,
       p::selection,
       h2::selection {
@@ -34,6 +40,10 @@
         top: 0;
         z-index: 100;
         box-shadow: 0px 6px 10px #ccc;
+      }
+      .headDiv{
+        position: relative;
+        z-index: 2;
       }
       .indexMain .headDiv h1 {
         margin-top: 40px;
@@ -57,6 +67,7 @@
         position: relative;
         top: 70px;
         left: 270px;
+        z-index: 2;
       }
 
       #translateBtn {
@@ -96,7 +107,64 @@
         color: #ab9353;
       }
 
+      /* adding dark mode  */
+      .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); 
+      z-index: 1; 
+      display: none; 
+    }
+    body.dark-mode .overlay {
+      display: block; 
+    }
+      .toggle-button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        position: fixed; 
+        top: 80px; 
+        right: 20px; 
+        z-index: 1000; 
+        cursor: pointer; 
+      }
+      #darkmd-toggle{
+        background: none;
+        border: none;
+      }
+      body.dark-mode {
+      background-color: #121212; 
+      color: #ffffff; 
+    }
 
+    .header.dark-mode {
+      background-color: #1f1f1f; 
+    }
+
+    .footer.dark-mode {
+      background-color: #1f1f1f; 
+    }
+
+
+    .navbar.dark-mode a {
+      color: #ffffff; 
+    }
+
+    .toggle-button.dark-mode {
+      background-color: #ffffff; 
+      color: #121212; 
+    }
+    body.dark-mode .content {
+      background-color: #1f1f1f; 
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); 
+    }
+    body.dark-mode .content p{
+      color: #ffffff; 
+    }
       @media (max-width: 768px) {
         .header {
           padding: 10px;
@@ -254,6 +322,8 @@
         justify-content: space-around;
         max-width: 1200px;
         margin: 0px 10px 0px 60px;
+        position: relative;
+        z-index: 2;
       }
 
       .footer-section {
@@ -460,15 +530,19 @@
           font-size: 15px;
         }
       }
-     
+
+    
     </style>
   </head>
   <body>
+    <div class="overlay"></div>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
+
         </div>
+       
         <form class="searchForm">
           <input
             type="text"
@@ -479,6 +553,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
+        
         <div class="navbar">
           <div class="navbar-up">
             <a href="scriptures.html">Scriptures</a>
@@ -494,6 +569,11 @@
       </div>
     </div>
     <div class="indexMain">
+      <div>
+        <a class="toggle-button">
+          <button id="darkmd-toggle" class="toggle-button">🌙</button>
+        </a>
+      </div>
       <div class="headDiv">
         <h1>Shree Krishna - My Strength</h1>
         <img

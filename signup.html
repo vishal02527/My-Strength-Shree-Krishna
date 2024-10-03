@@ -76,6 +76,69 @@
         color: #3b82f8;
       }
 
+       /* adding dark mode  */
+       .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); 
+      z-index: 1; 
+      display: none; 
+    }
+    body.dark-mode .overlay {
+      display: block; 
+    }
+      .toggle-button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        position: fixed; 
+        top: 100px; 
+        right: 20px; 
+        z-index: 1000; 
+        cursor: pointer; 
+      }
+
+      /* adding dark mode */
+      body.dark-mode {
+      background-color: #121212; 
+      color: #ffffff; 
+    }
+
+    body.dark-mode .signup-form {
+      background-color: #1f1f1f; 
+      color: #ffffff; 
+    }
+
+    body.dark-mode label {
+      color: #ddd; 
+    }
+
+    body.dark-mode input {
+      background-color: #333; 
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    body.dark-mode input:focus {
+      border: 2px solid #ffc107; 
+    }
+
+    body.dark-mode button {
+      background: linear-gradient(269deg, #0056b3, #007bff); 
+    }
+
+    .toggle-button.dark-mode {
+      background-color: #ffffff; 
+      color: #121212; 
+    }
+    .maindarkenable{
+      position: relative;
+      z-index: 2;
+    }
       @media (max-width: 768px) {
         .signup-form {
           max-width: 280px;
@@ -91,10 +154,17 @@
           margin-left: 90px;
         }
       }
+      
     </style>
   </head>
   <body>
-    <main>
+    <div class="overlay"></div>
+    <div>
+      <a class="toggle-button">
+        <button id="darkmd-toggle" class="toggle-button">🌙</button>
+      </a>
+    </div>
+    <main class="maindarkenable">
       <div class="signup-form" id="signupForm">
         <h2>Sign Up</h2>
         <form id="form" action="./discussion-forum.html" method="GET">
@@ -114,7 +184,7 @@
       <p style="text-align: center">&copy; All rights reserved 2023</p>
     </main>
 
-    <script>
+    <script src="script.js">
       function saveUsername() {
         // Save username and password in sessionStorage
         const username = document.getElementById("username").value;

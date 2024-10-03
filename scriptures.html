@@ -17,6 +17,7 @@
         padding: 0;
         margin: 0;
         overflow-x: hidden;
+        position: relative;
       }
       p::selection,
       h2::selection {
@@ -32,6 +33,8 @@
       .content {
         padding: 20px 120px;
         margin-bottom: 50px;
+        position: relative;
+        z-index: 2;
       }
       .content h1 {
         text-align: center;
@@ -100,6 +103,72 @@
         z-index: 100;
         box-shadow: 0px 6px 10px #ccc;
       }
+      /* adding dark mode  */
+      .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); 
+      z-index: 1; 
+      display: none; 
+    }
+    body.dark-mode .overlay {
+      display: block; 
+    }
+      .toggle-button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        position: fixed; 
+        top: 100px; 
+        right: 20px; 
+        z-index: 1000; 
+        cursor: pointer; 
+      }
+      #darkmd-toggle{
+        background: none;
+        border: none;
+      }
+      body.dark-mode {
+      background-color: #121212; 
+      color: #ffffff; 
+    }
+
+      .header.dark-mode {
+        background-color: #1f1f1f; 
+      }
+
+      .footer.dark-mode {
+        background-color: #1f1f1f; 
+      }
+
+
+      .navbar.dark-mode a {
+        color: #ffffff; 
+      }
+
+      .toggle-button.dark-mode {
+        background-color: #ffffff; 
+        color: #121212; 
+      }
+      .lastbdarkmode{
+        position: relative;
+        z-index: 2;
+      }
+      body.dark-mode .scripture-card {
+      background-color: #1f1f1f; 
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); 
+    }
+    body.dark-mode .scripture-card p{
+      color: #ffffff; 
+    }
+    body.dark-mode .lastbdarkmode {
+      color: #ffffff; 
+    }
+      
       .navigation {
         padding: 10px;
         display: flex;
@@ -211,6 +280,7 @@
         position: relative;
         bottom: 0;
         width: 100%;
+        z-index: 2;
       }
 
       .footer-content {
@@ -328,9 +398,11 @@
           font-size: 12px;
         }
       }
+      
     </style>
   </head>
   <body>
+    <div class="overlay"></div>
     <div class="scriptMain">
       <div class="navigation">
         <div class="homeDiv">
@@ -354,7 +426,12 @@
     </div>
 
     <div class="content">
-      <h1>Scriptures</h1>
+      <div>
+        <a class="toggle-button">
+          <button id="darkmd-toggle" class="toggle-button">🌙</button>
+        </a>
+      </div>
+      <h1 >Scriptures</h1>
       <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
           हिंदी में पढ़ें
@@ -458,7 +535,7 @@
         </div>
       </div>
 
-      <p>
+      <p class="lastbdarkmode">
         These scriptures offer profound insights into the divine nature of Lord
         Shree Krishna and serve as guiding lights for seekers on the spiritual
         path.

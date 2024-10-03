@@ -16,6 +16,7 @@
         margin: 0;
         color: #333;
         overflow-x: hidden;
+        position: relative;
       }
       .content {
         padding: 20px 20px 100px;
@@ -34,6 +35,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        position: relative;
+        z-index: 2;
       }
       .image-card {
         margin: 15px;
@@ -57,6 +60,62 @@
         transform: scale(1.1);
       }
 
+      /* adding dark mode  */
+      .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); 
+      z-index: 1; 
+      display: none; 
+    }
+    body.dark-mode .overlay {
+      display: block; 
+    }
+      .toggle-button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        position: fixed; 
+        top: 100px; 
+        right: 20px; 
+        z-index: 1000; 
+        cursor: pointer; 
+      }
+      #darkmd-toggle{
+        background: none;
+        border: none;
+      }
+    /* adding dark mode */
+    body.dark-mode {
+      background-color: #121212; 
+      color: #ffffff; 
+    }
+
+    .header.dark-mode {
+      background-color: #1f1f1f; 
+    }
+
+    .footer.dark-mode {
+      background-color: #1f1f1f; 
+    }
+
+
+    .navbar.dark-mode a {
+      color: #ffffff; 
+    }
+
+    .toggle-button.dark-mode {
+      background-color: #ffffff; 
+      color: #121212; 
+    }
+    .darkmodeenable{
+      position: relative;
+      z-index: 2;
+    }
       /* Lightbox Styles */
       .lightbox {
         display: none;
@@ -206,6 +265,7 @@
         position: relative;
         bottom: 0;
         width: 100%;
+        z-index: 2;
       }
 
       .footer-content {
@@ -339,9 +399,11 @@
         }
 
       }
+      
     </style>
   </head>
   <body>
+    <div class="overlay"></div>
     <div class="galleryMain">
       <div class="navigation">
         <div class="homeDiv">
@@ -364,7 +426,12 @@
       </div>
     </div>
     <div class="content">
-      <h1>Gallery - Shree Krishna</h1>
+      <div>
+        <a class="toggle-button">
+          <button id="darkmd-toggle" class="toggle-button">🌙</button>
+        </a>
+      </div>
+      <h1 class="darkmodeenable">Gallery - Shree Krishna</h1>
 
       <div class="image-container">
         <div>

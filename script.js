@@ -186,3 +186,14 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Search form not found");
   }
 });
+
+//adding the darkmode feature
+function toggleDarkMode() {
+  const body = document.body;
+  const toggleButton = document.getElementById('darkmd-toggle');
+  body.classList.toggle('dark-mode');
+
+  toggleButton.textContent = body.classList.contains('dark-mode') ? '🌞' : '🌙';
+}
+
+document.getElementById('darkmd-toggle').addEventListener('click', toggleDarkMode);
