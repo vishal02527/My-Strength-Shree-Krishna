@@ -2,10 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/post');
 
-//debuggnig purposes
+//Fetch all the posts saved
 router.get('/', async (req, res) => {
-  return res.json({ message: 'Hello from the backend!' });
-  
+  try {
+    const posts = await Post.find({});
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ message: 'Error getting posts', error });
+  }
 });
 
 
