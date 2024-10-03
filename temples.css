@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Montserrat", system-ui;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url("https://i.pinimg.com/564x/46/73/6b/46736b637bd3e737634759d1bd39e001.jpg");
+    color: #eee;
+    user-select: none;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+
+
+.temple {
+    display: flex;
+    user-select: none;
+    max-width: 850px;
+    margin: 5rem auto;
+    border: 1px solid #ffffff22;
+    background-color: #282c34;
+    background: linear-gradient(0deg, #ffa585 0%, #ffeda0 100%);
+    box-shadow: 0 7px 20px 5px #00000088;
+    border-radius: .7rem;
+    
+    overflow: hidden;
+    transition: .5s all;
+}
+
+.temple hr {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-top: 0;
+}
+
+.temple ins {
+    text-decoration: none;
+}
+
+.temple .main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.temple .main .photo {
+    border-radius: .5rem;
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.temple .main .description {
+    margin: .5rem 0;
+    color: brown;
+    max-width: 500px;
+}
+
+.temple .main .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temple .main .details .location {
+    display: flex;
+    align-items: center;
+    color: maroon;
+    font-weight: 700;
+}
+
+.temple .main .details .duration {
+    display: flex;
+    align-items: center;
+    color: purple;
+    margin-right: .2rem;
+}
+
+.temple .main .creator {
+    display: flex;
+    align-items: center;
+    margin-top: .2rem;
+    margin-bottom: -.3rem;
+}
+
+.creator button {
+    background-color: transparent;
+    border: inset 5px rgb(68, 21, 21);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: black;
+    font-weight: 900;
+    font-size: 15px;
+
+}
+
+
+.temple .main .creator .wrapper img {
+    border-radius: 100%;
+    border: 1px solid #ffffff22;
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    margin: 0;
+}
+
+.temple::before {
+    position: fixed;
+    content: "";
+    box-shadow: 0 0 100px 40px #ffffff08;
+    top: -10%;
+    left: -100%;
+    transform: rotate(-45deg);
+    height: 60rem;
+    transition: .7s all;
+}
+
+.temple:hover {
+    border: 1px solid #ffffff44;
+    box-shadow: 0 7px 50px 10px #000000aa;
+    transform: scale(1.015);
+    filter: brightness(-1.3);
+}
+
+.temple:hover::before {
+    filter: brightness(.5);
+    top: -100%;
+    left: 200%;
+}
+
+.bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg h1 {
+    font-size: 20rem;
+    filter: opacity(0.5);
+}
