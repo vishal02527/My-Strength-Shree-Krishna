@@ -605,30 +605,53 @@
     ];
 
     // Function to display posts
-    function displayPosts() {
+    async function displayPosts() {
       const postContainer = document.getElementById("postContainer");
       postContainer.innerHTML = ""; // Clear existing posts
 
-      postsData.forEach((post) => {
-        const postElement = document.createElement("div");
-        postElement.classList.add("post");
+      // Admin post to be always on top
+      const adminPost = {
+        author: "Vishal(admin)",
+        title: "Welcome to the Discussion Forum",
+        content: "Follow the forum rules and be respectful to others. Radhe Radhe!🙏",
+      };
 
-        const titleElement = document.createElement("h2");
-        titleElement.textContent = post.title;
+      try {
+        const apiEndpoint = `${window.location.protocol}//${window.location.hostname}:5000/api/posts`;
+        const response = await fetch(apiEndpoint);
+        if (!response.ok) {
+          throw new Error("Failed to fetch posts");
+        }
 
-        const userNameElement = document.createElement("span");
-        userNameElement.classList.add("post-username");
-        userNameElement.textContent = `👤${post.username}`;
+        const postsData = await response.json();
 
-        const contentElement = document.createElement("p");
-        contentElement.textContent = post.content;
+        // Add the admin post at the beginning of the postsData array
+        postsData.unshift(adminPost);
 
-        postElement.appendChild(userNameElement);
-        postElement.appendChild(titleElement);
-        postElement.appendChild(contentElement);
+        postsData.forEach((post) => {
+          const postElement = document.createElement("div");
+          postElement.classList.add("post");
 
-        postContainer.appendChild(postElement);
-      });
+          const titleElement = document.createElement("h2");
+          titleElement.textContent = post.title;
+
+          const userNameElement = document.createElement("span");
+          userNameElement.classList.add("post-username");
+          userNameElement.textContent = `👤${post.author}`;
+
+          const contentElement = document.createElement("p");
+          contentElement.textContent = post.content;
+
+          postElement.appendChild(userNameElement);
+          postElement.appendChild(titleElement);
+          postElement.appendChild(contentElement);
+
+          postContainer.appendChild(postElement);
+        });
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+        postContainer.innerHTML = "<p>Failed to load posts. Please try again later.</p>";
+      }
     }
 
     // Initial display of posts
