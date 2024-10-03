@@ -474,7 +474,22 @@
   max-width: 100%; 
   margin-bottom: 20px;
 }
+.custom-icon {
+    background: linear-gradient(45deg,  #af40ff, #5b42f3 50%, #00ddeb);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+  }
 
+  /* Hover effect to make it interactive */
+  .custom-icon:hover {
+    background: linear-gradient(45deg, #4b6cb7, #6a4dbb);
+  }
     </style>
   </head>
   <body>
@@ -595,24 +610,27 @@
                 </div>
           </div>
               <!-- Carousel Controls (Next/Previous) -->
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#krishnaCarousel"
-                data-bs-slide="prev"
-              >
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#krishnaCarousel"
-                data-bs-slide="next"
-              >
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+            <!-- Previous button with < icon -->
+<button
+class="carousel-control-prev"
+type="button"
+data-bs-target="#krishnaCarousel"
+data-bs-slide="prev"
+>
+<span class="custom-icon" aria-hidden="true">&lt;</span>
+<span class="visually-hidden">Previous</span>
+</button>
+
+<!-- Next button with > icon -->
+<button
+class="carousel-control-next"
+type="button"
+data-bs-target="#krishnaCarousel"
+data-bs-slide="next"
+>
+<span class="custom-icon" aria-hidden="true">&gt;</span>
+<span class="visually-hidden">Next</span>
+</button>
             </div>
           </div>
         </div>
