@@ -53,7 +53,7 @@ function closeLightbox() {
 }
 
 function showLoginForm() {
-  // Check if the user has signed up
+  /*Check if the user has signed up
   const hasSignedUp = localStorage.getItem("username") !== null;
 
   if (hasSignedUp) {
@@ -68,10 +68,14 @@ function showLoginForm() {
       window.location.href = "./login.html";
     }
   } else {
-    // Redirect to the signup page if not signed up
+    // Redirect to the signup page if not signed up*/
     window.location.href = "./signup.html";
   }
-}
+
+  
+
+
+   
 
 //search functionality
 document.addEventListener("DOMContentLoaded", function () {
