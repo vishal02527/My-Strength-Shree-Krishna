@@ -76,12 +76,24 @@
       #translateBtn:hover {
         background-position: right center;
       }
-      .krishna-image {
+     /* .krishna-image {
         margin: 10px 0px 10px 550px;
         width: 27%;
         height: 480px;
         transition: opacity 5s ease-in-out;
-      }
+      }*/
+      .krishna-image {
+  margin: 10px 0px 10px 20%;
+  width: 27vw;
+  height: 40vh;
+  object-fit: cover;
+  transition: opacity 5s ease-in-out, transform 5s ease-in-out, margin 5s ease-in-out, filter 5s ease-in-out;
+}
+
+.krishna-image:hover {
+  transform: rotate(10deg) scale(1.1);
+  filter: sepia(0.5);
+}
       .krishna-image.fade {
         opacity: 0;
       }
