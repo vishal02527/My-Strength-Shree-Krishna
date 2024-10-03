@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const postRoutes = require('./routes/post');
 require('dotenv').config();
+const cors=require('cors');
 
 const app = express();
 const url = process.env.MONGODB_URL;
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 // Routes
 app.use('/api/posts', postRoutes);
