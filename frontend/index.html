@@ -6,8 +6,45 @@
     <title>Shree Krishna: My Strength</title>
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous" ></script>
+      <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"rel="stylesheet"/>
+
+<!-- Bootstrap JavaScript (required for carousel) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>// Array of slokas with their Hindi meanings
+  const slokas = [
+    {
+      text: 'धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय॥',
+      meaning: 'धृतराष्ट्र ने कहा: हे संजय, धर्मक्षेत्र कुरुक्षेत्र में मेरे पुत्र और पाण्डु के पुत्र युद्ध करने की इच्छा से क्या कर रहे हैं?'
+    },
+    {
+      text: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥',
+      meaning: 'तुम्हारा अधिकार केवल कर्म करने में है, न कि उसके फलों में। इसलिए कर्मफल की इच्छा मत करो, न ही अकर्मण्यता में आसक्त हो।'
+    },
+    {
+      text: 'व्यासप्रसादाच्छ्रुतवां एतद्गुह्यमहं परम्।\nयोगं योगेश्वरात्कृष्णात्साक्षात्कथयतः स्वयम्॥',
+      meaning: 'व्यास जी की कृपा से मैंने स्वयं भगवान श्रीकृष्ण से इस गुप्ततम योग को सुना, जिसे वे स्वयं कथन कर रहे थे।'
+    }
+  ];
+  
+  // Function to display a random sloka
+  function displayRandomSloka() {
+    const slokaElement = document.getElementById('slokaText');
+    const meaningElement = document.getElementById('slokaMeaning');
+  
+    // Get a random sloka from the array
+    const randomSloka = slokas[Math.floor(Math.random() * slokas.length)];
+  
+    // Display the sloka and its meaning
+    slokaElement.innerText = randomSloka.text;
+    meaningElement.innerText = randomSloka.meaning;
+  }
+  
+  // Call the function when the page loads
+  window.onload = displayRandomSloka;
+  </script>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <style>
@@ -75,15 +112,6 @@
       }
       #translateBtn:hover {
         background-position: right center;
-      }
-      .krishna-image {
-        margin: 10px 0px 10px 550px;
-        width: 27%;
-        height: 480px;
-        transition: opacity 5s ease-in-out;
-      }
-      .krishna-image.fade {
-        opacity: 0;
       }
       .indexMain p {
         font-size: 16px;
@@ -310,8 +338,8 @@
           gap: 20px;
           display: flex;
         }
-        .navbar .navbar-down {
-          display: flex;
+        .navbar .navbar-down{
+          display: flex ;
           gap: 20px;
         }
         .navigation .navbar a {
@@ -523,6 +551,97 @@
             font-size: 20px;
           }
         }
+.carousel-item img {
+  display: block; /* Ensure the image behaves like a block element */
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 750px;
+  max-width: 750px;
+  object-fit: cover; /* Ensures images cover the carousel area */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background for next/prev buttons */
+  border-radius: 50%;
+}
+
+.krishna-image {
+  max-width: 100%; 
+  margin-bottom: 20px;
+}
+.custom-icon {
+    background: linear-gradient(45deg,  #af40ff, #5b42f3 50%, #00ddeb);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+  }
+
+  /* Hover effect to make it interactive */
+  .custom-icon:hover {
+    background: linear-gradient(45deg, #4b6cb7, #6a4dbb);
+  }
+      /* sloka styles*/
+       .sloka-container {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+ padding: 5%;
+}
+
+.sloka-card {
+  position: relative;
+  width: 600px;
+  padding: 30px;
+  background: rgb(0, 0, 0);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+  line-height: 1.6;
+  color: #4b4b4b;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.sloka-text {
+  font-weight: bold;
+  color: #af40ff; /* Sloka text color */
+}
+
+.sloka-meaning {
+  font-size: 20px;
+  color: #5b42f3;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color:#000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 12px;
+  transition: opacity 0.5s ease;
+}
+
+.sloka-card:hover .sloka-meaning {
+  opacity: 0.9;
+  background: linear-gradient(45deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+.sloka-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
     </style>
   </head>
   <body>
@@ -556,14 +675,127 @@
     <div class="indexMain">
       <div class="headDiv">
         <h1>Shree Krishna - My Strength</h1>
-        <img
-          src="./images/krishna-home-image.jpg"
-          id="krishnaImage"
-          class="krishna-image"
-          alt="Shree Krishna"
-        />
+            <!-- Image Carousel -->
+            <div id="krishnaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+              <!-- Carousel Indicators -->
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#krishnaCarousel"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+                
+              </div>
+        
+              <!-- Carousel Inner -->
+              <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                  <img
+                    src="./images/krishna-home-image.jpg"
+                    class="d-block w-100"
+                    alt="Krishna Image 1"
+                  />
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                  <img
+                    src="./images/krishna-img1.jpg"
+                    class="d-block w-100"
+                    alt="Krishna Image 2"
+                  />
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                  <img
+                    src="./images/krishna-img2.jpg"
+                    class="d-block w-100"
+                    alt="Krishna Image 3"
+                  />
+                </div>
+        
+                <!-- Slide 4 -->
+                <div class="carousel-item">
+                  <img
+                    src="./images/krishna-img3.jpg"
+                    class="d-block w-100"
+                    alt="Krishna Image 4"
+                  />
+                </div>
+                  <!-- Slide 5 -->
+                  <div class="carousel-item">
+                    <img
+                      src="./images/krishna-img4.jpg"
+                      class="d-block w-100"
+                      alt="Krishna Image 5"
+                    />
+                  </div>
+                </div>
+          </div>
+              <!-- Carousel Controls (Next/Previous) -->
+            <!-- Previous button with < icon -->
+<button
+class="carousel-control-prev"
+type="button"
+data-bs-target="#krishnaCarousel"
+data-bs-slide="prev"
+>
+<span class="custom-icon" aria-hidden="true">&lt;</span>
+<span class="visually-hidden">Previous</span>
+</button>
+
+<!-- Next button with > icon -->
+<button
+class="carousel-control-next"
+type="button"
+data-bs-target="#krishnaCarousel"
+data-bs-slide="next"
+>
+<span class="custom-icon" aria-hidden="true">&gt;</span>
+<span class="visually-hidden">Next</span>
+</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="translateBtnDiv">
+ <div class="sloka-container">
+        <div class="sloka-card" id="slokaCard">
+          <div class="sloka-text" id="slokaText">
+            <!-- Sloka will be inserted here by JavaScript -->
+          </div>
+          <div class="sloka-meaning" id="slokaMeaning">
+            <!-- Hindi meaning will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
           हिंदी में पढ़ें
         </button>
