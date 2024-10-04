@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scriptures: Shree Krishna</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
@@ -354,7 +356,7 @@
     </div>
 
     <div class="content">
-      <h1>Scriptures</h1>
+      <h1 data-aos="fade-right">Scriptures</h1>
       <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
           हिंदी में पढ़ें
@@ -362,7 +364,7 @@
       </div>
       <div id="content-english">
         <!-- Bhagavad Gita Card -->
-        <div class="scripture-card">
+        <div class="scripture-card" data-aos="fade-right">
           <h2>The Bhagavad Gita</h2>
           <p>
             The Bhagavad Gita, often referred to as the Gita, is a 700-verse
@@ -376,7 +378,7 @@
         </div>
 
         <!-- Srimad Bhagavatam Card -->
-        <div class="scripture-card">
+        <div class="scripture-card" data-aos="fade-right">
           <h2>Srimad Bhagavatam</h2>
           <p>
             The Srimad Bhagavatam, also known as the Bhagavata Purana, is one of
@@ -385,7 +387,7 @@
             (leelas), and provides philosophical teachings on devotion and
             spirituality.
           </p>
-          <div class="scripture-details">
+          <div class="scripture-details" >
             <h3>Key Aspects of Srimad Bhagavatam:</h3>
             <ul>
               <li>Comprises 12 books with over 18,000 verses</li>
@@ -400,7 +402,7 @@
         </div>
 
         <!-- Mahabharata Card -->
-        <div class="scripture-card">
+        <div class="scripture-card" data-aos="fade-right">
           <h2>The Mahabharata</h2>
           <p>
             The Mahabharata is one of the two major Sanskrit epics of ancient
@@ -414,7 +416,7 @@
         </div>
       </div>
       <div id="content-hindi" style="display: none">
-        <div class="scripture-card">
+        <div class="scripture-card" data-aos="fade-right">
           <h2>भगवत गीता</h2>
           <p>
             भगवद गीता, जिसे अक्सर गीता भी कहा जाता है, एक 700 श्लोक वाला हिंदू
@@ -426,7 +428,7 @@
             आत्माओं का मार्गदर्शन और ज्ञानवर्धन करती रहती हैं।
           </p>
         </div>
-        <div class="scripture-card">
+        <div class="scripture-card" data-aos="fade-right">
           <h2>श्रीमद्भागवतम्</h2>
           <p>
             श्रीमद्भागवतम्, जिसे भागवत पुराण के नाम से भी जाना जाता है, अठारह
@@ -434,7 +436,7 @@
             भगवान कृष्ण के बचपन, उनके दिव्य नाटकों (लीलाओं) की कहानी बताता है,
             और भक्ति और आध्यात्मिकता पर दार्शनिक शिक्षा प्रदान करता है।
           </p>
-          <div class="scripture-details">
+          <div class="scripture-details" data-aos="fade-right">
             <h3>श्रीमद्भागवत के प्रमुख पहलू</h3>
             <ul>
               <li>इसमें 18,000 से अधिक छंदों वाली 12 पुस्तकें शामिल हैं</li>
@@ -445,7 +447,7 @@
             </ul>
           </div>
         </div>
-        <div class="scripture-card">
+        <div class="scripture-card" data-aos="fade-right">
           <h2>महाभारत</h2>
           <p>
             महाभारत प्राचीन भारत के दो प्रमुख संस्कृत महाकाव्यों में से एक है,
@@ -497,5 +499,9 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

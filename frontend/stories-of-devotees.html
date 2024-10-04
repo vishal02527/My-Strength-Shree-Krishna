@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stories of devotees: Shree Krishna</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
@@ -327,7 +329,7 @@
       <h1>Devotees of Shree Krishna</h1>
       <ul class="devotee-list">
         <li class="devotee-list-item">
-          <h2
+          <h2 
             class="devotee-name"
             onclick="redirectToDevoteeStory('karmati-bai')"
           >
@@ -336,19 +338,19 @@
         </li>
 
         <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('surdas')">
+          <h2 class="devotee-name" onclick="redirectToDevoteeStory('surdas')" >
             Surdas
           </h2>
         </li>
 
         <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('taj-biwi')">
+          <h2 class="devotee-name" onclick="redirectToDevoteeStory('taj-biwi')" >
             Taj Biwi
           </h2>
         </li>
 
         <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('raidas')">
+          <h2 class="devotee-name" onclick="redirectToDevoteeStory('raidas')" >
             Raidas
           </h2>
         </li>
@@ -356,7 +358,7 @@
         <li class="devotee-list-item">
           <h2
             class="devotee-name"
-            onclick="redirectToDevoteeStory('meera-bai')"
+            onclick="redirectToDevoteeStory('meera-bai')" 
           >
             Meera Bai
           </h2>
@@ -365,14 +367,14 @@
         <li class="devotee-list-item">
           <h2
             class="devotee-name"
-            onclick="redirectToDevoteeStory('dhanna-jatt')"
+            onclick="redirectToDevoteeStory('dhanna-jatt')" 
           >
             Dhanna Jatt
           </h2>
         </li>
 
         <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('narsi')">
+          <h2 class="devotee-name" onclick="redirectToDevoteeStory('narsi')" >
             Narsi
           </h2>
         </li>
@@ -417,5 +419,9 @@
         window.location.href = devoteeFileName;
       }
     </script>
+       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+       <script>
+         AOS.init();
+       </script>
   </body>
 </html>

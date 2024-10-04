@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discussion Forum - Shree Krishna</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -109,7 +111,7 @@
   </head>
   <body>
     <main>
-      <div class="login-form" id="loginForm">
+      <div class="login-form" id="loginForm" data-aos="zoom-in">
         <h2>Login</h2>
         <form id="form" action="./discussion-forum.html" method="GET">
           <label for="username">Username:</label>
@@ -159,5 +161,9 @@
           }
         });
     </script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script>
   </body>
 </html>
