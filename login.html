@@ -70,20 +70,7 @@
       margin-left: 160px;
     }
 
-    #main {
 
-      background-color: #154edd;
-      /* Blue color */
-      color: #fff;
-      padding: 5px 10px;
-      /* Smaller size */
-      border: 0;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.4s;
-      margin-left: 0;
-      /* Align to the left */
-    }
 
 
 
@@ -120,22 +107,17 @@
 
         <!--Change the button type to "submit" -->
         <button>Login</button>
-        <button id="main" type="button" location.href='signup.html'>Signup</button>
+
       </form>
     </div>
     <p style="text-align: center">&copy; All rights reserved 2023</p>
   </main>
 
- <script>
+  <script>
     document
       .getElementById("form")
       .addEventListener("submit", function (event) {
         event.preventDefault();
-
-        /* Retrieve stored username and password from localStorage
-        const storedUsername = localStorage.getItem("username");
-        const storedPassword = localStorage.getItem("password");
-        */
 
         // Get user input
         const enteredUsername = document.getElementById("username").value;
@@ -146,24 +128,6 @@
           password: enteredPassword
         };
 
-        /* Check if the entered username and password match the stored values
-        if (
-          enteredUsername === storedUsername &&
-          enteredPassword === storedPassword
-        ) {
-          // Successful login - allow the form submission
-
-          // Set 'isLoggedIn' to true upon successful login
-          localStorage.setItem("isLoggedIn", "true");
-          // Redirect to discussion forum with username
-          window.location.href = "./discussion-forum.html";
-        } else {
-          // Prevent form submission if login fails
-          event.preventDefault();
-          alert("Invalid username or password. Please try again.");
-        }
-      });
-      */
         fetch('/login', {
           method: 'POST',
           headers: {
@@ -171,7 +135,7 @@
           },
           body: JSON.stringify(loginData)
         })
-          /*.then(response => response.json())*/
+
           .then(response => {
             if (!response.ok) {
               return response.json().then(data => {
@@ -181,18 +145,14 @@
             return response.json();
           })
           .then(data => {
-            //if (data.message === 'Invalid username or password. Please try again.') {
-            alert(data.message);
-            // } else{
             window.location.href = '/discussion-forum';
-            // }
+
           })
-          //.catch(error => console.error('Error:', error));
           .catch(error => {
             console.error('Error:', error);
             alert('An error occurred: ' + error.message);
           });
-        });
+      });
   </script>
 
 

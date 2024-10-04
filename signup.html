@@ -111,9 +111,8 @@
       </div>
       <p style="text-align: center">&copy; All rights reserved 2023</p>
     </main>
-
     <script>
-      document.getElementById("form").addEventListener("submit", function(event) {
+      document.getElementById("form").addEventListener("submit", function (event) {
         event.preventDefault();
 
         const username = document.getElementById("username").value;
@@ -133,28 +132,27 @@
           },
           body: JSON.stringify(signupData)
         })
-        .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (data.redirect) {
-        window.location.href = data.redirect;
-      } else {
-        console.log(data.message);
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-
-   
-    });
-  });
-
-
+          .then(response => response.json().then(data => ({ status: response.status, body: data })))
+          .then(({ status, body }) => {
+            if (status === 400 && body.redirect) {
+              alert(body.message);
+              console.log('Redirecting to:', body.redirect);
+              window.location.href = body.redirect;
+            } else if (status === 201 && body.redirect) {
+              console.log('Redirecting to:', body.redirect);
+              window.location.href = body.redirect;
+            } else {
+              console.log(body.message);
+              alert(body.message);
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred during signup. Please try again.');
+          });
+      });
     </script>
+
 
   </body>
 

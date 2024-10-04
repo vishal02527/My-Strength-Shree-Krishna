@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const bcrypt = require('bcrypt'); // Use bcrypt for password hashing
+const path = require('path');
 const cors = require('cors');
 
 
@@ -12,7 +13,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '..')));
 
 const PORT = process.env.PORT || 3000;
 
@@ -30,31 +31,31 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 app.use(session({
-  secret: 'yutgh',
+  secret: process.env.SESSION_SECRET || 'default_secret', // Use an environment variable for the secret
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // Set to true if using HTTPS
+  cookie: { secure: process.env.NODE_ENV === 'production' } // Set to true in production
 }));
 
 // Discussion forum route
 app.get('/discussion-forum', (req, res) => {
   if (req.session.isLoggedIn) {
-    res.sendFile(__dirname + '/discussion-forum.html'); // Serve the discussion forum page
+    res.sendFile(path.join(__dirname, '..', 'discussion-forum.html')); // Adjust the path
   } else {
-    res.redirect('/login'); // Redirect to login if not logged in
+    res.redirect('/login');
   }
 });
 
-// Signup Route
+//signup route
+
 app.post('/signup', async (req, res) => {
   try {
-    console.log('Received signup request:', req.body); // Debugging line
     const { username, email, password } = req.body;
 
     // Check if the username or email already exists
     const existingUser = await User.findOne({ $or: [{ username }, { email }] });
     if (existingUser) {
-      return res.status(400).json({ message: 'Username or email already exists' });
+      return res.status(400).json({ message: 'Username or email already exists. Please log in ', redirect: '/login' });
     }
 
     // Hash the password
@@ -66,10 +67,12 @@ app.post('/signup', async (req, res) => {
     });
 
     await newUser.save();
-    
+
     // Set session variables
     req.session.isLoggedIn = true;
-    req.session.username = username; // Store username in session
+    req.session.username = username;
+
+    console.log('Signup successful, session variables set:', req.session);
 
     // Redirect to discussion forum after signup
     return res.status(201).json({ message: 'Signup successful', redirect: '/discussion-forum' });
@@ -78,6 +81,7 @@ app.post('/signup', async (req, res) => {
     res.status(500).json({ message: 'Error signing up' });
   }
 });
+
 
 // Login Route
 app.post('/login', async (req, res) => {
@@ -113,8 +117,13 @@ app.get('/check-login', (req, res) => {
   }
 });
 
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'login.html')); // Adjust the path to your login.html file
+});
+
+
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(path.join(__dirname, '..', 'index.html')); // Serve the index.html file
 });
 
 // Start the server
