@@ -53,22 +53,7 @@ function closeLightbox() {
 }
 
 function showLoginForm() {
-  /*Check if the user has signed up
-  const hasSignedUp = localStorage.getItem("username") !== null;
-
-  if (hasSignedUp) {
-    // Check if the user is already logged in
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-    if (isLoggedIn) {
-      // Redirect to the discussion forum if already logged in
-      window.location.href = "./discussion-forum.html";
-    } else {
-      // Redirect to the login page if signed up but not logged in
-      window.location.href = "./login.html";
-    }
-  } else {
-    // Redirect to the signup page if not signed up*/
+ 
     window.location.href = "./signup.html";
   }
 
