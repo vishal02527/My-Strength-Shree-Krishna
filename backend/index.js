@@ -2,7 +2,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const postRoutes = require('./routes/post');
 const loginRoutes = require('./routes/login');
 const session = require('express-session');
 const cors = require('cors');
@@ -19,10 +18,10 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname,'../frontend')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
-app.use('/api', loginRoutes); 
-app.use('/', loginRoutes);  
+app.use('/api', loginRoutes);
+app.use('/', loginRoutes);
 
 app.use(session({
   secret: process.env.SESSION_SECRET || 'default_secret',
@@ -41,10 +40,8 @@ mongoose.connect(process.env.MONGODB_URL, {
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-//define 
-app.use('/login', loginRoutes); // Prefix all login routes with /api/login
-app.use('/posts', postRoutes); // Prefix all post routes with /api/posts
 
+app.use('/login', loginRoutes);
 
 // Serve home page
 app.get('/', (req, res) => {
