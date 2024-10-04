@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Morning Mantras Audio: Shree Krishna</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
+    <title>Stories of devotees: Shree Krishna</title>
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
@@ -20,12 +16,20 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        overflow-x: hidden;
       }
-      p::selection,
-      h2::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
+      h1 {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 900;
+        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
+
       .header {
         text-align: center;
         background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
@@ -104,59 +108,70 @@
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
       }
+
       main {
         padding: 20px;
+        margin: 50px auto;
       }
-      .content {
-        padding: 20px 120px;
-        margin-bottom: 50px;
+
+      .devotee-list {
+        list-style: none;
+        padding: 0;
+        margin-left: 33%;
+        max-width: 500px;
       }
-      .content h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .mantra-card {
+
+      .devotee-list-item {
         background-color: #fff;
-        border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
-      .mantra-card h2 {
+
+      .devotee-name {
         color: #ab9353;
-        margin-top: 0;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color linear 0.2s;
       }
-      .mantra-card p {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 15px;
-      }
-      .audioBtnDiv {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      audio {
-        width: 88%;
-        height: 40px;
-        border-radius: 5px;
-      }
-      .cta-button {
-        background: linear-gradient(269deg, #0048ff, #0096ff);
+
+      .devotee-name:hover {
+        background-color: #f39c12;
         color: #fff;
-        text-decoration: none;
-        padding: 12px 20px;
-        margin-top: 0px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
       }
+
+      .searchInput {
+        box-sizing: border-box;
+        width: 300px;
+        height: 35px;
+        padding: 5px 20px;
+        border-radius: 50px;
+        border: 0;
+      }
+      .searchInput:focus {
+        outline: 0;
+      }
+      .searchForm button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        position: relative;
+        top: 2px;
+        right: 55px;
+      }
+      .searchForm button i {
+        color: #555;
+        padding: 9px 15px;
+
+        font-size: 16px;
+        cursor: pointer;
+        transition: linear 0.16s;
+      }
+      .searchForm button i:hover {
+        color: #23d1c8;
+      }
+
       footer {
         background-color: #2c3e50;
         color: #ecf0f1;
@@ -188,7 +203,6 @@
         font-size: 16px;
         margin-top: 0;
         margin-bottom: 0;
-        color: #fff;
       }
 
       .social-icons a i {
@@ -211,41 +225,9 @@
         margin-top: 0;
         margin-bottom: 0;
         font-size: 14px;
-        color: #fff;
       }
 
       @media screen and (max-width: 600px) {
-        .content {
-          padding: 20px 15px;
-        }
-        .content h1 {
-          font-size: 22px;
-        }
-        .mantra-card {
-          width: 100%;
-          margin-left: -20px;
-        }
-        .mantra-card h2 {
-          font-size: 20px;
-        }
-        .mantra-card p {
-          font-size: 14px;
-        }
-        .audioBtnDiv {
-          flex-direction: column;
-          align-items: center;
-        }
-        audio {
-          width: 110%;
-          height: 25px;
-          font-size: 8px !important;
-        }
-        .cta-button {
-          font-size: 14px;
-          padding: 10px;
-          margin-top: 15px;
-          border-radius: 5px;
-        }
         .header {
           position: unset;
           padding: 10px;
@@ -262,6 +244,9 @@
           flex-direction: column;
           margin-top: 20px;
         }
+        h1 {
+          font-size: 22px;
+        }
 
         .navigation .navbar a {
           margin: 10px 0;
@@ -275,6 +260,7 @@
         .navigation .homeDiv #homeBtn a {
           font-size: 14px;
         }
+
         .footer-content {
           flex-direction: column;
           align-items: center;
@@ -302,16 +288,32 @@
         .creatorDiv p {
           font-size: 12px;
         }
+
+        .devotee-list {
+          margin-left: 0px;
+          max-width: 280px;
+        }
+        .devotee-name {
+          font-size: 16px;
+        }
       }
     </style>
   </head>
+
   <body>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-
+        <form class="searchForm">
+          <input
+            type="text"
+            class="searchInput"
+            placeholder="Search all the content"
+          />
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
         <div class="navbar">
           <a href="scriptures.html">Scriptures</a>
           <a href="gallery.html">Gallery</a>
@@ -320,123 +322,61 @@
         </div>
       </div>
     </div>
+
     <main>
-      <div class="content">
-        <h1>Morning Mantras Audio</h1>
-        <!-- Mantra 1 Card -->
-        <div class="mantra-card">
-          <h2>Soothing Krishna Chants</h2>
-          <p>
-            Start your morning with the divine chants dedicated to Shree
-            Krishna. Feel the positive energy and tranquility with each mantra.
-          </p>
-          <div class="audioBtnDiv">
-            <audio controls>
-              <source
-                src="./audios/Soothing-Krishna-Chants.mp3"
-                type="audio/mpeg"
-              />
-              Your browser does not support the audio element.
-            </audio>
-            <a
-              href="./audios/Soothing-Krishna-Chants.mp3"
-              class="cta-button"
-              download
-            >
-              Download
-            </a>
-          </div>
-        </div>
+      <h1>Devotees of Shree Krishna</h1>
+      <ul class="devotee-list">
+        <li class="devotee-list-item">
+          <h2
+            class="devotee-name"
+            onclick="redirectToDevoteeStory('karmati-bai')"
+          >
+            Karmati Bai
+          </h2>
+        </li>
 
-        <!-- Mantra 2 Card -->
-        <div class="mantra-card">
-          <h2>Morning Bliss</h2>
-          <p>
-            Immerse yourself in the blissful music that bring peace and
-            serenity. Let the divine vibrations guide you through your day.
-          </p>
-          <div class="audioBtnDiv">
-            <audio controls>
-              <source src="./audios/morning-bliss.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <a href="./audios/morning-bliss.mp3" class="cta-button" download>
-              Download
-            </a>
-          </div>
-        </div>
+        <li class="devotee-list-item">
+          <h2 class="devotee-name" onclick="redirectToDevoteeStory('surdas')">
+            Surdas
+          </h2>
+        </li>
 
-        <div class="mantra-card">
-          <h2>Krishna Relaxing Flute</h2>
-          <p>
-            Lose in the the heaven while hearing melodious sound of Krishna's
-            flute.
-          </p>
-          <div class="audioBtnDiv">
-            <audio controls>
-              <source
-                src="./audios/Krishna-Relaxing-Flute.mp3"
-                type="audio/mpeg"
-              />
-              Your browser does not support the audio element.
-            </audio>
-            <a
-              href="./audios/Krishna-Relaxing-Flute.mp3"
-              class="cta-button"
-              download
-            >
-              Download
-            </a>
-          </div>
-        </div>
+        <li class="devotee-list-item">
+          <h2 class="devotee-name" onclick="redirectToDevoteeStory('taj-biwi')">
+            Taj Biwi
+          </h2>
+        </li>
 
-        <!-- Mantra 3 Card -->
-        <div class="mantra-card">
-          <h2>Radiant Krishna Aarti</h2>
-          <p>
-            Listen to the soothing Aarti dedicated to Shree Krishna, radiating
-            positivity and divine blessings. Enhance your spiritual experience.
-          </p>
-          <div class="audioBtnDiv">
-            <audio controls>
-              <source
-                src="./audios/Radiant-Krishna-Arti.mp3"
-                type="audio/mpeg"
-              />
-              Your browser does not support the audio element.
-            </audio>
-            <a
-              href="./audios/Radiant-Krishna-Arti.mp3"
-              class="cta-button"
-              download
-            >
-              Download
-            </a>
-          </div>
-        </div>
+        <li class="devotee-list-item">
+          <h2 class="devotee-name" onclick="redirectToDevoteeStory('raidas')">
+            Raidas
+          </h2>
+        </li>
 
-        <!-- Mantra 4 Card -->
-        <div class="mantra-card">
-          <h2>Sri Krishna Ashtakam</h2>
-          <p>Listen to this powerfull and devine Krishna Ashtakam.</p>
-          <div class="audioBtnDiv">
-            <audio controls>
-              <source
-                src="./audios/Sri-Krishna-Ashtakam.mp3"
-                type="audio/mpeg"
-              />
-              Your browser does not support the audio element.
-            </audio>
-            <a
-              href="./audios/Sri-Krishna-Ashtakam.mp3"
-              class="cta-button"
-              download
-            >
-              Download
-            </a>
-          </div>
-        </div>
-      </div>
+        <li class="devotee-list-item">
+          <h2
+            class="devotee-name"
+            onclick="redirectToDevoteeStory('meera-bai')"
+          >
+            Meera Bai
+          </h2>
+        </li>
+
+        <li class="devotee-list-item">
+          <h2
+            class="devotee-name"
+            onclick="redirectToDevoteeStory('dhanna-jatt')"
+          >
+            Dhanna Jatt
+          </h2>
+        </li>
+
+        <li class="devotee-list-item">
+          <h2 class="devotee-name" onclick="redirectToDevoteeStory('narsi')">
+            Narsi
+          </h2>
+        </li>
+      </ul>
     </main>
     <footer>
       <div class="footer-content">
@@ -455,13 +395,13 @@
           <h3>Follow Us</h3>
           <div class="social-icons">
             <a href="#" target="_blank" title="Github"
-              ><i class="fab fa-github"></i
+              ><i class="fa-brands fa-github"></i
             ></a>
             <a href="#" target="_blank" title="Codepen"
-              ><i class="fab fa-codepen"></i
+              ><i class="fa-brands fa-codepen"></i
             ></a>
             <a href="#" target="_blank" title="LinkedIn"
-              ><i class="fab fa-linkedin"></i
+              ><i class="fa-brands fa-linkedin"></i
             ></a>
           </div>
         </div>
@@ -471,5 +411,11 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      function redirectToDevoteeStory(devoteeName) {
+        const devoteeFileName = `${devoteeName}.html`;
+        window.location.href = devoteeFileName;
+      }
+    </script>
   </body>
 </html>
