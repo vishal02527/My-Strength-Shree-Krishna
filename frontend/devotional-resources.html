@@ -3,23 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Devotional Resources: Shree Krishna</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
+    <title>Scriptures: Shree Krishna</title>
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Add any specific styles or scripts for this page if needed -->
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
         color: #333;
-        margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        margin: 0;
         overflow-x: hidden;
       }
       p::selection,
@@ -27,26 +23,98 @@
         background-color: rgb(237, 204, 133);
         color: #000;
       }
+      .scripture-details h3::selection,
+      li::selection {
+        background-color: rgb(237, 204, 133);
+        color: #000;
+      }
 
-      /* Header styles */
+      .content {
+        padding: 20px 120px;
+        margin-bottom: 50px;
+      }
+      .content h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 36px;
+        font-weight: 900;
+        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      #translateBtnDiv {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        margin-bottom: 20px;
+      }
 
-      .header {
+      #translateBtn {
+        border: 0;
+        padding: 15px 25px;
+        color: #fff;
+        background-image: linear-gradient(
+          to right,
+          #314755 0%,
+          #26a0da 51%,
+          #314755 100%
+        );
+        background-size: 200% auto;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #translateBtn:hover {
+        background-position: right center;
+      }
+
+      .content p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 15px;
+      }
+      .scripture-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        color: #ab9353;
+        margin-top: 0;
+      }
+      .scripture-details {
+        margin-top: 10px;
+      }
+      .scripture-details h3 {
+        color: #ab9353;
+      }
+      .scriptMain {
         text-align: center;
         background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
+        padding: 0px 20px;
         position: sticky;
         top: 0;
         z-index: 100;
         box-shadow: 0px 6px 10px #ccc;
       }
-
       .navigation {
-        padding: 10px;
+        padding: 4px;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
 
+      .logo img{
+        width: 140px;
+      }
+      .homeDiv{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
       .navigation .homeDiv #homeBtn {
         align-items: center;
         background-image: linear-gradient(
@@ -103,7 +171,6 @@
         padding: 10px 15px;
         border-radius: 20px;
       }
-
       .navigation .navbar a:hover {
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
@@ -112,59 +179,6 @@
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
       }
-
-      /* Main content styles */
-
-      main {
-        padding: 20px;
-      }
-
-      .content {
-        padding: 20px 120px;
-        margin-bottom: 50px;
-      }
-      .content h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .resource-card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-
-      .resource-card h2 {
-        color: #ab9353;
-        margin-top: 0;
-      }
-
-      .resource-card p {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 15px;
-      }
-
-      .cta-button {
-        display: inline-block;
-        background: linear-gradient(269deg, #0048ff, #0096ff);
-        color: #fff;
-        text-decoration: none;
-        padding: 10px 20px;
-        margin-top: 0px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-      }
-
 
       .searchInput {
         box-sizing: border-box;
@@ -196,7 +210,6 @@
       .searchForm button i:hover {
         color: #23d1c8;
       }
-      /* Footer styles */
 
       footer {
         background-color: #2c3e50;
@@ -229,7 +242,6 @@
         font-size: 16px;
         margin-top: 0;
         margin-bottom: 0;
-        color: #fff;
       }
 
       .social-icons a i {
@@ -243,96 +255,83 @@
       .social-icons a i:hover {
         color: rgb(241, 203, 120);
       }
-
       .creatorDiv {
         margin-top: 10px;
       }
-
       .creatorDiv p {
         margin-top: 0;
         margin-bottom: 0;
         font-size: 14px;
-        color: #fff;
       }
-
-      @media screen and (max-width: 600px) {
+      /* Mobile Responsive Styles */
+      @media (max-width: 768px) {
         .content {
           padding: 20px 15px;
+        }
+
+        #translateBtn {
+          padding: 12px 20px;
+          font-size: 14px;
         }
         .content h1 {
           font-size: 22px;
         }
-        .resource-card {
-          width: 100%;
-          margin-left: -20px;
+        .scriptMain {
+          position: unset;
         }
-        .resource-card h2 {
+        .scripture-card {
+          padding: 10px 20px;
+          margin-right: 10px;
+        }
+        .scripture-card h2 {
           font-size: 20px;
         }
-        .resource-card p {
+        .content p {
           font-size: 14px;
         }
-        .cta-button {
-          font-size: 14px;
-          padding: 10px;
-          margin-top: 5px;
-          border-radius: 5px;
-        }
 
-        .header {
-          position: unset;
-          padding: 10px;
+        .scripture-details h3 {
+          font-size: 18px;
         }
-
         .navigation {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-
         .navigation .navbar {
           display: flex;
           flex-direction: column;
           margin-top: 20px;
         }
-
         .navigation .navbar a {
           margin: 10px 0;
-          font-size: 12px;
+          font-size: 14px;
         }
-
         .navigation .homeDiv #homeBtn {
           min-width: 80px;
         }
-
         .navigation .homeDiv #homeBtn a {
           font-size: 14px;
         }
-
         .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
         }
-
         .footer-section p {
           font-size: 14px;
         }
-
         .social-icons a i {
           font-size: 22px;
           margin: 5px;
         }
-
         .footer-section {
           margin-bottom: 0;
         }
-
         .creatorDiv {
           margin-top: 20px;
           margin-right: 30px;
         }
-
         .creatorDiv p {
           font-size: 12px;
         }
@@ -340,9 +339,10 @@
     </style>
   </head>
   <body>
-    <div class="header">
+    <div class="scriptMain">
       <div class="navigation">
         <div class="homeDiv">
+          <div class="logo"><img src="./images/Logo.png" alt=""></div>
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
         <form class="searchForm">
@@ -354,102 +354,125 @@
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <div class="navbar">
-          <a href="scriptures.html">Scriptures</a>
+          <a href="scriptures.html" id="active">Scriptures</a>
           <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-          <a href="devotional-resources.html" id="active"
-            >Devotional Resources</a
-          >
+          <a href="signup.html">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
         </div>
       </div>
     </div>
 
-    <main>
-      <div class="content">
-        <h1>Devotional Resources</h1>
-        <!-- Resource 1 Card -->
-        <div class="resource-card">
-          <h2>Bhagavad Gita PDF</h2>
+    <div class="content">
+      <h1>Scriptures</h1>
+      <div id="translateBtnDiv">
+        <button onclick="toggleLanguage()" id="translateBtn">
+          हिंदी में पढ़ें
+        </button>
+      </div>
+      <div id="content-english">
+        <!-- Bhagavad Gita Card -->
+        <div class="scripture-card">
+          <h2>The Bhagavad Gita</h2>
           <p>
-            Download a PDF version of the Bhagavad Gita for easy access to its
-            divine verses. Dive into the teachings of Shree Krishna anytime,
-            anywhere.
+            The Bhagavad Gita, often referred to as the Gita, is a 700-verse
+            Hindu scripture that is part of the Indian epic Mahabharata. It
+            consists of a conversation between Prince Arjuna and Lord Krishna,
+            who serves as his charioteer. In this sacred dialogue, Lord Krishna
+            imparts profound spiritual wisdom, addressing the dilemmas of life,
+            duty, and the path to salvation. The teachings of the Bhagavad Gita
+            are timeless and continue to guide and enlighten countless souls.
           </p>
-          <a
-            href="./pdf_files/Bhagavad-gita-hindi.pdf"
-            class="cta-button"
-            download
-            >Download Now</a
-          >
         </div>
 
-        <!-- Resource 2 Card -->
-        <div class="resource-card">
-          <h2>Stories Of Devotees</h2>
+        <!-- Srimad Bhagavatam Card -->
+        <div class="scripture-card">
+          <h2>Srimad Bhagavatam</h2>
           <p>
-            Immerse yourself in the divine love of devotees with their beloved
-            Shree Krishna with our collection of awesome stories.
+            The Srimad Bhagavatam, also known as the Bhagavata Purana, is one of
+            the eighteen Mahāpurāṇas, a genre of ancient Indian literature. It
+            narrates the story of Lord Krishna's childhood, his divine plays
+            (leelas), and provides philosophical teachings on devotion and
+            spirituality.
           </p>
-          <a href="./stories-of-devotees.html" class="cta-button">Read Now</a>
+          <div class="scripture-details">
+            <h3>Key Aspects of Srimad Bhagavatam:</h3>
+            <ul>
+              <li>Comprises 12 books with over 18,000 verses</li>
+              <li>Details the life of Lord Krishna from birth to departure</li>
+              <li>
+                Emphasizes the importance of devotion (bhakti) to the Supreme
+              </li>
+              <li>Includes the story of Krishna's enchanting childhood</li>
+              <li>Explores various paths of spiritual realization</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Resource 3 Card -->
-        <div class="resource-card">
-          <h2>Shree Krishna Padawali</h2>
+        <!-- Mahabharata Card -->
+        <div class="scripture-card">
+          <h2>The Mahabharata</h2>
           <p>
-            Dive into the transcendental realm with our curated collection of
-            pad, bhajans, devotional thoughts and daily spiritual quotes in
-            Shree Krishna Padawali, each note resonating with the divine energy
-            of Krishna. These soul-stirring melodies have been carefully
-            selected to elevate your spiritual experience and foster a deeper
-            connection with the divine.
+            The Mahabharata is one of the two major Sanskrit epics of ancient
+            India, the other being the Ramayana. It is a vast and intricate
+            narrative that encompasses stories of heroes, villains, gods, and
+            the human condition. At the heart of the Mahabharata is the
+            Kurukshetra War, a great conflict between two branches of the Kuru
+            dynasty, the Pandavas, and the Kauravas, with Lord Krishna playing a
+            pivotal role as the charioteer and guide of Arjuna.
           </p>
-          <a
-            href="https://shreekrishnapadawali.netlify.app/"
-            target="_blank"
-            class="cta-button"
-            >Visit Now</a
-          >
-        </div>
-
-        <!-- Resource 4 Card -->
-        <div class="resource-card">
-          <h2>Morning Mantras Audio</h2>
-          <p>
-            Start your day with the soothing chants and mantras dedicated to
-            Shree Krishna. Listen to the divine vibrations and bring positivity
-            to your mornings.
-          </p>
-          <a href="./morning-mantra-audio.html" class="cta-button"
-            >Listen Now</a
-          >
-        </div>
-
-        <!-- Resource 5 Card -->
-        <div class="resource-card">
-          <h2>Shri Radha Chalisa PDF</h2>
-          <p>Blessed your life with the reading of Shree Radhika Chalisa.</p>
-          <a
-            href="./pdf_files/Shree-Radha-Chalisa.pdf"
-            class="cta-button"
-            download
-            >Download Now</a
-          >
-        </div>
-
-        <!-- Resource 6 Card -->
-        <div class="resource-card">
-          <h2>Divine and beautiful wallpapers</h2>
-          <p>Immerse yourself in a serene and spiritual journey through our carefully curated selection of captivating images. Explore these enchanting visuals capturing moments of tranquility, devotion, and beauty. Each wallpaper encapsulates a unique essence that seeks to inspire and uplift. Feel free to download and adorn your screens with these divine creations, inviting moments of reflection and peace into your daily life.</p>
-          <a
-            href="./divine-wallpapers.html"
-            class="cta-button"
-            >Explore Now</a
-          >
         </div>
       </div>
-    </main>
+      <div id="content-hindi" style="display: none">
+        <div class="scripture-card">
+          <h2>भगवत गीता</h2>
+          <p>
+            भगवद गीता, जिसे अक्सर गीता भी कहा जाता है, एक 700 श्लोक वाला हिंदू
+            धर्मग्रंथ है जो भारतीय महाकाव्य महाभारत का हिस्सा है। इसमें राजकुमार
+            अर्जुन और भगवान कृष्ण, जो उनके सारथी के रूप में कार्य करते हैं, के
+            बीच बातचीत शामिल है। इस पवित्र संवाद में, भगवान कृष्ण जीवन, कर्तव्य
+            और मोक्ष के मार्ग की दुविधाओं को संबोधित करते हुए गहन आध्यात्मिक
+            ज्ञान प्रदान करते हैं। भगवद गीता की शिक्षाएँ कालातीत हैं और अनगिनत
+            आत्माओं का मार्गदर्शन और ज्ञानवर्धन करती रहती हैं।
+          </p>
+        </div>
+        <div class="scripture-card">
+          <h2>श्रीमद्भागवतम्</h2>
+          <p>
+            श्रीमद्भागवतम्, जिसे भागवत पुराण के नाम से भी जाना जाता है, अठारह
+            महापुराणों में से एक है, जो प्राचीन भारतीय साहित्य की एक शैली है। यह
+            भगवान कृष्ण के बचपन, उनके दिव्य नाटकों (लीलाओं) की कहानी बताता है,
+            और भक्ति और आध्यात्मिकता पर दार्शनिक शिक्षा प्रदान करता है।
+          </p>
+          <div class="scripture-details">
+            <h3>श्रीमद्भागवत के प्रमुख पहलू</h3>
+            <ul>
+              <li>इसमें 18,000 से अधिक छंदों वाली 12 पुस्तकें शामिल हैं</li>
+              <li>भगवान कृष्ण के जन्म से लेकर प्रस्थान तक के जीवन का विवरण</li>
+              <li>सर्वोच्च के प्रति समर्पण (भक्ति) के महत्व पर जोर देता है</li>
+              <li>इसमें कृष्ण के मनमोहक बचपन की कहानी शामिल है</li>
+              <li>आध्यात्मिक अनुभूति के विभिन्न मार्गों की खोज करता है</li>
+            </ul>
+          </div>
+        </div>
+        <div class="scripture-card">
+          <h2>महाभारत</h2>
+          <p>
+            महाभारत प्राचीन भारत के दो प्रमुख संस्कृत महाकाव्यों में से एक है,
+            दूसरा रामायण है। यह एक विशाल और जटिल कथा है जिसमें नायकों, खलनायकों,
+            देवताओं और मानवीय स्थिति की कहानियाँ शामिल हैं। महाभारत के केंद्र
+            में कुरूक्षेत्र युद्ध है, जो कुरु वंश की दो शाखाओं, पांडवों और
+            कौरवों के बीच एक महान संघर्ष था, जिसमें भगवान कृष्ण ने अर्जुन के
+            सारथी और मार्गदर्शक के रूप में महत्वपूर्ण भूमिका निभाई थी।
+          </p>
+        </div>
+      </div>
 
+      <p>
+        These scriptures offer profound insights into the divine nature of Lord
+        Shree Krishna and serve as guiding lights for seekers on the spiritual
+        path.
+      </p>
+    </div>
     <footer>
       <div class="footer-content">
         <div class="footer-section">
@@ -467,13 +490,13 @@
           <h3>Follow Us</h3>
           <div class="social-icons">
             <a href="#" target="_blank" title="Github"
-              ><i class="fab fa-github"></i
+              ><i class="fa-brands fa-github"></i
             ></a>
             <a href="#" target="_blank" title="Codepen"
-              ><i class="fab fa-codepen"></i
+              ><i class="fa-brands fa-codepen"></i
             ></a>
             <a href="#" target="_blank" title="LinkedIn"
-              ><i class="fab fa-linkedin"></i
+              ><i class="fa-brands fa-linkedin"></i
             ></a>
           </div>
         </div>
