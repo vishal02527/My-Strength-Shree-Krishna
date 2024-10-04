@@ -66,7 +66,7 @@
       .header {
         text-align: center;
         background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
+        padding: 5px 20px;
         position: sticky;
         top: 0;
         z-index: 100;
@@ -169,8 +169,16 @@
         justify-content: center;
 
       }
-
+      .logo img{
+        width: 150px;
+      }
+      .homeDiv{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
       .navigation .homeDiv #homeBtn {
+        height: 54px;
         align-items: center;
         background-image: linear-gradient(
           144deg,
@@ -585,6 +593,7 @@
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
+          <div class="logo"><img src="./images/Logo.png" alt=""></div>
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
         <form class="searchForm">
