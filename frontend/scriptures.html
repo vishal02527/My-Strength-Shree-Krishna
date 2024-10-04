@@ -94,19 +94,27 @@
       .scriptMain {
         text-align: center;
         background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
+        padding: 0px 20px;
         position: sticky;
         top: 0;
         z-index: 100;
         box-shadow: 0px 6px 10px #ccc;
       }
       .navigation {
-        padding: 10px;
+        padding: 4px;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
 
+      .logo img{
+        width: 140px;
+      }
+      .homeDiv{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
       .navigation .homeDiv #homeBtn {
         align-items: center;
         background-image: linear-gradient(
@@ -334,6 +342,7 @@
     <div class="scriptMain">
       <div class="navigation">
         <div class="homeDiv">
+          <div class="logo"><img src="./images/Logo.png" alt=""></div>
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
         <form class="searchForm">
