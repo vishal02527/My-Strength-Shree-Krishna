@@ -157,6 +157,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
         margin-bottom: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
       }
 
       .resource-card h2 {
@@ -170,6 +171,11 @@
         color: #333;
         margin-bottom: 15px;
       }
+      .resource-card:hover {
+        transform: scale(1.015);
+        box-shadow: 0 8px 16px rgba(248, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+      }
 
       .cta-button {
         display: inline-block;
@@ -180,6 +186,11 @@
         margin-top: 0px;
         border-radius: 5px;
         transition: background-color 0.3s;
+      }
+      .cta-button:hover {
+        background-color: #0f0e0b;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       }
 
 
