@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shree Krishna: My Strength</title>
@@ -12,12 +15,43 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <style>
       body {
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        /*background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);*/
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
         overflow-x: hidden;
+        transition: background-color 0.3s, color 0.3s;
       }
+
+      body.light {
+      background-color: white;
+      color: rgb(20, 20, 20);
+    }
+
+    body.dark {
+      background-color: rgb(20, 20, 20);
+      color: white;
+    }
+
+    .navbar {
+      transition: background-color 0.3s;
+    }
+
+    .navbar-up {
+      background-color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      background: none;
+      border:none;
+      color: white;
+      font-size: 1.2em;
+
+    }
+
+
+    
       .scroll-top-btn {
     position: fixed; /* Fixed position */
     bottom: 20px; /* Distance from the bottom of the viewport */
@@ -488,11 +522,15 @@
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
+            <button id="theme-toggle" onclick="toggleTheme()">
+              <i id="theme-icon" class="fas fa-sun"></i>
+            </button>
+            
           </div>
         </div>
       </div>
     </div>
-    <div class="indexMain">
+    <div class="indexMain" id="theme-toggle" >
       <div class="headDiv">
         <h1>Shree Krishna - My Strength</h1>
         <img
