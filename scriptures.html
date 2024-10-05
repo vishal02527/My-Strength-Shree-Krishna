@@ -18,6 +18,23 @@
         margin: 0;
         overflow-x: hidden;
       }
+      .scroll-top-btn {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    background-color: #330867;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.scroll-top-btn:hover {
+    background-color: #330867;
+}
       p::selection,
       h2::selection {
         background-color: rgb(237, 204, 133);
@@ -331,6 +348,7 @@
     </style>
   </head>
   <body>
+    <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
     <div class="scriptMain">
       <div class="navigation">
         <div class="homeDiv">
@@ -500,5 +518,24 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      window.onscroll = function() {
+    toggleScrollTopButton();
+};
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+function toggleScrollTopButton() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block"; // Show button after scrolling down
+    } else {
+        scrollTopBtn.style.display = "none"; // Hide button when at the top
+    }
+}
+
+scrollTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+};
+  </script>
   </body>
 </html>

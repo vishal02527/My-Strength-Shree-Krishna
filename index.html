@@ -95,8 +95,6 @@
       h2 {
         color: #ab9353;
       }
-
-
       @media (max-width: 768px) {
         .header {
           padding: 10px;
@@ -134,12 +132,10 @@
       }
 
       .navigation {
-        /* padding: 5px; */
+        padding: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        justify-content: center;
-
       }
 
       .navigation .homeDiv #homeBtn {
@@ -186,12 +182,7 @@
       .navigation .homeDiv #homeBtn:hover a {
         background: none;
       }
-      .navigation {
-        justify-content: space-between;
-      }
-      .navigation .navbar{
-        display: flex;
-      }
+
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
@@ -210,7 +201,7 @@
 
       .searchInput {
         box-sizing: border-box;
-        width: 280px;
+        width: 300px;
         height: 35px;
         padding: 5px 20px;
         border-radius: 50px;
@@ -238,7 +229,7 @@
       .searchForm button i:hover {
         color: #23d1c8;
       }
-      footer {
+      /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -289,96 +280,9 @@
         margin-top: 0;
         margin-bottom: 0;
         font-size: 14px;
-      }
-
-
-        /* tablet  Responsive Styles */
-        @media (max-width: 1100px){
-          .header {
-          position: unset;
-        }
-        .navigation {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-        }
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          margin-top: 20px;
-        }
-        .navbar .navbar-up{
-          gap: 20px;
-          display: flex ;
-          
-        }
-        .navbar .navbar-down{
-      
-          display: flex ;
-          gap: 20px;
-          
-        }
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
-        .navigation .homeDiv #homeBtn {
-          min-width: 30px;
-        }
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-        .footer-content {
-          flex-direction: column;
-          align-items: center;
-          margin: 0px 40px 0px 0px;
-        }
-        .footer-section p {
-          font-size: 14px;
-        }
-        .social-icons a i {
-          font-size: 22px;
-          margin: 5px;
-        }
-        .footer-section {
-          margin-bottom: 0;
-        }
-        .creatorDiv {
-          margin-top: 20px;
-          margin-right: 30px;
-        }
-        .creatorDiv p {
-          font-size: 12px;
-        }
-        .searchForm {
-          display: flex;
-          margin: 20px 0px -10px 35px;
-        }
-        .searchInput {
-          width: 180px;
-          height: 30px;
-          padding: 5px 12px;
-          border-radius: 50px;
-          border: 0;
-          font-size: 12px;
-          margin-bottom: 20px;
-        }
-
-        .searchForm button {
-          top: 0px;
-          right: 45px;
-          margin-bottom: 20px;
-        }
-        .searchForm button i {
-          padding: 9px 15px;
-          font-size: 15px;
-        }
-
-        }
+      } */
       /* Mobile Responsive Styles */
-      @media (max-width: 668px) {
+      @media (max-width: 768px) {
         .header {
           position: unset;
         }
@@ -391,24 +295,10 @@
           display: flex;
           flex-direction: column;
           margin-top: 20px;
-          gap: 10px;
         }
         .navigation .navbar a {
           margin: 10px 0;
           font-size: 12px;
-        }
-        .navbar .navbar-up{
-          gap: 20px;
-          display: flex ;
-          flex-direction: column;
-          
-        }
-        .navbar .navbar-down{
-      
-          display: flex ;
-          gap: 20px;
-          flex-direction: column;
-          
         }
         .navigation .homeDiv #homeBtn {
           min-width: 80px;
@@ -416,7 +306,7 @@
         .navigation .homeDiv #homeBtn a {
           font-size: 14px;
         }
-        .footer-content {
+        /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -437,7 +327,7 @@
         }
         .creatorDiv p {
           font-size: 12px;
-        }
+        } */
         .searchForm {
           display: flex;
           margin: 20px 0px -10px 35px;
@@ -460,7 +350,6 @@
           font-size: 15px;
         }
       }
-     
     </style>
   </head>
   <body>
@@ -475,22 +364,16 @@
             class="searchInput"
             placeholder="Search all the content"
           />
-          <button>
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <div class="navbar">
-
           <a href="aboutus.html" id="active">About Us</a>
           <a href="scriptures.html">Scriptures</a>
           <a href="gallery.html">Gallery</a>
           <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
           <a href="devotional-resources.html">Devotional Resources</a>
           <a href="contactus.html">Contact Us</a>
-
-     
-         
-
+          
         </div>
       </div>
     </div>
@@ -826,38 +709,50 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>About Us</h3>
-          <p>Your description about the website and its purpose.</p>
-        </div>
+   
 
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: +1 234 567 890</p>
-        </div>
 
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="#" target="_blank" title="Github"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="#" target="_blank" title="Codepen"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a href="#" target="_blank" title="LinkedIn"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
+    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
+      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
+          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+        </div>
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
+          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
+          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+          <p>Feel free to reach out for any inquiries or support.</p>
+        </div>
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;">Follow Us</h3>
+
+          
+          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-codepen"></i>
+            </a>
+            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
           </div>
         </div>
       </div>
-      <div class="creatorDiv">
+      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
         <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
+
+
+
     <script src="script.js"></script>
   </body>
 </html>
+
