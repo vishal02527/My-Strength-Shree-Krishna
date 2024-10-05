@@ -249,15 +249,27 @@
       }
 
       .social-icons a i {
-        color: #ecf0f1;
-        margin: 0 8px;
-        font-size: 30px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        background-color: transparent;
+        border: 0.2rem solid #000;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        margin: 0.1rem 0.2rem 0.1rem 0;
+        transition: 0.3s ease;
+        color: #ffffff;
         text-decoration: none;
-        transition: color 0.3s;
+
       }
 
       .social-icons a i:hover {
-        color: rgb(241, 203, 120);
+        color: rgb(255, 255, 255);
+        transform: scale(1.3) translateY(-5px);
+        background-color: #ac905c;
+        box-shadow: 0 0 25px #f0eaea;
       }
       .creatorDiv {
         margin-top: 10px;
@@ -505,20 +517,14 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#" target="_blank" title="Github"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="#" target="_blank" title="Codepen"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a href="#" target="_blank" title="LinkedIn"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
+            <a href="#"> <i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-codepen"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved 2024, Created by Vishal.</p>
       </div>
     </footer>
     <script src="script.js"></script>
