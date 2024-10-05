@@ -18,6 +18,23 @@
         box-sizing: border-box;
         overflow-x: hidden;
       }
+      .scroll-top-btn {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    background-color: #330867;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.scroll-top-btn:hover {
+    background-color: #330867;
+}
       p::selection {
         background-color: rgb(237, 204, 133);
         color: #000;
@@ -156,6 +173,37 @@
       }
       #translateBtn:hover {
         background-position: right center;
+      }
+
+      .searchInput {
+        box-sizing: border-box;
+        width: 300px;
+        height: 35px;
+        padding: 5px 20px;
+        border-radius: 50px;
+        border: 0;
+      }
+      .searchInput:focus {
+        outline: 0;
+      }
+      .searchForm button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        position: relative;
+        top: 2px;
+        right: 55px;
+      }
+      .searchForm button i {
+        color: #555;
+        padding: 9px 15px;
+
+        font-size: 16px;
+        cursor: pointer;
+        transition: linear 0.16s;
+      }
+      .searchForm button i:hover {
+        color: #23d1c8;
       }
 
       footer {
@@ -594,6 +642,7 @@
   </head>
 
   <body>
+    <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
@@ -761,5 +810,24 @@
 
 
     <script src="script.js"></script>
+    <script>
+      window.onscroll = function() {
+    toggleScrollTopButton();
+};
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+function toggleScrollTopButton() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block"; // Show button after scrolling down
+    } else {
+        scrollTopBtn.style.display = "none"; // Hide button when at the top
+    }
+}
+
+scrollTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+};
+  </script>
   </body>
 </html>
