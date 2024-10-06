@@ -187,13 +187,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//adding the darkmode feature
+//toggle button 
 function toggleDarkMode() {
   const body = document.body;
-  const toggleButton = document.getElementById('darkmd-toggle');
+  const toggleCheckbox = document.getElementById('darkmd-toggle');
   body.classList.toggle('dark-mode');
 
-  toggleButton.textContent = body.classList.contains('dark-mode') ? '🌞' : '🌙';
+ 
+  toggleCheckbox.checked = body.classList.contains('dark-mode');
 }
 
-document.getElementById('darkmd-toggle').addEventListener('click', toggleDarkMode);
+document.getElementById('darkmd-toggle').addEventListener('change', toggleDarkMode);

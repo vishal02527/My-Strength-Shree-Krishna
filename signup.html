@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discussion Forum - Shree Krishna</title>
+    <link rel="stylesheet" href="/toggle.css">
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -14,12 +15,13 @@
         box-sizing: border-box;
       }
       h2::selection,
-      label::selection {
+      #form label::selection {
         background-color: rgb(237, 204, 133);
         color: #000;
       }
       main {
         padding: 20px;
+   
       }
       .signup-form {
         max-width: 400px;
@@ -34,19 +36,19 @@
         margin-top: 0;
         text-align: center;
       }
-      label {
+      #form label {
         display: block;
         margin-bottom: 8px;
         color: #555;
       }
-      input {
+      #form input {
         width: 93%;
         padding: 10px;
         margin-bottom: 15px;
         border: 1px solid #ccc;
         border-radius: 5px;
       }
-      input:focus {
+      #form input:focus {
         border: 2px solid #ffc107;
         outline: 0;
       }
@@ -113,17 +115,17 @@
       color: #ffffff; 
     }
 
-    body.dark-mode label {
+    body.dark-mode #form label {
       color: #ddd; 
     }
 
-    body.dark-mode input {
+    body.dark-mode #form input {
       background-color: #333; 
       color: #fff;
       border: 1px solid #555;
     }
 
-    body.dark-mode input:focus {
+    body.dark-mode #form input:focus {
       border: 2px solid #ffc107; 
     }
 
@@ -143,7 +145,7 @@
         .signup-form {
           max-width: 280px;
         }
-        label {
+        #form label {
           font-size: 14px;
         }
 
@@ -155,15 +157,61 @@
         }
       }
       
+      .toggle-container {
+  position: fixed;
+  top: 20px; 
+  right: 20px; 
+  display: flex;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.toggle-checkbox {
+  opacity: 0; 
+}
+
+.toggle-label {
+  cursor: pointer;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc; 
+  border-radius: 34px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.toggle-switch {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #4caf50; 
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-switch {
+  transform: translateX(26px);
+}
+
     </style>
   </head>
   <body>
     <div class="overlay"></div>
-    <div>
-      <a class="toggle-button">
-        <button id="darkmd-toggle" class="toggle-button">🌙</button>
-      </a>
+    <div class="toggle-container">
+      <input type="checkbox" id="darkmd-toggle" class="toggle-checkbox">
+      <label class="toggle-label" for="darkmd-toggle">
+        <span class="toggle-inner"></span>
+        <span class="toggle-switch"></span>
+      </label>
     </div>
+    
+    
     <main class="maindarkenable">
       <div class="signup-form" id="signupForm">
         <h2>Sign Up</h2>

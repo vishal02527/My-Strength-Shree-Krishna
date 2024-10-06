@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scriptures: Shree Krishna</title>
+    <link rel="stylesheet" href="/toggle.css">
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
@@ -168,6 +169,13 @@
     body.dark-mode .lastbdarkmode {
       color: #ffffff; 
     }
+    body.dark-mode .content .darkheading{
+        background: linear-gradient(to right,   #39ff14 20%, #aaff32 100%);
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
       
       .navigation {
         padding: 10px;
@@ -426,12 +434,14 @@
     </div>
 
     <div class="content">
-      <div>
-        <a class="toggle-button">
-          <button id="darkmd-toggle" class="toggle-button">🌙</button>
-        </a>
+      <div class="toggle-container">
+        <input type="checkbox" id="darkmd-toggle" class="toggle-checkbox">
+        <label class="toggle-label" for="darkmd-toggle">
+          <span class="toggle-inner"></span>
+          <span class="toggle-switch"></span>
+        </label>
       </div>
-      <h1 >Scriptures</h1>
+      <h1 class="darkheading">Scriptures</h1>
       <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
           हिंदी में पढ़ें

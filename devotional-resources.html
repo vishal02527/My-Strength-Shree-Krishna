@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Devotional Resources: Shree Krishna</title>
+    <link rel="stylesheet" href="/toggle.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -262,6 +263,13 @@
     body.dark-mode .resource-card p{
       color: #ffffff; 
     }
+    
+    body.dark-mode .content .darkmodeenable{
+      background: linear-gradient(to right,   #39ff14 20%, #aaff32 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
       /* Footer styles */
 
       footer {
@@ -434,12 +442,14 @@
 
     <main>
       <div class="content">
-        <div>
-          <a class="toggle-button">
-            <button id="darkmd-toggle" class="toggle-button">🌙</button>
-          </a>
+        <div class="toggle-container">
+          <input type="checkbox" id="darkmd-toggle" class="toggle-checkbox">
+          <label class="toggle-label" for="darkmd-toggle">
+            <span class="toggle-inner"></span>
+            <span class="toggle-switch"></span>
+          </label>
         </div>
-        <h1>Devotional Resources</h1>
+        <h1 class="darkmodeenable">Devotional Resources</h1>
         <!-- Resource 1 Card -->
         <div class="resource-card">
           <h2>Bhagavad Gita PDF</h2>

@@ -10,6 +10,7 @@
     ></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/toggle.css">
     <style>
       body {
         background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
@@ -165,6 +166,16 @@
     body.dark-mode .content p{
       color: #ffffff; 
     }
+    body.dark-mode .indexMain .headDiv h1{
+
+       background: linear-gradient(to right,   #39ff14 20%, #aaff32 100%);
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    
       @media (max-width: 768px) {
         .header {
           padding: 10px;
@@ -569,13 +580,17 @@
       </div>
     </div>
     <div class="indexMain">
-      <div>
-        <a class="toggle-button">
-          <button id="darkmd-toggle" class="toggle-button">🌙</button>
-        </a>
+      <div class="toggle-container">
+        <input type="checkbox" id="darkmd-toggle" class="toggle-checkbox">
+        <label class="toggle-label" for="darkmd-toggle">
+          <span class="toggle-inner"></span>
+          <span class="toggle-switch"></span>
+        </label>
       </div>
+      
+      
       <div class="headDiv">
-        <h1>Shree Krishna - My Strength</h1>
+        <h1 class="darkheading">Shree Krishna - My Strength</h1>
         <img
           src="./images/krishna-home-image.jpg"
           id="krishnaImage"

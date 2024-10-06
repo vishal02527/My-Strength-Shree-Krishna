@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery: Shree Krishna</title>
+    <link rel="stylesheet" href="/toggle.css">
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
@@ -115,6 +116,13 @@
     .darkmodeenable{
       position: relative;
       z-index: 2;
+    }
+
+    body.dark-mode .darkmodeenable{
+      background: linear-gradient(to right,   #39ff14 20%, #aaff32 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
       /* Lightbox Styles */
       .lightbox {
@@ -426,10 +434,12 @@
       </div>
     </div>
     <div class="content">
-      <div>
-        <a class="toggle-button">
-          <button id="darkmd-toggle" class="toggle-button">🌙</button>
-        </a>
+      <div class="toggle-container">
+        <input type="checkbox" id="darkmd-toggle" class="toggle-checkbox">
+        <label class="toggle-label" for="darkmd-toggle">
+          <span class="toggle-inner"></span>
+          <span class="toggle-switch"></span>
+        </label>
       </div>
       <h1 class="darkmodeenable">Gallery - Shree Krishna</h1>
 
