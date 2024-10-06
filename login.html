@@ -50,7 +50,20 @@
         border: 2px solid #ffc107;
         outline: 0;
       }
+      .forgot-password{
+        display: block;
+        margin-top: 2px;
+        margin-bottom: 12px;
+        color: #6b7290;
+        font-weight: 400;
+        text-decoration: none;
+      }
+
+      .forgot-password:hover{
+        color: #3b82f8;
+      }
       button {
+        display: block;
         background: linear-gradient(269deg, #0048ff, #0096ff);
         color: #fff;
         padding: 10px 20px;
@@ -60,6 +73,23 @@
         transition: background-color 0.3s;
         margin-left: 160px;
       }
+      .signup{
+        text-align: center;
+        margin-block: 12px ;
+      }
+      .signup-link{
+        color: #6b7290;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+
+      .signup-link:hover{
+        color: #3b82f8;
+        text-decoration: underline;
+      }
+
+
 
       @media (max-width: 768px) {
         .login-form {
@@ -89,8 +119,12 @@
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
 
-          <!-- Change the button type to "submit" -->
+          <a class="forgot-password" href="">Forgot password?</a>
+
           <button>Login</button>
+
+          <div class="signup">Don't hava an account ? <a class="signup-link" href="./signup.html">Signup</a></div>
+          <!-- Change the button type to "submit" -->
         </form>
       </div>
       <p style="text-align: center">&copy; All rights reserved 2023</p>

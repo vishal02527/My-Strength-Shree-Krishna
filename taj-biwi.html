@@ -18,6 +18,23 @@
         box-sizing: border-box;
         overflow-x: hidden;
       }
+      .scroll-top-btn {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    background-color: #330867;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.scroll-top-btn:hover {
+    background-color: #330867;
+}
       p::selection {
         background-color: rgb(237, 204, 133);
         color: #000;
@@ -334,6 +351,7 @@
   </head>
 
   <body>
+    <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
@@ -482,13 +500,13 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#" target="_blank" title="Github"
+            <a href="https://github.com/vishal02527" target="_blank" title="Github"
               ><i class="fa-brands fa-github"></i
             ></a>
-            <a href="#" target="_blank" title="Codepen"
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank" title="Codepen"
               ><i class="fa-brands fa-codepen"></i
             ></a>
-            <a href="#" target="_blank" title="LinkedIn"
+            <a href="https://www.linkedin.com/in/vishal-kumar-8303a3283" target="_blank" title="LinkedIn"
               ><i class="fa-brands fa-linkedin"></i
             ></a>
           </div>
@@ -499,5 +517,24 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      window.onscroll = function() {
+    toggleScrollTopButton();
+};
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+function toggleScrollTopButton() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block"; // Show button after scrolling down
+    } else {
+        scrollTopBtn.style.display = "none"; // Hide button when at the top
+    }
+}
+
+scrollTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+};
+  </script>
   </body>
 </html>

@@ -18,6 +18,23 @@
         margin: 0;
         overflow-x: hidden;
       }
+      .scroll-top-btn {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    background-color: #330867;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.scroll-top-btn:hover {
+    background-color: #330867;
+}
 
       .headDiv{
         display: flex;
@@ -112,7 +129,7 @@
           padding: 10px;
         }
         .indexMain .headDiv h1 {
-          font-size: 22px;
+          font-size: 20px;
         }
         .content {
           width: 100%;
@@ -144,7 +161,6 @@
       }
 
       .navigation {
-        /* padding: 5px; */
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -321,15 +337,9 @@
         }
         .navbar .navbar-up{
           gap: 20px;
-          display: flex ;
-          
+          display: flex ;     
         }
-        .navbar .navbar-down{
-      
-          display: flex ;
-          gap: 20px;
-          
-        }
+
         .navigation .navbar a {
           margin: 10px 0;
           font-size: 12px;
@@ -401,25 +411,17 @@
           display: flex;
           flex-direction: column;
           margin-top: 20px;
-          gap: 10px;
+          
         }
         .navigation .navbar a {
-          margin: 10px 0;
+          margin: 0;
           font-size: 12px;
         }
-        .navbar .navbar-up{
-          gap: 20px;
+        .navbar .navbar-up{ 
           display: flex ;
           flex-direction: column;
-          
         }
-        .navbar .navbar-down{
-      
-          display: flex ;
-          gap: 20px;
-          flex-direction: column;
-          
-        }
+
         .navigation .homeDiv #homeBtn {
           min-width: 80px;
         }
@@ -474,6 +476,7 @@
     </style>
   </head>
   <body>
+    <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
@@ -493,11 +496,10 @@
           <div class="navbar-up">
             <a href="scriptures.html">Scriptures</a>
             <a href="gallery.html">Gallery</a>
-          </div>
-          <div class="navbar-down">
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
           </div>    
+          </div>
         </div>
       </div>
     </div>
@@ -866,5 +868,24 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      window.onscroll = function() {
+    toggleScrollTopButton();
+};
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+function toggleScrollTopButton() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block"; // Show button after scrolling down
+    } else {
+        scrollTopBtn.style.display = "none"; // Hide button when at the top
+    }
+}
+
+scrollTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+};
+  </script>
   </body>
 </html>
