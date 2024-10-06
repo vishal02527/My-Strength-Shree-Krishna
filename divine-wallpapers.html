@@ -53,8 +53,24 @@
         justify-content: space-between;
         align-items: center;
       }
+      .navigation .navbar {
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: flex;
+        font-family: Phantomsans, sans-serif;
+        justify-content: center;
+        line-height: 0.8em;
+        max-width: 100%;
+        min-width: 110px;
+        padding: 3px;
+        text-decoration: none;
+        cursor: pointer;
+      }
 
-      .navigation .homeDiv #homeBtn {
+      .navigation .navbar button{
         align-items: center;
         background-image: linear-gradient(
           144deg,
@@ -78,12 +94,12 @@
         cursor: pointer;
       }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
+      .navigation .navbar button:active,
+      .navigation .navbar button:hover {
         outline: 0;
       }
 
-      .navigation .homeDiv #homeBtn a {
+      .navigation .navbar button a {
         background-color: rgb(5, 6, 45);
         color: #fff;
         font-size: 16px;
@@ -95,10 +111,14 @@
         text-decoration: none;
       }
 
-      .navigation .homeDiv #homeBtn:hover a {
+      .navigation .navbar #homeBtn:hover a {
         background: none;
       }
 
+      .navigation .homeDiv img{
+        height: 200px;
+        width: 250px;
+      }
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
@@ -292,16 +312,21 @@
           font-size: 12px;
         }
 
-        .navigation .homeDiv #homeBtn {
+        .navigation .navbar #homeBtn {
           min-width: 80px;
         }
 
-        .navigation .homeDiv #homeBtn a {
+        .navigation .navbar #homeBtn a {
           font-size: 14px;
         }
 
         h1 {
           font-size: 22px;
+        }
+        
+        .logo{
+          height: 20px;
+          width:30px
         }
 
         .wallpaper-row {
@@ -354,7 +379,7 @@
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
+          <img id="logo" src="images\Logo.png">
         </div>
         <form class="searchForm">
           <input
