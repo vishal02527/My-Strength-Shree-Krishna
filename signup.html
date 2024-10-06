@@ -61,6 +61,22 @@
         margin-left: 150px;
       }
 
+      .login{
+        text-align: center;
+        margin-block: 12px ;
+      }
+      .login-link{
+        color: #6b7290;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+
+      .login-link:hover{
+        color: #3b82f8;
+        text-decoration: underline;
+      }
+
       @media (max-width: 768px) {
         .signup-form {
           max-width: 280px;
@@ -93,6 +109,7 @@
           <input type="password" id="password" name="password" required />
 
           <button onclick="saveUsername()">Sign Up</button>
+          <div class="login">Already hava an account? <a class="login-link" href="./login.html">Login</a></div>
         </form>
       </div>
       <p style="text-align: center">&copy; All rights reserved 2023</p>
