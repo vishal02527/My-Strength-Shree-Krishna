@@ -462,6 +462,84 @@
           font-size: 15px;
         }
       }
+      .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-bottom: 40px;
+        }
+
+        .ui-card {
+            width: 350px;
+            height: auto;
+            background-color: #f4f7fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .ui-card:hover {
+            transform: scale(1.08);
+        }
+        
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 340px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .heading {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            color:  #ffd700;
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .content {
+          background-color:#efe2c4;
+            padding: 10px;
+            display: none;
+            border-radius: 5px;
+        }
+
+        .content.expanded {
+            display: block;
+            /* height: 1000px; */
+            max-height:none;
+            overflow-y:visible;
+            padding-bottom: 5px;
+        }
+
+        .read-more {
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .ui-card .image-container,
+        .ui-card .content {
+            transition: all 0.3s ease;
+        }  
      
     </style>
   </head>
@@ -502,12 +580,190 @@
           alt="Shree Krishna"
         />
       </div>
-      <div id="translateBtnDiv">
-        <button onclick="toggleLanguage()" id="translateBtn">
-          हिंदी में पढ़ें
-        </button>
-      </div>
-      <div class="content">
+      
+  <div class="container">
+    <!-- Card 1 -->
+    <div class="ui-card">
+        <div class="image-container">
+            <img src="\images\krishna1.jpg" alt="Krishna Image 1">
+            <div class="heading">The Divine Essence of Lord Shree Krishna</div>
+        </div>
+        <div class="content">
+            <p>Lord Shree Krishna, the divine avatar of Lord Vishnu, is the
+              embodiment of love, compassion, and wisdom. His teachings in the
+              Bhagavad Gita are a source of eternal inspiration for humanity.
+              Shree Krishna is the guiding light in our lives, showing us the path
+              of righteousness and devotion. His enchanting presence brings solace to the troubled hearts and
+              uplifts the spirit. Shree Krishna's divine grace is the strength
+              that carries us through the storms of life and illuminates our
+              darkest hours. His divine flute enchants all living beings, and his
+              smile is like the sun that dispels darkness. Let us immerse ourselves in the devotion and love for Shree Krishna,
+              seeking His blessings and guidance in our journey towards spiritual
+              enlightenment and inner peace. His divine Leelas (playful
+              activities) continue to inspire and remind us of the path of Dharma
+              and devotion.</p>
+        </div>
+        <div class="read-more" onclick="toggleContent(this)">Read More</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="ui-card">
+        <div class="image-container">
+            <img src="\images\krishna2.jpg" alt="Krishna Image 2">
+            <div class="heading">The Birth and Childhood</div>
+        </div>
+        <div class="content">
+            <p>Shree Krishna was born in the prison of Mathura to Devaki and
+              Vasudeva. His divine childhood was marked by playful escapades, such
+              as stealing butter and engaging in pranks, which endeared him to the
+              residents of Vrindavan. His childhood also included miraculous feats, such as lifting the
+              Govardhan Hill to protect the people from torrential rains. These
+              stories of his early life reflect his divine nature and his role as
+              a protector and source of joy for all.</p>
+        </div>
+        <div class="read-more" onclick="toggleContent(this)">Read More</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="ui-card">
+        <div class="image-container">
+            <img src="\images\krishna3.jpg" alt="Krishna Image 3">
+            <div class="heading">The Govardhan Leela</div>
+        </div>
+        <div class="content">
+            <p>One of the most cherished episodes in Lord Krishna's life is the
+              Govardhan Leela. When the people of Vrindavan were preparing to
+              offer their annual worship to Lord Indra, Krishna questioned the
+              need to worship Indra. Instead, he proposed that they worship
+              Govardhan Hill, which provided them with resources. In response, Lord Krishna lifted Govardhan Hill with his little
+              finger to protect the people from the wrath of Lord Indra's rain.
+              This act of love and devotion to his devotees is a testament to his
+              divine power and the importance of simple faith and surrender.</p>
+        </div>
+        <div class="read-more" onclick="toggleContent(this)">Read More</div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="ui-card">
+        <div class="image-container">
+            <img src="\images\krishna4.jpg" alt="Krishna Image 4">
+            <div class="heading">The Ras Leela</div>
+        </div>
+        <div class="content">
+            <p>The Ras Leela is a profound and mystical dance of love and devotion.
+              Lord Krishna's dance with the Gopis under the moonlit sky of
+              Vrindavan symbolizes the union of the individual soul with the
+              divine. The Ras Leela serves as a spiritual metaphor, emphasizing the
+              importance of selfless devotion and surrender to the divine. It is a
+              reminder of the eternal love between Lord Krishna and his devotees.</p>
+        </div>
+        <div class="read-more" onclick="toggleContent(this)">Read More</div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="ui-card">
+        <div class="image-container">
+            <img src="\images\krishna5.jpg" alt="Krishna Image 5">
+            <div class="heading">The Flute of Krishna</div>
+        </div>
+        <div class="content">
+            <p>The divine flute playing of Lord Krishna is legendary. His melodious
+              tunes enchanted the entire creation, including humans, animals, and
+              even the celestial beings. When he played the flute, the Gopis would
+              be drawn to him, leaving everything behind to be in his divine
+              presence. The music of his flute symbolizes the call of the divine, the
+              yearning of the soul to unite with the Supreme, and the eternal love
+              of Lord Krishna for his devotees. It's a reminder of the bliss that
+              comes from surrendering to the divine and being in harmony with the
+              universe.</p>
+        </div>
+        <div class="read-more" onclick="toggleContent(this)">Read More</div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="ui-card">
+        <div class="image-container">
+            <img src="\images\krishna6.jpg" alt="Krishna Image 6">
+            <div class="heading">Divine Love of Radha-Krishna</div>
+        </div>
+        <div class="content">
+            <p>At the heart of Lord Krishna's divine journey lies the sublime love
+              story of Radha and Krishna. Radha, often referred to as "Radha
+              Rani," is regarded as the eternal and supreme devotee of Lord
+              Krishna. Their love transcends the mundane and embodies the divine
+              union of the soul with the Supreme Being. Their love story, celebrated in songs, poetry, and art, represents
+              the divine connection between the individual soul (jivatma) and the
+              ultimate reality (paramatma). The love of Radha and Krishna
+              symbolizes the profound and selfless devotion one should have for
+              the divine. Radha-Krishna's love story inspires devotees to seek the highest
+              form of love and surrender to the Lord with unwavering faith and
+              devotion. It is a reminder that true love, both earthly and divine,
+              is the path to spiritual realization and eternal bliss.</p>
+        </div>
+        <div class="read-more" onclick="toggleContent(this)">Read More</div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="ui-card">
+        <div class="image-container">
+            <img src="\images\krishna7.jpg" alt="Krishna Image 7">
+            <div class="heading">The Departure</div>
+        </div>
+        <div class="content">
+            <p>After fulfilling his earthly mission and guiding humanity, Lord
+              Krishna, often referred to as the "Yogeshwara," left for his divine
+              abode, Dwarka. His departure marked the end of his physical presence
+              on Earth. However, his spiritual presence and teachings continue to be a
+              guiding light for all who seek wisdom, love, and inner peace.
+              Devotees remember his departure as an opportunity to deepen their
+              spiritual connection through devotion and prayer. While his physical form may have departed, Lord Krishna's divine
+              influence and love remain eternal and ever-present in the hearts of
+              his devotees.</p>
+        </div>
+        <div class="read-more" onclick="toggleContent(this)">Read More</div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="ui-card">
+        <div class="image-container">
+            <img src="\images\krishna8.jpg" alt="Krishna Image 8">
+            <div class="heading">My Dedication to Krishna</div>
+        </div>
+        <div class="content">
+            <p>As a devotee of Lord Shree Krishna, I am inspired by his divine
+              presence, teachings, and the enchanting stories of his life. My
+              dedication to Krishna is a heartfelt commitment to walk the path of
+              righteousness, love, and devotion that he has shown us. Lord Krishna's teachings, especially those in the Bhagavad Gita, are
+              a guiding light in my life, offering wisdom in times of doubt and
+              clarity in times of confusion. His divine Leelas and the enchanting
+              sound of his flute resonate in my heart, reminding me of the eternal
+              love and joy that can be found in his presence. My dedication to Lord Krishna is a promise to strive for a life
+              filled with love, compassion, and selfless service. His grace is my
+              strength, and his love is my inspiration. In the company of Shree
+              Krishna, I find solace, guidance, and boundless joy. May my devotion to Lord Krishna continue to deepen, and may his
+              divine blessings illuminate my path as I journey through life,
+              seeking spiritual enlightenment and inner peace.</p>
+        </div>
+        <div class="read-more" onclick="toggleContent(this)">Read More</div>
+    </div>
+</div>
+
+<script>
+    function toggleContent(element) {
+        const content = element.previousElementSibling;
+        content.classList.toggle('expanded');
+        element.textContent = content.classList.contains('expanded') ? "Read Less" : "Read More";
+    }
+</script>
+
+<script>
+    function toggleContent(element) {
+        const content = element.previousElementSibling;
+        content.classList.toggle('expanded');
+        element.textContent = content.classList.contains('expanded') ? "Read Less" : "Read More";
+    }
+</script>
+      <!-- <div class="content">
         <div id="content-english">
           <h1>The Divine Essence of Lord Shree Krishna</h1>
           <p>
@@ -667,7 +923,9 @@
             divine blessings illuminate my path as I journey through life,
             seeking spiritual enlightenment and inner peace.
           </p>
-        </div>
+        </div> -->
+        
+        
         <div id="content-hindi" style="display: none">
           <h1>भगवान श्री कृष्ण का दिव्य सार</h1>
           <p>
