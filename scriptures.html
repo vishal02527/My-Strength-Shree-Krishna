@@ -169,10 +169,15 @@
         background: none;
       }
 
+      .navigation .navbar{
+        display: flex;
+        margin-right: 350px !important;
+      }
+
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 5px;
         font-size: 16px;
         font-weight: 500;
         transition: ease-in 0.3s;
@@ -211,7 +216,6 @@
       .searchForm button i {
         color: #555;
         padding: 9px 15px;
-
         font-size: 16px;
         cursor: pointer;
         transition: linear 0.16s;
@@ -277,6 +281,10 @@
         .content {
           padding: 20px 15px;
         }
+        .navbar .navbar-up{ 
+          display: flex ;
+          flex-direction: column;
+        }
 
         #translateBtn {
           padding: 12px 20px;
@@ -299,6 +307,15 @@
           font-size: 14px;
         }
 
+        .searchForm button {
+        top: -34px;
+        right: -130px;
+      }
+      .searchForm{
+        margin-top: 10px;
+        margin-bottom: -35px;
+      }
+
         .scripture-details h3 {
           font-size: 18px;
         }
@@ -311,6 +328,7 @@
           display: flex;
           flex-direction: column;
           margin-top: 20px;
+          margin-right: 0 !important;
         }
         .navigation .navbar a {
           margin: 10px 0;
@@ -354,6 +372,15 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
+        
+        <div class="navbar">
+          <div class="navbar-up">
+          <a href="scriptures.html" id="active">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="signup.html">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+          </div>
+        </div>
         <form class="searchForm">
           <input
             type="text"
@@ -362,12 +389,6 @@
           />
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <div class="navbar">
-          <a href="scriptures.html" id="active">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="signup.html">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-        </div>
       </div>
     </div>
 

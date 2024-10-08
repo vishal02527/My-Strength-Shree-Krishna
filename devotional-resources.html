@@ -108,11 +108,14 @@
       .navigation .homeDiv #homeBtn:hover a {
         background: none;
       }
-
+      .navigation .navbar{
+        display: flex;
+        margin-right: 350px !important;
+      }
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 5px;
         font-size: 16px;
         font-weight: 500;
         transition: ease-in 0.3s;
@@ -306,11 +309,16 @@
           flex-direction: column;
           align-items: center;
         }
+        .navbar .navbar-up{ 
+          display: flex ;
+          flex-direction: column;
+        }
 
         .navigation .navbar {
           display: flex;
           flex-direction: column;
           margin-top: 20px;
+          margin-right: 0 !important;
         }
 
         .navigation .navbar a {
@@ -325,6 +333,14 @@
         .navigation .homeDiv #homeBtn a {
           font-size: 14px;
         }
+        .searchForm button {
+        top: -34px;
+        right: -130px;
+      }
+      .searchForm{
+        margin-top: 10px;
+        margin-bottom: -35px;
+      }
 
         .footer-content {
           flex-direction: column;
@@ -363,6 +379,17 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
+        
+        <div class="navbar">
+          <div class="navbar-up">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+          <a href="devotional-resources.html" id="active"
+            >Devotional Resources</a
+          >
+        </div>
+        </div>
         <form class="searchForm">
           <input
             type="text"
@@ -371,14 +398,6 @@
           />
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <div class="navbar">
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-          <a href="devotional-resources.html" id="active"
-            >Devotional Resources</a
-          >
-        </div>
       </div>
     </div>
 

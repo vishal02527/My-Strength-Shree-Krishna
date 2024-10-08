@@ -18,17 +18,17 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
     background-color: #330867;
     color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it appears above other content */
+    display: none; 
+    z-index: 1000; 
 }
 
 .scroll-top-btn:hover {
@@ -163,10 +163,11 @@
         background: none;
       }
 
+      
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 5px;
         font-size: 16px;
         font-weight: 500;
         transition: ease-in 0.3s;
@@ -213,7 +214,6 @@
       .searchForm button i:hover {
         color: #23d1c8;
       }
-
 
       footer {
         background-color: #2c3e50;
@@ -317,10 +317,16 @@
           flex-direction: column;
           align-items: center;
         }
+
+        .navbar .navbar-up{ 
+          display: flex ;
+          flex-direction: column;
+        }
         .navigation .navbar {
           display: flex;
           flex-direction: column;
           margin-top: 20px;
+          margin-right: 0 !important;
         }
         .navigation .navbar a {
           margin: 10px 0;
@@ -332,6 +338,14 @@
         .navigation .homeDiv #homeBtn a {
           font-size: 14px;
         }
+        .searchForm button {
+        top: -34px;
+        right: -130px;
+      }
+      .searchForm{
+        margin-top: 10px;
+        margin-bottom: -35px;
+      }
         .footer-content {
           flex-direction: column;
           align-items: center;
@@ -365,6 +379,15 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
+        
+        <div class="navbar">
+          <div class="navbar-up">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html" id="active">Gallery</a>
+          <a href="signup.html">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+        </div>
+        </div>
         <form class="searchForm">
           <input
             type="text"
@@ -373,12 +396,6 @@
           />
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <div class="navbar">
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html" id="active">Gallery</a>
-          <a href="signup.html">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-        </div>
       </div>
     </div>
     <div class="content">
