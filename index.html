@@ -119,7 +119,7 @@
           padding: 10px;
         }
         .indexMain .headDiv h1 {
-          font-size: 22px;
+          font-size: 20px;
         }
         .content {
           width: 90%;
@@ -151,7 +151,6 @@
       }
 
       .navigation {
-        /* padding: 5px; */
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -288,17 +287,28 @@
         margin-bottom: 0;
       }
 
-      .social-icons a i {
-        color: #ecf0f1;
-        margin: 0 8px;
-        font-size: 30px;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
+      .social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    background-color: transparent;
+    border: 0.2rem solid #000000;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    margin:0.1rem 0.2rem 0.1rem 0;
+    transition: 0.3s ease;
+    color: #ffffff;
+    text-decoration: none;
+}
 
-      .social-icons a i:hover {
-        color: rgb(241, 203, 120);
-      }
+.social-icons a:hover {
+    color:  rgb(255, 255, 255);
+    transform: scale(1.3) translateY(-5px);
+    background-color: #ac905c;
+    box-shadow: 0 0 25px #f0eaea;
+}
       .creatorDiv {
         margin-top: 10px;
       }
@@ -328,15 +338,9 @@
         }
         .navbar .navbar-up{
           gap: 20px;
-          display: flex ;
-          
+          display: flex ;     
         }
-        .navbar .navbar-down{
-      
-          display: flex ;
-          gap: 20px;
-          
-        }
+
         .navigation .navbar a {
           margin: 10px 0;
           font-size: 12px;
@@ -408,25 +412,17 @@
           display: flex;
           flex-direction: column;
           margin-top: 20px;
-          gap: 10px;
+          
         }
         .navigation .navbar a {
-          margin: 10px 0;
+          margin: 0;
           font-size: 12px;
         }
-        .navbar .navbar-up{
-          gap: 20px;
+        .navbar .navbar-up{ 
           display: flex ;
           flex-direction: column;
-          
         }
-        .navbar .navbar-down{
-      
-          display: flex ;
-          gap: 20px;
-          flex-direction: column;
-          
-        }
+
         .navigation .homeDiv #homeBtn {
           min-width: 80px;
         }
@@ -501,13 +497,9 @@
           <div class="navbar-up">
             <a href="scriptures.html">Scriptures</a>
             <a href="gallery.html">Gallery</a>
-          </div>
-          <div class="navbar-down">
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
           </div>
-         
-    
         </div>
       </div>
     </div>
@@ -859,16 +851,11 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#" target="_blank" title="Github"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="#" target="_blank" title="Codepen"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a href="#" target="_blank" title="LinkedIn"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-          </div>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-codepen"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        
         </div>
       </div>
       <div class="creatorDiv">
