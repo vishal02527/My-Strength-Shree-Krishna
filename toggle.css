@@ -1,0 +1,42 @@
+.toggle-container {
+    position: fixed;
+    top: 100px; 
+    right: 20px; 
+    display: flex;
+    align-items: center;
+    z-index: 1000; 
+  }
+  
+  .toggle-checkbox {
+    opacity: 0; 
+  }
+  
+  .toggle-label {
+    cursor: pointer;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc; 
+    border-radius: 34px;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-switch {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .toggle-checkbox:checked + .toggle-label {
+    background-color: #000000; 
+  }
+  
+  .toggle-checkbox:checked + .toggle-label .toggle-switch {
+    transform: translateX(26px); 
+  }
+  
