@@ -207,59 +207,137 @@
       }
 
       footer {
-        background-color: #2c3e50;
-        color: #ecf0f1;
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 40px 20px;
+  text-align: left;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+}
 
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 0px 10px 0px 60px;
-      }
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  height: 30vh;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
 
-      .footer-section {
-        margin-bottom: 20px;
-      }
+.footer-section {
+  flex-basis: 22%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
 
-      .footer-section h3 {
-        margin-bottom: 10px;
-        color: #f39c12;
-      }
+.footer-section:hover {
+  transform: translateY(-5px);
+}
 
-      .footer-section p {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: #f39c12;
+  text-transform: uppercase;
+  font-size: 18px;
+}
 
-      .social-icons a i {
-        color: #ecf0f1;
-        margin: 0 8px;
-        font-size: 30px;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
+.footer-section p,
+.footer-section ul li {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
 
-      .social-icons a i:hover {
-        color: rgb(241, 203, 120);
-      }
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
 
-      .creatorDiv {
-        margin-top: 10px;
-      }
+.footer-section ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-      .creatorDiv p {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 14px;
-      }
+.footer-section ul li a:hover {
+  color: #f39c12;
+}
+
+.footer-icons {
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  margin: 0 10px;
+  color: #ecf0f1;
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #f39c12;
+  transform: scale(1.2);
+}
+
+.footer-section form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.footer-section form button {
+  padding: 10px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-section form button:hover {
+  background-color: #e67e22;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  height: 1vh;
+  border-top: 1px solid #bdc3c7;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f39c12;
+  padding: 10px;
+  border-radius: 50%;
+  display: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  background-color: #e67e22;
+  transform: scale(1.2);
+}
 
       @media screen and (max-width: 600px) {
         .header {
@@ -484,34 +562,52 @@
 
     <footer>
       <div class="footer-content">
-        <div class="footer-section">
+        <!-- About Section -->
+        <div class="footer-section about">
           <h3>About Us</h3>
-          <p>Your description about the website and its purpose.</p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: +1 234 567 890</p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="#" target="_blank" title="Github"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="#" target="_blank" title="Codepen"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a href="#" target="_blank" title="LinkedIn"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
+          <p>We are committed to providing quality services and ensuring a great experience for our users. Your satisfaction is our priority.</p>
+          <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
           </div>
         </div>
+    
+        <!-- Useful Links Section -->
+        <div class="footer-section links">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+    
+        <!-- Contact Section -->
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p><i class="fa fa-map-marker"></i> 123 Main Street, City, Country</p>
+          <p><i class="fa fa-phone"></i> +1 234 567 890</p>
+          <p><i class="fa fa-envelope"></i> info@domain.com</p>
+        </div>
+    
+        <!-- Newsletter Section -->
+        <div class="footer-section newsletter">
+          <h3>Newsletter</h3>
+          <p>Subscribe to get the latest updates and offers.</p>
+          <form action="#">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
       </div>
-      <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+    
+      <!-- Footer Bottom Section -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
       </div>
     </footer>
     <script src="script.js"></script>
