@@ -4,18 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discussion Forum: Shree Krishna</title>
+    <link rel="stylesheet" id="theme-stylesheet" href="light-theme.css"/>
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
     ></script>
     <style>
       body {
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        /*background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);*/
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
         overflow-x: hidden;
       }
+
+    /*thene-button*/
+
+    button {
+      cursor: pointer;
+      background: none;
+      border:none;
+      color: white;
+      font-size: 1.2em;
+
+    }
+
       .scroll-top-btn {
     position: fixed; /* Fixed position */
     bottom: 20px; /* Distance from the bottom of the viewport */
@@ -497,6 +510,9 @@
           <a href="gallery.html">Gallery</a>
           <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
           <a href="devotional-resources.html">Devotional Resources</a>
+          <button id="theme-toggle">
+            <i id="theme-icon" class="fas fa-sun"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -713,4 +729,24 @@ scrollTopBtn.onclick = function() {
 };
   </script>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeStylesheet = document.getElementById("theme-stylesheet");
+
+        // Check local storage for theme preference
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme) {
+            themeStylesheet.href = currentTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+        }
+
+        themeToggle.addEventListener("click", () => {
+            const newTheme = themeStylesheet.href.includes("dark-theme.css") ? "light" : "dark";
+            themeStylesheet.href = newTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+            // Save theme preference in local storage
+            localStorage.setItem("theme", newTheme);
+        });
+    });
+</script>
+
 </html>

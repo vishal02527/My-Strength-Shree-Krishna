@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Devotional Resources: Shree Krishna</title>
+
+    <link rel="stylesheet" id="theme-stylesheet" href="light-theme.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -15,13 +17,25 @@
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        /*background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);*/
         color: #333;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         overflow-x: hidden;
       }
+
+
+      
+    button {
+      cursor: pointer;
+      background: none;
+      border:none;
+      color: white;
+      font-size: 1.2em;
+
+    }
+
       .scroll-top-btn {
     position: fixed; /* Fixed position */
     bottom: 20px; /* Distance from the bottom of the viewport */
@@ -378,6 +392,9 @@
           <a href="devotional-resources.html" id="active"
             >Devotional Resources</a
           >
+          <button id="theme-toggle">
+            <i id="theme-icon" class="fas fa-sun"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -521,4 +538,24 @@ scrollTopBtn.onclick = function() {
 };
   </script>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeStylesheet = document.getElementById("theme-stylesheet");
+
+        // Check local storage for theme preference
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme) {
+            themeStylesheet.href = currentTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+        }
+
+        themeToggle.addEventListener("click", () => {
+            const newTheme = themeStylesheet.href.includes("dark-theme.css") ? "light" : "dark";
+            themeStylesheet.href = newTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+            // Save theme preference in local storage
+            localStorage.setItem("theme", newTheme);
+        });
+    });
+</script>
+
 </html>

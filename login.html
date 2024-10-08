@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discussion Forum - Shree Krishna</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="light-theme.css"/>
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        /*background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);*/
         color: #333;
         margin: 0;
         padding: 0;
@@ -125,11 +126,32 @@
 
           <div class="signup">Don't hava an account ? <a class="signup-link" href="./signup.html">Signup</a></div>
           <!-- Change the button type to "submit" -->
+
+          
         </form>
       </div>
       <p style="text-align: center">&copy; All rights reserved 2023</p>
     </main>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const themeToggle = document.getElementById("theme-toggle");
+          const themeStylesheet = document.getElementById("theme-stylesheet");
+    
+          // Check local storage for theme preference
+          const currentTheme = localStorage.getItem("theme");
+          if (currentTheme) {
+              themeStylesheet.href = currentTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+          }
+    
+          themeToggle.addEventListener("click", () => {
+              const newTheme = themeStylesheet.href.includes("dark-theme.css") ? "light" : "dark";
+              themeStylesheet.href = newTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+              // Save theme preference in local storage
+              localStorage.setItem("theme", newTheme);
+          });
+      });
+    </script>
     <script>
       document
         .getElementById("form")
@@ -160,5 +182,9 @@
           }
         });
     </script>
+
+
+
+
   </body>
 </html>

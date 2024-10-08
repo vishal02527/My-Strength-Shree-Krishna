@@ -1,24 +1,6 @@
 let isHindi = false;
 const button = document.getElementById("translateBtn");
 
-function toggleTheme() {
-  const body = document.body;
-  const icon = document.getElementById('theme-icon');
-  
-  body.classList.toggle('dark');
-  body.classList.toggle('light');
-  
-  // Change icon based on theme
-  if (body.classList.contains('dark')) {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-    localStorage.setItem('theme', 'light');
-  }
-}
 
 
 function toggleLanguage() {

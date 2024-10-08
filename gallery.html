@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery: Shree Krishna</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="light-theme.css"/>
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
@@ -11,12 +12,22 @@
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        /*background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);*/
         padding: 0;
         margin: 0;
         color: #333;
         overflow-x: hidden;
       }
+
+      
+    button {
+      cursor: pointer;
+      background: none;
+      border:none;
+      color: white;
+      font-size: 1.2em;
+
+    }
       .scroll-top-btn {
     position: fixed; /* Fixed position */
     bottom: 20px; /* Distance from the bottom of the viewport */
@@ -378,6 +389,9 @@
           <a href="gallery.html" id="active">Gallery</a>
           <a href="signup.html">Discussion Forum</a>
           <a href="devotional-resources.html">Devotional Resources</a>
+          <button id="theme-toggle">
+            <i id="theme-icon" class="fas fa-sun"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -541,5 +555,27 @@ scrollTopBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
 };
   </script>
+// theme-script
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeStylesheet = document.getElementById("theme-stylesheet");
+
+      // Check local storage for theme preference
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme) {
+          themeStylesheet.href = currentTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+      }
+
+      themeToggle.addEventListener("click", () => {
+          const newTheme = themeStylesheet.href.includes("dark-theme.css") ? "light" : "dark";
+          themeStylesheet.href = newTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+          // Save theme preference in local storage
+          localStorage.setItem("theme", newTheme);
+      });
+  });
+</script>
+
+
   </body>
 </html>

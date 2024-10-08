@@ -3,6 +3,7 @@
   <head>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="light-theme.css"/>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +24,7 @@
         transition: background-color 0.3s, color 0.3s;
       }
 
-      body.light {
+    /*  body.light {
       background-color: white;
       color: rgb(20, 20, 20);
     }
@@ -39,7 +40,7 @@
 
     .navbar-up {
       background-color: inherit;
-    }
+    }*/
 
     button {
       cursor: pointer;
@@ -522,7 +523,7 @@
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
-            <button id="theme-toggle" onclick="toggleTheme()">
+            <button id="theme-toggle">
               <i id="theme-icon" class="fas fa-sun"></i>
             </button>
             
@@ -915,4 +916,24 @@ scrollTopBtn.onclick = function() {
 };
   </script>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeStylesheet = document.getElementById("theme-stylesheet");
+
+        // Check local storage for theme preference
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme) {
+            themeStylesheet.href = currentTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+        }
+
+        themeToggle.addEventListener("click", () => {
+            const newTheme = themeStylesheet.href.includes("dark-theme.css") ? "light" : "dark";
+            themeStylesheet.href = newTheme === "dark" ? "dark-theme.css" : "light-theme.css";
+            // Save theme preference in local storage
+            localStorage.setItem("theme", newTheme);
+        });
+    });
+</script>
+
 </html>
