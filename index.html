@@ -264,6 +264,64 @@
         width: 100%;
       }
 
+
+
+      /* faq css */
+      #faq-section {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+/* FAQ Item Styling */
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.faq-question {
+  font-size: 1.2em;
+  color: #0056b3;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.faq-question:hover {
+  color: #003366;
+}
+
+.faq-answer {
+  font-size: 1.15em;
+  color: #47464b;
+  margin-top: 10px;
+  display: none;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  #faq-section {
+    width: 90%;
+  }
+}
+
+
+      /* end */
+
       .footer-content {
         display: flex;
         flex-wrap: wrap;
@@ -835,6 +893,66 @@
         </div>
       </div>
     </div>
+
+     <!-- fAQ -->
+     <section id="faq-section">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+  
+      <!-- Question 1 -->
+      <div class="faq-item">
+        <h3 class="faq-question">What is My Strength Shree Krishna?</h3>
+        <p class="faq-answer">
+          My Strength Shree Krishna is a devotional website dedicated to helping individuals connect with Lord Krishna through his teachings, divine stories, and inspirational resources. The website provides content that motivates and guides you on your spiritual journey.
+        </p>
+      </div>
+  
+      <!-- Question 2 -->
+      <div class="faq-item">
+        <h3 class="faq-question">How can I connect with Lord Krishna through this website?</h3>
+        <p class="faq-answer">
+          You can connect with Lord Krishna through various devotional content, including sacred texts, devotional songs, stories, teachings from the Bhagavad Gita, and more. Our website also provides guidance for cultivating bhakti (devotion) and enhancing your spiritual practice.
+        </p>
+      </div>
+  
+      <!-- Question 3 -->
+      <div class="faq-item">
+        <h3 class="faq-question">Are there any resources available for learning about Bhagavad Gita?</h3>
+        <p class="faq-answer">
+          Yes! We offer numerous resources on the Bhagavad Gita, including summaries, translations, commentaries, and discussions on its teachings. These resources will help deepen your understanding and devotion to Lord Krishna.
+        </p>
+      </div>
+  
+      <!-- Question 4 -->
+      <div class="faq-item">
+        <h3 class="faq-question">Can I participate in devotional activities through this website?</h3>
+        <p class="faq-answer">
+          Absolutely! We offer virtual devotional activities, such as live chanting, prayer sessions, and the sharing of devotional music. You can also join our community for spiritual discussions and deepen your connection with Lord Krishna.
+        </p>
+      </div>
+  
+      <!-- Question 5 -->
+      <div class="faq-item">
+        <h3 class="faq-question">How can I contribute to this website?</h3>
+        <p class="faq-answer">
+          You can contribute by sharing your devotional experiences, writings, art, or any content that resonates with the teachings of Lord Krishna. We welcome volunteers and donations to help further our mission of spreading Krishna's teachings.
+        </p>
+      </div>
+  
+      <!-- Question 6 -->
+      <div class="faq-item">
+        <h3 class="faq-question">Is there a way to get personalized spiritual guidance?</h3>
+        <p class="faq-answer">
+          Yes, we offer personalized guidance through our spiritual counselors. You can contact us through the "Contact Us" page, and our team will be happy to assist you on your spiritual path.
+        </p>
+      </div>
+  
+    </section>
+
+
+     <!-- end -->
+
+
+
     <footer>
       <div class="footer-content">
         <div class="footer-section">
@@ -864,6 +982,20 @@
     </footer>
     <script src="script.js"></script>
     <script>
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  });
+  
+
+
       window.onscroll = function() {
     toggleScrollTopButton();
 };
