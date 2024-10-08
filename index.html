@@ -474,9 +474,103 @@
         }
       }
      
+      
+      /* Popup dialog styles */
+      .popup {
+        display: none; /* Hidden by default */
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 2px solid #330867;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1001;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+      }
+      .popup h2 {
+        color: #330867;
+      }
+      .popup button {
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .popup button:hover {
+        background-color: #5b42f3;
+      }
     </style>
   </head>
   <body>
+    <!-- Popup dialog -->
+    <div class="popup" id="popup">
+      <h2>Welcome!</h2>
+      <p id="popupMessage"></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+      // Array of random messages
+      const messages = [
+    "Shree Krishna brings peace and strength.",
+    "Embrace the teachings of Lord Krishna.",
+    "Let your faith in Krishna guide you.",
+    "Krishna's wisdom illuminates the path.",
+    "In every challenge, find Krishna's grace.",
+    "Trust in Krishna's plan for you.",
+    "The love of Krishna conquers all fears.",
+    "Krishna teaches us the value of selfless service.",
+    "In the silence of your heart, hear Krishna's voice.",
+    "Find joy in devotion and surrender to Krishna.",
+    "Every moment with Krishna is a blessing.",
+    "Krishna's love transcends all boundaries.",
+    "Stay steadfast in your faith and Krishna will guide you.",
+    "Krishna is the answer to every prayer.",
+    "In the embrace of Krishna, find your true self.",
+    "Let Krishna's teachings be your compass in life.",
+    
+    "श्री कृष्ण शांति और शक्ति लाते हैं।",
+    "भगवान कृष्ण की शिक्षाओं को अपनाएं।",
+    "अपने विश्वास को कृष्ण के मार्गदर्शन में लगाएं।",
+    "कृष्ण की बुद्धि मार्ग को प्रकाशित करती है।",
+    "हर चुनौती में, कृष्ण की कृपा को पाएं।",
+    "कृष्ण की योजना पर विश्वास रखें।",
+    "कृष्ण का प्रेम सभी भय को जीतता है।",
+    "कृष्ण हमें निस्वार्थ सेवा का मूल्य सिखाते हैं।",
+    "अपने दिल की चुप्पी में, कृष्ण की आवाज़ सुनें।",
+    "भक्ति में आनंद खोजें और कृष्ण के प्रति समर्पित रहें।",
+    "कृष्ण के साथ हर पल एक आशीर्वाद है।",
+    "कृष्ण का प्रेम सभी सीमाओं को पार करता है।",
+    "अपने विश्वास में दृढ़ रहें, कृष्ण आपका मार्गदर्शन करेंगे।",
+    "कृष्ण हर प्रार्थना का उत्तर हैं।",
+    "कृष्ण की गोद में अपने असली स्व को पाएं।",
+    "कृष्ण की शिक्षाएं आपके जीवन की दिशा में आपका मार्गदर्शक हों।"
+];
+
+
+      // Function to show popup with random message
+      function showPopup() {
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        const message = messages[randomIndex];
+        document.getElementById("popupMessage").innerText = message;
+        document.getElementById("popup").style.display = "block";
+      }
+
+      // Function to close the popup
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      // Show the popup when the page loads
+      window.onload = showPopup;
+    </script>
+
     <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
     <div class="header">
       <div class="navigation">
