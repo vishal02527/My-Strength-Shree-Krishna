@@ -193,4 +193,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// script for faq section
 
+document.querySelectorAll(".faq-question").forEach((button) => {
+  button.addEventListener("click", () => {
+    const answer = button.nextElementSibling;
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+    // Collapse any open answer
+    document
+      .querySelectorAll(".faq-answer")
+      .forEach((a) => (a.style.display = "none"));
+    document
+      .querySelectorAll(".faq-question")
+      .forEach((q) => q.setAttribute("aria-expanded", "false"));
+
+    // Toggle the clicked answer
+    if (!isExpanded) {
+      answer.style.display = "block";
+      button.setAttribute("aria-expanded", "true");
+    }
+  });
+});
