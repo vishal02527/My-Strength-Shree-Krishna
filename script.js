@@ -1,6 +1,12 @@
 let isHindi = false;
 const button = document.getElementById("translateBtn");
 
+// /preloader js styling
+let preloader = document.querySelector("#preloader");
+window.addEventListener("load",function(e){
+    preloader.style.display = "none";
+});
+
 function toggleLanguage() {
   const contentEnglish = document.getElementById("content-english");
   const contentHindi = document.getElementById("content-hindi");
@@ -186,9 +192,5 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Search form not found");
   }
 });
-// /preloader js styling
-let preloader = document.querySelector("#preloader");
-window.addEventListener("load",function(e){
-    preloader.style.display = "none";
-});
+
 
