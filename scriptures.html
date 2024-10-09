@@ -171,7 +171,6 @@
 
       .navigation .navbar {
         display: flex;
-        margin-right: 350px !important;
       }
 
       .navigation .navbar a {
@@ -219,6 +218,7 @@
         font-size: 16px;
         cursor: pointer;
         transition: linear 0.16s;
+        margin-left: 1rem;
       }
       .searchForm button i:hover {
         color: #23d1c8;
@@ -227,7 +227,7 @@
       footer {
         background-color: #2c3e50;
         color: #ecf0f1;
-        padding: 20px;
+        padding-bottom: 2rem;
         text-align: center;
         position: relative;
         bottom: 0;
@@ -239,7 +239,6 @@
         flex-wrap: wrap;
         justify-content: space-around;
         max-width: 1200px;
-        margin: 0px 10px 0px 60px;
       }
 
       .footer-section {
@@ -288,7 +287,7 @@
         font-size: 14px;
       }
       /* Mobile Responsive Styles */
-      @media (max-width: 768px) {
+      @media (max-width: 980px) {
         .content {
           padding: 20px 15px;
         }
@@ -319,14 +318,17 @@
         }
 
         .searchForm button {
-          top: -34px;
-          right: -130px;
-        }
-        .searchForm {
-          margin-top: 10px;
-          margin-bottom: -35px;
-        }
-
+        top: -34px;
+        right: -10px;
+      }
+      .searchForm{
+        margin-top: 10px;
+        margin-bottom: -35px;
+        display: contents;
+      }
+      .searchForm button i{
+        margin-left: 15rem;
+      }
         .scripture-details h3 {
           font-size: 18px;
         }
@@ -354,7 +356,6 @@
         .footer-content {
           flex-direction: column;
           align-items: center;
-          margin: 0px 40px 0px 0px;
         }
         .footer-section p {
           font-size: 14px;
