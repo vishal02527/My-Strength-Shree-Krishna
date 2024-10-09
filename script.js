@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pdf: "./devotional-resources.html",
             "radha chalisa": "./devotional-resources.html",
             "krishna padawali": "./devotional-resources.html",
-            "padawali": "./devotional-resources.html",
+            padawali: "./devotional-resources.html",
             radha: "./devotional-resources.html",
             "discussion forum": "./discussion-forum.html",
             discussion: "./discussion-forum.html",

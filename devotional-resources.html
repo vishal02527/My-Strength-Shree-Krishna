@@ -23,22 +23,22 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    background-color: #330867;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it appears above other content */
-}
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Distance from the bottom of the viewport */
+        right: 20px; /* Distance from the right of the viewport */
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        z-index: 1000; /* Ensure it appears above other content */
+      }
 
-.scroll-top-btn:hover {
-    background-color: #330867;
-}
+      .scroll-top-btn:hover {
+        background-color: #330867;
+      }
       p::selection,
       h2::selection {
         background-color: rgb(237, 204, 133);
@@ -107,6 +107,11 @@
 
       .navigation .homeDiv #homeBtn:hover a {
         background: none;
+      }
+
+      .navigation .navbar {
+        display: flex;
+        margin-right: 350px !important;
       }
       .navigation .navbar a {
         color: #fff;
@@ -181,7 +186,6 @@
         transition: background-color 0.3s;
       }
 
-
       .searchInput {
         box-sizing: border-box;
         width: 300px;
@@ -248,27 +252,27 @@
       }
 
       .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    background-color: transparent;
-    border: 0.2rem solid #000000;
-    font-size: 1.2rem;
-    border-radius: 50%;
-    margin:0.1rem 0.2rem 0.1rem 0;
-    transition: 0.3s ease;
-    color: #ffffff;
-    text-decoration: none;
-}
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        background-color: transparent;
+        border: 0.2rem solid #000000;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        margin: 0.1rem 0.2rem 0.1rem 0;
+        transition: 0.3s ease;
+        color: #ffffff;
+        text-decoration: none;
+      }
 
-.social-icons a:hover {
-    color:  rgb(255, 255, 255);
-    transform: scale(1.3) translateY(-5px);
-    background-color: #ac905c;
-    box-shadow: 0 0 25px #f0eaea;
-}
+      .social-icons a:hover {
+        color: rgb(255, 255, 255);
+        transform: scale(1.3) translateY(-5px);
+        background-color: #ac905c;
+        box-shadow: 0 0 25px #f0eaea;
+      }
 
       .creatorDiv {
         margin-top: 10px;
@@ -315,8 +319,8 @@
         flex-direction: column;
         align-items: center;
         }
-        .navbar .navbar-up{ 
-          display: flex ;
+        .navbar .navbar-up {
+          display: flex;
           flex-direction: column;
         }
 
@@ -385,16 +389,16 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-        
+
         <div class="navbar">
           <div class="navbar-up">
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-          <a href="devotional-resources.html" id="active"
-            >Devotional Resources</a
-          >
-        </div>
+            <a href="scriptures.html">Scriptures</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+            <a href="devotional-resources.html" id="active"
+              >Devotional Resources</a
+            >
+          </div>
         </div>
         <form class="searchForm">
           <input
@@ -483,12 +487,16 @@
         <!-- Resource 6 Card -->
         <div class="resource-card">
           <h2>Divine and beautiful wallpapers</h2>
-          <p>Immerse yourself in a serene and spiritual journey through our carefully curated selection of captivating images. Explore these enchanting visuals capturing moments of tranquility, devotion, and beauty. Each wallpaper encapsulates a unique essence that seeks to inspire and uplift. Feel free to download and adorn your screens with these divine creations, inviting moments of reflection and peace into your daily life.</p>
-          <a
-            href="./divine-wallpapers.html"
-            class="cta-button"
-            >Explore Now</a
-          >
+          <p>
+            Immerse yourself in a serene and spiritual journey through our
+            carefully curated selection of captivating images. Explore these
+            enchanting visuals capturing moments of tranquility, devotion, and
+            beauty. Each wallpaper encapsulates a unique essence that seeks to
+            inspire and uplift. Feel free to download and adorn your screens
+            with these divine creations, inviting moments of reflection and
+            peace into your daily life.
+          </p>
+          <a href="./divine-wallpapers.html" class="cta-button">Explore Now</a>
         </div>
       </div>
     </main>
@@ -509,11 +517,18 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-codepen"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        
+            <a href="https://github.com/vishal02527" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
         </div>
       </div>
       <div class="creatorDiv">
@@ -522,23 +537,26 @@
     </footer>
     <script src="script.js"></script>
     <script>
-      window.onscroll = function() {
-    toggleScrollTopButton();
-};
+      window.onscroll = function () {
+        toggleScrollTopButton();
+      };
 
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-function toggleScrollTopButton() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block"; // Show button after scrolling down
-    } else {
-        scrollTopBtn.style.display = "none"; // Hide button when at the top
-    }
-}
+      function toggleScrollTopButton() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block"; // Show button after scrolling down
+        } else {
+          scrollTopBtn.style.display = "none"; // Hide button when at the top
+        }
+      }
 
-scrollTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-  </script>
+      scrollTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+      };
+    </script>
   </body>
 </html>
