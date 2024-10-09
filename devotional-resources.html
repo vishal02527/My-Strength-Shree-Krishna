@@ -182,8 +182,13 @@
         padding: 10px 20px;
         margin-top: 0px;
         border-radius: 5px;
-        transition: background-color 0.3s;
-      }
+        transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for background and resizing */
+    }
+
+      .cta-button:hover {
+        background: linear-gradient(269deg, #0036d1, #007ac1); /* Darker variant of the original colors */
+        transform: scale(1.1); /* Slightly enlarges the button on hover */
+    }
 
 
       .searchInput {
@@ -303,13 +308,21 @@
         .resource-card p {
           font-size: 14px;
         }
-        .cta-button {
-          font-size: 14px;
-          padding: 10px;
-          margin-top: 5px;
-          border-radius: 5px;
-        }
 
+        
+       .cta-button {
+         font-size: 14px;
+         padding: 10px;
+         margin-top: 5px;
+         border-radius: 5px;
+       }
+
+       .cta-button:hover {
+         background: linear-gradient(269deg, #0036d1, #007ac1); /* Darker variant on hover */
+         transform: scale(1.05); /* Slightly smaller scale increase for mobile */
+       }
+
+        
         .header {
           position: unset;
           padding: 10px;
