@@ -19,22 +19,22 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    background-color: #330867;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it appears above other content */
-}
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Distance from the bottom of the viewport */
+        right: 20px; /* Distance from the right of the viewport */
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        z-index: 1000; /* Ensure it appears above other content */
+      }
 
-.scroll-top-btn:hover {
-    background-color: #330867;
-}
+      .scroll-top-btn:hover {
+        background-color: #330867;
+      }
 
       .content h1::selection,
       p::selection,
@@ -113,7 +113,6 @@
         color: #ab9353;
       }
 
-
       @media (max-width: 768px) {
         .header {
           padding: 10px;
@@ -155,7 +154,6 @@
         justify-content: space-between;
         align-items: center;
         justify-content: center;
-
       }
 
       .navigation .homeDiv #homeBtn {
@@ -205,7 +203,7 @@
       .navigation {
         justify-content: space-between;
       }
-      .navigation .navbar{
+      .navigation .navbar {
         display: flex;
         margin-right: 350px !important;
       }
@@ -289,27 +287,27 @@
       }
 
       .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    background-color: transparent;
-    border: 0.2rem solid #000000;
-    font-size: 1.2rem;
-    border-radius: 50%;
-    margin:0.1rem 0.2rem 0.1rem 0;
-    transition: 0.3s ease;
-    color: #ffffff;
-    text-decoration: none;
-}
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        background-color: transparent;
+        border: 0.2rem solid #000000;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        margin: 0.1rem 0.2rem 0.1rem 0;
+        transition: 0.3s ease;
+        color: #ffffff;
+        text-decoration: none;
+      }
 
-.social-icons a:hover {
-    color:  rgb(255, 255, 255);
-    transform: scale(1.3) translateY(-5px);
-    background-color: #ac905c;
-    box-shadow: 0 0 25px #f0eaea;
-}
+      .social-icons a:hover {
+        color: rgb(255, 255, 255);
+        transform: scale(1.3) translateY(-5px);
+        background-color: #ac905c;
+        box-shadow: 0 0 25px #f0eaea;
+      }
       .creatorDiv {
         margin-top: 10px;
       }
@@ -319,10 +317,9 @@
         font-size: 14px;
       }
 
-
-        /* tablet  Responsive Styles */
-        @media (max-width: 1100px){
-          .header {
+      /* tablet  Responsive Styles */
+      @media (max-width: 1100px) {
+        .header {
           position: unset;
         }
         .navigation {
@@ -338,9 +335,9 @@
           margin-top: 20px;
           margin-right: 0 !important;
         }
-        .navbar .navbar-up{
+        .navbar .navbar-up {
           gap: 20px;
-          display: flex ;     
+          display: flex;
         }
 
         .navigation .navbar a {
@@ -398,8 +395,7 @@
           padding: 9px 15px;
           font-size: 15px;
         }
-
-        }
+      }
       /* Mobile Responsive Styles */
       @media (max-width: 668px) {
         .header {
@@ -414,14 +410,13 @@
           display: flex;
           flex-direction: column;
           margin-top: 20px;
-          
         }
         .navigation .navbar a {
           margin: 0;
           font-size: 12px;
         }
-        .navbar .navbar-up{ 
-          display: flex ;
+        .navbar .navbar-up {
+          display: flex;
           flex-direction: column;
         }
 
@@ -475,7 +470,6 @@
           font-size: 15px;
         }
       }
-     
     </style>
   </head>
   <body>
@@ -485,7 +479,6 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-        
         <div class="navbar">
           <div class="navbar-up">
             <a href="scriptures.html">Scriptures</a>
@@ -854,11 +847,18 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-codepen"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        
+            <a href="https://github.com/vishal02527" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
         </div>
       </div>
       <div class="creatorDiv">
@@ -867,23 +867,26 @@
     </footer>
     <script src="script.js"></script>
     <script>
-      window.onscroll = function() {
-    toggleScrollTopButton();
-};
+      window.onscroll = function () {
+        toggleScrollTopButton();
+      };
 
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-function toggleScrollTopButton() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block"; // Show button after scrolling down
-    } else {
-        scrollTopBtn.style.display = "none"; // Hide button when at the top
-    }
-}
+      function toggleScrollTopButton() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block"; // Show button after scrolling down
+        } else {
+          scrollTopBtn.style.display = "none"; // Hide button when at the top
+        }
+      }
 
-scrollTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-  </script>
+      scrollTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+      };
+    </script>
   </body>
 </html>
