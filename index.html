@@ -10,6 +10,8 @@
     ></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
     <style>
       body {
         background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
@@ -97,6 +99,7 @@
         margin: 10px 0px 10px 550px;
         width: 27%;
         height: 480px;
+        border-radius: 15px;
         transition: opacity 5s ease-in-out;
       }
       .krishna-image.fade {
@@ -113,7 +116,9 @@
         color: #ab9353;
       }
 
+
       @media (max-width: 768px) {
+
         .header {
           padding: 10px;
         }
@@ -126,12 +131,14 @@
           padding: 10px 15px;
         }
         #translateBtnDiv {
-          left: 15px;
+          left: 3px;
+          width: 200px;
         }
 
         #translateBtn {
           padding: 12px 20px;
           font-size: 14px;
+          margin: 10px;
         }
         .krishna-image {
           margin: 10px 0px 0px 22px;
@@ -205,11 +212,12 @@
       }
       .navigation .navbar {
         display: flex;
+        margin-right: 350px !important;
       }
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 5px;
         font-size: 16px;
         font-weight: 500;
         transition: ease-in 0.3s;
@@ -259,7 +267,6 @@
         text-align: center;
         position: relative;
         bottom: 0;
-        width: 100%;
       }
 
       .footer-content {
@@ -332,6 +339,7 @@
           flex-direction: column;
           justify-content: space-between;
           margin-top: 20px;
+          margin-right: 0 !important;
         }
         .navbar .navbar-up {
           gap: 20px;
@@ -427,7 +435,7 @@
         .footer-content {
           flex-direction: column;
           align-items: center;
-          margin: 0px 40px 0px 0px;
+          margin: 0px 0px 0px 0px;
         }
         .footer-section p {
           font-size: 14px;
@@ -468,6 +476,7 @@
           font-size: 15px;
         }
       }
+
 
       /* FAQ seciton css */
 
@@ -542,14 +551,23 @@
         }
       }
       /* faq css end */
+
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
+    <button id="scrollTopBtn" class="scroll-top-btn">  <i class="fas fa-arrow-up"></i></button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
+        </div>
+        <div class="navbar">
+          <div class="navbar-up">
+            <a href="scriptures.html">Scriptures</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+            <a href="devotional-resources.html">Devotional Resources</a>
+          </div>
         </div>
         <form class="searchForm">
           <input
@@ -561,14 +579,6 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
-        <div class="navbar">
-          <div class="navbar-up">
-            <a href="scriptures.html">Scriptures</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-            <a href="devotional-resources.html">Devotional Resources</a>
-          </div>
-        </div>
       </div>
     </div>
     <div class="indexMain">
@@ -1007,9 +1017,19 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-codepen"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+            <a href="https://github.com/vishal02527" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+
           </div>
         </div>
       </div>
