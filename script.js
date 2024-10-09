@@ -1,6 +1,12 @@
 let isHindi = false;
 const button = document.getElementById("translateBtn");
 
+// /preloader js styling
+let preloader = document.querySelector("#preloader");
+window.addEventListener("load",function(e){
+    preloader.style.display = "none";
+});
+
 function toggleLanguage() {
   const contentEnglish = document.getElementById("content-english");
   const contentHindi = document.getElementById("content-hindi");
@@ -210,3 +216,29 @@ document.querySelectorAll(".faq-question").forEach((button) => {
   });
 });
 
+
+// script for faq section
+
+document.querySelectorAll(".faq-question").forEach((button) => {
+  button.addEventListener("click", () => {
+    const answer = button.nextElementSibling;
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+    // Collapse any open answer
+    document
+      .querySelectorAll(".faq-answer")
+      .forEach((a) => (a.style.display = "none"));
+    document
+      .querySelectorAll(".faq-question")
+      .forEach((q) => q.setAttribute("aria-expanded", "false"));
+
+    // Toggle the clicked answer
+    if (!isExpanded) {
+      answer.style.display = "block";
+      button.setAttribute("aria-expanded", "true");
+    }
+  });
+
+
+
+});
