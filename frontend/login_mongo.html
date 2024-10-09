@@ -70,6 +70,10 @@
       margin-left: 160px;
     }
 
+
+
+
+
     @media (max-width: 768px) {
       .login-form {
         max-width: 280px;
@@ -94,15 +98,16 @@
   <main>
     <div class="login-form" id="loginForm">
       <h2>Login</h2>
-      <form id="form" action="./discussion-forum.html" method="GET">
+      <form id="form" action="/login" method="POST">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required />
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required />
 
-        <!-- Change the button type to "submit" -->
+        <!--Change the button type to "submit" -->
         <button>Login</button>
+
       </form>
     </div>
     <p style="text-align: center">&copy; All rights reserved 2023</p>
@@ -149,6 +154,7 @@
           });
       });
   </script>
+
 
 </body>
 

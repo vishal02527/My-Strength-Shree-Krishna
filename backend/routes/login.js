@@ -82,7 +82,7 @@ router.use(session({
     if (req.session.isLoggedIn) {
       res.redirect('/discussion-forum');
     } else {
-      res.redirect('/login');
+      res.redirect('/login_mongo');
     }
   });
 
@@ -96,7 +96,7 @@ router.get('/discussion-forum', (req, res) => {
 });
   
   router.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '..','..','frontend', 'login.html')); // Adjust the path to your login.html file
+    res.sendFile(path.join(__dirname, '..','..','frontend', 'login_mongo.html')); // Adjust the path to your login.html file
   });
   
   
