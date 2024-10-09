@@ -8,9 +8,11 @@
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
     ></script>
+    
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="stylesheet" href="preloaderStyle.css">
+    
     <style>
       body {
         background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
@@ -20,22 +22,22 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    background-color: #330867;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it appears above other content */
-}
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Distance from the bottom of the viewport */
+        right: 20px; /* Distance from the right of the viewport */
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        z-index: 1000; /* Ensure it appears above other content */
+      }
 
-.scroll-top-btn:hover {
-    background-color: #330867;
-}
+      .scroll-top-btn:hover {
+        background-color: #330867;
+      }
 
       .content h1::selection,
       p::selection,
@@ -98,6 +100,7 @@
         margin: 10px 0px 10px 550px;
         width: 27%;
         height: 480px;
+        border-radius: 15px;
         transition: opacity 5s ease-in-out;
       }
       .krishna-image.fade {
@@ -114,8 +117,7 @@
         color: #ab9353;
       }
 
-
-      @media (max-width: 768px) {
+      @media (max-width: 980px) {
         .header {
           padding: 10px;
         }
@@ -128,12 +130,14 @@
           padding: 10px 15px;
         }
         #translateBtnDiv {
-          left: 15px;
+          left: 3px;
+          width: 200px;
         }
 
         #translateBtn {
           padding: 12px 20px;
           font-size: 14px;
+          margin: 10px;
         }
         .krishna-image {
           margin: 10px 0px 0px 22px;
@@ -156,7 +160,6 @@
         justify-content: space-between;
         align-items: center;
         justify-content: center;
-
       }
 
       .navigation .homeDiv #homeBtn {
@@ -206,13 +209,14 @@
       .navigation {
         justify-content: space-between;
       }
-      .navigation .navbar{
+      .navigation .navbar {
         display: flex;
+        margin-right: 350px !important;
       }
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 5px;
         font-size: 16px;
         font-weight: 500;
         transition: ease-in 0.3s;
@@ -262,7 +266,6 @@
         text-align: center;
         position: relative;
         bottom: 0;
-        width: 100%;
       }
 
       .footer-content {
@@ -289,27 +292,27 @@
       }
 
       .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    background-color: transparent;
-    border: 0.2rem solid #000000;
-    font-size: 1.2rem;
-    border-radius: 50%;
-    margin:0.1rem 0.2rem 0.1rem 0;
-    transition: 0.3s ease;
-    color: #ffffff;
-    text-decoration: none;
-}
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        background-color: transparent;
+        border: 0.2rem solid #000000;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        margin: 0.1rem 0.2rem 0.1rem 0;
+        transition: 0.3s ease;
+        color: #ffffff;
+        text-decoration: none;
+      }
 
-.social-icons a:hover {
-    color:  rgb(255, 255, 255);
-    transform: scale(1.3) translateY(-5px);
-    background-color: #ac905c;
-    box-shadow: 0 0 25px #f0eaea;
-}
+      .social-icons a:hover {
+        color: rgb(255, 255, 255);
+        transform: scale(1.3) translateY(-5px);
+        background-color: #ac905c;
+        box-shadow: 0 0 25px #f0eaea;
+      }
       .creatorDiv {
         margin-top: 10px;
       }
@@ -319,10 +322,9 @@
         font-size: 14px;
       }
 
-
-        /* tablet  Responsive Styles */
-        @media (max-width: 1100px){
-          .header {
+      /* tablet  Responsive Styles */
+      @media (max-width: 1100px) {
+        .header {
           position: unset;
         }
         .navigation {
@@ -336,10 +338,11 @@
           flex-direction: column;
           justify-content: space-between;
           margin-top: 20px;
+          margin-right: 0 !important;
         }
-        .navbar .navbar-up{
+        .navbar .navbar-up {
           gap: 20px;
-          display: flex ;     
+          display: flex;
         }
 
         .navigation .navbar a {
@@ -397,8 +400,7 @@
           padding: 9px 15px;
           font-size: 15px;
         }
-
-        }
+      }
       /* Mobile Responsive Styles */
       @media (max-width: 668px) {
         .header {
@@ -413,14 +415,13 @@
           display: flex;
           flex-direction: column;
           margin-top: 20px;
-          
         }
         .navigation .navbar a {
           margin: 0;
           font-size: 12px;
         }
-        .navbar .navbar-up{ 
-          display: flex ;
+        .navbar .navbar-up {
+          display: flex;
           flex-direction: column;
         }
 
@@ -433,7 +434,7 @@
         .footer-content {
           flex-direction: column;
           align-items: center;
-          margin: 0px 40px 0px 0px;
+          margin: 0px 0px 0px 0px;
         }
         .footer-section p {
           font-size: 14px;
@@ -474,7 +475,6 @@
           font-size: 15px;
         }
       }
-     
     </style>
   </head>
   <body>
@@ -491,12 +491,19 @@
           </div>
       </div>
   </div>
-
     <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
+        </div>
+        <div class="navbar">
+          <div class="navbar-up">
+            <a href="scriptures.html">Scriptures</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+            <a href="devotional-resources.html">Devotional Resources</a>
+          </div>
         </div>
         <form class="searchForm">
           <input
@@ -508,14 +515,6 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
-        <div class="navbar">
-          <div class="navbar-up">
-            <a href="scriptures.html">Scriptures</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-            <a href="devotional-resources.html">Devotional Resources</a>
-          </div>
-        </div>
       </div>
     </div>
     <div class="indexMain">
@@ -866,11 +865,18 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-codepen"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        
+            <a href="https://github.com/vishal02527" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
         </div>
       </div>
       <div class="creatorDiv">
@@ -879,23 +885,26 @@
     </footer>
     <script src="script.js"></script>
     <script>
-      window.onscroll = function() {
-    toggleScrollTopButton();
-};
+      window.onscroll = function () {
+        toggleScrollTopButton();
+      };
 
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-function toggleScrollTopButton() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block"; // Show button after scrolling down
-    } else {
-        scrollTopBtn.style.display = "none"; // Hide button when at the top
-    }
-}
+      function toggleScrollTopButton() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block"; // Show button after scrolling down
+        } else {
+          scrollTopBtn.style.display = "none"; // Hide button when at the top
+        }
+      }
 
-scrollTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-  </script>
+      scrollTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+      };
+    </script>
   </body>
 </html>
