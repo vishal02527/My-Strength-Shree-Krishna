@@ -17,22 +17,22 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    background-color: #330867;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it appears above other content */
-}
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Distance from the bottom of the viewport */
+        right: 20px; /* Distance from the right of the viewport */
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none;
+        z-index: 1000;
+      }
 
-.scroll-top-btn:hover {
-    background-color: #330867;
-}
+      .scroll-top-btn:hover {
+        background-color: #330867;
+      }
       p::selection,
       h2::selection,
       h3::selection,
@@ -54,6 +54,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+      }
+      .navigation .navbar {
+        display: flex;
+        margin-right: 350px !important;
+      }
+      .navbar .navbar-up {
+        display: flex;
       }
 
       .navigation .homeDiv #homeBtn {
@@ -104,7 +111,7 @@
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 5px;
         font-size: 16px;
         font-weight: 500;
         transition: ease-in 0.3s;
@@ -167,7 +174,7 @@
         word-wrap: break-word;
         font-size: 16px;
       }
-      
+
       .logDeleteBtnDiv {
         max-width: 800px;
         margin-top: 20px;
@@ -231,10 +238,10 @@
         border: 2px solid #ffc107;
         outline: 0;
       }
-      main h3{
-          text-align: center;
-          margin-bottom: 80px;
-        }
+      main h3 {
+        text-align: center;
+        margin-bottom: 80px;
+      }
 
       .newPost-button {
         margin: 10px;
@@ -388,14 +395,25 @@
         }
         .navigation {
           display: flex;
-          flex-direction: column;
+          flex-direction: column !important;
           align-items: center;
         }
+
         .navigation .navbar {
-          display: flex;
-          flex-direction: column;
+          flex-direction: column !important;
           margin-top: 20px;
+          margin-right: 0 !important;
         }
+
+        .searchForm button {
+          top: -34px;
+          right: -130px;
+        }
+        .searchForm {
+          margin-top: 10px;
+          margin-bottom: -35px;
+        }
+
         .navigation .navbar a {
           margin: 10px 0;
           font-size: 12px;
@@ -432,11 +450,11 @@
         .post-form h2 {
           font-size: 20px;
         }
-        main h3{
+        main h3 {
           margin-top: 50px;
           margin-bottom: 50px;
         }
-        
+
         .logDeleteBtnDiv {
           margin-top: 0;
           margin-left: 0%;
@@ -448,10 +466,10 @@
           font-size: 14px;
         }
 
-        .delete-btn{
+        .delete-btn {
           margin-right: 0px;
         }
-        
+
         .footer-content {
           flex-direction: column;
           align-items: center;
@@ -484,6 +502,16 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
+        <div class="navbar">
+          <div class="navbar-up">
+            <a href="scriptures.html">Scriptures</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#" onclick="showLoginForm()" id="active"
+              >Discussion Forum</a
+            >
+            <a href="devotional-resources.html">Devotional Resources</a>
+          </div>
+        </div>
         <form class="searchForm">
           <input
             type="text"
@@ -492,12 +520,6 @@
           />
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <div class="navbar">
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-        </div>
       </div>
     </div>
 
@@ -508,7 +530,6 @@
       </div>
       <h3 id="user"><!-- username will be dynamically added here --></h3>
       <div class="user-BtnDiv">
-        
         <div class="logDeleteBtnDiv">
           <button class="logout-btn" onclick="logout()">Logout</button>
           <button class="delete-btn" onclick="deleteAccount()">
@@ -560,13 +581,15 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#" target="_blank" title="Github"
+            <a href="https://github.com/vishal02527" target="_blank"
               ><i class="fa-brands fa-github"></i
             ></a>
-            <a href="#" target="_blank" title="Codepen"
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
               ><i class="fa-brands fa-codepen"></i
             ></a>
-            <a href="#" target="_blank" title="LinkedIn"
+            <a
+              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
+              target="_blank"
               ><i class="fa-brands fa-linkedin"></i
             ></a>
           </div>
@@ -694,23 +717,26 @@
     </script>
     <script src="script.js"></script>
     <script>
-      window.onscroll = function() {
-    toggleScrollTopButton();
-};
+      window.onscroll = function () {
+        toggleScrollTopButton();
+      };
 
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-function toggleScrollTopButton() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block"; // Show button after scrolling down
-    } else {
-        scrollTopBtn.style.display = "none"; // Hide button when at the top
-    }
-}
+      function toggleScrollTopButton() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block"; // Show button after scrolling down
+        } else {
+          scrollTopBtn.style.display = "none"; // Hide button when at the top
+        }
+      }
 
-scrollTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-  </script>
+      scrollTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+      };
+    </script>
   </body>
 </html>
