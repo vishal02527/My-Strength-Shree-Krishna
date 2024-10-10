@@ -16,23 +16,6 @@
         margin: 0;
         overflow-x: hidden;
       }
-      .scroll-top-btn {
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    background-color: #330867;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-.scroll-top-btn:hover {
-    background-color: #330867;
-}
       p::selection,
       h2::selection,
       h3::selection,
@@ -287,37 +270,7 @@
         cursor: pointer;
         transition: background-color 0.3s;
       }
-      .searchInput {
-        box-sizing: border-box;
-        width: 300px;
-        height: 35px;
-        padding: 5px 20px;
-        border-radius: 50px;
-        border: 0;
-      }
-      .searchInput:focus {
-        outline: 0;
-      }
-      .searchForm button {
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        position: relative;
-        top: 2px;
-        right: 55px;
-      }
-      .searchForm button i {
-        color: #555;
-        padding: 9px 15px;
-
-        font-size: 16px;
-        cursor: pointer;
-        transition: linear 0.16s;
-      }
-      .searchForm button i:hover {
-        color: #23d1c8;
-      }
-
+/* 
       footer {
         background-color: #2c3e50;
         color: #ecf0f1;
@@ -369,7 +322,7 @@
         margin-top: 0;
         margin-bottom: 0;
         font-size: 14px;
-      }
+      } */
 
       /* Mobile Responsive Styles */
       @media (max-width: 768px) {
@@ -451,7 +404,7 @@
         .delete-btn{
           margin-right: 0px;
         }
-        
+/*         
         .footer-content {
           flex-direction: column;
           align-items: center;
@@ -473,36 +426,24 @@
         }
         .creatorDiv p {
           font-size: 12px;
-        }
+        } */
       }
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-        <form class="searchForm">
-          <input
-            type="text"
-            class="searchInput"
-            placeholder="Search all the content"
-          />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+
         <div class="navbar">
+          <a href="aboutus.html" id="active">About Us</a>
           <a href="scriptures.html">Scriptures</a>
           <a href="gallery.html">Gallery</a>
-
-
-          <a href="aboutus.html" id="active">About Us</a>
-          <a href="contactus.html">Contact Us</a>
-
-          
           <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
           <a href="devotional-resources.html">Devotional Resources</a>
+          <a href="contactus.html">Contact Us</a>
         </div>
       </div>
     </div>
@@ -550,38 +491,48 @@
       </div>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>About Us</h3>
-          <p>Your description about the website and its purpose.</p>
-        </div>
+   
 
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: +1 234 567 890</p>
+    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
+      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
+          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
         </div>
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
+          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
+          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+          <p>Feel free to reach out for any inquiries or support.</p>
+        </div>
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;">Follow Us</h3>
 
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="#" target="_blank" title="Github"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="#" target="_blank" title="Codepen"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a href="#" target="_blank" title="LinkedIn"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
+          
+          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-codepen"></i>
+            </a>
+            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
           </div>
         </div>
       </div>
-      <div class="creatorDiv">
+      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
         <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
+
+
+
 
     <script>
       const user = document.getElementById("user");
@@ -699,24 +650,5 @@
       }
     </script>
     <script src="script.js"></script>
-    <script>
-      window.onscroll = function() {
-    toggleScrollTopButton();
-};
-
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-function toggleScrollTopButton() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block"; // Show button after scrolling down
-    } else {
-        scrollTopBtn.style.display = "none"; // Hide button when at the top
-    }
-}
-
-scrollTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-  </script>
   </body>
 </html>
