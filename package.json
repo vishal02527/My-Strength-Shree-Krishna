@@ -1,0 +1,16 @@
+{
+  "name": "my-strength-shree-krishna",
+  "version": "1.0.0",
+  "description": "This website is based on devotional content. Many resources and references are there to motivate you towards Krishna and get you connect with His devotion.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "google-auth-library": "^9.14.1"
+  }
+}
