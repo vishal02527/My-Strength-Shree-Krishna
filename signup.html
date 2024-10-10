@@ -61,18 +61,17 @@
         margin-left: 150px;
       }
 
-      .login{
+      .login {
         text-align: center;
-        margin-block: 12px ;
+        margin-block: 12px;
       }
-      .login-link{
+      .login-link {
         color: #6b7290;
         font-weight: 500;
         text-decoration: none;
       }
 
-
-      .login-link:hover{
+      .login-link:hover {
         color: #3b82f8;
         text-decoration: underline;
       }
@@ -110,8 +109,12 @@
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
 
-          <button id="hover_button" onclick="saveUsername()">Sign Up</button>
-          <div class="login">Already have an account? <a class="login-link" href="./login.html">Login</a></div>
+
+          <button onclick="saveUsername()">Sign Up</button>
+          <div class="login">
+            Already have an account?
+            <a class="login-link" href="./login.html">Login</a>
+          </div>
         </form>
       </div>
       <p style="text-align: center">&copy; All rights reserved 2023</p>
