@@ -150,7 +150,7 @@
         word-wrap: break-word;
         font-size: 16px;
       }
-      
+
       .logDeleteBtnDiv {
         max-width: 800px;
         margin-top: 20px;
@@ -214,10 +214,10 @@
         border: 2px solid #ffc107;
         outline: 0;
       }
-      main h3{
-          text-align: center;
-          margin-bottom: 80px;
-        }
+      main h3 {
+        text-align: center;
+        margin-bottom: 80px;
+      }
 
       .newPost-button {
         margin: 10px;
@@ -270,7 +270,53 @@
         cursor: pointer;
         transition: background-color 0.3s;
       }
-/* 
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: #fff;
+
+        border-radius: 10px;
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+      }
+
+      .modal h3 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      .modal button {
+        background-color: #da1e09;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 800;
+      }
+
+      .modal button.cancel {
+        background-color: #85888e;
+      }
+
+      .modal button:hover {
+        opacity: 0.9;
+      }
+      /* 
       footer {
         background-color: #2c3e50;
         color: #ecf0f1;
@@ -385,11 +431,11 @@
         .post-form h2 {
           font-size: 20px;
         }
-        main h3{
+        main h3 {
           margin-top: 50px;
           margin-bottom: 50px;
         }
-        
+
         .logDeleteBtnDiv {
           margin-top: 0;
           margin-left: 0%;
@@ -401,10 +447,10 @@
           font-size: 14px;
         }
 
-        .delete-btn{
+        .delete-btn {
           margin-right: 0px;
         }
-/*         
+        /*         
         .footer-content {
           flex-direction: column;
           align-items: center;
@@ -455,15 +501,28 @@
       </div>
       <h3 id="user"><!-- username will be dynamically added here --></h3>
       <div class="user-BtnDiv">
-        
         <div class="logDeleteBtnDiv">
-          <button class="logout-btn" onclick="logout()">Logout</button>
-          <button class="delete-btn" onclick="deleteAccount()">
-            Delete Account
-          </button>
+          <button class="logout-btn">Logout</button>
+          <button class="delete-btn">Delete Account</button>
         </div>
       </div>
 
+      <div id="logoutModal" class="modal">
+        <div class="modal-content">
+          <h3>Are you sure you want to logout?</h3>
+          <button id="confirmLogout">Logout</button>
+          <button class="cancel" id="cancelLogout">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Delete Account Confirmation Modal -->
+      <div id="deleteModal" class="modal">
+        <div class="modal-content">
+          <h3>Are you sure you want to delete your account?</h3>
+          <button id="confirmDelete">Delete</button>
+          <button class="cancel" id="cancelDelete">Cancel</button>
+        </div>
+      </div>
       <div class="post-container" id="postContainer">
         <!-- Posts will be dynamically added here -->
       </div>
@@ -491,48 +550,114 @@
       </div>
     </main>
 
-   
-
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+    <footer style="background-color: #2c3e50; color: white; padding: 20px 0">
+      <div
+        class="footer-content"
+        style="
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          text-align: center;
+        "
+      >
+        <div class="footer-section" style="flex: 1; margin: 10px">
+          <h3 style="color: #f39c12">
+            <a href="aboutus.html" style="color: #f39c12; text-decoration: none"
+              >About Us</a
+            >
+          </h3>
+          <p>
+            We are dedicated to providing a reliable ambulance monitoring system
+            to ensure timely medical assistance.
+          </p>
+          <a
+            href="aboutus.html"
+            style="color: #f39c12; text-decoration: underline"
+            >Learn More</a
+          >
         </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+        <div class="footer-section" style="flex: 1; margin: 10px">
+          <h3 style="color: #f39c12">
+            <a
+              href="contactus.html"
+              style="color: #f39c12; text-decoration: none"
+              >Contact Us</a
+            >
+          </h3>
+          <p>
+            Email:
+            <a
+              href="mailto:info@example.com"
+              style="color: white; text-decoration: underline"
+              >info@example.com</a
+            >
+          </p>
+          <p>
+            Phone:
+            <a
+              href="contactus.html"
+              style="color: white; text-decoration: underline"
+              >+1 234 567 890</a
+            >
+          </p>
           <p>Feel free to reach out for any inquiries or support.</p>
         </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
+        <div class="footer-section" style="flex: 1; margin: 10px">
+          <h3 style="color: #f39c12">Follow Us</h3>
 
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+          <div
+            class="social-icons"
+            style="display: flex; justify-content: center; gap: 10px"
+          >
+            <a
+              href="#"
+              target="_blank"
+              title="Github"
+              style="
+                color: white;
+                transition: transform 0.3s;
+                display: inline-block;
+              "
+              onmouseover="this.style.transform='scale(1.2)';"
+              onmouseout="this.style.transform='scale(1)';"
+            >
               <i class="fa-brands fa-github"></i>
             </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <a
+              href="#"
+              target="_blank"
+              title="Codepen"
+              style="
+                color: white;
+                transition: transform 0.3s;
+                display: inline-block;
+              "
+              onmouseover="this.style.transform='scale(1.2)';"
+              onmouseout="this.style.transform='scale(1)';"
+            >
               <i class="fa-brands fa-codepen"></i>
             </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <a
+              href="#"
+              target="_blank"
+              title="LinkedIn"
+              style="
+                color: white;
+                transition: transform 0.3s;
+                display: inline-block;
+              "
+              onmouseover="this.style.transform='scale(1.2)';"
+              onmouseout="this.style.transform='scale(1)';"
+            >
               <i class="fa-brands fa-linkedin"></i>
             </a>
           </div>
         </div>
       </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+      <div class="creatorDiv" style="text-align: center; margin-top: 20px">
         <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
-
-
-
 
     <script>
       const user = document.getElementById("user");
@@ -648,6 +773,50 @@
         // Redirect to the signup page after deleting the account
         window.location.href = "./signup.html";
       }
+    </script>
+
+    <script>
+      // Logout modal functionality
+      const logoutBtn = document.querySelector(".logout-btn"); // Corrected selector for logout button
+      const logoutModal = document.getElementById("logoutModal");
+      const confirmLogout = document.getElementById("confirmLogout");
+      const cancelLogout = document.getElementById("cancelLogout");
+
+      logoutBtn.addEventListener("click", () => {
+        logoutModal.style.display = "flex";
+      });
+
+      cancelLogout.addEventListener("click", () => {
+        logoutModal.style.display = "none";
+      });
+
+      confirmLogout.addEventListener("click", () => {
+        // Add your logout logic here
+        alert("Logged out successfully");
+        logout();
+        logoutModal.style.display = "none";
+      });
+
+      // Delete modal functionality
+      const deleteBtn = document.querySelector(".delete-btn"); // Corrected selector for delete button
+      const deleteModal = document.getElementById("deleteModal");
+      const confirmDelete = document.getElementById("confirmDelete");
+      const cancelDelete = document.getElementById("cancelDelete");
+
+      deleteBtn.addEventListener("click", () => {
+        deleteModal.style.display = "flex";
+      });
+
+      cancelDelete.addEventListener("click", () => {
+        deleteModal.style.display = "none";
+      });
+
+      confirmDelete.addEventListener("click", () => {
+        // Add your delete account logic here
+        alert("Account deleted successfully");
+        deleteAccount();
+        deleteModal.style.display = "none";
+      });
     </script>
     <script src="script.js"></script>
   </body>
