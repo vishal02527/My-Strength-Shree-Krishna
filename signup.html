@@ -90,6 +90,8 @@
         button {
           margin-left: 90px;
         }
+       
+
       }
     </style>
   </head>
@@ -99,13 +101,14 @@
         <h2>Sign Up</h2>
         <form id="form" action="./discussion-forum.html" method="GET">
           <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required />
+          <input type="text" id="username" name="username" required placeholder="Username"/>
 
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required placeholder="abc@gmail.com"/>
 
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
+
 
           <button onclick="saveUsername()">Sign Up</button>
           <div class="login">
