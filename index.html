@@ -10,46 +10,49 @@
     ></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <style>
       .chatbot-container {
-          position: fixed;
-          bottom: 20px; /* Adjust as needed */
-          right: 20px; /* Adjust as needed */
-          z-index: 1000; /* Ensure it appears above other elements */
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
       }
 
       .chatbot-button {
-          border: none;
-          border-radius: 50%;
-          padding: 5px; /* Smaller padding */
-          cursor: pointer;
-          position: relative;
-          width: 50px; /* Adjusted size */
-          height: 50px; /* Adjusted size */
+        border: none;
+        border-radius: 50%;
+        padding: 5px; /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
       }
 
       .chatbot-button img {
-          width: 30px; /* Adjusted image size */
-          height: 30px; /* Adjusted image size */
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
       }
 
       .tooltip-text {
-          display: none; /* Hide by default */
-          position: absolute;
-          bottom: 100%; /* Position above the button */
-          right: 50%;
-          transform: translateX(50%);
-          background-color: #333; /* Background color for tooltip */
-          color: #fff; /* Tooltip text color */
-          padding: 5px;
-          border-radius: 5px;
-          white-space: nowrap; /* Prevent text from wrapping */
+        display: none; /* Hide by default */
+        position: absolute;
+        bottom: 100%; /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333; /* Background color for tooltip */
+        color: #fff; /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
       }
 
       .chatbot-button:hover .tooltip-text {
-          display: block; /* Show on hover */
+        display: block; /* Show on hover */
       }
       body {
         background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
@@ -59,34 +62,21 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 90px; /* Distance from the right of the viewport */
-    background-color: #330867;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-.scroll-top-btn:hover {
-    background-color: #330867;
-}
-        position: fixed; /* Fixed position */
-        bottom: 20px; /* Distance from the bottom of the viewport */
-        right: 20px; /* Distance from the right of the viewport */
+        position: fixed; 
+        bottom: 30px; 
+        right: 30px; 
         background-color: #330867;
         color: white;
         border: none;
         padding: 10px 15px;
         cursor: pointer;
         border-radius: 5px;
-        display: none; /* Initially hidden */
-        z-index: 1000; /* Ensure it appears above other content */
+        display: none; 
+        z-index: 1000; 
+      }
+
+      .scroll-top-btn:hover {
+        background-color: #330867;
       }
 
       .scroll-top-btn:hover {
@@ -171,9 +161,7 @@
         color: #ab9353;
       }
 
-
       @media (max-width: 768px) {
-
         .header {
           padding: 10px;
         }
@@ -532,7 +520,6 @@
         }
       }
 
-
       /* FAQ seciton css */
 
       /* faq section */
@@ -606,11 +593,12 @@
         }
       }
       /* faq css end */
-
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn">  <i class="fas fa-arrow-up"></i></button>
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
@@ -971,9 +959,9 @@
     <a href="chatbot.html">
       <div class="fixed bottom-0 right-2 chatbot-container">
         <button class="chatbot-button group">
-          <img class="h-20" src="panditji.png" alt="chatbot">
+          <img class="h-20" src="panditji.png" alt="chatbot" />
           <span class="tooltip-text">
-            🙏Radhe Radhe<br>
+            Radhe Radhe🙏<br />
             How can I help You?🌸
           </span>
         </button>
@@ -1084,7 +1072,6 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-
             <a href="https://github.com/vishal02527" target="_blank"
               ><i class="fa-brands fa-github"></i
             ></a>
@@ -1096,7 +1083,6 @@
               target="_blank"
               ><i class="fa-brands fa-linkedin"></i
             ></a>
-
           </div>
         </div>
       </div>
@@ -1107,26 +1093,26 @@
     <script src="script.js"></script>
 
     <script>
+      window.onscroll = function () {
+        toggleScrollTopButton();
+      };
 
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-      window.onscroll = function() {
-    toggleScrollTopButton();
-};
+      function toggleScrollTopButton() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block"; // Show button after scrolling down
+        } else {
+          scrollTopBtn.style.display = "none"; // Hide button when at the top
+        }
+      }
 
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-function toggleScrollTopButton() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block"; // Show button after scrolling down
-    } else {
-        scrollTopBtn.style.display = "none"; // Hide button when at the top
-    }
-}
-
-scrollTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-  </script>
-
+      scrollTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+      };
+    </script>
   </body>
 </html>
