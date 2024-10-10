@@ -1,5 +1,26 @@
 let isHindi = false;
 const button = document.getElementById("translateBtn");
+const darkModeToggle = document.querySelector('.dark-mode-toggle');
+const body = document.body;
+const icon = darkModeToggle.querySelector('i');
+if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark-mode');
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+}
+darkModeToggle.addEventListener('click', function () {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('darkMode', 'enabled'); 
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('darkMode', 'disabled');
+    }
+});
+
 
 function toggleLanguage() {
   const contentEnglish = document.getElementById("content-english");
@@ -209,4 +230,3 @@ document.querySelectorAll(".faq-question").forEach((button) => {
     }
   });
 });
-
