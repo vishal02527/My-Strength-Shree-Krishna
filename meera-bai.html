@@ -19,22 +19,22 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    background-color: #330867;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it appears above other content */
-}
+        position: fixed; /* Fixed position */
+        bottom: 30px; 
+        right: 30px; 
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        z-index: 1000; /* Ensure it appears above other content */
+      }
 
-.scroll-top-btn:hover {
-    background-color: #330867;
-}
+      .scroll-top-btn:hover {
+        background-color: #330867;
+      }
       p::selection {
         background-color: rgb(237, 204, 133);
         color: #000;
@@ -65,6 +65,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+      }
+
+      .navigation .navbar {
+        display: flex;
+        margin-right: 350px !important;
+      }
+      .navbar .navbar-up {
+        display: flex;
       }
 
       .navigation .homeDiv #homeBtn {
@@ -115,7 +123,7 @@
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 5px;
         font-size: 16px;
         font-weight: 500;
         transition: ease-in 0.3s;
@@ -279,6 +287,16 @@
           display: flex;
           flex-direction: column;
           margin-top: 20px;
+          margin-right: 0 !important;
+        }
+
+        .searchForm button {
+          top: -34px;
+          right: -130px;
+        }
+        .searchForm {
+          margin-top: 10px;
+          margin-bottom: -35px;
         }
 
         .navigation .navbar a {
@@ -299,7 +317,7 @@
           margin: 60px auto;
           padding: 10px 15px;
         }
-        .imageDiv{
+        .imageDiv {
           margin: 20px 0px -20px;
         }
         .imageDiv img {
@@ -346,7 +364,8 @@
           font-size: 12px;
         }
       }
-    </style><style>
+    </style>
+    <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
@@ -570,6 +589,16 @@
           display: flex;
           flex-direction: column;
           margin-top: 20px;
+          margin-right: 0 !important;
+        }
+
+        .searchForm button {
+          top: -34px;
+          right: -130px;
+        }
+        .searchForm {
+          margin-top: 10px;
+          margin-bottom: -35px;
         }
 
         .navigation .navbar a {
@@ -590,7 +619,7 @@
           margin: 60px auto;
           padding: 10px 15px;
         }
-        .imageDiv{
+        .imageDiv {
           margin: 20px 0px -20px;
         }
         .imageDiv img {
@@ -641,11 +670,19 @@
   </head>
 
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
+    <button id="scrollTopBtn" class="scroll-top-btn">  <i class="fas fa-arrow-up"></i></button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
+        </div>
+        <div class="navbar">
+          <div class="navbar-up">
+            <a href="scriptures.html">Scriptures</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+            <a href="devotional-resources.html">Devotional Resources</a>
+          </div>
         </div>
         <form class="searchForm">
           <input
@@ -655,12 +692,6 @@
           />
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <div class="navbar">
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-        </div>
       </div>
     </div>
 
@@ -785,13 +816,15 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#" target="_blank" title="Github"
+            <a href="https://github.com/vishal02527" target="_blank"
               ><i class="fa-brands fa-github"></i
             ></a>
-            <a href="#" target="_blank" title="Codepen"
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
               ><i class="fa-brands fa-codepen"></i
             ></a>
-            <a href="#" target="_blank" title="LinkedIn"
+            <a
+              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
+              target="_blank"
               ><i class="fa-brands fa-linkedin"></i
             ></a>
           </div>
@@ -803,23 +836,26 @@
     </footer>
     <script src="script.js"></script>
     <script>
-      window.onscroll = function() {
-    toggleScrollTopButton();
-};
+      window.onscroll = function () {
+        toggleScrollTopButton();
+      };
 
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-function toggleScrollTopButton() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block"; // Show button after scrolling down
-    } else {
-        scrollTopBtn.style.display = "none"; // Hide button when at the top
-    }
-}
+      function toggleScrollTopButton() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block"; // Show button after scrolling down
+        } else {
+          scrollTopBtn.style.display = "none"; // Hide button when at the top
+        }
+      }
 
-scrollTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-  </script>
+      scrollTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+      };
+    </script>
   </body>
 </html>
