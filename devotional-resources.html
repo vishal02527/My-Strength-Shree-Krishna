@@ -109,14 +109,10 @@
         background: none;
       }
 
-      .navigation .navbar {
-        display: flex;
-        margin-right: 350px !important;
-      }
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 5px;
+        margin: 0 8px;
         font-size: 16px;
         font-weight: 500;
         transition: ease-in 0.3s;
@@ -186,42 +182,12 @@
         transition: background-color 0.3s;
       }
 
-      .searchInput {
-        box-sizing: border-box;
-        width: 300px;
-        height: 35px;
-        padding: 5px 20px;
-        border-radius: 50px;
-        border: 0;
-      }
-      .searchInput:focus {
-        outline: 0;
-      }
-      .searchForm button {
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        position: relative;
-        top: 2px;
-        right: 55px;
-      }
-      .searchForm button i {
-        color: #555;
-        padding: 9px 15px;
-
-        font-size: 16px;
-        cursor: pointer;
-        transition: linear 0.16s;
-      }
-      .searchForm button i:hover {
-        color: #23d1c8;
-      }
       /* Footer styles */
 
-      footer {
+      /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
-        padding-bottom: 2rem;
+        padding: 20px;
         text-align: center;
         position: relative;
         bottom: 0;
@@ -233,6 +199,7 @@
         flex-wrap: wrap;
         justify-content: space-around;
         max-width: 1200px;
+        margin: 0px 10px 0px 60px;
       }
 
       .footer-section {
@@ -251,27 +218,16 @@
         color: #fff;
       }
 
-      .social-icons a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 2.1rem;
-        height: 2.1rem;
-        background-color: transparent;
-        border: 0.2rem solid #000000;
-        font-size: 1.2rem;
-        border-radius: 50%;
-        margin: 0.1rem 0.2rem 0.1rem 0;
-        transition: 0.3s ease;
-        color: #ffffff;
+      .social-icons a i {
+        color: #ecf0f1;
+        margin: 0 8px;
+        font-size: 30px;
         text-decoration: none;
+        transition: color 0.3s;
       }
 
-      .social-icons a:hover {
-        color: rgb(255, 255, 255);
-        transform: scale(1.3) translateY(-5px);
-        background-color: #ac905c;
-        box-shadow: 0 0 25px #f0eaea;
+      .social-icons a i:hover {
+        color: rgb(241, 203, 120);
       }
 
       .creatorDiv {
@@ -283,9 +239,9 @@
         margin-bottom: 0;
         font-size: 14px;
         color: #fff;
-      }
+      } */
 
-      @media screen and (max-width: 980px) {
+      @media screen and (max-width: 600px) {
         .content {
           padding: 20px 15px;
         }
@@ -316,21 +272,19 @@
 
         .navigation {
           display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
-        .navbar .navbar-up {
-          display: flex;
           flex-direction: column;
+          align-items: center;
         }
 
         .navigation .navbar {
           display: flex;
+          flex-direction: column;
+          margin-top: 20px;
         }
 
         .navigation .navbar a {
           margin: 10px 0;
-          font-size: 14px;
+          font-size: 12px;
         }
 
         .navigation .homeDiv #homeBtn {
@@ -340,22 +294,11 @@
         .navigation .homeDiv #homeBtn a {
           font-size: 14px;
         }
-        .searchForm button {
-        top: -34px;
-        right: -10px;
-      }
-      .searchForm{
-        margin-top: 10px;
-        margin-bottom: -35px;
-        display: contents;
-      }
-      .searchForm button i{
-        margin-left: 15rem;
-      }
 
-        .footer-content {
+        /* .footer-content {
           flex-direction: column;
           align-items: center;
+          margin: 0px 40px 0px 0px;
         }
 
         .footer-section p {
@@ -378,12 +321,11 @@
 
         .creatorDiv p {
           font-size: 12px;
-        }
+        } */
       }
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn"> <i class="fas fa-arrow-up"></i></button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
@@ -391,23 +333,33 @@
         </div>
 
         <div class="navbar">
-          <div class="navbar-up">
-            <a href="scriptures.html">Scriptures</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-            <a href="devotional-resources.html" id="active"
-              >Devotional Resources</a
-            >
-          </div>
+          <a href="aboutus.html">About Us</a>
+
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+
+         
+         
+
+
+          
+          <!-- <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          
+         
+          <a href="signup.html">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+          <a href="contactus.html" id="active">Contact Us</a> -->
+
+          
+          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+
+          <a href="devotional-resources.html" id="active"
+            >Devotional Resources</a
+          >
+
+          <a href="contactus.html" id="active">Contact Us</a>
         </div>
-        <form class="searchForm">
-          <input
-            type="text"
-            class="searchInput"
-            placeholder="Search all the content"
-          />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
       </div>
     </div>
 
@@ -487,76 +439,58 @@
         <!-- Resource 6 Card -->
         <div class="resource-card">
           <h2>Divine and beautiful wallpapers</h2>
-          <p>
-            Immerse yourself in a serene and spiritual journey through our
-            carefully curated selection of captivating images. Explore these
-            enchanting visuals capturing moments of tranquility, devotion, and
-            beauty. Each wallpaper encapsulates a unique essence that seeks to
-            inspire and uplift. Feel free to download and adorn your screens
-            with these divine creations, inviting moments of reflection and
-            peace into your daily life.
-          </p>
-          <a href="./divine-wallpapers.html" class="cta-button">Explore Now</a>
+          <p>Immerse yourself in a serene and spiritual journey through our carefully curated selection of captivating images. Explore these enchanting visuals capturing moments of tranquility, devotion, and beauty. Each wallpaper encapsulates a unique essence that seeks to inspire and uplift. Feel free to download and adorn your screens with these divine creations, inviting moments of reflection and peace into your daily life.</p>
+          <a
+            href="./divine-wallpapers.html"
+            class="cta-button"
+            >Explore Now</a
+          >
         </div>
       </div>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>About Us</h3>
-          <p>Your description about the website and its purpose.</p>
+    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;"></footer>
+      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
+          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
         </div>
-
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: +1 234 567 890</p>
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
+          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
+          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+          <p>Feel free to reach out for any inquiries or support.</p>
         </div>
+        <div class="footer-section" style="flex: 1; margin: 10px;">
+          <h3 style="color: #f39c12;">Follow Us</h3>
 
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="https://github.com/vishal02527" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
+          
+          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-codepen"></i>
+            </a>
+            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
+               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
           </div>
         </div>
       </div>
-      <div class="creatorDiv">
+      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
         <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
+
+
+
+
+
     <script src="script.js"></script>
-    <script>
-      window.onscroll = function () {
-        toggleScrollTopButton();
-      };
-
-      const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-      function toggleScrollTopButton() {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollTopBtn.style.display = "block"; // Show button after scrolling down
-        } else {
-          scrollTopBtn.style.display = "none"; // Hide button when at the top
-        }
-      }
-
-      scrollTopBtn.onclick = function () {
-        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
-      };
-    </script>
   </body>
 </html>
