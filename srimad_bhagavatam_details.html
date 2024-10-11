@@ -4,160 +4,292 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Srimad Bhagavatam Details</title>
-    <link rel="stylesheet" href="https://kit.fontawesome.com/d74f12bccc.js">
+    <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg');
-            background-size: cover;
+            background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
             color: #333;
-            margin: 0;
             padding: 0;
+            margin: 0;
             overflow-x: hidden;
         }
-        header {
-            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-            padding: 20px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        .back-button {
-            margin: 20px 0;
-            text-align: center;
-        }
-        .back-button a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            background-color: brown;
-            transition: background-color 0.3s;
-        }
-        .back-button a:hover {
-            background-color: rgba(255, 223, 186, 1);
-        }
+
         .content {
-            padding: 20px 50px;
+            padding: 20px 120px;
+            margin-bottom: 50px;
         }
-        .scripture-details {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+
+        .content h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .scripture-details h2 {
-            color: brown;
-            margin-bottom: 15px;
-        }
-        .scripture-details p {
+
+        .content p {
             font-size: 18px;
             line-height: 1.6;
             color: #555;
+            margin-bottom: 15px;
         }
+
+        h2 {
+            color: #ab9353;
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #ab9353;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #8c7a44;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .section h3 {
+            color: #330867;
+            margin-top: 0;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
         .shloka {
-            background-color: rgba(255, 223, 186, 0.1);
-            padding: 15px;
-            margin: 10px 0;
-            border-left: 4px solid brown;
+            margin-bottom: 30px;
+        }
+
+        .sanskrit {
             font-style: italic;
+            color: #ab9353;
+            margin-bottom: 10px;
         }
-        .shloka p {
-            margin: 0;
-            font-size: 18px;
-            line-height: 1.6;
-            color: #333;
+
+        .transliteration {
+            color: #555;
+            margin-bottom: 10px;
         }
-        footer {
-            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-            color: #ecf0f1;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 20px;
+
+        .translation {
+            font-weight: bold;
+        }
+
+        .explanation {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px 15px;
+            }
+
+            .content h1 {
+                font-size: 22px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .section h3 {
+                font-size: 18px;
+            }
+
+            .section li {
+                font-size: 14px;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ab9353;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .language-toggle:hover {
+            background-color: #8c7a44;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Srimad Bhagavatam Details</h1>
-    </header>
-
-    <div class="back-button">
-        <a href="javascript:history.back()">Back</a>
-    </div>
+    <button id="languageToggle" class="language-toggle" onclick="toggleLanguage()">हिंदी में पढ़ें</button>
 
     <div class="content">
-        <div class="scripture-details">
-            <h2>Overview of Srimad Bhagavatam</h2>
-            <p>
-                Srimad Bhagavatam is one of the most important texts in the Vaishnavism tradition of Hinduism. It is a narrative of the life and teachings of Lord Krishna, providing deep insights into the philosophy of devotion (bhakti). The text comprises twelve books (Cantos) and contains numerous stories of the divine, illustrating the concept of God in personal forms.
-            </p>
-        </div>
+        <a href="scriptures.html" class="back-button" data-translate="back">← Back to Scriptures</a>
+        <h1 data-translate="title">Srimad Bhagavatam</h1>
+        
+        <h2 data-translate="introduction">Introduction</h2>
+        <p data-translate="intro-text">The Srimad Bhagavatam, also known as Bhagavata Purana, is one of Hinduism's eighteen great Puranas (Mahapuranas). It is a revered text in Vaishnavism, particularly for its focus on bhakti (devotion) to Supreme God Vishnu and his avatars, including Krishna.</p>
+        
+        <h2 data-translate="historical-context">Historical and Cultural Context</h2>
+        <p data-translate="historical-text">Traditionally attributed to the sage Vyasa, the Bhagavatam is believed to have been composed around 3000 BCE. It consists of 12 books (skandhas) with 18,000 verses. The text is a narrative history of Krishna and various avatars of Vishnu, interwoven with philosophical and metaphysical elements.</p>
 
-        <div class="scripture-details">
-            <h2>Key Teachings</h2>
-            <p>
-                The Srimad Bhagavatam offers several teachings that are fundamental to spiritual growth:
-            </p>
+        <h2 data-translate="key-teachings">Key Teachings</h2>
+        <p data-translate="teachings-text">The Bhagavatam emphasizes devotional service to God and the cultivation of detachment from the material world. It presents a philosophy of monotheism where Krishna is seen as the supreme form of God.</p>
+
+        <div class="section">
+            <h3 data-translate="stories-characters">Notable Stories and Characters</h3>
             <ul>
-                <li>The importance of devotion and surrender to God.</li>
-                <li>The concept of divine love (bhakti) as the highest path to liberation.</li>
-                <li>The significance of stories and teachings of the avatars of God.</li>
-                <li>The practice of humility and compassion.</li>
-                <li>The realization of the eternal nature of the soul (Atman).</li>
+                <li data-translate="story-1">The Birth of Krishna: The miraculous appearance of Krishna and his childhood pastimes.</li>
+                <li data-translate="story-2">The Lifting of Govardhan Hill: Krishna's feat of lifting a mountain to protect his devotees.</li>
+                <li data-translate="story-3">The Rasa Lila: Krishna's divine dance with the gopis, symbolizing the soul's longing for God.</li>
+                <li data-translate="story-4">Prahlada and Narasimha: The story of a young devotee and the half-man, half-lion avatar of Vishnu.</li>
+                <li data-translate="story-5">The Churning of the Ocean: A creation myth involving gods, demons, and the emergence of divine objects and beings.</li>
             </ul>
         </div>
 
-        <div class="scripture-details">
-            <h2>Chapters Overview</h2>
-            <p>
-                The Srimad Bhagavatam is divided into twelve books, each focusing on different aspects of life and spirituality:
-            </p>
-            <ol>
-                <li>Book 1: Creation</li>
-                <li>Book 2: Cosmic Creation</li>
-                <li>Book 3: The Perfect Vision</li>
-                <li>Book 4: The Sages</li>
-                <li>Book 5: The Creative Impetus</li>
-                <li>Book 6: The Path of Devotion</li>
-                <li>Book 7: The Puranic Era</li>
-                <li>Book 8: The Yadu Dynasty</li>
-                <li>Book 9: The Dynasty of Ikshvaku</li>
-                <li>Book 10: The Glories of Lord Krishna</li>
-                <li>Book 11: The Universal Vision</li>
-                <li>Book 12: The Conclusion</li>
-            </ol>
+        <div class="section">
+            <h3 data-translate="important-teachings">Important Teachings</h3>
+            <ul>
+                <li data-translate="teaching-1">Bhakti Yoga: The path of loving devotion to God as the supreme means of liberation.</li>
+                <li data-translate="teaching-2">The Nature of the Absolute Truth: Descriptions of the personal and impersonal aspects of the Divine.</li>
+                <li data-translate="teaching-3">The Concept of Lila: Understanding God's activities as divine play or sport.</li>
+                <li data-translate="teaching-4">The Importance of Satsang: The value of associating with devotees and spiritual practitioners.</li>
+                <li data-translate="teaching-5">The Transient Nature of Material Existence: Encouraging detachment from worldly pursuits.</li>
+            </ul>
         </div>
-        <div class="scripture-details">
-            <h2>Important Shlokas</h2>
-            <div class="shloka">
-                <h3>Book 1, Chapter 2, Verse 6</h3>
-                <p><strong>Transliteration:</strong> sa evāyaṁ bhagavān ādiḥ<br> sūryaṁ bhaktyā nayiṣyati.</p>
-                <p><strong>Translation:</strong> "The Supreme Personality of Godhead, who is the original cause of all causes, is approached through devotion."</p>
-            </div>
-            <div class="shloka">
-                <h3>Book 2, Chapter 10, Verse 42</h3>
-                <p><strong>Transliteration:</strong> yathā hi puruṣaḥ kāmān<br> prāyāṇāṁ saṁyugāḥ sukham.</p>
-                <p><strong>Translation:</strong> "Just as a man achieves all his desires through the performance of action, similarly, devotion brings all desired results."</p>
-            </div>
-            <div class="shloka">
-                <h3>Book 10, Chapter 14, Verse 36</h3>
-                <p><strong>Transliteration:</strong> kāmānāṁ sampradāne<br> kāmāni saṁkṣayāṁ vibho.</p>
-                <p><strong>Translation:</strong> "When one surrenders to God, all desires are fulfilled and one achieves the ultimate goal of life."</p>
+
+        <div class="section">
+            <h3 data-translate="famous-verses">Famous Verses</h3>
+            <div class="verse">
+                <h4 data-translate="verse-1-title">First Verse of Srimad Bhagavatam (1.1.1)</h4>
+                <p data-translate="verse-1-translation">"I meditate upon Him, the transcendent reality, the source of all that exists, who is self-sufficient and fully cognizant of everything directly and indirectly. It is He who imparted Vedic knowledge into the heart of Brahma, the first created being. Even great sages and demigods are bewildered in their attempts to understand Him, for He is beyond the material nature. As the ethereal element provides space for the interaction of material objects, He is the ultimate shelter of all gross and subtle cosmic manifestations. Material nature appears real because of Him, yet He is always free from material contamination. I meditate upon Him, the eternal Supreme Truth."</p>
+                <p data-translate="verse-1-explanation">This verse, known as the "seed verse" of Srimad Bhagavatam, encapsulates the essence of the entire text. It describes the nature of the Absolute Truth as the source of all creation, beyond material nature, and the ultimate object of meditation and devotion.</p>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Srimad Bhagavatam. All Rights Reserved.</p>
-    </footer>
+    <script>
+        const translations = {
+            'en': {
+                'languageToggle': 'हिंदी में पढ़ें',
+                'back': '← Back to Scriptures',
+                'title': 'Srimad Bhagavatam',
+                'introduction': 'Introduction',
+                'intro-text': 'The Srimad Bhagavatam, also known as Bhagavata Purana, is one of Hinduism\'s eighteen great Puranas (Mahapuranas). It is a revered text in Vaishnavism, particularly for its focus on bhakti (devotion) to Supreme God Vishnu and his avatars, including Krishna.',
+                'historical-context': 'Historical and Cultural Context',
+                'historical-text': 'Traditionally attributed to the sage Vyasa, the Bhagavatam is believed to have been composed around 3000 BCE. It consists of 12 books (skandhas) with 18,000 verses. The text is a narrative history of Krishna and various avatars of Vishnu, interwoven with philosophical and metaphysical elements.',
+                'key-teachings': 'Key Teachings',
+                'teachings-text': 'The Bhagavatam emphasizes devotional service to God and the cultivation of detachment from the material world. It presents a philosophy of monotheism where Krishna is seen as the supreme form of God.',
+                'stories-characters': 'Notable Stories and Characters',
+                'story-1': 'The Birth of Krishna: The miraculous appearance of Krishna and his childhood pastimes.',
+                'story-2': 'The Lifting of Govardhan Hill: Krishna\'s feat of lifting a mountain to protect his devotees.',
+                'story-3': 'The Rasa Lila: Krishna\'s divine dance with the gopis, symbolizing the soul\'s longing for God.',
+                'story-4': 'Prahlada and Narasimha: The story of a young devotee and the half-man, half-lion avatar of Vishnu.',
+                'story-5': 'The Churning of the Ocean: A creation myth involving gods, demons, and the emergence of divine objects and beings.',
+                'important-teachings': 'Important Teachings',
+                'teaching-1': 'Bhakti Yoga: The path of loving devotion to God as the supreme means of liberation.',
+                'teaching-2': 'The Nature of the Absolute Truth: Descriptions of the personal and impersonal aspects of the Divine.',
+                'teaching-3': 'The Concept of Lila: Understanding God\'s activities as divine play or sport.',
+                'teaching-4': 'The Importance of Satsang: The value of associating with devotees and spiritual practitioners.',
+                'teaching-5': 'The Transient Nature of Material Existence: Encouraging detachment from worldly pursuits.',
+                'famous-verses': 'Famous Verses',
+                'verse-1-title': 'First Verse of Srimad Bhagavatam (1.1.1)',
+                'verse-1-translation': '"I meditate upon Him, the transcendent reality, the source of all that exists, who is self-sufficient and fully cognizant of everything directly and indirectly. It is He who imparted Vedic knowledge into the heart of Brahma, the first created being. Even great sages and demigods are bewildered in their attempts to understand Him, for He is beyond the material nature. As the ethereal element provides space for the interaction of material objects, He is the ultimate shelter of all gross and subtle cosmic manifestations. Material nature appears real because of Him, yet He is always free from material contamination. I meditate upon Him, the eternal Supreme Truth."',
+                'verse-1-explanation': 'This verse, known as the "seed verse" of Srimad Bhagavatam, encapsulates the essence of the entire text. It describes the nature of the Absolute Truth as the source of all creation, beyond material nature, and the ultimate object of meditation and devotion.'
+            },
+            'hi': {
+                'languageToggle': 'Read in English',
+                'back': '← धर्मग्रंथों पर वापस जाएं',
+                'title': 'श्रीमद् भागवतम्',
+                'introduction': 'परिचय',
+                'intro-text': 'श्रीमद् भागवतम्, जिसे भागवत पुराण के नाम से भी जाना जाता है, हिंदू धर्म के अठारह महापुराणों में से एक है। यह वैष्णव धर्म में एक पूजनीय ग्रंथ है, विशेष रूप से भगवान विष्णु और उनके अवतारों, जिसमें कृष्ण भी शामिल हैं, के प्रति भक्ति (समर्पण) पर इसके ध्यान के लिए।',
+                'historical-context': 'ऐतिहासिक और सांस्कृतिक संदर्भ',
+                'historical-text': 'परंपरागत रूप से महर्षि व्यास को इसका रचयिता माना जाता है, और माना जाता है कि भागवतम् की रचना लगभग 3000 ईसा पूर्व हुई थी। इसमें 12 स्कंध (पुस्तकें) हैं जिनमें 18,000 श्लोक हैं। यह ग्रंथ कृष्ण और विष्णु के विभिन्न अवतारों का एक कथात्मक इतिहास है, जिसमें दार्शनिक और आध्यात्मिक तत्व भी गुंथे हुए हैं।',
+                'key-teachings': 'प्रमुख शिक्षाएँ',
+                'teachings-text': 'भागवतम् भगवान के प्रति भक्तिपूर्ण सेवा और भौतिक जगत से विरक्ति के विकास पर जोर देता है। यह एकेश्वरवाद का दर्शन प्रस्तुत करता है जहाँ कृष्ण को भगवान का सर्वोच्च रूप माना जाता है।',
+                'stories-characters': 'उल्लेखनीय कथाएँ और पात्र',
+                'story-1': 'कृष्ण का जन्म: कृष्ण का चमत्कारिक आविर्भाव और उनकी बाल लीलाएँ।',
+                'story-2': 'गोवर्धन पर्वत का उठाना: अपने भक्तों की रक्षा के लिए कृष्ण द्वारा एक पहाड़ को उठाने का पराक्रम।',
+                'story-3': 'रास लीला: गोपियों के साथ कृष्ण का दिव्य नृत्य, जो आत्मा की भगवान के लिए लालसा का प्रतीक है।',
+                'story-4': 'प्रह्लाद और नृसिंह: एक युवा भक्त और विष्णु के आधे मनुष्य, आधे सिंह अवतार की कहानी।',
+                'story-5': 'समुद्र मंथन: देवताओं, असुरों और दिव्य वस्तुओं तथा प्राणियों के उद्भव से जुड़ी एक सृष्टि मिथक।',
+                'important-teachings': 'महत्वपूर्ण शिक्षाएँ',
+                'teaching-1': 'भक्ति योग: मुक्ति के सर्वोच्च साधन के रूप में भगवान के प्रति प्रेमपूर्ण भक्ति का मार्ग।',
+                'teaching-2': 'परम सत्य का स्वरूप: दिव्य के व्यक्तिगत और निर्गुण पहलुओं का वर्णन।',
+                'teaching-3': 'लीला की अवधारणा: भगवान की गतिविधियों को दिव्य खेल या क्रीड़ा के रूप में समझना।',
+                'teaching-4': 'सत्संग का महत्व: भक्तों और आध्यात्मिक साधकों के साथ संगति का मूल्य।',
+                'teaching-5': 'भौतिक अस्तित्व की क्षणभंगुरता: सांसारिक प्रयासों से विरक्ति को प्रोत्साहित करना।',
+                'famous-verses': 'प्रसिद्ध श्लोक',
+                'verse-1-title': 'श्रीमद् भागवतम् का पहला श्लोक (1.1.1)',
+                'verse-1-translation': '"मैं उस परम सत्य का ध्यान करता हूँ, जो सभी अस्तित्व का स्रोत है, जो स्वयं में पूर्ण है और प्रत्यक्ष और परोक्ष रूप से सब कुछ जानता है। वही है जिसने ब्रह्मा, पहले सृजित प्राणी, के हृदय में वैदिक ज्ञान प्रदान किया। महान ऋषि और देवता भी उसे समझने के प्रयास में भ्रमित हो जाते हैं, क्योंकि वह प्राकृतिक जगत से परे है। जैसे आकाश तत्व भौतिक वस्तुओं के अंतःक्रिया के लिए स्थान प्रदान करता है, वैसे ही वह सभी स्थूल और सूक्ष्म ब्रह्मांडीय अभिव्यक्तियों का परम आश्रय है। प्रकृति उसके कारण ही वास्तविक प्रतीत होती है, फिर भी वह सदैव भौतिक प्रदूषण से मुक्त रहता है। मैं उस शाश्वत परम सत्य का ध्यान करता हूँ।"',
+                'verse-1-explanation': 'यह श्लोक, जिसे श्रीमद् भागवतम् का "बीज श्लोक" कहा जाता है, पूरे ग्रंथ के सार को समेटे हुए है। यह परम सत्य के स्वरूप का वर्णन करता है, जो सृष्टि का स्रोत है, प्रकृति से परे है, और ध्यान तथा भक्ति का परम लक्ष्य है।'
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'hi' : 'en';
+            updateContent();
+            updateToggleButton();
+        }
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage][key]) {
+                    element.innerHTML = translations[currentLanguage][key];
+                }
+            });
+        }
+
+        function updateToggleButton() {
+            const button = document.getElementById('languageToggle');
+            button.textContent = translations[currentLanguage]['languageToggle'];
+        }
+
+        // Call this function when the page loads to set the initial button text
+        updateToggleButton();
+    </script>
 </body>
 </html>
