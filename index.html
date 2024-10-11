@@ -36,13 +36,11 @@
     background-color: #330867;
 }
 
-      .content h1,
+      .content h1::selection,
       p::selection,
-      h2 {
-        background: linear-gradient(to right, #30cfd0 20%, #0026ffb0 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      h2::selection {
+        background-color: rgb(237, 204, 133);
+        color: #000;
       }
 
       .header {
@@ -91,18 +89,14 @@
         background-size: 200% auto;
         font-size: 16px;
         cursor: pointer;
-        border-radius: 50px;
       }
       #translateBtn:hover {
         background-position: right center;
       }
-
-
       .krishna-image {
         margin: 10px 0px 10px 550px;
-        border-radius: 10px;
-        width: 25%;
-        height: 400px;
+        width: 27%;
+        height: 480px;
         transition: opacity 5s ease-in-out;
       }
       .krishna-image.fade {
@@ -288,28 +282,9 @@
       }
 
       .footer-section p {
-        font-size: 14px;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-      .footer-section h4 {
         font-size: 16px;
         margin-top: 0;
         margin-bottom: 0;
-        font-weight: 10;
-        transition: color 0.3s;
-        display: flex;
-        flex-direction:row ;
-        gap: 20px;
-      }
-
-      .footer-section h4:hover {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-weight: 10;
-        color: rgb(241, 203, 120);
       }
 
       .social-icons a {
@@ -864,19 +839,13 @@
       <div class="footer-content">
         <div class="footer-section">
           <h3>About Us</h3>
-          <p>This Site Gives the Divine Knoweldge of scriptures.<br> 
-            You can Download Devotional Resources such as <br> 
-            THE GREATEST EPIC : Bhagvat Gita  and many More.<br> 
-            We also Provides you Morning Mantras Audio that <br> 
-            make your Morning and the STARTING OF DAY Full of<br> 
-            ENTHUSIASM. You can DOWNLOAD images of<br>  LORD KRISHNA
-            form the Gallery Section.</p>
+          <p>Your description about the website and its purpose.</p>
         </div>
 
         <div class="footer-section">
           <h3>Contact Us</h3>
-          <h4><b>Email:</b> info@example.com</h4><br>
-          <h4><b>Phone:</b> +1 234 567 890</h4>
+          <p>Email: info@example.com</p>
+          <p>Phone: +1 234 567 890</p>
         </div>
 
         <div class="footer-section">
