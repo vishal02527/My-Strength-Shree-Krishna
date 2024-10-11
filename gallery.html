@@ -19,8 +19,8 @@
       }
       .scroll-top-btn {
         position: fixed;
-        bottom: 30px; 
-        right: 30px; 
+        bottom: 30px;
+        right: 30px;
         background-color: #330867;
         color: white;
         border: none;
@@ -52,6 +52,81 @@
         flex-wrap: wrap;
         justify-content: center;
       }
+
+      html {
+        background-image: linear-gradient(#eee, #aaa);
+        height: 100%;
+      }
+
+      .img {
+        border: solid 2px;
+        border-bottom-color: rgb(233, 233, 145);
+        border-left-color: #eed;
+        border-right-color: #eed;
+        border-top-color: #ccb;
+        max-height: 90%; /* Limit height to leave some space */
+        max-width: 100%;
+        margin-top: 10px; /* Add a gap at the top */
+        margin-bottom: 10px; /* Add a gap at the bottom */
+        box-sizing: border-box;
+      }
+
+      .image-card {
+        background-color: #ddc;
+        border: solid 5vmin #eee;
+        border-bottom-color: #fff;
+        border-left-color: #eee;
+        border-radius: 2px;
+        border-right-color: #eee;
+        border-top-color: #ddd;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset,
+          0 5px 10px 5px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        display: flex; /* Flexbox to center image */
+        justify-content: center; /* Horizontally center the image */
+        align-items: center; /* Vertically center the image */
+        margin: 10vh 10vw;
+        height: 80vh;
+        padding: 8vmin;
+        position: relative;
+        text-align: center;
+      }
+
+      .image-card:before {
+        border-radius: 2px;
+        bottom: -2vmin;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+        content: "";
+        left: -2vmin;
+        position: absolute;
+        right: -2vmin;
+        top: -2vmin;
+      }
+
+      .image-card:after {
+        border-radius: 2px;
+        bottom: -2.5vmin;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+        content: "";
+        left: -2.5vmin;
+        position: absolute;
+        right: -2.5vmin;
+        top: -2.5vmin;
+      }
+
+      /* New responsive rules */
+      @media (max-width: 768px) {
+        .image-card {
+          margin: 5vh 5vw;
+          height: 60vh;
+        }
+
+        .img {
+          margin-top: 5px; /* Smaller gap for small screens */
+          margin-bottom: 5px; /* Smaller gap for small screens */
+        }
+      }
+
       .image-card {
         margin: 15px;
         border-radius: 10px;
@@ -301,7 +376,7 @@
         }
         .image-card {
           width: 280px;
-          height: 350px;
+          height: 300px;
           margin: 0;
         }
         .caption {
@@ -311,7 +386,7 @@
         }
         .image-card img {
           width: 100%;
-          height: 350px;
+          height: 300px;
         }
         .lightbox {
           top: 0;
@@ -345,17 +420,17 @@
           font-size: 14px;
         }
         .searchForm button {
-        top: -34px;
-        right: -10px;
-      }
-      .searchForm{
-        margin-top: 10px;
-        margin-bottom: -35px;
-        display: contents;
-      }
-      .searchForm button i{
-        margin-left: 15rem;
-      }
+          top: -34px;
+          right: -10px;
+        }
+        .searchForm {
+          margin-top: 10px;
+          margin-bottom: -35px;
+          display: contents;
+        }
+        .searchForm button i {
+          margin-left: 15rem;
+        }
 
         .footer-content {
           flex-direction: column;
@@ -382,7 +457,9 @@
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn">  <i class="fas fa-arrow-up"></i></button>
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <div class="galleryMain">
       <div class="navigation">
         <div class="homeDiv">
