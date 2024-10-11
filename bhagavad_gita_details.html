@@ -4,168 +4,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhagavad Gita Details</title>
-    <link rel="stylesheet" href="https://kit.fontawesome.com/d74f12bccc.js">
+    <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg');
-            background-size: cover;
+            background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
             color: #333;
-            margin: 0;
             padding: 0;
+            margin: 0;
             overflow-x: hidden;
         }
-        header {
-            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-            padding: 20px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        .back-button {
-            margin: 20px 0;
-            text-align: center;
-        }
-        .back-button a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            background-color: brown;
-            transition: background-color 0.3s;
-        }
-        .back-button a:hover {
-            background-color: rgba(255, 223, 186, 1);
-        }
+
         .content {
-            padding: 20px 50px;
+            padding: 20px 120px;
+            margin-bottom: 50px;
         }
-        .scripture-details {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+
+        .content h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .scripture-details h2 {
-            color: brown;
-            margin-bottom: 15px;
-        }
-        .scripture-details p {
+
+        .content p {
             font-size: 18px;
             line-height: 1.6;
             color: #555;
+            margin-bottom: 15px;
         }
+
+        h2 {
+            color: #ab9353;
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Add other styles from scriptures.html as needed */
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px 15px;
+            }
+
+            .content h1 {
+                font-size: 22px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            /* Add other mobile styles from scriptures.html as needed */
+        }
+
+        .shloka-section {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
         .shloka {
-            background-color: rgba(255, 223, 186, 0.1);
-            padding: 15px;
-            margin: 10px 0;
-            border-left: 4px solid brown;
+            margin-bottom: 30px;
+        }
+
+        .shloka h3 {
+            color: #330867;
+            margin-bottom: 10px;
+        }
+
+        .sanskrit {
             font-style: italic;
+            color: #ab9353;
+            margin-bottom: 10px;
         }
-        .shloka p {
-            margin: 0;
-            font-size: 18px;
-            line-height: 1.6;
-            color: #333;
+
+        .transliteration {
+            color: #555;
+            margin-bottom: 10px;
         }
-        footer {
-            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-            color: #ecf0f1;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 20px;
+
+        .translation {
+            font-weight: bold;
+        }
+
+        .explanation {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        /* ... existing mobile styles ... */
+
+        @media (max-width: 768px) {
+            /* ... existing mobile styles ... */
+
+            .shloka-section {
+                padding: 15px;
+            }
+
+            .shloka h3 {
+                font-size: 18px;
+            }
+
+            .sanskrit, .transliteration, .translation, .explanation {
+                font-size: 14px;
+            }
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #ab9353;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #8c7a44;
+        }
+
+        @media (max-width: 768px) {
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ab9353;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .language-toggle:hover {
+            background-color: #8c7a44;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bhagavad Gita Details</h1>
-    </header>
-
-    <div class="back-button">
-        <a href="javascript:history.back()">Back</a>
-    </div>
+    <button id="languageToggle" class="language-toggle" onclick="toggleLanguage()">हिंदी में पढ़ें</button>
 
     <div class="content">
-        <div class="scripture-details">
-            <h2>Overview of the Bhagavad Gita</h2>
-            <p>
-                The Bhagavad Gita is a 700-verse Hindu scripture that is part of the Indian epic Mahabharata. It consists of a conversation between Prince Arjuna and Lord Krishna, who serves as his charioteer. In this sacred dialogue, Krishna imparts profound spiritual wisdom, addressing the dilemmas of life, duty, and the path to salvation.
-            </p>
-        </div>
+        <a href="scriptures.html" class="back-button" data-translate="back">← Back to Scriptures</a>
+        <h1 data-translate="title">The Bhagavad Gita</h1>
+        
+        <h2 data-translate="introduction">Introduction</h2>
+        <p data-translate="intro-text">The Bhagavad Gita, often referred to as the Gita, is a 700-verse Hindu scripture that is part of the Indian epic Mahabharata. It is a dialogue between Prince Arjuna and his guide and charioteer, Lord Krishna, on a variety of philosophical issues.</p>
+        
+        <h2 data-translate="historical-context">Historical and Philosophical Context</h2>
+        <p data-translate="historical-text">Composed between the 5th and 2nd century BCE, the Gita is set in a narrative framework of a dialogue between Pandava prince Arjuna and his guide Lord Krishna. Facing the duty as a warrior to fight the Dharma Yudhha or righteous war between Pandavas and Kauravas, Arjuna is counselled by Krishna to fulfill his Kshatriya (warrior) duty as a warrior and establish Dharma.</p>
 
-        <div class="scripture-details">
-            <h2>Key Teachings</h2>
-            <p>
-                The Bhagavad Gita offers a wealth of teachings that can guide individuals on their spiritual journey:
-            </p>
-            <ul>
-                <li>Understanding the nature of the self (Atman)</li>
-                <li>The importance of duty (Dharma)</li>
-                <li>The paths of devotion (Bhakti), knowledge (Jnana), and selfless action (Karma)</li>
-                <li>The pursuit of inner peace and fulfillment</li>
-                <li>Realizing the oneness of all existence</li>
-            </ul>
-        </div>
+        <h2 data-translate="key-teachings">Key Teachings</h2>
+        <p data-translate="teachings-text">The Gita presents a synthesis of Hindu ideas about dharma, theistic bhakti, and the yogic ideals of moksha. It advocates various paths for spiritual realization, including:</p>
+        <ul>
+            <li data-translate="teaching-1">Karma Yoga (The Yoga of Action)</li>
+            <li data-translate="teaching-2">Bhakti Yoga (The Yoga of Devotion)</li>
+            <li data-translate="teaching-3">Jnana Yoga (The Yoga of Knowledge)</li>
+            <li data-translate="teaching-4">Raja Yoga (The Yoga of Meditation)</li>
+        </ul>
 
-        <div class="scripture-details">
-            <h2>Chapters Overview</h2>
-            <p>
-                The Bhagavad Gita is divided into 18 chapters, each addressing different aspects of life and spirituality:
-            </p>
-            <ol>
-                <li>Arjuna's Dilemma</li>
-                <li>The Yoga of Knowledge</li>
-                <li>The Yoga of Action</li>
-                <li>The Yoga of Knowledge and Wisdom</li>
-                <li>The Yoga of Devotion</li>
-                <li>The Yoga of Self-Realization</li>
-                <li>The Yoga of Knowledge and Knowledge of the Ultimate Reality</li>
-                <li>The Yoga of the Eternal God</li>
-                <li>The Yoga of the Three Modes of Material Nature</li>
-                <li>The Yoga of Action in the Spirit of Renunciation</li>
-                <li>The Yoga of Faith</li>
-                <li>The Yoga of the Divine Glories</li>
-                <li>The Yoga of the Field and the Knower of the Field</li>
-                <li>The Yoga of the Three Divisions of Faith</li>
-                <li>The Yoga of Self-Realization</li>
-                <li>The Yoga of the Lord’s Divine Power</li>
-                <li>The Yoga of Liberation</li>
-                <li>The Yoga of the Supreme Person</li>
-                <li>Conclusion: The Yoga of the Ultimate Reality</li>
-            </ol>
-        </div>
+        <div class="shloka-section">
+            <h2 data-translate="notable-verses">Notable Shlokas (Verses)</h2>
 
-    <div class="scripture-details">
-        <h2>Important Shlokas</h2>
-        <div class="shloka">
-            <h3>Chapter 2, Verse 47</h3>
-            <p><strong>Transliteration:</strong> karmanye vadhikaraste ma phaleshu kadachana |<br> ma karma-phala-hetur bhur ma te sango 'stv akarmani ||</p>
-            <p><strong>Translation:</strong> "You have the right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results of your activities, nor be attached to inaction."</p>
-        </div>
-        <div class="shloka">
-            <h3>Chapter 4, Verse 7</h3>
-            <p><strong>Transliteration:</strong> yada yada hi dharmasya glanir bhavati bharata |<br> abhyutthanam adharmasya tadaatmanam srijamyaham ||</p>
-            <p><strong>Translation:</strong> "Whenever there is a decline in righteousness and an increase in unrighteousness, O Arjuna, at that time I manifest myself on earth."</p>
-        </div>
-        <div class="shloka">
-            <h3>Chapter 6, Verse 5</h3>
-            <p><strong>Transliteration:</strong> uddhared atmanatmanam natmanam avasadayet |<br> atmaiva hy atmano bandhur atmaiva ripur atmanah ||</p>
-            <p><strong>Translation:</strong> "One must elevate, not degrade, oneself by one's own mind. The mind is the friend of the conditioned soul, and its enemy as well."</p>
+            <div class="shloka">
+                <h3 data-translate="verse-1-title">Chapter 2, Verse 47 - On Duty and Detachment</h3>
+                <p class="sanskrit" data-translate="verse-1-sanskrit">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।<br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥</p>
+                <p class="transliteration" data-translate="verse-1-transliteration">karmaṇy-evādhikāras te mā phaleṣu kadācana<br>mā karma-phala-hetur bhūr mā te saṅgo 'stv akarmaṇi</p>
+                <p class="translation" data-translate="verse-1-translation">"You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself to be the cause of the results of your activities, nor be attached to inaction."</p>
+                <p class="explanation" data-translate="verse-1-explanation">This verse emphasizes the importance of performing one's duties without attachment to the results. It encourages action without expectation, promoting a mindset of selfless service.</p>
+            </div>
+
+            <div class="shloka">
+                <h3 data-translate="verse-2-title">Chapter 4, Verse 7 - On Divine Incarnation</h3>
+                <p class="sanskrit" data-translate="verse-2-sanskrit">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।<br>अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्॥</p>
+                <p class="transliteration" data-translate="verse-2-transliteration">yadā yadā hi dharmasya glānir bhavati bhārata<br>abhyutthānam adharmasya tadātmānaṁ sṛjāmy aham</p>
+                <p class="translation" data-translate="verse-2-translation">"Whenever there is a decline in righteousness and an increase in unrighteousness, O Arjuna, at that time I manifest myself on earth."</p>
+                <p class="explanation" data-translate="verse-2-explanation">This verse speaks about the concept of divine intervention. It suggests that the Divine incarnates in times of moral and spiritual decline to restore balance and righteousness in the world.</p>
+            </div>
+
+            <!-- Add more shlokas as needed -->
+
         </div>
     </div>
-</div>
 
-    <footer>
-        <p>&copy; 2024 Bhagavad Gita. All Rights Reserved.</p>
-    </footer>
+    <!-- Add footer and other elements as in scriptures.html -->
+
+    <script>
+        const translations = {
+            'en': {
+                'languageToggle': 'हिंदी में पढ़ें',
+                'back': '← Back to Scriptures',
+                'title': 'The Bhagavad Gita',
+                'introduction': 'Introduction',
+                'intro-text': 'The Bhagavad Gita, often referred to as the Gita, is a 700-verse Hindu scripture that is part of the Indian epic Mahabharata. It is a dialogue between Prince Arjuna and his guide and charioteer, Lord Krishna, on a variety of philosophical issues.',
+                'historical-context': 'Historical and Philosophical Context',
+                'historical-text': 'Composed between the 5th and 2nd century BCE, the Gita is set in a narrative framework of a dialogue between Pandava prince Arjuna and his guide Lord Krishna. Facing the duty as a warrior to fight the Dharma Yudhha or righteous war between Pandavas and Kauravas, Arjuna is counselled by Krishna to fulfill his Kshatriya (warrior) duty as a warrior and establish Dharma.',
+                'key-teachings': 'Key Teachings',
+                'teachings-text': 'The Gita presents a synthesis of Hindu ideas about dharma, theistic bhakti, and the yogic ideals of moksha. It advocates various paths for spiritual realization, including:',
+                'teaching-1': 'Karma Yoga (The Yoga of Action)',
+                'teaching-2': 'Bhakti Yoga (The Yoga of Devotion)',
+                'teaching-3': 'Jnana Yoga (The Yoga of Knowledge)',
+                'teaching-4': 'Raja Yoga (The Yoga of Meditation)',
+                'notable-verses': 'Notable Shlokas (Verses)',
+                'verse-1-title': 'Chapter 2, Verse 47 - On Duty and Detachment',
+                'verse-1-sanskrit': 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।<br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥',
+                'verse-1-transliteration': 'karmaṇy-evādhikāras te mā phaleṣu kadācana<br>mā karma-phala-hetur bhūr mā te saṅgo \'stv akarmaṇi',
+                'verse-1-translation': '"You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself to be the cause of the results of your activities, nor be attached to inaction."',
+                'verse-1-explanation': 'This verse emphasizes the importance of performing one\'s duties without attachment to the results. It encourages action without expectation, promoting a mindset of selfless service.',
+                'verse-2-title': 'Chapter 4, Verse 7 - On Divine Incarnation',
+                'verse-2-sanskrit': 'यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।<br>अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्॥',
+                'verse-2-transliteration': 'yadā yadā hi dharmasya glānir bhavati bhārata<br>abhyutthānam adharmasya tadātmānaṁ sṛjāmy aham',
+                'verse-2-translation': '"Whenever there is a decline in righteousness and an increase in unrighteousness, O Arjuna, at that time I manifest myself on earth."',
+                'verse-2-explanation': 'This verse speaks about the concept of divine intervention. It suggests that the Divine incarnates in times of moral and spiritual decline to restore balance and righteousness in the world.'
+            },
+            'hi': {
+                'languageToggle': 'Read in English',
+                'back': '← धर्मग्रंथों पर वापस जाएं',
+                'title': 'भगवद् गीता',
+                'introduction': 'परिचय',
+                'intro-text': 'भगवद् गीता, जिसे अक्सर गीता के नाम से जाना जाता है, 700 श्लोकों का एक हिंदू धर्मग्रंथ है जो भारतीय महाकाव्य महाभारत का हिस्सा है। यह राजकुमार अर्जुन और उनके मार्गदर्शक और सारथी, भगवान कृष्ण के बीच विभिन्न दार्शनिक मुद्दों पर एक संवाद है।',
+                'historical-context': 'ऐतिहासिक और दार्शनिक संदर्भ',
+                'historical-text': '5वीं और 2री शताब्दी ईसा पूर्व के बीच रचित, गीता पांडव राजकुमार अर्जुन और उनके मार्गदर्शक भगवान कृष्ण के बीच एक संवाद के कथात्मक ढांचे में स्थापित है। पांडवों और कौरवों के बीच धर्म युद्ध या न्यायोचित युद्ध लड़ने के लिए एक योद्धा के रूप में अपने कर्तव्य का सामना करते हुए, कृष्ण अर्जुन को अपने क्षत्रिय (योद्धा) कर्तव्य को पूरा करने और धर्म की स्थापना करने की सलाह देते हैं।',
+                'key-teachings': 'प्रमुख शिक्षाएँ',
+                'teachings-text': 'गीता धर्म, भक्तिवादी भक्ति, और मोक्ष के योगिक आदर्शों के बारे में हिंदू विचारों का एक संश्लेषण प्रस्तुत करती है। यह आध्यात्मिक साक्षात्कार के लिए विभिन्न मार्गों की वकालत करती है, जिसमें शामिल हैं:',
+                'teaching-1': 'कर्म योग (कर्म का योग)',
+                'teaching-2': 'भक्ति योग (भक्ति का योग)',
+                'teaching-3': 'ज्ञान योग (ज्ञान का योग)',
+                'teaching-4': 'राज योग (ध्यान का योग)',
+                'notable-verses': 'उल्लेखनीय श्लोक',
+                'verse-1-title': 'अध्याय 2, श्लोक 47 - कर्तव्य और अनासक्ति पर',
+                'verse-1-sanskrit': 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।<br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥',
+                'verse-1-transliteration': 'कर्मण्य् एवाधिकारस् ते मा फलेषु कदाचन।<br>मा कर्म-फल-हेतुर् भूर् मा ते सङ्गोऽस्त्व् अकर्मणि॥',
+                'verse-1-translation': '"तुम्हारा अधिकार केवल कर्म करने में है, फलों में कभी नहीं। कर्मफल के हेतु मत बनो, और न ही अकर्म में आसक्त होओ।"',
+                'verse-1-explanation': 'यह श्लोक फल की आसक्ति के बिना अपने कर्तव्यों को निभाने के महत्व पर जोर देता है। यह अपेक्षा के बिना कार्य करने को प्रोत्साहित करता है, निःस्वार्थ सेवा की मानसिकता को बढ़ावा देता है।',
+                'verse-2-title': 'अध्याय 4, श्लोक 7 - दैवीय अवतार पर',
+                'verse-2-sanskrit': 'यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।<br>अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्॥',
+                'verse-2-transliteration': 'यदा यदा हि धर्मस्य ग्लानिर् भवति भारत।<br>अभ्युत्थानम् अधर्मस्य तदात्मानं सृजाम्य् अहम्॥',
+                'verse-2-translation': '"हे अर्जुन, जब-जब धर्म की हानि और अधर्म की वृद्धि होती है, तब-तब मैं स्वयं को प्रकट करता हूँ।"',
+                'verse-2-explanation': 'यह श्लोक दैवीय हस्तक्षेप की अवधारणा के बारे में बताता है। यह सुझाव देता है कि दिव्य नैतिक और आध्यात्मिक पतन के समय में संतुलन और धार्मिकता को बहाल करने के लिए अवतार लेता है।'
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'hi' : 'en';
+            updateContent();
+            updateToggleButton();
+        }
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage][key]) {
+                    element.innerHTML = translations[currentLanguage][key];
+                }
+            });
+        }
+
+        function updateToggleButton() {
+            const button = document.getElementById('languageToggle');
+            button.textContent = translations[currentLanguage]['languageToggle'];
+        }
+
+        // Call this function when the page loads to set the initial button text
+        updateToggleButton();
+    </script>
 </body>
 </html>
