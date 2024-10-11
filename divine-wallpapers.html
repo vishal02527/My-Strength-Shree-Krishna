@@ -20,6 +20,25 @@
         margin: 0;
         overflow-x: hidden;
       }
+
+      .scroll-top-btn {
+        position: fixed; /* Fixed position */
+        bottom: 30px; 
+        right: 30px; 
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        z-index: 1000; /* Ensure it appears above other content */
+      }
+
+      .scroll-top-btn:hover {
+        background-color: #330867;
+      }
+
       .header {
         text-align: center;
         background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
