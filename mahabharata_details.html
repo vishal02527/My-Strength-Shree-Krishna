@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahabharata Details</title>
+    <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+            color: #333;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .content {
+            padding: 20px 120px;
+            margin-bottom: 50px;
+        }
+
+        .content h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #ab9353;
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px 15px;
+            }
+
+            .content h1 {
+                font-size: 22px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #ab9353;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #8c7a44;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .section h3 {
+            color: #330867;
+            margin-top: 0;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 15px;
+            }
+
+            .section h3 {
+                font-size: 18px;
+            }
+
+            .section li {
+                font-size: 14px;
+            }
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ab9353;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .language-toggle:hover {
+            background-color: #8c7a44;
+        }
+    </style>
+</head>
+<body>
+    <button id="languageToggle" class="language-toggle" onclick="toggleLanguage()">हिंदी में पढ़ें</button>
+
+    <div class="content">
+        <a href="scriptures.html" class="back-button" data-translate="back">← Back to Scriptures</a>
+        <h1 data-translate="title">The Mahabharata</h1>
+        
+        <h2 data-translate="introduction">Introduction</h2>
+        <p data-translate="intro-text">The Mahabharata is one of the two major Sanskrit epics of ancient India, the other being the Ramayana. It is an epic narrative of the Kurukshetra War and the fates of the Kaurava and the Pandava princes.</p>
+        
+        <h2 data-translate="historical-context">Historical and Cultural Context</h2>
+        <p data-translate="historical-text">Traditionally, the authorship of the Mahabharata is attributed to Vyasa. Its longest version consists of over 100,000 śloka or over 200,000 individual verse lines (each shloka is a couplet), and long prose passages. About 1.8 million words in total, the Mahabharata is roughly ten times the length of the Iliad and the Odyssey combined, or about four times the length of the Ramayana.</p>
+
+        <h2 data-translate="key-elements">Key Elements</h2>
+        <p data-translate="elements-text">The epic contains many philosophical and devotional material, such as a discussion of the four "goals of life" or puruṣārtha. The most important philosophical discussion is the Bhagavad Gita, which is contained in the Bhishma Parva of the epic.</p>
+
+        <div class="section">
+            <h3 data-translate="stories-characters">Notable Stories and Characters</h3>
+            <ul>
+                <li data-translate="story-1"><strong>The Pandavas and Kauravas:</strong> The central characters of the epic, two groups of cousins fighting for the throne of Hastinapura.</li>
+                <li data-translate="story-2"><strong>Draupadi's Swayamvara:</strong> The contest where Arjuna wins Draupadi's hand in marriage.</li>
+                <li data-translate="story-3"><strong>The Game of Dice:</strong> A pivotal moment where the Pandavas lose their kingdom and are exiled.</li>
+                <li data-translate="story-4"><strong>The Bhagavad Gita:</strong> Krishna's counsel to Arjuna on the battlefield of Kurukshetra.</li>
+                <li data-translate="story-5"><strong>Bhishma's Vow:</strong> The story of Bhishma's lifelong celibacy and his unparalleled devotion to duty.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 data-translate="important-teachings">Important Teachings</h3>
+            <ul>
+                <li data-translate="teaching-1"><strong>Dharma (Righteousness):</strong> The importance of following one's duty and moral law.</li>
+                <li data-translate="teaching-2"><strong>Karma:</strong> The law of cause and effect, emphasizing the importance of right action.</li>
+                <li data-translate="teaching-3"><strong>Loyalty and Honor:</strong> Exemplified by characters like Bhishma and Karna.</li>
+                <li data-translate="teaching-4"><strong>The Futility of War:</strong> Despite being a war epic, the Mahabharata ultimately shows the devastating effects of conflict.</li>
+                <li data-translate="teaching-5"><strong>Divine Intervention:</strong> The role of gods, particularly Krishna, in human affairs.</li>
+                <li data-translate="teaching-6"><strong>The Complexity of Morality:</strong> The epic often presents moral dilemmas with no clear right answer.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 data-translate="famous-quotes">Famous Quotes</h3>
+            <ul>
+                <li data-translate="quote-1">"I am Time grown old to destroy the world." - Krishna</li>
+                <li data-translate="quote-2">"The greatest enemy is one's own self." - Yudhishthira</li>
+                <li data-translate="quote-3">"There is no greater force than destiny." - Bhishma</li>
+                <li data-translate="quote-4">"Victory attained by violence is tantamount to a defeat, for it is momentary." - Attributed to the Mahabharata</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const translations = {
+            'en': {
+                'back': '← Back to Scriptures',
+                'title': 'The Mahabharata',
+                'introduction': 'Introduction',
+                'intro-text': 'The Mahabharata is one of the two major Sanskrit epics of ancient India, the other being the Ramayana. It is an epic narrative of the Kurukshetra War and the fates of the Kaurava and the Pandava princes.',
+                'historical-context': 'Historical and Cultural Context',
+                'historical-text': 'Traditionally, the authorship of the Mahabharata is attributed to Vyasa. Its longest version consists of over 100,000 śloka or over 200,000 individual verse lines (each shloka is a couplet), and long prose passages. About 1.8 million words in total, the Mahabharata is roughly ten times the length of the Iliad and the Odyssey combined, or about four times the length of the Ramayana.',
+                'key-elements': 'Key Elements',
+                'elements-text': 'The epic contains many philosophical and devotional material, such as a discussion of the four "goals of life" or puruṣārtha. The most important philosophical discussion is the Bhagavad Gita, which is contained in the Bhishma Parva of the epic.',
+                'stories-characters': 'Notable Stories and Characters',
+                'story-1': '<strong>The Pandavas and Kauravas:</strong> The central characters of the epic, two groups of cousins fighting for the throne of Hastinapura.',
+                'story-2': '<strong>Draupadi\'s Swayamvara:</strong> The contest where Arjuna wins Draupadi\'s hand in marriage.',
+                'story-3': '<strong>The Game of Dice:</strong> A pivotal moment where the Pandavas lose their kingdom and are exiled.',
+                'story-4': '<strong>The Bhagavad Gita:</strong> Krishna\'s counsel to Arjuna on the battlefield of Kurukshetra.',
+                'story-5': '<strong>Bhishma\'s Vow:</strong> The story of Bhishma\'s lifelong celibacy and his unparalleled devotion to duty.',
+                'important-teachings': 'Important Teachings',
+                'teaching-1': '<strong>Dharma (Righteousness):</strong> The importance of following one\'s duty and moral law.',
+                'teaching-2': '<strong>Karma:</strong> The law of cause and effect, emphasizing the importance of right action.',
+                'teaching-3': '<strong>Loyalty and Honor:</strong> Exemplified by characters like Bhishma and Karna.',
+                'teaching-4': '<strong>The Futility of War:</strong> Despite being a war epic, the Mahabharata ultimately shows the devastating effects of conflict.',
+                'teaching-5': '<strong>Divine Intervention:</strong> The role of gods, particularly Krishna, in human affairs.',
+                'teaching-6': '<strong>The Complexity of Morality:</strong> The epic often presents moral dilemmas with no clear right answer.',
+                'famous-quotes': 'Famous Quotes',
+                'quote-1': '"I am Time grown old to destroy the world." - Krishna',
+                'quote-2': '"The greatest enemy is one\'s own self." - Yudhishthira',
+                'quote-3': '"There is no greater force than destiny." - Bhishma',
+                'quote-4': '"Victory attained by violence is tantamount to a defeat, for it is momentary." - Attributed to the Mahabharata'
+            },
+            'hi': {
+                'back': '← धर्मग्रंथों पर वापस जाएं',
+                'title': 'महाभारत',
+                'introduction': 'परिचय',
+                'intro-text': 'महाभारत प्राचीन भारत के दो प्रमुख संस्कृत महाकाव्यों में से एक है, दूसरा रामायण है। यह कुरुक्षेत्र युद्ध और कौरव तथा पांडव राजकुमारों के भाग्य की एक महाकाव्य कथा है।',
+                'historical-context': 'ऐतिहासिक और सांस्कृतिक संदर्भ',
+                'historical-text': 'परंपरागत रूप से, महाभारत की रचना व्यास को दी जाती है। इसका सबसे लंबा संस्करण 100,000 से अधिक श्लोक या 200,000 से अधिक व्यक्तिगत पंक्तियों (प्रत्येक श्लोक एक युग्मक है) और लंबे गद्य अंशों से युक्त है। कुल मिलाकर लगभग 1.8 मिलियन शब्द, महाभारत इलियड और ओडिसी के संयुक्त लंबाई का लगभग दस गुना, या रामायण की लंबाई का लगभग चार गुना है।',
+                'key-elements': 'प्रमुख तत्व',
+                'elements-text': 'इस महाकाव्य में कई दार्शनिक और भक्तिपूर्ण सामग्री शामिल है, जैसे कि जीवन के चार "लक्ष्यों" या पुरुषार्थ पर चर्चा। सबसे महत्वपूर्ण दार्शनिक चर्चा भगवद गीता है, जो महाकाव्य के भीष्म पर्व में निहित है।',
+                'stories-characters': 'उल्लेखनीय कहानियाँ और पात्र',
+                'story-1': '<strong>पांडव और कौरव:</strong> महाकाव्य के केंद्रीय पात्र, चचेरे भाइयों के दो समूह जो हस्तिनापुर के सिंहासन के लिए लड़ रहे हैं।',
+                'story-2': '<strong>द्रौपदी का स्वयंवर:</strong> वह प्रतियोगिता जहाँ अर्जुन द्रौपदी का हाथ जीतता है।',
+                'story-3': '<strong>द्यूत क्रीड़ा:</strong> एक महत्वपूर्ण क्षण जहाँ पांडव अपना राज्य खो देते हैं और निर्वासित हो जाते हैं।',
+                'story-4': '<strong>भगवद गीता:</strong> कुरुक्षेत्र के युद्धक्षेत्र पर अर्जुन को कृष्ण का उपदेश।',
+                'story-5': '<strong>भीष्म की प्रतिज्ञा:</strong> भीष्म के आजीवन ब्रह्मचर्य और कर्तव्य के प्रति उनकी अद्वितीय निष्ठा की कहानी।',
+                'important-teachings': 'महत्वपूर्ण शिक्षाएँ',
+                'teaching-1': '<strong>धर्म (नैतिकता):</strong> अपने कर्तव्य और नैतिक कानून का पालन करने का महत्व।',
+                'teaching-2': '<strong>कर्म:</strong> कारण और प्रभाव का नियम, सही कार्य के महत्व पर जोर देना।',
+                'teaching-3': '<strong>निष्ठा और सम्मान:</strong> भीष्म और कर्ण जैसे पात्रों द्वारा प्रदर्शित।',
+                'teaching-4': '<strong>युद्ध की व्यर्थता:</strong> एक युद्ध महाकाव्य होने के बावजूद, महाभारत अंततः संघर्ष के विनाशकारी प्रभावों को दिखाता है।',
+                'teaching-5': '<strong>दैवीय हस्तक्षेप:</strong> मानव मामलों में देवताओं, विशेष रूप से कृष्ण की भूमिका।',
+                'teaching-6': '<strong>नैतिकता की जटिलता:</strong> महाकाव्य अक्सर नैतिक दुविधाओं को प्रस्तुत करता है जिनका कोई स्पष्ट उत्तर नहीं होता।',
+                'famous-quotes': 'प्रसिद्ध उद्धरण',
+                'quote-1': '"मैं संसार का नाश करने के लिए बढ़ा हुआ काल हूँ।" - कृष्ण',
+                'quote-2': '"सबसे बड़ा शत्रु स्वयं का अहंकार है।" - युधिष्ठिर',
+                'quote-3': '"नियति से बड़ी कोई शक्ति नहीं है।" - भीष्म',
+                'quote-4': '"हिंसा से प्राप्त विजय पराजय के समान है, क्योंकि वह क्षणिक होती है।" - महाभारत से संबंधित'
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'hi' : 'en';
+            updateContent();
+            updateToggleButton();
+        }
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage][key]) {
+                    element.innerHTML = translations[currentLanguage][key];
+                }
+            });
+        }
+
+        function updateToggleButton() {
+            const button = document.getElementById('languageToggle');
+            button.textContent = currentLanguage === 'en' ? 'हिंदी में पढ़ें' : 'Read in English';
+        }
+    </script>
+</body>
+</html>
