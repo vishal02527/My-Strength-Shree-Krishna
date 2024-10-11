@@ -365,6 +365,54 @@
         margin-bottom: 0;
         font-size: 14px;
       }
+      .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  transition: ease-in 0.3s;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  border-color: rgb(250, 219, 153);
+}
+
+.hamburger:hover span {
+  background-color: rgb(250, 219, 153);
+}
+
+/* Navbar-up link styling */
+.navbar-up a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: ease-in 0.3s;
+  border: 2px solid #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.navbar-up a:hover {
+  color: rgb(250, 219, 153);
+  border-color: rgb(250, 219, 153);
+}
 
       /* tablet  Responsive Styles */
       @media (max-width: 1100px) {
@@ -394,6 +442,7 @@
           font-size: 12px;
         }
         .navigation .homeDiv #homeBtn {
+          margin-left: 10px;
           min-width: 30px;
         }
         .navigation .homeDiv #homeBtn a {
@@ -445,6 +494,28 @@
           font-size: 15px;
         }
       }
+      @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-up {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar-up.active {
+    display: flex;
+  }
+
+  .navbar-up a {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
       /* Mobile Responsive Styles */
       @media (max-width: 668px) {
         .header {
@@ -604,13 +675,17 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-        <div class="navbar">
-          <div class="navbar-up">
-            <a href="scriptures.html">Scriptures</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-            <a href="devotional-resources.html">Devotional Resources</a>
-          </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="navbar-up" id="navbar-links">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+          <a href="signup.html">Login</a>
+          
         </div>
         <form class="searchForm">
           <input
@@ -622,8 +697,19 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
+        </div>
+        
       </div>
     </div>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navbarLinks = document.getElementById("navbar-links");
+
+      hamburger.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+    </script>
     <div class="indexMain">
       <div class="headDiv">
         <h1>Shree Krishna - My Strength</h1>
