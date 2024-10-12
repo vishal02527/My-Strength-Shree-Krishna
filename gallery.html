@@ -291,85 +291,108 @@
 
       footer {
   background-color: #1c3d5a;
-  color: #fff;
-  padding: 20px 0;
+  color: #ffffff;
+  padding: 40px 0; /* Increased padding for more space */
   font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 100%;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Spread items evenly across the footer */
   align-items: flex-start;
-  flex-wrap: wrap;
-  padding: 20px;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  padding: 0 50px;
+  max-width: 1200px; /* Limit max width to keep it centered */
+  margin: 0 auto;
 }
 
 .footer-section {
   flex: 1;
-  margin: 15px;
-  min-width: 200px;
+  margin: 20px; /* Add margin for spacing between sections */
+  min-width: 220px; /* Minimum width for smaller screens */
 }
 
 .footer-section h3 {
-  font-size: 18px;
+  font-size: 24px; /* Increased the heading size */
   margin-bottom: 15px;
-  color: #f0c43f;
+  color: #f0c43f; /* Gold color */
 }
 
+/* Quick Links Styling */
 .footer-links {
-  list-style: none;
-
+  list-style-type: none;
   padding: 0;
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 12px; /* Spacing between links */
 }
 
 .footer-links a {
   text-decoration: none;
-  color: #f6f4f1;
-  font-size: 16px;
-  transition: color 0.3s;
+  color: #ffffff;
+  font-size: 18px; /* Increased font size for better readability */
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #fce4a6;
+  color: #fce4a6; /* Lighter gold on hover */
 }
 
-    
+/* Faith Statement Section */
+.statement .faith-statement {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #fff;
+  max-height: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s ease-in-out;
+}
 
-      .social-icons a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 2.1rem;
-        height: 2.1rem;
-        background-color: transparent;
-        border: 0.2rem solid #000000;
-        font-size: 1.2rem;
-        border-radius: 50%;
-        margin: 0.1rem 0.2rem 0.1rem 0;
-        transition: 0.3s ease;
-        color: #ffffff;
-        text-decoration: none;
-      }
+.read-more {
+  color: #f4d35e;
+  cursor: pointer;
+  text-decoration: underline;
+}
 
-      .social-icons a:hover {
-        color: rgb(255, 255, 255);
-        transform: scale(1.3) translateY(-5px);
-        background-color: #ac905c;
-        box-shadow: 0 0 25px #f0eaea;
-      }
-      .creatorDiv {
-        text-align: center;
-  margin-top: 20px;
+/* Social Icons Styling */
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 26px; /* Increased icon size */
+  margin-right: 15px; /* Spacing between icons */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f0c43f;
+}
+
+/* Footer Bottom Section */
+.creatorDiv {
+  text-align: center;
+  margin-top: 30px;
   font-size: 14px;
-      }
+  padding: 10px;
+  border-top: 1px solid #ffffff44; /* Subtle border for separation */
+}
 
-      .creatorDiv p {
-        margin: 0;
-      }
+.creatorDiv p {
+  margin: 0;
+}
+
+
+
+
+
+
+
       .caption {
         margin-top: 25px;
         margin-bottom: 20px;
@@ -613,6 +636,14 @@
     </div>
     <footer>
       <div class="footer-content">
+        <div class="footer-section statement ">
+          <h3>Statement on Faith </h3>
+          <p class="faith-statement">
+            Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
+        
+          </p>
+          <a href="devotional-resources.html" class="read-more">Read More</a>
+        </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul class="footer-links">
