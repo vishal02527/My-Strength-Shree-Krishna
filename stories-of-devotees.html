@@ -1,146 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stories of devotees: Shree Krishna</title>
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
-      h1 {
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
 
-      .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="sources/cssFiles/navbar.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories of devotees: Shree Krishna</title>
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
 
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    h1 {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
+    main {
+      padding: 20px;
+      margin: 50px auto;
+    }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
+    .devotee-list {
+      list-style: none;
+      padding: 0;
+      margin-left: 33%;
+      max-width: 500px;
+    }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
+    .devotee-list-item {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
+    .devotee-name {
+      color: #ab9353;
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color linear 0.2s;
+    }
 
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
+    .devotee-name:hover {
+      background-color: #f39c12;
+      color: #fff;
+    }
 
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-
-      main {
-        padding: 20px;
-        margin: 50px auto;
-      }
-
-      .devotee-list {
-        list-style: none;
-        padding: 0;
-        margin-left: 33%;
-        max-width: 500px;
-      }
-
-      .devotee-list-item {
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 10px;
-      }
-
-      .devotee-name {
-        color: #ab9353;
-        margin: 0;
-        padding: 10px;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color linear 0.2s;
-      }
-
-      .devotee-name:hover {
-        background-color: #f39c12;
-        color: #fff;
-      }
-      /* footer {
+    /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -195,41 +117,18 @@
         font-size: 14px;
       } */
 
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
+    @media screen and (max-width: 600px) {
+      .header {
+        position: unset;
+        padding: 10px;
+      }
 
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
 
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
-        h1 {
-          font-size: 22px;
-        }
+      h1 {
+        font-size: 22px;
+      }
 
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
-
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
-
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-
-        /* .footer-content {
+      /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -257,140 +156,163 @@
           font-size: 12px;
         } */
 
-        .devotee-list {
-          margin-left: 0px;
-          max-width: 280px;
-        }
-        .devotee-name {
-          font-size: 16px;
-        }
+      .devotee-list {
+        margin-left: 0px;
+        max-width: 280px;
       }
-    </style>
-  </head>
 
-  <body>
-    <div class="header">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
+      .devotee-name {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
 
-        <div class="navbar">
-          <a href="aboutus.html" id="active">About Us</a>
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-          <a href="contactus.html">Contact Us</a>
-          
+<body>
+
+  <div class="header">
+    <div class="navigation">
+      <div class="homeDiv">
+        <button id="homeBtn"><a href="./index.html">Home</a></button>
+      </div>
+
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </input>
+      </form>
+    </div>
+    <div class="navbar">
+      <a href="aboutus.html" id="active">About Us</a>
+      <a href="scriptures.html">Scriptures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+      <a href="devotional-resources.html">Devotional Resources</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <div class="right">
+      <div class="menuDrop-btn" onclick="togglemenuDrop()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="menuDrop" id="menuDrop">
+        <a href="aboutus.html" id="active">About Us</a>
+        <a href="scriptures.html">Scriptures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+        <a href="devotional-resources.html">Devotional Resources</a>
+        <a href="contactus.html">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <main>
+    <h1>Devotees of Shree Krishna</h1>
+    <ul class="devotee-list">
+      <li class="devotee-list-item">
+        <h2 class="devotee-name" onclick="redirectToDevoteeStory('karmati-bai')">
+          Karmati Bai
+        </h2>
+      </li>
+
+      <li class="devotee-list-item">
+        <h2 class="devotee-name" onclick="redirectToDevoteeStory('surdas')">
+          Surdas
+        </h2>
+      </li>
+
+      <li class="devotee-list-item">
+        <h2 class="devotee-name" onclick="redirectToDevoteeStory('taj-biwi')">
+          Taj Biwi
+        </h2>
+      </li>
+
+      <li class="devotee-list-item">
+        <h2 class="devotee-name" onclick="redirectToDevoteeStory('raidas')">
+          Raidas
+        </h2>
+      </li>
+
+      <li class="devotee-list-item">
+        <h2 class="devotee-name" onclick="redirectToDevoteeStory('meera-bai')">
+          Meera Bai
+        </h2>
+      </li>
+
+      <li class="devotee-list-item">
+        <h2 class="devotee-name" onclick="redirectToDevoteeStory('dhanna-jatt')">
+          Dhanna Jatt
+        </h2>
+      </li>
+
+      <li class="devotee-list-item">
+        <h2 class="devotee-name" onclick="redirectToDevoteeStory('narsi')">
+          Narsi
+        </h2>
+      </li>
+    </ul>
+  </main>
+
+
+
+  <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
+    <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a>
+        </h3>
+        <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+        <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact
+            Us</a></h3>
+        <p>Email: <a href="mailto:info@example.com"
+            style="color: white; text-decoration: underline;">info@example.com</a></p>
+        <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+        <p>Feel free to reach out for any inquiries or support.</p>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;">Follow Us</h3>
+
+
+        <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+          <a href="#" target="_blank" title="Github"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" target="_blank" title="Codepen"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+          <a href="#" target="_blank" title="LinkedIn"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </div>
-
-    <main>
-      <h1>Devotees of Shree Krishna</h1>
-      <ul class="devotee-list">
-        <li class="devotee-list-item">
-          <h2
-            class="devotee-name"
-            onclick="redirectToDevoteeStory('karmati-bai')"
-          >
-            Karmati Bai
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('surdas')">
-            Surdas
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('taj-biwi')">
-            Taj Biwi
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('raidas')">
-            Raidas
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2
-            class="devotee-name"
-            onclick="redirectToDevoteeStory('meera-bai')"
-          >
-            Meera Bai
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2
-            class="devotee-name"
-            onclick="redirectToDevoteeStory('dhanna-jatt')"
-          >
-            Dhanna Jatt
-          </h2>
-        </li>
-
-        <li class="devotee-list-item">
-          <h2 class="devotee-name" onclick="redirectToDevoteeStory('narsi')">
-            Narsi
-          </h2>
-        </li>
-      </ul>
-    </main>
-  
-
-
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
-          <p>Feel free to reach out for any inquiries or support.</p>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
-
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-codepen"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-      </div>
-    </footer>
+    <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+    </div>
+  </footer>
 
 
 
-    <script src="script.js"></script>
-    <script>
-      function redirectToDevoteeStory(devoteeName) {
-        const devoteeFileName = `${devoteeName}.html`;
-        window.location.href = devoteeFileName;
-      }
-    </script>
-  </body>
+  <script src="script.js"></script>
+  <script>
+    function redirectToDevoteeStory(devoteeName) {
+      const devoteeFileName = `${devoteeName}.html`;
+      window.location.href = devoteeFileName;
+    }
+  </script>
+</body>
+
 </html>

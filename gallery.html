@@ -1,171 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery: Shree Krishna</title>
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        padding: 0;
-        margin: 0;
-        color: #333;
-        overflow-x: hidden;
-      }
-      .content {
-        padding: 20px 20px 100px;
-      }
-      h1 {
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .image-container {
-        margin: 40px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .image-card {
-        margin: 15px;
-        border-radius: 10px;
-        height: 400px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-      }
-      .image-card:hover {
-        transform: scale(1.08);
-      }
-      .image-card img {
-        width: 320px;
-        height: 400px;
-        border-radius: 10px;
-        transition: transform 0.3s ease-in-out;
-      }
-      .image-card:hover img {
-        transform: scale(1.1);
-      }
 
-      /* Lightbox Styles */
-      .lightbox {
-        display: none;
-        position: fixed;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-      }
-      .lightbox img {
-        max-width: 80%;
-        max-height: 80%;
-        border-radius: 10px;
-      }
-      .close-btn {
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 30px;
-        color: #fff;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery: Shree Krishna</title>
+  <link rel="stylesheet" href="sources/cssFiles/navbar.css">
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      padding: 0;
+      margin: 0;
+      color: #333;
+      overflow-x: hidden;
+    }
 
-      .galleryMain {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
+    .content {
+      padding: 20px 20px 100px;
+    }
 
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
+    .image-container {
+      margin: 40px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
+    .image-card {
+      margin: 15px;
+      border-radius: 10px;
+      height: 400px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
+    .image-card:hover {
+      transform: scale(1.08);
+    }
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
+    .image-card img {
+      width: 320px;
+      height: 400px;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
 
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-      #active {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-      /* footer {
+    .image-card:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .lightbox img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 30px;
+      color: #fff;
+    }
+
+
+    #active {
+      color: rgb(250, 219, 153);
+      border: 2px solid rgb(250, 219, 153);
+    }
+
+    /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -217,74 +150,60 @@
         margin-bottom: 0;
         font-size: 14px;
       } */
+    .caption {
+      margin-top: 25px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 16px;
+      font-style: italic;
+      color: #f39c12;
+    }
+
+    .caption::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    /* Responsive Styles */
+
+    @media (max-width: 768px) {
+      .galleryMain {
+        position: unset;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .image-card {
+        width: 280px;
+        height: 350px;
+        margin: 0;
+      }
+
       .caption {
-        margin-top: 25px;
-        margin-bottom: 20px;
-        text-align: center;
-        font-weight: 500;
-        font-size: 16px;
-        font-style: italic;
-        color: #f39c12;
-      }
-      .caption::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 14px;
       }
 
-      /* Responsive Styles */
+      .image-card img {
+        width: 100%;
+        height: 350px;
+      }
 
-      @media (max-width: 768px) {
-        .galleryMain {
-          position: unset;
-        }
-        h1 {
-          font-size: 22px;
-        }
-        .image-card {
-          width: 280px; 
-          height: 350px;
-          margin: 0;
-        }
-        .caption {
-          margin-top: 20px;
-          margin-bottom: 15px;
-          font-size: 14px;
-        }
-        .image-card img {
-          width: 100%;
-          height: 350px;
-        }
-        .lightbox {
-          top: 0;
-          left: -20px;
-        }
-        .close-btn {
-          top: 40px;
-          right: 40px;
-        }
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 14px;
-        }
+      .lightbox {
+        top: 0;
+        left: -20px;
+      }
 
-        
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-        /* .footer-content {
+      .close-btn {
+        top: 40px;
+        right: 40px;
+      }
+
+      /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -306,176 +225,175 @@
         .creatorDiv p {
           font-size: 12px;
         } */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="galleryMain">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
+    }
+  </style>
+</head>
 
-        <div class="navbar">
-          <a href="aboutus.html" id="active">About Us</a>
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-          <a href="contactus.html">Contact Us</a>
+<body>
+
+  <div class="header">
+    <div class="navigation">
+      <div class="homeDiv">
+        <button id="homeBtn"><a href="./index.html">Home</a></button>
+      </div>
+
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </input>
+      </form>
+    </div>
+    <div class="navbar">
+      <a href="aboutus.html" id="active">About Us</a>
+      <a href="scriptures.html">Scriptures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+      <a href="devotional-resources.html">Devotional Resources</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <div class="right">
+      <div class="menuDrop-btn" onclick="togglemenuDrop()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="menuDrop" id="menuDrop">
+        <a href="aboutus.html" id="active">About Us</a>
+        <a href="scriptures.html">Scriptures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+        <a href="devotional-resources.html">Devotional Resources</a>
+        <a href="contactus.html">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="content">
+    <h1>Gallery - Shree Krishna</h1>
+
+    <div class="image-container">
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img1.jpg')">
+          <img src="./images/krishna-img1.jpg" alt="Shree Krishna Image 1" />
+        </div>
+        <div class="caption">Shree Krishna</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img9.jpg')">
+          <img src="./images/krishna-img9.jpg" alt="Shree Krishna Image 2" />
+        </div>
+        <div class="caption">Shree Radhavallabh Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img10.jpg')">
+          <img src="./images/krishna-img10.jpg" alt="Shree Krishna Image 3" />
+        </div>
+        <div class="caption">Shree Radha Raman Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img4.jpg')">
+          <img src="./images/krishna-img4.jpg" alt="Shree Krishna Image 4" />
+        </div>
+        <div class="caption">Shree Banke Bihari Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img5.jpg')">
+          <img src="./images/krishna-img5.jpg" alt="Shree Krishna Image 5" />
+        </div>
+        <div class="caption">Shree Govind Dev Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img6.jpg')">
+          <img src="./images/krishna-img6.jpg" alt="Shree Krishna Image 6" />
+        </div>
+        <div class="caption">Shree Radha Krishna Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img7.jpg')">
+          <img src="./images/krishna-img7.jpg" alt="Shree Krishna Image 7" />
+        </div>
+        <div class="caption">Shree Yugal Kishor Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img8.jpg')">
+          <img src="./images/krishna-img8.jpg" alt="Shree Krishna Image 8" />
+        </div>
+        <div class="caption">Shree Panduranga Vitthal Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img11.jpg')">
+          <img src="./images/krishna-img11.jpg" alt="Shree Krishna Image 11" />
+        </div>
+        <div class="caption">Shree Nath Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img12.jpg')">
+          <img src="./images/krishna-img12.jpg" alt="Shree Krishna Image 12" />
+        </div>
+        <div class="caption">Shree Dwarkadhish Ji</div>
+      </div>
+    </div>
+
+    <!-- Lightbox Container -->
+    <div class="lightbox" onclick="closeLightbox()">
+      <span class="close-btn">&times;</span>
+      <img id="lightbox-img" src="" alt="Lightbox Image" />
+    </div>
+  </div>
+
+
+  <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
+    <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a>
+        </h3>
+        <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+        <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact
+            Us</a></h3>
+        <p>Email: <a href="mailto:info@example.com"
+            style="color: white; text-decoration: underline;">info@example.com</a></p>
+        <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+        <p>Feel free to reach out for any inquiries or support.</p>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;">Follow Us</h3>
+
+
+        <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+          <a href="#" target="_blank" title="Github"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" target="_blank" title="Codepen"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+          <a href="#" target="_blank" title="LinkedIn"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </div>
-    <div class="content">
-      <h1>Gallery - Shree Krishna</h1>
-
-      <div class="image-container">
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img1.jpg')"
-          >
-            <img src="./images/krishna-img1.jpg" alt="Shree Krishna Image 1" />
-          </div>
-          <div class="caption">Shree Krishna</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img9.jpg')"
-          >
-            <img src="./images/krishna-img9.jpg" alt="Shree Krishna Image 2" />
-          </div>
-          <div class="caption">Shree Radhavallabh Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img10.jpg')"
-          >
-            <img src="./images/krishna-img10.jpg" alt="Shree Krishna Image 3" />
-          </div>
-          <div class="caption">Shree Radha Raman Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img4.jpg')"
-          >
-            <img src="./images/krishna-img4.jpg" alt="Shree Krishna Image 4" />
-          </div>
-          <div class="caption">Shree Banke Bihari Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img5.jpg')"
-          >
-            <img src="./images/krishna-img5.jpg" alt="Shree Krishna Image 5" />
-          </div>
-          <div class="caption">Shree Govind Dev Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img6.jpg')"
-          >
-            <img src="./images/krishna-img6.jpg" alt="Shree Krishna Image 6" />
-          </div>
-          <div class="caption">Shree Radha Krishna Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img7.jpg')"
-          >
-            <img src="./images/krishna-img7.jpg" alt="Shree Krishna Image 7" />
-          </div>
-          <div class="caption">Shree Yugal Kishor Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img8.jpg')"
-          >
-            <img src="./images/krishna-img8.jpg" alt="Shree Krishna Image 8" />
-          </div>
-          <div class="caption">Shree Panduranga Vitthal Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img11.jpg')"
-          >
-            <img
-              src="./images/krishna-img11.jpg"
-              alt="Shree Krishna Image 11"
-            />
-          </div>
-          <div class="caption">Shree Nath Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img12.jpg')"
-          >
-            <img
-              src="./images/krishna-img12.jpg"
-              alt="Shree Krishna Image 12"
-            />
-          </div>
-          <div class="caption">Shree Dwarkadhish Ji</div>
-        </div>
-      </div>
-
-      <!-- Lightbox Container -->
-      <div class="lightbox" onclick="closeLightbox()">
-        <span class="close-btn">&times;</span>
-        <img id="lightbox-img" src="" alt="Lightbox Image" />
-      </div>
+    <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
     </div>
-   
-
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
-          <p>Feel free to reach out for any inquiries or support.</p>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
-
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-codepen"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-      </div>
-    </footer>
+  </footer>
 
 
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

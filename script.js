@@ -1,6 +1,15 @@
 let isHindi = false;
 const button = document.getElementById("translateBtn");
 
+// menubar toggle for buttons 
+function togglemenuDrop() {
+  const menuDropBtn = document.querySelector('.menuDrop-btn');
+  const menuDrop = document.getElementById('menuDrop');
+  menuDropBtn.classList.toggle('open');
+  menuDrop.classList.toggle('open');
+}
+
+
 function toggleLanguage() {
   const contentEnglish = document.getElementById("content-english");
   const contentHindi = document.getElementById("content-hindi");

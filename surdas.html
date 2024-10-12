@@ -1,164 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Surdas: The Melodious Poet of Shree Krishna</title>
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
-      p::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      main h1 {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
 
-      .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surdas: The Melodious Poet of Shree Krishna</title>
+  <link rel="stylesheet" href="sources/cssFiles/navbar.css">
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
 
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    p::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
+    main h1 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
+    main {
+      padding: 20px;
+    }
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
+    .content {
+      max-width: 900px;
+      margin: 70px auto 100px;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
+    .imageDiv {
+      text-align: center;
+      margin: 20px 0px 0px;
+    }
 
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
+    .imageDiv img {
+      width: 48%;
+      height: 430px;
+    }
 
-      main {
-        padding: 20px;
-      }
-      .content {
-        max-width: 900px;
-        margin: 70px auto 100px;
-        padding: 20px 40px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+    #translateBtnDiv {
+      position: relative;
+      top: 50px;
+      left: 250px;
+    }
 
-      .imageDiv {
-        text-align: center;
-        margin: 20px 0px 0px;
-      }
-
-      .imageDiv img {
-        width: 48%;
-        height: 430px;
-      }
-
-      #translateBtnDiv {
-        position: relative;
-        top: 50px;
-        left: 250px;
-      }
-
-      #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
+    #translateBtn {
+      border: 0;
+      padding: 15px 25px;
+      color: #fff;
+      background-image: linear-gradient(to right,
           #314755 0%,
           #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
+          #314755 100%);
+      background-size: 200% auto;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-      /* footer {
+    #translateBtn:hover {
+      background-position: right center;
+    }
+
+    /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -213,65 +136,37 @@
         font-size: 14px;
       } */
 
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-        main h1 {
-          font-size: 22px;
-        }
+    @media screen and (max-width: 600px) {
 
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+      .content {
+        width: 90%;
+        margin: 60px auto;
+        padding: 10px 15px;
+      }
 
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
+      .imageDiv {
+        margin: 20px 0px -20px;
+      }
 
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
+      .imageDiv img {
+        width: 300px;
+        height: 210px;
+      }
 
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
+      #translateBtnDiv {
+        left: 5px;
+      }
 
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
+      .content p {
+        font-size: 14px;
+      }
 
-        .content {
-          width: 90%;
-          margin: 60px auto;
-          padding: 10px 15px;
-        }
-        .imageDiv{
-          margin: 20px 0px -20px;
-        }
-        .imageDiv img {
-          width: 300px;
-          height: 210px;
-        }
+      #translateBtn {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
 
-        #translateBtnDiv {
-          left: 5px;
-        }
-        .content p {
-          font-size: 14px;
-        }
-
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        /* .footer-content {
+      /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -298,179 +193,210 @@
         .creatorDiv p {
           font-size: 12px;
         } */
-      }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <div class="header">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
+<body>
 
-        <div class="navbar">
-          <a href="aboutus.html" id="active">About Us</a>
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-          <a href="contactus.html">Contact Us</a>
-          
+  <div class="header">
+    <div class="navigation">
+      <div class="homeDiv">
+        <button id="homeBtn"><a href="./index.html">Home</a></button>
+      </div>
+
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </input>
+      </form>
+    </div>
+    <div class="navbar">
+      <a href="aboutus.html" id="active">About Us</a>
+      <a href="scriptures.html">Scriptures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+      <a href="devotional-resources.html">Devotional Resources</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <div class="right">
+      <div class="menuDrop-btn" onclick="togglemenuDrop()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="menuDrop" id="menuDrop">
+        <a href="aboutus.html" id="active">About Us</a>
+        <a href="scriptures.html">Scriptures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+        <a href="devotional-resources.html">Devotional Resources</a>
+        <a href="contactus.html">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <main>
+    <h1>Surdas: The Melodious Poet of Shree Krishna</h1>
+    <div class="imageDiv">
+      <img src="./images/surdas.png" alt="सूरदास" />
+    </div>
+
+    <div id="translateBtnDiv">
+      <button onclick="toggleLanguage()" id="translateBtn">
+        हिंदी में पढ़ें
+      </button>
+    </div>
+    <div class="content">
+      <div id="content-english">
+        <p>
+          Surdas, the celebrated poet-saint, stands as a luminous figure in
+          the rich tapestry of devotion to Shree Krishna. Born in the 15th
+          century, his life unfolded as a melodic hymn dedicated to the Lord,
+          leaving an indelible mark on the landscape of Bhakti literature.
+        </p>
+        <p>
+          Surdas, often addressed as the "Bhakt Kavi," displayed an innate
+          talent for poetry from a young age. His verses, sung in the
+          soul-stirring raags, became a bridge between the earthly and the
+          divine, drawing listeners into the celestial realms of Krishna's
+          leelas.
+        </p>
+        <p>
+          The poet's journey was not without challenges. Blind since birth,
+          Surdas navigated a world of darkness, relying solely on the inner
+          vision of his heart. This physical limitation, however, only
+          deepened his spiritual insight, and he found solace in the boundless
+          beauty of Krishna's divine form.
+        </p>
+        <p>
+          Surdas' compositions, known as "Sursagar," overflow with profound
+          love and devotion. His words paint vivid portraits of Shree
+          Krishna's playful escapades, capturing the essence of the Lord's
+          divine character. Each verse resonates with the poet's deep yearning
+          for union with the beloved, transcending the limitations of the
+          material world.
+        </p>
+        <p>
+          Legends speak of Surdas' divine encounters with Shree Krishna. It is
+          said that the Lord, enchanted by the poet's devotion, would manifest
+          Himself to Surdas, engaging in melodious conversations and playful
+          interactions. These divine moments fueled the poet's creative
+          expression, as he poured his heart into verses that continue to
+          reverberate through the corridors of time.
+        </p>
+        <p>
+          Surdas' life is a testament to the transformative power of devotion,
+          proving that even in the darkest corners, the light of divine love
+          can illuminate the soul. His poetry remains a cherished gift to
+          humanity, an eternal melody that connects hearts to the divine
+          rhythm of Shree Krishna.
+        </p>
+      </div>
+      <div id="content-hindi" style="display: none">
+        <p>
+          सूरदास, प्रसिद्ध कवि-संत, श्री कृष्ण की भक्ति की समृद्ध छवि में एक
+          चमकदार छवि के रूप में खड़े हैं। 15वीं शताब्दी में जन्मे, उनका जीवन
+          भगवान को समर्पित एक मधुर भजन के रूप में सामने आया, जिसने भक्ति
+          साहित्य के परिदृश्य पर एक अमिट छाप छोड़ी।
+        </p>
+
+        <p>
+          सूरदास, जिन्हें अक्सर "भक्त कवि" के रूप में संबोधित किया जाता है, ने
+          छोटी उम्र से ही कविता के लिए एक जन्मजात प्रतिभा प्रदर्शित की। आत्मा
+          को झकझोर देने वाले रागों में गाए गए उनके छंद सांसारिक और दिव्य के
+          बीच एक सेतु बन गए, जो श्रोताओं को कृष्ण की लीलाओं के दिव्य क्षेत्र
+          में ले गए।
+        </p>
+
+        <p>
+          कवि की यात्रा चुनौतियों से रहित नहीं थी। जन्म से दृष्टिहीन सूरदास ने
+          केवल अपने हृदय की आंतरिक दृष्टि पर भरोसा करते हुए अंधकार की दुनिया
+          में कदम रखा। हालाँकि, इस भौतिक सीमा ने उनकी आध्यात्मिक अंतर्दृष्टि
+          को और गहरा कर दिया, और उन्हें कृष्ण के दिव्य रूप की असीम सुंदरता में
+          सांत्वना मिली।
+        </p>
+
+        <p>
+          सूरदास की रचनाएँ, जिन्हें "सूरसागर" के नाम से जाना जाता है, गहन
+          प्रेम और भक्ति से ओत-प्रोत हैं। उनके शब्द श्री कृष्ण की चंचल लीलाओं
+          के ज्वलंत चित्र चित्रित करते हैं, जो भगवान के दिव्य चरित्र के सार को
+          दर्शाते हैं। प्रत्येक कविता भौतिक संसार की सीमाओं से परे, प्रिय के
+          साथ मिलन की कवि की गहरी लालसा को प्रतिध्वनित करती है।
+        </p>
+
+        <p>
+          किंवदंतियाँ श्री कृष्ण के साथ सूरदास की दिव्य मुठभेड़ों की बात करती
+          हैं। ऐसा कहा जाता है कि भगवान, कवि की भक्ति से मंत्रमुग्ध होकर,
+          सूरदास के सामने प्रकट होंगे, मधुर वार्तालाप और चंचल बातचीत में
+          संलग्न होंगे। इन दिव्य क्षणों ने कवि की रचनात्मक अभिव्यक्ति को
+          बढ़ावा दिया, क्योंकि उन्होंने अपने हृदय को छंदों में पिरोया जो समय
+          के गलियारों में गूंजता रहा।
+        </p>
+
+        <p>
+          सूरदास का जीवन भक्ति की परिवर्तनकारी शक्ति का एक प्रमाण है, जो यह
+          साबित करता है कि अंधेरे कोनों में भी, दिव्य प्रेम की रोशनी आत्मा को
+          रोशन कर सकती है। उनकी कविता मानवता के लिए एक अनमोल उपहार है, एक
+          शाश्वत संगीत है जो दिलों को श्री कृष्ण की दिव्य लय से जोड़ता है।
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
+
+
+    <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a>
+        </h3>
+        <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+        <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact
+            Us</a></h3>
+        <p>Email: <a href="mailto:info@example.com"
+            style="color: white; text-decoration: underline;">info@example.com</a></p>
+        <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+        <p>Feel free to reach out for any inquiries or support.</p>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;">Follow Us</h3>
+
+
+        <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+          <a href="#" target="_blank" title="Github"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" target="_blank" title="Codepen"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+          <a href="#" target="_blank" title="LinkedIn"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </div>
-
-    <main>
-      <h1>Surdas: The Melodious Poet of Shree Krishna</h1>
-      <div class="imageDiv">
-        <img src="./images/surdas.png" alt="सूरदास" />
-      </div>
-
-      <div id="translateBtnDiv">
-        <button onclick="toggleLanguage()" id="translateBtn">
-          हिंदी में पढ़ें
-        </button>
-      </div>
-      <div class="content">
-        <div id="content-english">
-          <p>
-            Surdas, the celebrated poet-saint, stands as a luminous figure in
-            the rich tapestry of devotion to Shree Krishna. Born in the 15th
-            century, his life unfolded as a melodic hymn dedicated to the Lord,
-            leaving an indelible mark on the landscape of Bhakti literature.
-          </p>
-          <p>
-            Surdas, often addressed as the "Bhakt Kavi," displayed an innate
-            talent for poetry from a young age. His verses, sung in the
-            soul-stirring raags, became a bridge between the earthly and the
-            divine, drawing listeners into the celestial realms of Krishna's
-            leelas.
-          </p>
-          <p>
-            The poet's journey was not without challenges. Blind since birth,
-            Surdas navigated a world of darkness, relying solely on the inner
-            vision of his heart. This physical limitation, however, only
-            deepened his spiritual insight, and he found solace in the boundless
-            beauty of Krishna's divine form.
-          </p>
-          <p>
-            Surdas' compositions, known as "Sursagar," overflow with profound
-            love and devotion. His words paint vivid portraits of Shree
-            Krishna's playful escapades, capturing the essence of the Lord's
-            divine character. Each verse resonates with the poet's deep yearning
-            for union with the beloved, transcending the limitations of the
-            material world.
-          </p>
-          <p>
-            Legends speak of Surdas' divine encounters with Shree Krishna. It is
-            said that the Lord, enchanted by the poet's devotion, would manifest
-            Himself to Surdas, engaging in melodious conversations and playful
-            interactions. These divine moments fueled the poet's creative
-            expression, as he poured his heart into verses that continue to
-            reverberate through the corridors of time.
-          </p>
-          <p>
-            Surdas' life is a testament to the transformative power of devotion,
-            proving that even in the darkest corners, the light of divine love
-            can illuminate the soul. His poetry remains a cherished gift to
-            humanity, an eternal melody that connects hearts to the divine
-            rhythm of Shree Krishna.
-          </p>
-        </div>
-        <div id="content-hindi" style="display: none">
-          <p>
-            सूरदास, प्रसिद्ध कवि-संत, श्री कृष्ण की भक्ति की समृद्ध छवि में एक
-            चमकदार छवि के रूप में खड़े हैं। 15वीं शताब्दी में जन्मे, उनका जीवन
-            भगवान को समर्पित एक मधुर भजन के रूप में सामने आया, जिसने भक्ति
-            साहित्य के परिदृश्य पर एक अमिट छाप छोड़ी।
-          </p>
-
-          <p>
-            सूरदास, जिन्हें अक्सर "भक्त कवि" के रूप में संबोधित किया जाता है, ने
-            छोटी उम्र से ही कविता के लिए एक जन्मजात प्रतिभा प्रदर्शित की। आत्मा
-            को झकझोर देने वाले रागों में गाए गए उनके छंद सांसारिक और दिव्य के
-            बीच एक सेतु बन गए, जो श्रोताओं को कृष्ण की लीलाओं के दिव्य क्षेत्र
-            में ले गए।
-          </p>
-
-          <p>
-            कवि की यात्रा चुनौतियों से रहित नहीं थी। जन्म से दृष्टिहीन सूरदास ने
-            केवल अपने हृदय की आंतरिक दृष्टि पर भरोसा करते हुए अंधकार की दुनिया
-            में कदम रखा। हालाँकि, इस भौतिक सीमा ने उनकी आध्यात्मिक अंतर्दृष्टि
-            को और गहरा कर दिया, और उन्हें कृष्ण के दिव्य रूप की असीम सुंदरता में
-            सांत्वना मिली।
-          </p>
-
-          <p>
-            सूरदास की रचनाएँ, जिन्हें "सूरसागर" के नाम से जाना जाता है, गहन
-            प्रेम और भक्ति से ओत-प्रोत हैं। उनके शब्द श्री कृष्ण की चंचल लीलाओं
-            के ज्वलंत चित्र चित्रित करते हैं, जो भगवान के दिव्य चरित्र के सार को
-            दर्शाते हैं। प्रत्येक कविता भौतिक संसार की सीमाओं से परे, प्रिय के
-            साथ मिलन की कवि की गहरी लालसा को प्रतिध्वनित करती है।
-          </p>
-
-          <p>
-            किंवदंतियाँ श्री कृष्ण के साथ सूरदास की दिव्य मुठभेड़ों की बात करती
-            हैं। ऐसा कहा जाता है कि भगवान, कवि की भक्ति से मंत्रमुग्ध होकर,
-            सूरदास के सामने प्रकट होंगे, मधुर वार्तालाप और चंचल बातचीत में
-            संलग्न होंगे। इन दिव्य क्षणों ने कवि की रचनात्मक अभिव्यक्ति को
-            बढ़ावा दिया, क्योंकि उन्होंने अपने हृदय को छंदों में पिरोया जो समय
-            के गलियारों में गूंजता रहा।
-          </p>
-
-          <p>
-            सूरदास का जीवन भक्ति की परिवर्तनकारी शक्ति का एक प्रमाण है, जो यह
-            साबित करता है कि अंधेरे कोनों में भी, दिव्य प्रेम की रोशनी आत्मा को
-            रोशन कर सकती है। उनकी कविता मानवता के लिए एक अनमोल उपहार है, एक
-            शाश्वत संगीत है जो दिलों को श्री कृष्ण की दिव्य लय से जोड़ता है।
-          </p>
-        </div>
-      </div>
-    </main>
-
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
-
-   
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
-          <p>Feel free to reach out for any inquiries or support.</p>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
-
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-codepen"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-      </div>
-    </footer>
+    <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+    </div>
+  </footer>
 
 
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

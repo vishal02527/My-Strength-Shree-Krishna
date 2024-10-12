@@ -1,0 +1,293 @@
+.header {
+    text-align: center;
+    background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+    padding: 14px 5px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 6px 10px #ccc;
+    border-radius: 10px;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+
+.homeDiv {
+    margin-right: 20px;
+}
+
+.navigation .homeDiv #homeBtn a {
+    background-color: rgb(5, 6, 45);
+    color: #fff;
+    font-size: 16px;
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+    text-decoration: none;
+}
+
+.navigation .homeDiv #homeBtn:hover a {
+    background: none;
+}
+
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    box-sizing: border-box;
+    width: 190px;
+    height: 35px;
+    padding: 5px 20px;
+    border-radius: 50px;
+
+    border: 0;
+
+}
+
+
+
+.searchInput {
+    align-self: center;
+    font-size: 90%;
+    background-color: rgba(152, 76, 240, 0.2);
+    width: 80%;
+    padding: 8px 40px 8px 8px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: white;
+
+    border: solid #5b42f3 1.2px;
+
+}
+
+.searchInput :hover {
+    background-color: #5b42f3;
+}
+
+
+
+
+
+.searchForm {
+    position: relative;
+
+    width: 280px;
+
+
+}
+
+
+
+.searchForm button {
+    position: absolute;
+    right: 14%;
+    top: 65%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.searchForm button i {
+    color: #2b2d2e;
+
+    padding: 9px 15px;
+    font-size: 16px;
+    transition: color 0.16s linear;
+}
+
+.searchForm button i:hover {
+    color: #23d1c8;
+}
+
+.navigation .homeDiv #homeBtn {
+    align-items: center;
+    background-image: linear-gradient(144deg,
+            #af40ff,
+            #5b42f3 50%,
+            #00ddeb);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    justify-content: center;
+    line-height: 0.8em;
+    max-width: 100%;
+    min-width: 110px;
+    padding: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: rgb(104, 122, 240);
+    opacity: 1;
+    /* For older browsers */
+
+}
+
+.navbar {
+    margin-top: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    margin: 0 15px;
+}
+
+.navbar a {
+    position: relative;
+    /* top : 10px;  */
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 5px;
+    font-size: 14px;
+    font-weight: 300;
+    transition: ease-in 0.3s;
+    border: 2px solid #fff;
+    padding: 8px 10px;
+    border-radius: 20px;
+
+}
+
+
+.navbar a:hover {
+    color: rgb(250, 219, 153);
+    border: 2px solid rgb(250, 219, 153);
+    transition: 0.3s;
+}
+
+.right {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } */
+
+
+    .homeDiv {
+        width: 10%;
+    }
+
+    .searchInput {
+        width: 80%;
+    }
+
+
+
+    .navbar {
+        display: none;
+    }
+
+    .right {
+        display: block;
+    }
+
+    .menuDrop-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 3px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    .menuDrop-btn div {
+        background-image: linear-gradient(144deg,
+                #af40ff,
+                #5b42f3 50%,
+                #00ddeb);
+        width: 30px;
+        height: 4px;
+        background-color: #333;
+        transition: all 0.3s;
+    }
+
+    .menuDrop-btn:hover {
+        transform: scale(1.01);
+
+        transition: all 0.3s;
+
+    }
+
+    .menuDrop-btn.open div:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .menuDrop-btn.open div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menuDrop-btn.open div:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .menuDrop {
+        display: none;
+        flex-direction: column;
+        background: rgba(137, 45, 242, 0.919);
+        /* background: #333; */
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        width: 150px;
+        top: 60px;
+        left: 80%;
+        transform: translateX(-50%);
+        border-radius: 10%;
+        z-index: 99;
+
+    }
+
+    .menuDrop.open {
+        display: flex;
+    }
+
+    .menuDrop a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 0;
+    }
+
+    .menuDrop a:hover {
+        background-image: linear-gradient(144deg,
+                #af40ff,
+                #5b42f3 50%,
+                #00ddeb);
+        color: #00ddeb;
+        border-radius: 10px;
+        box-shadow: #333 1px 1.2px 8px;
+    }
+
+    .menuDrop-btn {
+        margin-right: 19px;
+    }
+}

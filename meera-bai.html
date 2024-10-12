@@ -1,455 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meera Bai: The Pinnacle of Devotion</title>
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
-      p::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      main h1 {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meera Bai: The Pinnacle of Devotion</title>
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="sources/cssFiles/navbar.css">
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    p::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    main h1 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
+    main {
+      padding: 20px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 70px auto 100px;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .imageDiv {
+      text-align: center;
+      margin: 20px 0px 0px;
+    }
+
+    .imageDiv img {
+      width: 48%;
+      height: 430px;
+    }
+
+    #translateBtnDiv {
+      position: relative;
+      top: 50px;
+      left: 250px;
+    }
+
+    #translateBtn {
+      border: 0;
+      padding: 15px 25px;
+      color: #fff;
+      background-image: linear-gradient(to right,
+          #314755 0%,
+          #26a0da 51%,
+          #314755 100%);
+      background-size: 200% auto;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #translateBtn:hover {
+      background-position: right center;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0px 10px 0px 60px;
+    }
+
+    .footer-section {
+      margin-bottom: 20px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 10px;
+      color: #f39c12;
+    }
+
+    .footer-section p {
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .social-icons a i {
+      color: #ecf0f1;
+      margin: 0 8px;
+      font-size: 30px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-icons a i:hover {
+      color: rgb(241, 203, 120);
+    }
+
+    .creatorDiv {
+      margin-top: 10px;
+    }
+
+    .creatorDiv p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 600px) {
       .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
-
-      .navigation {
+        position: unset;
         padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
       }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
+      main h1 {
+        font-size: 22px;
       }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
-
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-
-      main {
-        padding: 20px;
-      }
       .content {
-        max-width: 900px;
-        margin: 70px auto 100px;
-        padding: 20px 40px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        margin: 60px auto;
+        padding: 10px 15px;
       }
 
       .imageDiv {
-        text-align: center;
-        margin: 20px 0px 0px;
+        margin: 20px 0px -20px;
       }
 
       .imageDiv img {
-        width: 48%;
-        height: 430px;
+        width: 300px;
+        height: 210px;
       }
 
       #translateBtnDiv {
-        position: relative;
-        top: 50px;
-        left: 250px;
+        left: 5px;
       }
 
-      #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
-          #314755 0%,
-          #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
-
-      footer {
-        background-color: #2c3e50;
-        color: #ecf0f1;
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 0px 10px 0px 60px;
-      }
-
-      .footer-section {
-        margin-bottom: 20px;
-      }
-
-      .footer-section h3 {
-        margin-bottom: 10px;
-        color: #f39c12;
-      }
-
-      .footer-section p {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-      .social-icons a i {
-        color: #ecf0f1;
-        margin: 0 8px;
-        font-size: 30px;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .social-icons a i:hover {
-        color: rgb(241, 203, 120);
-      }
-
-      .creatorDiv {
-        margin-top: 10px;
-      }
-
-      .creatorDiv p {
-        margin-top: 0;
-        margin-bottom: 0;
+      .content p {
         font-size: 14px;
       }
 
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-        main h1 {
-          font-size: 22px;
-        }
-
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
-
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
-
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
-
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-
-        .content {
-          width: 90%;
-          margin: 60px auto;
-          padding: 10px 15px;
-        }
-        .imageDiv{
-          margin: 20px 0px -20px;
-        }
-        .imageDiv img {
-          width: 300px;
-          height: 210px;
-        }
-
-        #translateBtnDiv {
-          left: 5px;
-        }
-        .content p {
-          font-size: 14px;
-        }
-
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        .footer-content {
-          flex-direction: column;
-          align-items: center;
-          margin: 0px 40px 0px 0px;
-        }
-
-        .footer-section p {
-          font-size: 14px;
-        }
-
-        .social-icons a i {
-          font-size: 22px;
-          margin: 5px;
-        }
-
-        .footer-section {
-          margin-bottom: 0;
-        }
-
-        .creatorDiv {
-          margin-top: 20px;
-          margin-right: 30px;
-        }
-
-        .creatorDiv p {
-          font-size: 12px;
-        }
-      }
-    </style><style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
-      p::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      main h1 {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
-
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
-
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
-
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
-
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-
-      main {
-        padding: 20px;
-      }
-      .content {
-        max-width: 900px;
-        margin: 70px auto 100px;
-        padding: 20px 40px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .imageDiv {
-        text-align: center;
-        margin: 20px 0px 0px;
-      }
-
-      .imageDiv img {
-        width: 48%;
-        height: 430px;
-      }
-
-      #translateBtnDiv {
-        position: relative;
-        top: 50px;
-        left: 250px;
-      }
-
       #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 40px 0px 0px;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+      }
+
+      .social-icons a i {
+        font-size: 22px;
+        margin: 5px;
+      }
+
+      .footer-section {
+        margin-bottom: 0;
+      }
+
+      .creatorDiv {
+        margin-top: 20px;
+        margin-right: 30px;
+      }
+
+      .creatorDiv p {
+        font-size: 12px;
+      }
+    }
+  </style>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    p::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    main h1 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
+    main {
+      padding: 20px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 70px auto 100px;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .imageDiv {
+      text-align: center;
+      margin: 20px 0px 0px;
+    }
+
+    .imageDiv img {
+      width: 48%;
+      height: 430px;
+    }
+
+    #translateBtnDiv {
+      position: relative;
+      top: 50px;
+      left: 250px;
+    }
+
+    #translateBtn {
+      border: 0;
+      padding: 15px 25px;
+      color: #fff;
+      background-image: linear-gradient(to right,
           #314755 0%,
           #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
+          #314755 100%);
+      background-size: 200% auto;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-      /* footer {
+    #translateBtn:hover {
+      background-position: right center;
+    }
+
+    /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -504,65 +334,45 @@
         font-size: 14px;
       } */
 
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-        main h1 {
-          font-size: 22px;
-        }
+    @media screen and (max-width: 600px) {
+      .header {
+        position: unset;
+        padding: 10px;
+      }
 
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+      main h1 {
+        font-size: 22px;
+      }
 
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
+      .content {
+        width: 90%;
+        margin: 60px auto;
+        padding: 10px 15px;
+      }
 
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
+      .imageDiv {
+        margin: 20px 0px -20px;
+      }
 
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
+      .imageDiv img {
+        width: 300px;
+        height: 210px;
+      }
 
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
+      #translateBtnDiv {
+        left: 5px;
+      }
 
-        .content {
-          width: 90%;
-          margin: 60px auto;
-          padding: 10px 15px;
-        }
-        .imageDiv{
-          margin: 20px 0px -20px;
-        }
-        .imageDiv img {
-          width: 300px;
-          height: 210px;
-        }
+      .content p {
+        font-size: 14px;
+      }
 
-        #translateBtnDiv {
-          left: 5px;
-        }
-        .content p {
-          font-size: 14px;
-        }
+      #translateBtn {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
 
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        /* .footer-content {
+      /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -589,176 +399,204 @@
         .creatorDiv p {
           font-size: 12px;
         } */
-      }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <div class="header">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
+<body>
+  <div class="header">
+    <div class="navigation">
+      <div class="homeDiv">
+        <button id="homeBtn"><a href="./index.html">Home</a></button>
+      </div>
 
-        <div class="navbar">
-          <a href="aboutus.html" id="active">About Us</a>
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-          <a href="contactus.html">Contact Us</a>
-          
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </input>
+      </form>
+    </div>
+    <div class="navbar">
+      <a href="aboutus.html" id="active">About Us</a>
+      <a href="scriptures.html">Scriptures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+      <a href="devotional-resources.html">Devotional Resources</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <div class="right">
+      <div class="menuDrop-btn" onclick="togglemenuDrop()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="menuDrop" id="menuDrop">
+        <a href="aboutus.html" id="active">About Us</a>
+        <a href="scriptures.html">Scriptures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+        <a href="devotional-resources.html">Devotional Resources</a>
+        <a href="contactus.html">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+  <main>
+    <h1>Meera Bai: The Pinnacle of Devotion</h1>
+    <div class="imageDiv">
+      <img src="./images/meerabai.png" alt="मीरा बाई" />
+    </div>
+
+    <div id="translateBtnDiv">
+      <button onclick="toggleLanguage()" id="translateBtn">
+        हिंदी में पढ़ें
+      </button>
+    </div>
+    <div class="content">
+      <div id="content-english">
+        <p>
+          Meera Bai, a luminary in the galaxy of Bhakti saints, exemplifies
+          the epitome of unwavering devotion and divine love. Born in the 16th
+          century in Rajasthan, Meera's life unfolded as an enchanting saga of
+          love, sacrifice, and unbridled devotion to Shree Krishna.
+        </p>
+        <p>
+          From a young age, Meera exhibited a deep spiritual inclination,
+          often losing herself in moments of divine communion. Her heart,
+          however, found its true calling when she encountered the divine
+          leelas of Shree Krishna. The Lord's flute, the sound of His name,
+          and the tales of His exploits captured Meera's soul, igniting a
+          flame of love that would consume her entire being.
+        </p>
+        <p>
+          Meera's devotion to Shree Krishna transcended societal norms and
+          earthly attachments. Her marriage to Rana Kumbha of Mewar did little
+          to alter her unwavering commitment to her true love, Lord Krishna.
+          The royal court became a backdrop for her devotional expressions,
+          with Meera often singing and dancing in ecstatic devotion, oblivious
+          to the world around her.
+        </p>
+        <p>
+          The stories of Meera Bai's miracles and divine encounters are woven
+          into the fabric of Bhakti literature. Legends speak of her fearless
+          encounters with societal disapproval, her miraculous communion with
+          the deity, and her unshakable faith that turned every challenge into
+          an opportunity to deepen her connection with Shree Krishna.
+        </p>
+        <p>
+          Meera Bai's poetry, composed in the Rajasthani and Braj Bhasha
+          languages, is a timeless testament to the intensity of her love for
+          Krishna. Her bhajans and padas, sung in soulful melodies, continue
+          to resonate with devotees across generations, carrying the fragrance
+          of devotion and surrender.
+        </p>
+        <p>
+          Meera Bai's life remains an inspiration for seekers on the spiritual
+          path, a journey that transcends the mundane and reaches the sublime
+          realms of divine love. Her devotional journey serves as a guiding
+          light, reminding us that true love, when directed towards the
+          divine, can lead the soul to ultimate liberation and union with the
+          beloved Lord.
+        </p>
+      </div>
+      <div id="content-hindi" style="display: none">
+        <p>
+          मीरा बाई, भक्ति संतों के तारों की एक चमकती ज्यों में रौशनी है,
+          निरंतर भक्ति और दिव्य प्रेम के पराकाष्ठान का उदाहरण हैं। राजस्थान
+          में 16वीं सदी में जन्मी मीरा का जीवन श्री कृष्ण के प्रति अनवरत
+          समर्पण, त्याग और उनकी असीम भक्ति की एक बहुत प्यारी कहानी के रूप में
+          खुला।
+        </p>
+        <p>
+          एक युवा आयु से ही, मीरा ने एक गहरे आध्यात्मिक झुकाव का प्रदर्शन
+          किया, अक्सर दिव्य सम्बोधन के क्षणों में खो जाती थीं। हालांकि, जब
+          उन्होंने श्री कृष्ण के दिव्य लीलाओं से मिले, तो उनका जीवन श्री कृष्ण
+          के प्रति प्रेम की एक ऐसी कहानी बन गया जिसने उनके पूरे अस्तित्व को
+          भस्म कर दिया।
+        </p>
+        <p>
+          मीरा का श्री कृष्ण के प्रति भक्ति ने सामाजिक नर्मों और पृथ्वीय
+          आसक्तियों को पारित करने में सहायक होते हुए उच्च स्तर की समर्पण और
+          प्रेम की ऊँचाई तक पहुंचा दिया। उनका मेवाड़ के राणा कुंभा के साथ
+          विवाह उनके सच्चे प्रेम को बदलने में कुछ भी नहीं किया, वरन उनके
+          वास्तविक प्रेम के प्रति उनकी अड़चन को बढ़ाने का एक अवसर बन गया।
+          राजमहल उनकी भक्ति के अभिव्यक्तियों का पृष्ठभूमि बन गया, जिसमें मीरा
+          अक्सर भक्ति में रूचि रखती थीं, अपने चरणों में गातीं और नृत्य करतीं,
+          उसे चारों ओर के दुनिया से अनजान बना देती।
+        </p>
+        <p>
+          मीरा बाई के चमत्कार और दिव्य मुलाकातों की कहानियां भक्ति साहित्य के
+          रेशमी धागों में बुनी गई हैं। किस्से उनके साहसी सामाजिक अस्वीकृति के
+          साथ, उनके दैहिक संबंधों के साथ उनके आशीर्वाद से भरे संदर्भों के साथ,
+          और उनके अदल-बदल में श्री कृष्ण के साथ उनके स्थानीय संपर्क की अथाह
+          आस्था के साथ हैं।
+        </p>
+        <p>
+          मीरा बाई की कविता, राजस्थानी और ब्रज भाषा में लिखी गई, उनके कृष्ण के
+          प्रति प्रेम की अधिमा का समयोग है। उनके भजन और पद, सौम्य मेलोदियों
+          में गाए जाने वाले, पीढ़ियों के बीच भक्तों के साथ संवाद करते हैं,
+          भक्ति और आत्मसमर्पण की खुशबू को साथ लेकर।
+        </p>
+        <p>
+          मीरा बाई का जीवन साधकों के लिए प्रेरणा स्रोत बना है, एक ऐसी यात्रा
+          की ओर जो पारंपरिक होने से बाहर निकलती है, आत्मा को परम विमुक्ति और
+          प्रिय भगवान के साथ एकीकरण की ओर ले जा सकती है।
+        </p>
+      </div>
+    </div>
+  </main>
+
+
+
+  <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
+    <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a>
+        </h3>
+        <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+        <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact
+            Us</a></h3>
+        <p>Email: <a href="mailto:info@example.com"
+            style="color: white; text-decoration: underline;">info@example.com</a></p>
+        <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+        <p>Feel free to reach out for any inquiries or support.</p>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;">Follow Us</h3>
+
+
+        <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+          <a href="#" target="_blank" title="Github"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" target="_blank" title="Codepen"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+          <a href="#" target="_blank" title="LinkedIn"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </div>
-
-    <main>
-      <h1>Meera Bai: The Pinnacle of Devotion</h1>
-      <div class="imageDiv">
-        <img src="./images/meerabai.png" alt="मीरा बाई" />
-      </div>
-
-      <div id="translateBtnDiv">
-        <button onclick="toggleLanguage()" id="translateBtn">
-          हिंदी में पढ़ें
-        </button>
-      </div>
-      <div class="content">
-        <div id="content-english">
-          <p>
-            Meera Bai, a luminary in the galaxy of Bhakti saints, exemplifies
-            the epitome of unwavering devotion and divine love. Born in the 16th
-            century in Rajasthan, Meera's life unfolded as an enchanting saga of
-            love, sacrifice, and unbridled devotion to Shree Krishna.
-          </p>
-          <p>
-            From a young age, Meera exhibited a deep spiritual inclination,
-            often losing herself in moments of divine communion. Her heart,
-            however, found its true calling when she encountered the divine
-            leelas of Shree Krishna. The Lord's flute, the sound of His name,
-            and the tales of His exploits captured Meera's soul, igniting a
-            flame of love that would consume her entire being.
-          </p>
-          <p>
-            Meera's devotion to Shree Krishna transcended societal norms and
-            earthly attachments. Her marriage to Rana Kumbha of Mewar did little
-            to alter her unwavering commitment to her true love, Lord Krishna.
-            The royal court became a backdrop for her devotional expressions,
-            with Meera often singing and dancing in ecstatic devotion, oblivious
-            to the world around her.
-          </p>
-          <p>
-            The stories of Meera Bai's miracles and divine encounters are woven
-            into the fabric of Bhakti literature. Legends speak of her fearless
-            encounters with societal disapproval, her miraculous communion with
-            the deity, and her unshakable faith that turned every challenge into
-            an opportunity to deepen her connection with Shree Krishna.
-          </p>
-          <p>
-            Meera Bai's poetry, composed in the Rajasthani and Braj Bhasha
-            languages, is a timeless testament to the intensity of her love for
-            Krishna. Her bhajans and padas, sung in soulful melodies, continue
-            to resonate with devotees across generations, carrying the fragrance
-            of devotion and surrender.
-          </p>
-          <p>
-            Meera Bai's life remains an inspiration for seekers on the spiritual
-            path, a journey that transcends the mundane and reaches the sublime
-            realms of divine love. Her devotional journey serves as a guiding
-            light, reminding us that true love, when directed towards the
-            divine, can lead the soul to ultimate liberation and union with the
-            beloved Lord.
-          </p>
-        </div>
-        <div id="content-hindi" style="display: none">
-          <p>
-            मीरा बाई, भक्ति संतों के तारों की एक चमकती ज्यों में रौशनी है,
-            निरंतर भक्ति और दिव्य प्रेम के पराकाष्ठान का उदाहरण हैं। राजस्थान
-            में 16वीं सदी में जन्मी मीरा का जीवन श्री कृष्ण के प्रति अनवरत
-            समर्पण, त्याग और उनकी असीम भक्ति की एक बहुत प्यारी कहानी के रूप में
-            खुला।
-          </p>
-          <p>
-            एक युवा आयु से ही, मीरा ने एक गहरे आध्यात्मिक झुकाव का प्रदर्शन
-            किया, अक्सर दिव्य सम्बोधन के क्षणों में खो जाती थीं। हालांकि, जब
-            उन्होंने श्री कृष्ण के दिव्य लीलाओं से मिले, तो उनका जीवन श्री कृष्ण
-            के प्रति प्रेम की एक ऐसी कहानी बन गया जिसने उनके पूरे अस्तित्व को
-            भस्म कर दिया।
-          </p>
-          <p>
-            मीरा का श्री कृष्ण के प्रति भक्ति ने सामाजिक नर्मों और पृथ्वीय
-            आसक्तियों को पारित करने में सहायक होते हुए उच्च स्तर की समर्पण और
-            प्रेम की ऊँचाई तक पहुंचा दिया। उनका मेवाड़ के राणा कुंभा के साथ
-            विवाह उनके सच्चे प्रेम को बदलने में कुछ भी नहीं किया, वरन उनके
-            वास्तविक प्रेम के प्रति उनकी अड़चन को बढ़ाने का एक अवसर बन गया।
-            राजमहल उनकी भक्ति के अभिव्यक्तियों का पृष्ठभूमि बन गया, जिसमें मीरा
-            अक्सर भक्ति में रूचि रखती थीं, अपने चरणों में गातीं और नृत्य करतीं,
-            उसे चारों ओर के दुनिया से अनजान बना देती।
-          </p>
-          <p>
-            मीरा बाई के चमत्कार और दिव्य मुलाकातों की कहानियां भक्ति साहित्य के
-            रेशमी धागों में बुनी गई हैं। किस्से उनके साहसी सामाजिक अस्वीकृति के
-            साथ, उनके दैहिक संबंधों के साथ उनके आशीर्वाद से भरे संदर्भों के साथ,
-            और उनके अदल-बदल में श्री कृष्ण के साथ उनके स्थानीय संपर्क की अथाह
-            आस्था के साथ हैं।
-          </p>
-          <p>
-            मीरा बाई की कविता, राजस्थानी और ब्रज भाषा में लिखी गई, उनके कृष्ण के
-            प्रति प्रेम की अधिमा का समयोग है। उनके भजन और पद, सौम्य मेलोदियों
-            में गाए जाने वाले, पीढ़ियों के बीच भक्तों के साथ संवाद करते हैं,
-            भक्ति और आत्मसमर्पण की खुशबू को साथ लेकर।
-          </p>
-          <p>
-            मीरा बाई का जीवन साधकों के लिए प्रेरणा स्रोत बना है, एक ऐसी यात्रा
-            की ओर जो पारंपरिक होने से बाहर निकलती है, आत्मा को परम विमुक्ति और
-            प्रिय भगवान के साथ एकीकरण की ओर ले जा सकती है।
-          </p>
-        </div>
-      </div>
-    </main>
-
-   
-
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
-          <p>Feel free to reach out for any inquiries or support.</p>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
-
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-codepen"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-      </div>
-    </footer>
+    <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+    </div>
+  </footer>
 
 
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

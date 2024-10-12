@@ -1,455 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raidas: A Spiritual Voyage in Devotion to Shree Krishna</title>
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
-      p::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      main h1 {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="sources/cssFiles/navbar.css"> -->
+  <title>Raidas: A Spiritual Voyage in Devotion to Shree Krishna</title>
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+
+
+
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    p::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    main h1 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
+    main {
+      padding: 20px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 70px auto 100px;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .imageDiv {
+      text-align: center;
+      margin: 20px 0px 0px;
+    }
+
+    .imageDiv img {
+      width: 48%;
+      height: 430px;
+    }
+
+    #translateBtnDiv {
+      position: relative;
+      top: 50px;
+      left: 250px;
+    }
+
+    #translateBtn {
+      border: 0;
+      padding: 15px 25px;
+      color: #fff;
+      background-image: linear-gradient(to right,
+          #314755 0%,
+          #26a0da 51%,
+          #314755 100%);
+      background-size: 200% auto;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #translateBtn:hover {
+      background-position: right center;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0px 10px 0px 60px;
+    }
+
+    .footer-section {
+      margin-bottom: 20px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 10px;
+      color: #f39c12;
+    }
+
+    .footer-section p {
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .social-icons a i {
+      color: #ecf0f1;
+      margin: 0 8px;
+      font-size: 30px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-icons a i:hover {
+      color: rgb(241, 203, 120);
+    }
+
+    .creatorDiv {
+      margin-top: 10px;
+    }
+
+    .creatorDiv p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 600px) {
       .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
-
-      .navigation {
+        position: unset;
         padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
       }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
+      main h1 {
+        font-size: 22px;
       }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
-
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
-
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
-
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-
-      main {
-        padding: 20px;
-      }
       .content {
-        max-width: 900px;
-        margin: 70px auto 100px;
-        padding: 20px 40px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        margin: 60px auto;
+        padding: 10px 15px;
       }
 
       .imageDiv {
-        text-align: center;
-        margin: 20px 0px 0px;
+        margin: 20px 0px -20px;
       }
 
       .imageDiv img {
-        width: 48%;
-        height: 430px;
+        width: 300px;
+        height: 210px;
       }
 
       #translateBtnDiv {
-        position: relative;
-        top: 50px;
-        left: 250px;
+        left: 5px;
       }
 
-      #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
-          #314755 0%,
-          #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
-
-      footer {
-        background-color: #2c3e50;
-        color: #ecf0f1;
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 0px 10px 0px 60px;
-      }
-
-      .footer-section {
-        margin-bottom: 20px;
-      }
-
-      .footer-section h3 {
-        margin-bottom: 10px;
-        color: #f39c12;
-      }
-
-      .footer-section p {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-      .social-icons a i {
-        color: #ecf0f1;
-        margin: 0 8px;
-        font-size: 30px;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .social-icons a i:hover {
-        color: rgb(241, 203, 120);
-      }
-
-      .creatorDiv {
-        margin-top: 10px;
-      }
-
-      .creatorDiv p {
-        margin-top: 0;
-        margin-bottom: 0;
+      .content p {
         font-size: 14px;
       }
 
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-        main h1 {
-          font-size: 22px;
-        }
-
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
-
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
-
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
-
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-
-        .content {
-          width: 90%;
-          margin: 60px auto;
-          padding: 10px 15px;
-        }
-        .imageDiv{
-          margin: 20px 0px -20px;
-        }
-        .imageDiv img {
-          width: 300px;
-          height: 210px;
-        }
-
-        #translateBtnDiv {
-          left: 5px;
-        }
-        .content p {
-          font-size: 14px;
-        }
-
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        .footer-content {
-          flex-direction: column;
-          align-items: center;
-          margin: 0px 40px 0px 0px;
-        }
-
-        .footer-section p {
-          font-size: 14px;
-        }
-
-        .social-icons a i {
-          font-size: 22px;
-          margin: 5px;
-        }
-
-        .footer-section {
-          margin-bottom: 0;
-        }
-
-        .creatorDiv {
-          margin-top: 20px;
-          margin-right: 30px;
-        }
-
-        .creatorDiv p {
-          font-size: 12px;
-        }
-      }
-    </style><style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
-      p::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      main h1 {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
-
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
-
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
-
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
-
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-
-      main {
-        padding: 20px;
-      }
-      .content {
-        max-width: 900px;
-        margin: 70px auto 100px;
-        padding: 20px 40px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .imageDiv {
-        text-align: center;
-        margin: 20px 0px 0px;
-      }
-
-      .imageDiv img {
-        width: 48%;
-        height: 430px;
-      }
-
-      #translateBtnDiv {
-        position: relative;
-        top: 50px;
-        left: 250px;
-      }
-
       #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 40px 0px 0px;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+      }
+
+      .social-icons a i {
+        font-size: 22px;
+        margin: 5px;
+      }
+
+      .footer-section {
+        margin-bottom: 0;
+      }
+
+      .creatorDiv {
+        margin-top: 20px;
+        margin-right: 30px;
+      }
+
+      .creatorDiv p {
+        font-size: 12px;
+      }
+    }
+  </style>
+
+
+
+
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    p::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    main h1 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
+    main {
+      padding: 20px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 70px auto 100px;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .imageDiv {
+      text-align: center;
+      margin: 20px 0px 0px;
+    }
+
+    .imageDiv img {
+      width: 48%;
+      height: 430px;
+    }
+
+    #translateBtnDiv {
+      position: relative;
+      top: 50px;
+      left: 250px;
+    }
+
+    #translateBtn {
+      border: 0;
+      padding: 15px 25px;
+      color: #fff;
+      background-image: linear-gradient(to right,
           #314755 0%,
           #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
+          #314755 100%);
+      background-size: 200% auto;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-      /* footer {
+    #translateBtn:hover {
+      background-position: right center;
+    }
+
+    /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -504,65 +339,46 @@
         font-size: 14px;
       } */
 
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-        main h1 {
-          font-size: 22px;
-        }
+    @media screen and (max-width: 600px) {
+      .header {
+        position: unset;
+        padding: 10px;
+      }
 
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+      main h1 {
+        font-size: 22px;
+      }
 
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
 
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
+      .content {
+        width: 90%;
+        margin: 60px auto;
+        padding: 10px 15px;
+      }
 
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
+      .imageDiv {
+        margin: 20px 0px -20px;
+      }
 
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
+      .imageDiv img {
+        width: 300px;
+        height: 210px;
+      }
 
-        .content {
-          width: 90%;
-          margin: 60px auto;
-          padding: 10px 15px;
-        }
-        .imageDiv{
-          margin: 20px 0px -20px;
-        }
-        .imageDiv img {
-          width: 300px;
-          height: 210px;
-        }
+      #translateBtnDiv {
+        left: 5px;
+      }
 
-        #translateBtnDiv {
-          left: 5px;
-        }
-        .content p {
-          font-size: 14px;
-        }
+      .content p {
+        font-size: 14px;
+      }
 
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        /* .footer-content {
+      #translateBtn {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -589,177 +405,208 @@
         .creatorDiv p {
           font-size: 12px;
         } */
-      }
-    </style>
-  </head>
+    }
+  </style> -->
+</head>
 
-  <body>
-    <div class="header">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
+<body>
 
-        <div class="navbar">
-          <a href="aboutus.html" id="active">About Us</a>
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-          <a href="contactus.html">Contact Us</a>
-          
+  <div class="header">
+    <div class="navigation">
+      <div class="homeDiv">
+        <button id="homeBtn"><a href="./index.html">Home</a></button>
+      </div>
+
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </input>
+      </form>
+    </div>
+    <div class="navbar">
+      <a href="aboutus.html" id="active">About Us</a>
+      <a href="scriptures.html">Scriptures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+      <a href="devotional-resources.html">Devotional Resources</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <div class="right">
+      <div class="menuDrop-btn" onclick="togglemenuDrop()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="menuDrop" id="menuDrop">
+        <a href="aboutus.html" id="active">About Us</a>
+        <a href="scriptures.html">Scriptures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+        <a href="devotional-resources.html">Devotional Resources</a>
+        <a href="contactus.html">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <main>
+    <h1>Raidas: A Spiritual Voyage in Devotion to Shree Krishna</h1>
+    <div class="imageDiv">
+      <img src="./images/raidas.png" alt="रैदास" />
+    </div>
+
+    <div id="translateBtnDiv">
+      <button onclick="toggleLanguage()" id="translateBtn">
+        हिंदी में पढ़ें
+      </button>
+    </div>
+    <div class="content">
+      <div id="content-english">
+        <p>
+          Raidas, also known as Ravidas or Guru Ravidas, stands as a towering
+          figure in the realm of devotional poets and saints. Born in the 15th
+          century, Raidas's life journey reflects a profound commitment to
+          spiritual ideals, with Shree Krishna as the focal point of his
+          unwavering devotion.
+        </p>
+        <p>
+          Hailing from humble origins, Raidas worked as a cobbler by
+          profession. His life, however, transcended the boundaries of social
+          status, as his heart was dedicated entirely to the worship of the
+          Divine. Raidas exemplified the essence of Bhakti, emphasizing the
+          universality of love for God, irrespective of one's caste or
+          occupation.
+        </p>
+        <p>
+          The devotional compositions of Raidas, encapsulated in the "Bani" or
+          verses attributed to him, echo the themes of love, humility, and the
+          quest for spiritual truth. Raidas's poems often depict poignant
+          dialogues between the soul and the Supreme, with Shree Krishna as
+          the object of boundless adoration.
+        </p>
+        <p>
+          One of Raidas's most celebrated contributions is the way he
+          challenged societal norms, advocating for equality and unity through
+          his devotion to Shree Krishna. His teachings emphasized that true
+          spirituality lies in transcending the divisions created by human
+          constructs and recognizing the divine spark present in every being.
+        </p>
+        <p>
+          Legends surrounding Raidas speak of his direct communion with Shree
+          Krishna, where the Lord acknowledged the sincerity of Raidas's
+          devotion. These divine encounters fueled the poet-saint's creative
+          expressions, inspiring verses that continue to inspire seekers on
+          their spiritual journeys.
+        </p>
+        <p>
+          Raidas's devotional journey serves as an enduring source of
+          inspiration, breaking down barriers and illuminating the path of
+          divine love. His life story resonates with the timeless message that
+          true devotion knows no bounds, and the love for Shree Krishna
+          transcends the limitations of societal norms, leading the soul to
+          the ultimate union with the Divine.
+        </p>
+      </div>
+      <div id="content-hindi" style="display: none">
+        <p>
+          रैदास, जिसे रविदास या गुरु रविदास भी कहा जाता है, भक्ति कवियों और
+          संतों के क्षेत्र में एक ऊँचा स्थान रखते हैं। 15वीं सदी में जन्मे
+          रैदास का जीवन-सफर एक अद्वितीय भक्ति के सिद्धांतों का परिचायक है,
+          जिसमें उनकी अटल भक्ति का केंद्र श्री कृष्ण है।
+        </p>
+        <p>
+          रैदास का जन्म सामान्य उत्पत्ति से हुआ था, और उन्होंने अपना जीवन एक
+          चमड़ेवाले के रूप में बिताया। उनका जीवन, हालांकि, सामाजिक स्थिति की
+          सीमाओं को पार करता था, क्योंकि उनका दिल पूरी तरह से भगवान की पूजा के
+          लिए समर्पित था। रैदास ने भक्ति के अद्वितीयता की ओर दिखाते हुए यह
+          दिखाया कि भगवान के प्रति प्रेम का सच्चा आदान-प्रदान सभी कास्ट या
+          ऑक्युपेशन के बावजूद होता है।
+        </p>
+        <p>
+          रैदास की भक्ति रचनाएँ, जो उन्हें सौंपी गई "बाणी" या उनसे जुड़े
+          शब्दों में हैं, उनकी कृपाशील और अद्वितीय भक्ति की ओर इशारा करती हैं।
+          रैदास की कविताएँ अक्सर आत्मा और परमात्मा के बीच दुखद संवादों को
+          दर्शाती हैं, जिसमें श्री कृष्ण को अवर्णनीय भक्ति का विषय बनाया गया
+          है।
+        </p>
+        <p>
+          रैदास का सबसे प्रसिद्ध योगदान में से एक यह है कि उन्होंने सामाजिक
+          नियमों को चुनौती देने का तरीका बताया, जिसमें उन्होंने भक्ति और
+          समरसता के माध्यम से समानता और एकता की बात की। उनकी शिक्षाएँ इसे
+          बताती हैं कि सच्ची आध्यात्मिकता मानव निर्मित विभाजनों को पार करने
+          में है और हर व्यक्ति में मौजूद ईश्वरीय चमक को पहचानने में है।
+        </p>
+        <p>
+          रैदास के चारित्रिक किस्से उनके सीधे दर्शनों की बात करते हैं, जहां
+          भगवान ने रैदास की भक्ति की ईमानदारी को स्वीकृति दी। इन दैवी संवादों
+          ने कवि-संत के रचनात्मक अभिव्यक्तियों को प्रेरित किया, जो अब भी
+          यात्रा करने वाले परमार्थीओं को प्रेरित कर रहे हैं।
+        </p>
+        <p>
+          रैदास की भक्ति यात्रा सतत प्रेरणा स्रोत के रूप में कार्य करती है,
+          सीमाओं को तोड़ती है और दिव्य प्रेम के मार्ग को प्रकाशित करती है।
+          उनकी जीवन कथा निरंतर संदेश देती है कि सच्ची भक्ति कोई सीमा नहीं
+          जानती है, और श्री कृष्ण के प्रति प्रेम सामाजिक निर्मितियों की सीमाओं
+          को तर्कसंगत नहीं समझता है, जीवात्मा को परमात्मा के साथ अंतिम एकता की
+          दिशा में ले जाता है।
+        </p>
+      </div>
+    </div>
+  </main>
+
+
+
+  <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
+    <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a>
+        </h3>
+        <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+        <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact
+            Us</a></h3>
+        <p>Email: <a href="mailto:info@example.com"
+            style="color: white; text-decoration: underline;">info@example.com</a></p>
+        <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+        <p>Feel free to reach out for any inquiries or support.</p>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;">Follow Us</h3>
+
+
+        <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+          <a href="#" target="_blank" title="Github"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" target="_blank" title="Codepen"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+          <a href="#" target="_blank" title="LinkedIn"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </div>
-
-    <main>
-      <h1>Raidas: A Spiritual Voyage in Devotion to Shree Krishna</h1>
-      <div class="imageDiv">
-        <img src="./images/raidas.png" alt="रैदास" />
-      </div>
-
-      <div id="translateBtnDiv">
-        <button onclick="toggleLanguage()" id="translateBtn">
-          हिंदी में पढ़ें
-        </button>
-      </div>
-      <div class="content">
-        <div id="content-english">
-          <p>
-            Raidas, also known as Ravidas or Guru Ravidas, stands as a towering
-            figure in the realm of devotional poets and saints. Born in the 15th
-            century, Raidas's life journey reflects a profound commitment to
-            spiritual ideals, with Shree Krishna as the focal point of his
-            unwavering devotion.
-          </p>
-          <p>
-            Hailing from humble origins, Raidas worked as a cobbler by
-            profession. His life, however, transcended the boundaries of social
-            status, as his heart was dedicated entirely to the worship of the
-            Divine. Raidas exemplified the essence of Bhakti, emphasizing the
-            universality of love for God, irrespective of one's caste or
-            occupation.
-          </p>
-          <p>
-            The devotional compositions of Raidas, encapsulated in the "Bani" or
-            verses attributed to him, echo the themes of love, humility, and the
-            quest for spiritual truth. Raidas's poems often depict poignant
-            dialogues between the soul and the Supreme, with Shree Krishna as
-            the object of boundless adoration.
-          </p>
-          <p>
-            One of Raidas's most celebrated contributions is the way he
-            challenged societal norms, advocating for equality and unity through
-            his devotion to Shree Krishna. His teachings emphasized that true
-            spirituality lies in transcending the divisions created by human
-            constructs and recognizing the divine spark present in every being.
-          </p>
-          <p>
-            Legends surrounding Raidas speak of his direct communion with Shree
-            Krishna, where the Lord acknowledged the sincerity of Raidas's
-            devotion. These divine encounters fueled the poet-saint's creative
-            expressions, inspiring verses that continue to inspire seekers on
-            their spiritual journeys.
-          </p>
-          <p>
-            Raidas's devotional journey serves as an enduring source of
-            inspiration, breaking down barriers and illuminating the path of
-            divine love. His life story resonates with the timeless message that
-            true devotion knows no bounds, and the love for Shree Krishna
-            transcends the limitations of societal norms, leading the soul to
-            the ultimate union with the Divine.
-          </p>
-        </div>
-        <div id="content-hindi" style="display: none">
-          <p>
-            रैदास, जिसे रविदास या गुरु रविदास भी कहा जाता है, भक्ति कवियों और
-            संतों के क्षेत्र में एक ऊँचा स्थान रखते हैं। 15वीं सदी में जन्मे
-            रैदास का जीवन-सफर एक अद्वितीय भक्ति के सिद्धांतों का परिचायक है,
-            जिसमें उनकी अटल भक्ति का केंद्र श्री कृष्ण है।
-          </p>
-          <p>
-            रैदास का जन्म सामान्य उत्पत्ति से हुआ था, और उन्होंने अपना जीवन एक
-            चमड़ेवाले के रूप में बिताया। उनका जीवन, हालांकि, सामाजिक स्थिति की
-            सीमाओं को पार करता था, क्योंकि उनका दिल पूरी तरह से भगवान की पूजा के
-            लिए समर्पित था। रैदास ने भक्ति के अद्वितीयता की ओर दिखाते हुए यह
-            दिखाया कि भगवान के प्रति प्रेम का सच्चा आदान-प्रदान सभी कास्ट या
-            ऑक्युपेशन के बावजूद होता है।
-          </p>
-          <p>
-            रैदास की भक्ति रचनाएँ, जो उन्हें सौंपी गई "बाणी" या उनसे जुड़े
-            शब्दों में हैं, उनकी कृपाशील और अद्वितीय भक्ति की ओर इशारा करती हैं।
-            रैदास की कविताएँ अक्सर आत्मा और परमात्मा के बीच दुखद संवादों को
-            दर्शाती हैं, जिसमें श्री कृष्ण को अवर्णनीय भक्ति का विषय बनाया गया
-            है।
-          </p>
-          <p>
-            रैदास का सबसे प्रसिद्ध योगदान में से एक यह है कि उन्होंने सामाजिक
-            नियमों को चुनौती देने का तरीका बताया, जिसमें उन्होंने भक्ति और
-            समरसता के माध्यम से समानता और एकता की बात की। उनकी शिक्षाएँ इसे
-            बताती हैं कि सच्ची आध्यात्मिकता मानव निर्मित विभाजनों को पार करने
-            में है और हर व्यक्ति में मौजूद ईश्वरीय चमक को पहचानने में है।
-          </p>
-          <p>
-            रैदास के चारित्रिक किस्से उनके सीधे दर्शनों की बात करते हैं, जहां
-            भगवान ने रैदास की भक्ति की ईमानदारी को स्वीकृति दी। इन दैवी संवादों
-            ने कवि-संत के रचनात्मक अभिव्यक्तियों को प्रेरित किया, जो अब भी
-            यात्रा करने वाले परमार्थीओं को प्रेरित कर रहे हैं।
-          </p>
-          <p>
-            रैदास की भक्ति यात्रा सतत प्रेरणा स्रोत के रूप में कार्य करती है,
-            सीमाओं को तोड़ती है और दिव्य प्रेम के मार्ग को प्रकाशित करती है।
-            उनकी जीवन कथा निरंतर संदेश देती है कि सच्ची भक्ति कोई सीमा नहीं
-            जानती है, और श्री कृष्ण के प्रति प्रेम सामाजिक निर्मितियों की सीमाओं
-            को तर्कसंगत नहीं समझता है, जीवात्मा को परमात्मा के साथ अंतिम एकता की
-            दिशा में ले जाता है।
-          </p>
-        </div>
-      </div>
-    </main>
-
-    
-
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
-          <p>Feel free to reach out for any inquiries or support.</p>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
-
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-codepen"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-      </div>
-    </footer>
+    <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+    </div>
+  </footer>
 
 
 
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

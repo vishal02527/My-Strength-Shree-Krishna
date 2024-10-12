@@ -1,173 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Devotional Resources: Shree Krishna</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
-      p::selection,
-      h2::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
 
-      /* Header styles */
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devotional Resources: Shree Krishna</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="sources/cssFiles/navbar.css">
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
 
-      .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
+    p::selection,
+    h2::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
 
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    /* Header styles */
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
+    #active {
+      color: rgb(250, 219, 153);
+      border: 2px solid rgb(250, 219, 153);
+    }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
+    /* Main content styles */
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
+    main {
+      padding: 20px;
+    }
 
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
+    .content {
+      padding: 20px 120px;
+      margin-bottom: 50px;
+    }
 
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-      #active {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
+    .content h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-      /* Main content styles */
+    .resource-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
 
-      main {
-        padding: 20px;
-      }
+    .resource-card h2 {
+      color: #ab9353;
+      margin-top: 0;
+    }
 
-      .content {
-        padding: 20px 120px;
-        margin-bottom: 50px;
-      }
-      .content h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+    .resource-card p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 15px;
+    }
 
-      .resource-card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin-bottom: 20px;
-      }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(269deg, #0048ff, #0096ff);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin-top: 0px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
 
-      .resource-card h2 {
-        color: #ab9353;
-        margin-top: 0;
-      }
+    /* Footer styles */
 
-      .resource-card p {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 15px;
-      }
-
-      .cta-button {
-        display: inline-block;
-        background: linear-gradient(269deg, #0048ff, #0096ff);
-        color: #fff;
-        text-decoration: none;
-        padding: 10px 20px;
-        margin-top: 0px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-      }
-
-      /* Footer styles */
-
-      /* footer {
+    /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -224,61 +145,38 @@
         color: #fff;
       } */
 
-      @media screen and (max-width: 600px) {
-        .content {
-          padding: 20px 15px;
-        }
-        .content h1 {
-          font-size: 22px;
-        }
-        .resource-card {
-          width: 100%;
-          margin-left: -20px;
-        }
-        .resource-card h2 {
-          font-size: 20px;
-        }
-        .resource-card p {
-          font-size: 14px;
-        }
-        .cta-button {
-          font-size: 14px;
-          padding: 10px;
-          margin-top: 5px;
-          border-radius: 5px;
-        }
+    @media screen and (max-width: 600px) {
+      .content {
+        padding: 20px 15px;
+      }
 
-        .header {
-          position: unset;
-          padding: 10px;
-        }
+      .content h1 {
+        font-size: 22px;
+      }
 
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+      .resource-card {
+        width: 100%;
+        margin-left: -20px;
+      }
 
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
+      .resource-card h2 {
+        font-size: 20px;
+      }
 
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
+      .resource-card p {
+        font-size: 14px;
+      }
 
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
+      .cta-button {
+        font-size: 14px;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+      }
 
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
 
-        /* .footer-content {
+
+      /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -305,175 +203,170 @@
         .creatorDiv p {
           font-size: 12px;
         } */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
+    }
+  </style>
+</head>
 
-        <div class="navbar">
-          <a href="aboutus.html">About Us</a>
+<body>
 
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-
-         
-         
-
-
-          
-          <!-- <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          
-         
-          <a href="signup.html">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-          <a href="contactus.html" id="active">Contact Us</a> -->
-
-          
-          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-
-          <a href="devotional-resources.html" id="active"
-            >Devotional Resources</a
-          >
-
-          <a href="contactus.html" id="active">Contact Us</a>
-        </div>
+  <div class="header">
+    <div class="navigation">
+      <div class="homeDiv">
+        <button id="homeBtn"><a href="./index.html">Home</a></button>
       </div>
+
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </input>
+      </form>
+    </div>
+    <div class="navbar">
+      <a href="aboutus.html" id="active">About Us</a>
+      <a href="scriptures.html">Scriptures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+      <a href="devotional-resources.html">Devotional Resources</a>
+      <a href="contactus.html">Contact Us</a>
     </div>
 
-    <main>
-      <div class="content">
-        <h1>Devotional Resources</h1>
-        <!-- Resource 1 Card -->
-        <div class="resource-card">
-          <h2>Bhagavad Gita PDF</h2>
-          <p>
-            Download a PDF version of the Bhagavad Gita for easy access to its
-            divine verses. Dive into the teachings of Shree Krishna anytime,
-            anywhere.
-          </p>
-          <a
-            href="./pdf_files/Bhagavad-gita-hindi.pdf"
-            class="cta-button"
-            download
-            >Download Now</a
-          >
-        </div>
-
-        <!-- Resource 2 Card -->
-        <div class="resource-card">
-          <h2>Stories Of Devotees</h2>
-          <p>
-            Immerse yourself in the divine love of devotees with their beloved
-            Shree Krishna with our collection of awesome stories.
-          </p>
-          <a href="./stories-of-devotees.html" class="cta-button">Read Now</a>
-        </div>
-
-        <!-- Resource 3 Card -->
-        <div class="resource-card">
-          <h2>Shree Krishna Padawali</h2>
-          <p>
-            Dive into the transcendental realm with our curated collection of
-            pad, bhajans, devotional thoughts and daily spiritual quotes in
-            Shree Krishna Padawali, each note resonating with the divine energy
-            of Krishna. These soul-stirring melodies have been carefully
-            selected to elevate your spiritual experience and foster a deeper
-            connection with the divine.
-          </p>
-          <a
-            href="https://shreekrishnapadawali.netlify.app/"
-            target="_blank"
-            class="cta-button"
-            >Visit Now</a
-          >
-        </div>
-
-        <!-- Resource 4 Card -->
-        <div class="resource-card">
-          <h2>Morning Mantras Audio</h2>
-          <p>
-            Start your day with the soothing chants and mantras dedicated to
-            Shree Krishna. Listen to the divine vibrations and bring positivity
-            to your mornings.
-          </p>
-          <a href="./morning-mantra-audio.html" class="cta-button"
-            >Listen Now</a
-          >
-        </div>
-
-        <!-- Resource 5 Card -->
-        <div class="resource-card">
-          <h2>Shri Radha Chalisa PDF</h2>
-          <p>Blessed your life with the reading of Shree Radhika Chalisa.</p>
-          <a
-            href="./pdf_files/Shree-Radha-Chalisa.pdf"
-            class="cta-button"
-            download
-            >Download Now</a
-          >
-        </div>
-
-        <!-- Resource 6 Card -->
-        <div class="resource-card">
-          <h2>Divine and beautiful wallpapers</h2>
-          <p>Immerse yourself in a serene and spiritual journey through our carefully curated selection of captivating images. Explore these enchanting visuals capturing moments of tranquility, devotion, and beauty. Each wallpaper encapsulates a unique essence that seeks to inspire and uplift. Feel free to download and adorn your screens with these divine creations, inviting moments of reflection and peace into your daily life.</p>
-          <a
-            href="./divine-wallpapers.html"
-            class="cta-button"
-            >Explore Now</a
-          >
-        </div>
+    <div class="right">
+      <div class="menuDrop-btn" onclick="togglemenuDrop()">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </main>
 
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;"></footer>
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
-          <p>Feel free to reach out for any inquiries or support.</p>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
-
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-codepen"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
+      <div class="menuDrop" id="menuDrop">
+        <a href="aboutus.html" id="active">About Us</a>
+        <a href="scriptures.html">Scriptures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+        <a href="devotional-resources.html">Devotional Resources</a>
+        <a href="contactus.html">Contact Us</a>
       </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+
+    </div>
+  </div>
+
+
+  <main>
+    <div class="content">
+      <h1>Devotional Resources</h1>
+      <!-- Resource 1 Card -->
+      <div class="resource-card">
+        <h2>Bhagavad Gita PDF</h2>
+        <p>
+          Download a PDF version of the Bhagavad Gita for easy access to its
+          divine verses. Dive into the teachings of Shree Krishna anytime,
+          anywhere.
+        </p>
+        <a href="./pdf_files/Bhagavad-gita-hindi.pdf" class="cta-button" download>Download Now</a>
       </div>
-    </footer>
+
+      <!-- Resource 2 Card -->
+      <div class="resource-card">
+        <h2>Stories Of Devotees</h2>
+        <p>
+          Immerse yourself in the divine love of devotees with their beloved
+          Shree Krishna with our collection of awesome stories.
+        </p>
+        <a href="./stories-of-devotees.html" class="cta-button">Read Now</a>
+      </div>
+
+      <!-- Resource 3 Card -->
+      <div class="resource-card">
+        <h2>Shree Krishna Padawali</h2>
+        <p>
+          Dive into the transcendental realm with our curated collection of
+          pad, bhajans, devotional thoughts and daily spiritual quotes in
+          Shree Krishna Padawali, each note resonating with the divine energy
+          of Krishna. These soul-stirring melodies have been carefully
+          selected to elevate your spiritual experience and foster a deeper
+          connection with the divine.
+        </p>
+        <a href="https://shreekrishnapadawali.netlify.app/" target="_blank" class="cta-button">Visit Now</a>
+      </div>
+
+      <!-- Resource 4 Card -->
+      <div class="resource-card">
+        <h2>Morning Mantras Audio</h2>
+        <p>
+          Start your day with the soothing chants and mantras dedicated to
+          Shree Krishna. Listen to the divine vibrations and bring positivity
+          to your mornings.
+        </p>
+        <a href="./morning-mantra-audio.html" class="cta-button">Listen Now</a>
+      </div>
+
+      <!-- Resource 5 Card -->
+      <div class="resource-card">
+        <h2>Shri Radha Chalisa PDF</h2>
+        <p>Blessed your life with the reading of Shree Radhika Chalisa.</p>
+        <a href="./pdf_files/Shree-Radha-Chalisa.pdf" class="cta-button" download>Download Now</a>
+      </div>
+
+      <!-- Resource 6 Card -->
+      <div class="resource-card">
+        <h2>Divine and beautiful wallpapers</h2>
+        <p>Immerse yourself in a serene and spiritual journey through our carefully curated selection of captivating
+          images. Explore these enchanting visuals capturing moments of tranquility, devotion, and beauty. Each
+          wallpaper encapsulates a unique essence that seeks to inspire and uplift. Feel free to download and adorn your
+          screens with these divine creations, inviting moments of reflection and peace into your daily life.</p>
+        <a href="./divine-wallpapers.html" class="cta-button">Explore Now</a>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background-color: #2c3e50; color: white; padding: 20px 0;"></footer>
+  <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+    <div class="footer-section" style="flex: 1; margin: 10px;">
+      <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a>
+      </h3>
+      <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+      <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+    </div>
+    <div class="footer-section" style="flex: 1; margin: 10px;">
+      <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a>
+      </h3>
+      <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a>
+      </p>
+      <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+      <p>Feel free to reach out for any inquiries or support.</p>
+    </div>
+    <div class="footer-section" style="flex: 1; margin: 10px;">
+      <h3 style="color: #f39c12;">Follow Us</h3>
+
+
+      <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+        <a href="#" target="_blank" title="Github"
+          style="color: white; transition: transform 0.3s; display: inline-block;"
+          onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#" target="_blank" title="Codepen"
+          style="color: white; transition: transform 0.3s; display: inline-block;"
+          onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+          <i class="fa-brands fa-codepen"></i>
+        </a>
+        <a href="#" target="_blank" title="LinkedIn"
+          style="color: white; transition: transform 0.3s; display: inline-block;"
+          onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+    <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+  </div>
+  </footer>
 
 
 
 
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

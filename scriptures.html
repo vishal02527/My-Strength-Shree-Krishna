@@ -1,177 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scriptures: Shree Krishna</title>
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Add any specific styles or scripts for this page if needed -->
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-      }
-      p::selection,
-      h2::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      .scripture-details h3::selection,
-      li::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
 
-      .content {
-        padding: 20px 120px;
-        margin-bottom: 50px;
-      }
-      .content h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      #translateBtnDiv {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin-bottom: 20px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scriptures: Shree Krishna</title>
+  <link rel="stylesheet" href="sources/cssFiles/navbar.css">
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+  <!-- Add any specific styles or scripts for this page if needed -->
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-      #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
+    p::selection,
+    h2::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    .scripture-details h3::selection,
+    li::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    .content {
+      padding: 20px 120px;
+      margin-bottom: 50px;
+    }
+
+    .content h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #translateBtnDiv {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      margin-bottom: 20px;
+    }
+
+    #translateBtn {
+      border: 0;
+      padding: 15px 25px;
+      color: #fff;
+      background-image: linear-gradient(to right,
           #314755 0%,
           #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
+          #314755 100%);
+      background-size: 200% auto;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-      .content p {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 15px;
-      }
-      .scripture-card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-      h2 {
-        color: #ab9353;
-        margin-top: 0;
-      }
-      .scripture-details {
-        margin-top: 10px;
-      }
-      .scripture-details h3 {
-        color: #ab9353;
-      }
-      .scriptMain {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    #translateBtn:hover {
+      background-position: right center;
+    }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 15px;
+    }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
+    .scripture-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
+    h2 {
+      color: #ab9353;
+      margin-top: 0;
+    }
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
+    .scripture-details {
+      margin-top: 10px;
+    }
 
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-      #active {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-      /* footer {
+    .scripture-details h3 {
+      color: #ab9353;
+    }
+
+
+    #active {
+      color: rgb(250, 219, 153);
+      border: 2px solid rgb(250, 219, 153);
+    }
+
+    /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -223,57 +156,43 @@
         margin-bottom: 0;
         font-size: 14px;
       } */
-      /* Mobile Responsive Styles */
-      @media (max-width: 768px) {
-        .content {
-          padding: 20px 15px;
-        }
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px 15px;
+      }
 
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        .content h1 {
-          font-size: 22px;
-        }
-        .scriptMain {
-          position: unset;
-        }
-        .scripture-card {
-          padding: 10px 20px;
-          margin-right: 10px;
-        }
-        .scripture-card h2 {
-          font-size: 20px;
-        }
-        .content p {
-          font-size: 14px;
-        }
+      #translateBtn {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
 
-        .scripture-details h3 {
-          font-size: 18px;
-        }
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 14px;
-        }
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-        /* .footer-content {
+      .content h1 {
+        font-size: 22px;
+      }
+
+      .scriptMain {
+        position: unset;
+      }
+
+      .scripture-card {
+        padding: 10px 20px;
+        margin-right: 10px;
+      }
+
+      .scripture-card h2 {
+        font-size: 20px;
+      }
+
+      .content p {
+        font-size: 14px;
+      }
+
+      .scripture-details h3 {
+        font-size: 18px;
+      }
+
+      /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -295,181 +214,213 @@
         .creatorDiv p {
           font-size: 12px;
         } */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="scriptMain">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
+    }
+  </style>
+</head>
 
-        <div class="navbar">
-          <a href="aboutus.html" id="active">About Us</a>
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-          <a href="contactus.html">Contact Us</a>
-          
+<body>
+
+  <div class="header">
+    <div class="navigation">
+      <div class="homeDiv">
+        <button id="homeBtn"><a href="./index.html">Home</a></button>
+      </div>
+
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </input>
+      </form>
+    </div>
+    <div class="navbar">
+      <a href="aboutus.html" id="active">About Us</a>
+      <a href="scriptures.html">Scriptures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+      <a href="devotional-resources.html">Devotional Resources</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <div class="right">
+      <div class="menuDrop-btn" onclick="togglemenuDrop()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="menuDrop" id="menuDrop">
+        <a href="aboutus.html" id="active">About Us</a>
+        <a href="scriptures.html">Scriptures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+        <a href="devotional-resources.html">Devotional Resources</a>
+        <a href="contactus.html">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="content">
+    <h1>Scriptures</h1>
+    <div id="translateBtnDiv">
+      <button onclick="toggleLanguage()" id="translateBtn">
+        हिंदी में पढ़ें
+      </button>
+    </div>
+    <div id="content-english">
+      <!-- Bhagavad Gita Card -->
+      <div class="scripture-card">
+        <h2>The Bhagavad Gita</h2>
+        <p>
+          The Bhagavad Gita, often referred to as the Gita, is a 700-verse
+          Hindu scripture that is part of the Indian epic Mahabharata. It
+          consists of a conversation between Prince Arjuna and Lord Krishna,
+          who serves as his charioteer. In this sacred dialogue, Lord Krishna
+          imparts profound spiritual wisdom, addressing the dilemmas of life,
+          duty, and the path to salvation. The teachings of the Bhagavad Gita
+          are timeless and continue to guide and enlighten countless souls.
+        </p>
+      </div>
+
+      <!-- Srimad Bhagavatam Card -->
+      <div class="scripture-card">
+        <h2>Srimad Bhagavatam</h2>
+        <p>
+          The Srimad Bhagavatam, also known as the Bhagavata Purana, is one of
+          the eighteen Mahāpurāṇas, a genre of ancient Indian literature. It
+          narrates the story of Lord Krishna's childhood, his divine plays
+          (leelas), and provides philosophical teachings on devotion and
+          spirituality.
+        </p>
+        <div class="scripture-details">
+          <h3>Key Aspects of Srimad Bhagavatam:</h3>
+          <ul>
+            <li>Comprises 12 books with over 18,000 verses</li>
+            <li>Details the life of Lord Krishna from birth to departure</li>
+            <li>
+              Emphasizes the importance of devotion (bhakti) to the Supreme
+            </li>
+            <li>Includes the story of Krishna's enchanting childhood</li>
+            <li>Explores various paths of spiritual realization</li>
+          </ul>
         </div>
+      </div>
+
+      <!-- Mahabharata Card -->
+      <div class="scripture-card">
+        <h2>The Mahabharata</h2>
+        <p>
+          The Mahabharata is one of the two major Sanskrit epics of ancient
+          India, the other being the Ramayana. It is a vast and intricate
+          narrative that encompasses stories of heroes, villains, gods, and
+          the human condition. At the heart of the Mahabharata is the
+          Kurukshetra War, a great conflict between two branches of the Kuru
+          dynasty, the Pandavas, and the Kauravas, with Lord Krishna playing a
+          pivotal role as the charioteer and guide of Arjuna.
+        </p>
+      </div>
+    </div>
+    <div id="content-hindi" style="display: none">
+      <div class="scripture-card">
+        <h2>भगवत गीता</h2>
+        <p>
+          भगवद गीता, जिसे अक्सर गीता भी कहा जाता है, एक 700 श्लोक वाला हिंदू
+          धर्मग्रंथ है जो भारतीय महाकाव्य महाभारत का हिस्सा है। इसमें राजकुमार
+          अर्जुन और भगवान कृष्ण, जो उनके सारथी के रूप में कार्य करते हैं, के
+          बीच बातचीत शामिल है। इस पवित्र संवाद में, भगवान कृष्ण जीवन, कर्तव्य
+          और मोक्ष के मार्ग की दुविधाओं को संबोधित करते हुए गहन आध्यात्मिक
+          ज्ञान प्रदान करते हैं। भगवद गीता की शिक्षाएँ कालातीत हैं और अनगिनत
+          आत्माओं का मार्गदर्शन और ज्ञानवर्धन करती रहती हैं।
+        </p>
+      </div>
+      <div class="scripture-card">
+        <h2>श्रीमद्भागवतम्</h2>
+        <p>
+          श्रीमद्भागवतम्, जिसे भागवत पुराण के नाम से भी जाना जाता है, अठारह
+          महापुराणों में से एक है, जो प्राचीन भारतीय साहित्य की एक शैली है। यह
+          भगवान कृष्ण के बचपन, उनके दिव्य नाटकों (लीलाओं) की कहानी बताता है,
+          और भक्ति और आध्यात्मिकता पर दार्शनिक शिक्षा प्रदान करता है।
+        </p>
+        <div class="scripture-details">
+          <h3>श्रीमद्भागवत के प्रमुख पहलू</h3>
+          <ul>
+            <li>इसमें 18,000 से अधिक छंदों वाली 12 पुस्तकें शामिल हैं</li>
+            <li>भगवान कृष्ण के जन्म से लेकर प्रस्थान तक के जीवन का विवरण</li>
+            <li>सर्वोच्च के प्रति समर्पण (भक्ति) के महत्व पर जोर देता है</li>
+            <li>इसमें कृष्ण के मनमोहक बचपन की कहानी शामिल है</li>
+            <li>आध्यात्मिक अनुभूति के विभिन्न मार्गों की खोज करता है</li>
+          </ul>
+        </div>
+      </div>
+      <div class="scripture-card">
+        <h2>महाभारत</h2>
+        <p>
+          महाभारत प्राचीन भारत के दो प्रमुख संस्कृत महाकाव्यों में से एक है,
+          दूसरा रामायण है। यह एक विशाल और जटिल कथा है जिसमें नायकों, खलनायकों,
+          देवताओं और मानवीय स्थिति की कहानियाँ शामिल हैं। महाभारत के केंद्र
+          में कुरूक्षेत्र युद्ध है, जो कुरु वंश की दो शाखाओं, पांडवों और
+          कौरवों के बीच एक महान संघर्ष था, जिसमें भगवान कृष्ण ने अर्जुन के
+          सारथी और मार्गदर्शक के रूप में महत्वपूर्ण भूमिका निभाई थी।
+        </p>
       </div>
     </div>
 
-    <div class="content">
-      <h1>Scriptures</h1>
-      <div id="translateBtnDiv">
-        <button onclick="toggleLanguage()" id="translateBtn">
-          हिंदी में पढ़ें
-        </button>
+    <p>
+      These scriptures offer profound insights into the divine nature of Lord
+      Shree Krishna and serve as guiding lights for seekers on the spiritual
+      path.
+    </p>
+  </div>
+
+
+
+  <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
+    <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a>
+        </h3>
+        <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+        <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
       </div>
-      <div id="content-english">
-        <!-- Bhagavad Gita Card -->
-        <div class="scripture-card">
-          <h2>The Bhagavad Gita</h2>
-          <p>
-            The Bhagavad Gita, often referred to as the Gita, is a 700-verse
-            Hindu scripture that is part of the Indian epic Mahabharata. It
-            consists of a conversation between Prince Arjuna and Lord Krishna,
-            who serves as his charioteer. In this sacred dialogue, Lord Krishna
-            imparts profound spiritual wisdom, addressing the dilemmas of life,
-            duty, and the path to salvation. The teachings of the Bhagavad Gita
-            are timeless and continue to guide and enlighten countless souls.
-          </p>
-        </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact
+            Us</a></h3>
+        <p>Email: <a href="mailto:info@example.com"
+            style="color: white; text-decoration: underline;">info@example.com</a></p>
+        <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+        <p>Feel free to reach out for any inquiries or support.</p>
+      </div>
+      <div class="footer-section" style="flex: 1; margin: 10px;">
+        <h3 style="color: #f39c12;">Follow Us</h3>
 
-        <!-- Srimad Bhagavatam Card -->
-        <div class="scripture-card">
-          <h2>Srimad Bhagavatam</h2>
-          <p>
-            The Srimad Bhagavatam, also known as the Bhagavata Purana, is one of
-            the eighteen Mahāpurāṇas, a genre of ancient Indian literature. It
-            narrates the story of Lord Krishna's childhood, his divine plays
-            (leelas), and provides philosophical teachings on devotion and
-            spirituality.
-          </p>
-          <div class="scripture-details">
-            <h3>Key Aspects of Srimad Bhagavatam:</h3>
-            <ul>
-              <li>Comprises 12 books with over 18,000 verses</li>
-              <li>Details the life of Lord Krishna from birth to departure</li>
-              <li>
-                Emphasizes the importance of devotion (bhakti) to the Supreme
-              </li>
-              <li>Includes the story of Krishna's enchanting childhood</li>
-              <li>Explores various paths of spiritual realization</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Mahabharata Card -->
-        <div class="scripture-card">
-          <h2>The Mahabharata</h2>
-          <p>
-            The Mahabharata is one of the two major Sanskrit epics of ancient
-            India, the other being the Ramayana. It is a vast and intricate
-            narrative that encompasses stories of heroes, villains, gods, and
-            the human condition. At the heart of the Mahabharata is the
-            Kurukshetra War, a great conflict between two branches of the Kuru
-            dynasty, the Pandavas, and the Kauravas, with Lord Krishna playing a
-            pivotal role as the charioteer and guide of Arjuna.
-          </p>
+        <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+          <a href="#" target="_blank" title="Github"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" target="_blank" title="Codepen"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+          <a href="#" target="_blank" title="LinkedIn"
+            style="color: white; transition: transform 0.3s; display: inline-block;"
+            onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
       </div>
-      <div id="content-hindi" style="display: none">
-        <div class="scripture-card">
-          <h2>भगवत गीता</h2>
-          <p>
-            भगवद गीता, जिसे अक्सर गीता भी कहा जाता है, एक 700 श्लोक वाला हिंदू
-            धर्मग्रंथ है जो भारतीय महाकाव्य महाभारत का हिस्सा है। इसमें राजकुमार
-            अर्जुन और भगवान कृष्ण, जो उनके सारथी के रूप में कार्य करते हैं, के
-            बीच बातचीत शामिल है। इस पवित्र संवाद में, भगवान कृष्ण जीवन, कर्तव्य
-            और मोक्ष के मार्ग की दुविधाओं को संबोधित करते हुए गहन आध्यात्मिक
-            ज्ञान प्रदान करते हैं। भगवद गीता की शिक्षाएँ कालातीत हैं और अनगिनत
-            आत्माओं का मार्गदर्शन और ज्ञानवर्धन करती रहती हैं।
-          </p>
-        </div>
-        <div class="scripture-card">
-          <h2>श्रीमद्भागवतम्</h2>
-          <p>
-            श्रीमद्भागवतम्, जिसे भागवत पुराण के नाम से भी जाना जाता है, अठारह
-            महापुराणों में से एक है, जो प्राचीन भारतीय साहित्य की एक शैली है। यह
-            भगवान कृष्ण के बचपन, उनके दिव्य नाटकों (लीलाओं) की कहानी बताता है,
-            और भक्ति और आध्यात्मिकता पर दार्शनिक शिक्षा प्रदान करता है।
-          </p>
-          <div class="scripture-details">
-            <h3>श्रीमद्भागवत के प्रमुख पहलू</h3>
-            <ul>
-              <li>इसमें 18,000 से अधिक छंदों वाली 12 पुस्तकें शामिल हैं</li>
-              <li>भगवान कृष्ण के जन्म से लेकर प्रस्थान तक के जीवन का विवरण</li>
-              <li>सर्वोच्च के प्रति समर्पण (भक्ति) के महत्व पर जोर देता है</li>
-              <li>इसमें कृष्ण के मनमोहक बचपन की कहानी शामिल है</li>
-              <li>आध्यात्मिक अनुभूति के विभिन्न मार्गों की खोज करता है</li>
-            </ul>
-          </div>
-        </div>
-        <div class="scripture-card">
-          <h2>महाभारत</h2>
-          <p>
-            महाभारत प्राचीन भारत के दो प्रमुख संस्कृत महाकाव्यों में से एक है,
-            दूसरा रामायण है। यह एक विशाल और जटिल कथा है जिसमें नायकों, खलनायकों,
-            देवताओं और मानवीय स्थिति की कहानियाँ शामिल हैं। महाभारत के केंद्र
-            में कुरूक्षेत्र युद्ध है, जो कुरु वंश की दो शाखाओं, पांडवों और
-            कौरवों के बीच एक महान संघर्ष था, जिसमें भगवान कृष्ण ने अर्जुन के
-            सारथी और मार्गदर्शक के रूप में महत्वपूर्ण भूमिका निभाई थी।
-          </p>
-        </div>
-      </div>
-
-      <p>
-        These scriptures offer profound insights into the divine nature of Lord
-        Shree Krishna and serve as guiding lights for seekers on the spiritual
-        path.
-      </p>
     </div>
-   
+    <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+    </div>
+  </footer>
 
 
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;">
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
-          <p>Feel free to reach out for any inquiries or support.</p>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
+  <script src="script.js"></script>
+</body>
 
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-codepen"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-      </div>
-    </footer>
-
-
-    <script src="script.js"></script>
-  </body>
 </html>

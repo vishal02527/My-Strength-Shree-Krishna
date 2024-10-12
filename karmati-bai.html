@@ -1,164 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Karmati Bai - Devotee of Shree Krishna</title>
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
-      p::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      main h1 {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
 
-      .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="sources/cssFiles/navbar.css">
+  <title>Karmati Bai - Devotee of Shree Krishna</title>
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
 
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    p::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
+    main h1 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
+    main {
+      padding: 20px;
+    }
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
+    .content {
+      max-width: 900px;
+      margin: 70px auto 100px;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
+    .imageDiv {
+      text-align: center;
+      margin: 20px 0px 0px;
+    }
 
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
+    .imageDiv img {
+      width: 48%;
+      height: 430px;
+    }
 
-      main {
-        padding: 20px;
-      }
-      .content {
-        max-width: 900px;
-        margin: 70px auto 100px;
-        padding: 20px 40px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+    #translateBtnDiv {
+      position: relative;
+      top: 50px;
+      left: 250px;
+    }
 
-      .imageDiv {
-        text-align: center;
-        margin: 20px 0px 0px;
-      }
-
-      .imageDiv img {
-        width: 48%;
-        height: 430px;
-      }
-
-      #translateBtnDiv {
-        position: relative;
-        top: 50px;
-        left: 250px;
-      }
-
-      #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
+    #translateBtn {
+      border: 0;
+      padding: 15px 25px;
+      color: #fff;
+      background-image: linear-gradient(to right,
           #314755 0%,
           #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
+          #314755 100%);
+      background-size: 200% auto;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-      /* footer {
+    #translateBtn:hover {
+      background-position: right center;
+    }
+
+    /* footer {
         background-color: #2c3e50;
         color: #ecf0f1;
         padding: 20px;
@@ -213,65 +136,45 @@
         font-size: 14px;
       } */
 
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-        main h1 {
-          font-size: 22px;
-        }
+    @media screen and (max-width: 600px) {
+      .header {
+        position: unset;
+        padding: 10px;
+      }
 
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+      main h1 {
+        font-size: 22px;
+      }
 
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
+      .content {
+        width: 90%;
+        margin: 60px auto;
+        padding: 10px 15px;
+      }
 
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
+      .imageDiv {
+        margin: 20px 0px -20px;
+      }
 
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
+      .imageDiv img {
+        width: 300px;
+        height: 210px;
+      }
 
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
+      #translateBtnDiv {
+        left: 5px;
+      }
 
-        .content {
-          width: 90%;
-          margin: 60px auto;
-          padding: 10px 15px;
-        }
-        .imageDiv{
-          margin: 20px 0px -20px;
-        }
-        .imageDiv img {
-          width: 300px;
-          height: 210px;
-        }
+      .content p {
+        font-size: 14px;
+      }
 
-        #translateBtnDiv {
-          left: 5px;
-        }
-        .content p {
-          font-size: 14px;
-        }
+      #translateBtn {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
 
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        /* .footer-content {
+      /* .footer-content {
           flex-direction: column;
           align-items: center;
           margin: 0px 40px 0px 0px;
@@ -295,173 +198,202 @@
           margin-right: 30px;
         } */
 
-        /* .creatorDiv p {
+      /* .creatorDiv p {
           font-size: 12px;
         } */
-      }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <div class="header">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
-
-        <div class="navbar">
-          <a href="aboutus.html" id="active">About Us</a>
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-          <a href="contactus.html">Contact Us</a>
-          
-        </div>
+<body>
+  <div class="header">
+    <div class="navigation">
+      <div class="homeDiv">
+        <button id="homeBtn"><a href="./index.html">Home</a></button>
       </div>
+
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </input>
+      </form>
+    </div>
+    <div class="navbar">
+      <a href="aboutus.html" id="active">About Us</a>
+      <a href="scriptures.html">Scriptures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+      <a href="devotional-resources.html">Devotional Resources</a>
+      <a href="contactus.html">Contact Us</a>
     </div>
 
-    <main>
-      <h1>Karmati Bai: The Devotee of Shree Krishna</h1>
-        <div class="imageDiv">
-          <img src="./images/karmaitibai.png" alt="करमैती बाई" />
-        </div>
-
-      <div id="translateBtnDiv">
-        <button onclick="toggleLanguage()" id="translateBtn">
-          हिंदी में पढ़ें
-        </button>
+    <div class="right">
+      <div class="menuDrop-btn" onclick="togglemenuDrop()">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-      <div class="content">
-        <div id="content-english">
-          <p>
-            Karmati Bai, often referred to as the "Lotus of Devotion," was a
-            radiant soul whose life became an embodiment of love and surrender
-            to Shree Krishna. Born in the quaint village of devotion, her
-            journey was a tapestry of divine experiences and selfless service.
-          </p>
-          <p>
-            From a young age, Karmati Bai exhibited a deep spiritual
-            inclination. Her heart resonated with the enchanting tunes of Shree
-            Krishna's flute, echoing through the village fields. She found
-            solace in the divine stories of the Lord's leelas, and her innocent
-            heart yearned for a connection with the Divine.
-          </p>
-          <p>
-            The simplicity of Karmati Bai's life was a testament to her
-            unwavering faith. Her daily routine involved singing devotional
-            songs, reciting prayers, and engaging in acts of kindness towards
-            all living beings. Her selfless service to the community earned her
-            the affection of both young and old, who saw in her a living example
-            of love in action.
-          </p>
-          <p>
-            Legends speak of Karmati Bai's moments of divine communion with
-            Shree Krishna. It is said that during her meditations, the Lord
-            Himself would appear, and she would lose herself in the boundless
-            ocean of His grace. Her eyes sparkled with the radiance of a devotee
-            who had found her eternal source of joy.
-          </p>
-          <p>
-            Karmati Bai's life wasn't without challenges, but her unwavering
-            faith transformed adversity into opportunities for spiritual growth.
-            Her heart, much like a blooming lotus, remained untouched by the mud
-            of worldly distractions.
-          </p>
-          <p>
-            Today, the legacy of Karmati Bai continues to inspire seekers on
-            their spiritual quest. Her story is a gentle reminder that true
-            devotion transcends boundaries, connecting the devoted heart
-            directly to the Divine.
-          </p>
-        </div>
-        <div id="content-hindi" style="display: none">
-          <p>
-            करमैती बाई, जिन्हें अक्सर "भक्ति का कमल" कहा जाता है, एक उज्ज्वल
-            आत्मा थीं जिनका जीवन श्री कृष्ण के प्रति प्रेम और समर्पण का प्रतीक
-            बन गया। भक्ति के विचित्र गाँव में जन्मी, उनकी यात्रा दिव्य अनुभवों
-            और निस्वार्थ सेवा की एक चित्रपट थी।
-          </p>
 
-          <p>
-            छोटी उम्र से ही, कर्मती बाई ने गहरी आध्यात्मिक प्रवृत्ति प्रदर्शित
-            की। गाँव के खेतों में गूँजती श्री कृष्ण की बाँसुरी की मनमोहक धुन से
-            उसका हृदय गूँज उठा। उसे भगवान की लीलाओं की दिव्य कहानियों में
-            सांत्वना मिली, और उसका मासूम दिल भगवान के साथ जुड़ने के लिए तरस गया।
-          </p>
-
-          <p>
-            करमती बाई के जीवन की सादगी उनके अटूट विश्वास का प्रमाण थी। उनकी
-            दिनचर्या में भक्ति गीत गाना, प्रार्थना करना और सभी जीवित प्राणियों
-            के प्रति दयालुता के कार्यों में शामिल होना शामिल था। समुदाय के प्रति
-            उनकी निस्वार्थ सेवा से उन्हें युवा और वृद्ध दोनों का स्नेह प्राप्त
-            हुआ, जिन्होंने उनमें कार्य में प्रेम का जीवंत उदाहरण देखा।
-          </p>
-
-          <p>
-            किंवदंतियाँ कर्मती बाई के श्री कृष्ण के साथ दिव्य मिलन के क्षणों का
-            वर्णन करती हैं। ऐसा कहा जाता है कि उसके ध्यान के दौरान, भगवान स्वयं
-            प्रकट होते थे, और वह उनकी कृपा के असीम सागर में खो जाती थी। उसकी
-            आँखें एक भक्त की चमक से चमक उठीं जिसने अपने आनंद का शाश्वत स्रोत पा
-            लिया था।
-          </p>
-
-          <p>
-            करमती बाई का जीवन चुनौतियों से रहित नहीं था, लेकिन उनके अटूट विश्वास
-            ने प्रतिकूल परिस्थितियों को आध्यात्मिक विकास के अवसरों में बदल दिया।
-            उसका हृदय, खिले हुए कमल की तरह, सांसारिक व्याकुलताओं के कीचड़ से
-            अछूता रहा।
-          </p>
-
-          <p>
-            आज, करमती बाई की विरासत साधकों को उनकी आध्यात्मिक खोज के लिए प्रेरित
-            करती रहती है। उनकी कहानी एक सौम्य अनुस्मारक है कि सच्ची भक्ति सीमाओं
-            को पार करती है, समर्पित हृदय को सीधे ईश्वर से जोड़ती है।
-          </p>
-        </div>
+      <div class="menuDrop" id="menuDrop">
+        <a href="aboutus.html" id="active">About Us</a>
+        <a href="scriptures.html">Scriptures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="showLoginForm()" id="active">Discussion Forum</a>
+        <a href="devotional-resources.html">Devotional Resources</a>
+        <a href="contactus.html">Contact Us</a>
       </div>
-    </main>
 
-    <footer style="background-color: #2c3e50; color: white; padding: 20px 0;"></footer>
-      <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a></h3>
-          <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
-          <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a></h3>
-          <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a></p>
-          <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
-          <p>Feel free to reach out for any inquiries or support.</p>
-        </div>
-        <div class="footer-section" style="flex: 1; margin: 10px;">
-          <h3 style="color: #f39c12;">Follow Us</h3>
+    </div>
+  </div>
 
-          
-          <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
-            <a href="#" target="_blank" title="Github" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank" title="Codepen" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-codepen"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn" style="color: white; transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
+  <main>
+    <h1>Karmati Bai: The Devotee of Shree Krishna</h1>
+    <div class="imageDiv">
+      <img src="./images/karmaitibai.png" alt="करमैती बाई" />
+    </div>
+
+    <div id="translateBtnDiv">
+      <button onclick="toggleLanguage()" id="translateBtn">
+        हिंदी में पढ़ें
+      </button>
+    </div>
+    <div class="content">
+      <div id="content-english">
+        <p>
+          Karmati Bai, often referred to as the "Lotus of Devotion," was a
+          radiant soul whose life became an embodiment of love and surrender
+          to Shree Krishna. Born in the quaint village of devotion, her
+          journey was a tapestry of divine experiences and selfless service.
+        </p>
+        <p>
+          From a young age, Karmati Bai exhibited a deep spiritual
+          inclination. Her heart resonated with the enchanting tunes of Shree
+          Krishna's flute, echoing through the village fields. She found
+          solace in the divine stories of the Lord's leelas, and her innocent
+          heart yearned for a connection with the Divine.
+        </p>
+        <p>
+          The simplicity of Karmati Bai's life was a testament to her
+          unwavering faith. Her daily routine involved singing devotional
+          songs, reciting prayers, and engaging in acts of kindness towards
+          all living beings. Her selfless service to the community earned her
+          the affection of both young and old, who saw in her a living example
+          of love in action.
+        </p>
+        <p>
+          Legends speak of Karmati Bai's moments of divine communion with
+          Shree Krishna. It is said that during her meditations, the Lord
+          Himself would appear, and she would lose herself in the boundless
+          ocean of His grace. Her eyes sparkled with the radiance of a devotee
+          who had found her eternal source of joy.
+        </p>
+        <p>
+          Karmati Bai's life wasn't without challenges, but her unwavering
+          faith transformed adversity into opportunities for spiritual growth.
+          Her heart, much like a blooming lotus, remained untouched by the mud
+          of worldly distractions.
+        </p>
+        <p>
+          Today, the legacy of Karmati Bai continues to inspire seekers on
+          their spiritual quest. Her story is a gentle reminder that true
+          devotion transcends boundaries, connecting the devoted heart
+          directly to the Divine.
+        </p>
       </div>
-      <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+      <div id="content-hindi" style="display: none">
+        <p>
+          करमैती बाई, जिन्हें अक्सर "भक्ति का कमल" कहा जाता है, एक उज्ज्वल
+          आत्मा थीं जिनका जीवन श्री कृष्ण के प्रति प्रेम और समर्पण का प्रतीक
+          बन गया। भक्ति के विचित्र गाँव में जन्मी, उनकी यात्रा दिव्य अनुभवों
+          और निस्वार्थ सेवा की एक चित्रपट थी।
+        </p>
+
+        <p>
+          छोटी उम्र से ही, कर्मती बाई ने गहरी आध्यात्मिक प्रवृत्ति प्रदर्शित
+          की। गाँव के खेतों में गूँजती श्री कृष्ण की बाँसुरी की मनमोहक धुन से
+          उसका हृदय गूँज उठा। उसे भगवान की लीलाओं की दिव्य कहानियों में
+          सांत्वना मिली, और उसका मासूम दिल भगवान के साथ जुड़ने के लिए तरस गया।
+        </p>
+
+        <p>
+          करमती बाई के जीवन की सादगी उनके अटूट विश्वास का प्रमाण थी। उनकी
+          दिनचर्या में भक्ति गीत गाना, प्रार्थना करना और सभी जीवित प्राणियों
+          के प्रति दयालुता के कार्यों में शामिल होना शामिल था। समुदाय के प्रति
+          उनकी निस्वार्थ सेवा से उन्हें युवा और वृद्ध दोनों का स्नेह प्राप्त
+          हुआ, जिन्होंने उनमें कार्य में प्रेम का जीवंत उदाहरण देखा।
+        </p>
+
+        <p>
+          किंवदंतियाँ कर्मती बाई के श्री कृष्ण के साथ दिव्य मिलन के क्षणों का
+          वर्णन करती हैं। ऐसा कहा जाता है कि उसके ध्यान के दौरान, भगवान स्वयं
+          प्रकट होते थे, और वह उनकी कृपा के असीम सागर में खो जाती थी। उसकी
+          आँखें एक भक्त की चमक से चमक उठीं जिसने अपने आनंद का शाश्वत स्रोत पा
+          लिया था।
+        </p>
+
+        <p>
+          करमती बाई का जीवन चुनौतियों से रहित नहीं था, लेकिन उनके अटूट विश्वास
+          ने प्रतिकूल परिस्थितियों को आध्यात्मिक विकास के अवसरों में बदल दिया।
+          उसका हृदय, खिले हुए कमल की तरह, सांसारिक व्याकुलताओं के कीचड़ से
+          अछूता रहा।
+        </p>
+
+        <p>
+          आज, करमती बाई की विरासत साधकों को उनकी आध्यात्मिक खोज के लिए प्रेरित
+          करती रहती है। उनकी कहानी एक सौम्य अनुस्मारक है कि सच्ची भक्ति सीमाओं
+          को पार करती है, समर्पित हृदय को सीधे ईश्वर से जोड़ती है।
+        </p>
       </div>
-    </footer>
+    </div>
+  </main>
+
+  <footer style="background-color: #2c3e50; color: white; padding: 20px 0;"></footer>
+  <div class="footer-content" style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+    <div class="footer-section" style="flex: 1; margin: 10px;">
+      <h3 style="color: #f39c12;"><a href="aboutus.html" style="color: #f39c12; text-decoration: none;">About Us</a>
+      </h3>
+      <p>We are dedicated to providing a reliable ambulance monitoring system to ensure timely medical assistance.</p>
+      <a href="aboutus.html" style="color: #f39c12; text-decoration: underline;">Learn More</a>
+    </div>
+    <div class="footer-section" style="flex: 1; margin: 10px;">
+      <h3 style="color: #f39c12;"><a href="contactus.html" style="color: #f39c12; text-decoration: none;">Contact Us</a>
+      </h3>
+      <p>Email: <a href="mailto:info@example.com" style="color: white; text-decoration: underline;">info@example.com</a>
+      </p>
+      <p>Phone: <a href="contactus.html" style="color: white; text-decoration: underline;">+1 234 567 890</a></p>
+      <p>Feel free to reach out for any inquiries or support.</p>
+    </div>
+    <div class="footer-section" style="flex: 1; margin: 10px;">
+      <h3 style="color: #f39c12;">Follow Us</h3>
+
+
+      <div class="social-icons" style="display: flex; justify-content: center; gap: 10px;">
+        <a href="#" target="_blank" title="Github"
+          style="color: white; transition: transform 0.3s; display: inline-block;"
+          onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#" target="_blank" title="Codepen"
+          style="color: white; transition: transform 0.3s; display: inline-block;"
+          onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+          <i class="fa-brands fa-codepen"></i>
+        </a>
+        <a href="#" target="_blank" title="LinkedIn"
+          style="color: white; transition: transform 0.3s; display: inline-block;"
+          onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="creatorDiv" style="text-align: center; margin-top: 20px;">
+    <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+  </div>
+  </footer>
 
 
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
