@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css">
     <script
       src="https://kit.fontawesome.com/d74f12bccc.js"
       crossorigin="anonymous"
@@ -44,96 +45,6 @@
         background-color: rgb(237, 204, 133);
         color: #000;
       }
-
-      /* Header styles */
-
-      .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
-
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
-
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
-
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
-
-      .navigation .navbar {
-        display: flex;
-        margin-right: 350px !important;
-      }
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 5px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-      #active {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-
       /* Main content styles */
 
       main {
@@ -309,50 +220,6 @@
           border-radius: 5px;
         }
 
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-
-        .navigation {
-          display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
-        .navbar .navbar-up {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .navigation .navbar {
-          display: flex;
-        }
-
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 14px;
-        }
-
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
-
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-        .searchForm button {
-        top: -34px;
-        right: -10px;
-      }
-      .searchForm{
-        margin-top: 10px;
-        margin-bottom: -35px;
-        display: contents;
-      }
-      .searchForm button i{
-        margin-left: 15rem;
-      }
-
         .footer-content {
           flex-direction: column;
           align-items: center;
@@ -385,29 +252,34 @@
   <body>
     <button id="scrollTopBtn" class="scroll-top-btn"> <i class="fas fa-arrow-up"></i></button>
     <div class="header">
-      <div class="navigation">
-        <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
-        </div>
 
+      <div class="navigation">
         <div class="navbar">
           <div class="navbar-up">
-            <a href="scriptures.html">Scriptures</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-            <a href="devotional-resources.html" id="active"
-              >Devotional Resources</a
-            >
+            <ul>
+              <a href="./index.html"><li>Home</li></a>
+              <a href="scriptures.html"><li>Scriptures</li></a>
+              <a href="gallery.html"><li>Gallery</li></a>
+              <a href="#" onclick="showLoginForm()"><li>Discussion Forum</li></a>
+              <a href="devotional-resources.html"><li>Devotional Resources</li></a>
+            </ul>
           </div>
+  
+          <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+  
         </div>
+  
         <form class="searchForm">
-          <input
-            type="text"
-            class="searchInput"
-            placeholder="Search all the content"
-          />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" class="searchInput" placeholder="Search all the content" />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </form>
+  
       </div>
     </div>
 

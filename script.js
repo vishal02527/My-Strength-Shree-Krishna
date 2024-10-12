@@ -1,3 +1,42 @@
+window.onscroll = function () {
+  toggleScrollTopButton();
+};
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+function toggleScrollTopButton() {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    scrollTopBtn.style.display = "block"; // Show button after scrolling down
+  } else {
+    scrollTopBtn.style.display = "none"; // Hide button when at the top
+  }
+}
+
+scrollTopBtn.onclick = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+};
+
+// hamburger menu code starts
+burger= document.querySelector(".burger");
+navbar= document.querySelector(".navbar-up");
+
+burger.addEventListener('click',()=>{
+    if (navbar.style.display === "none") { 
+        navbar.style.display = "flex";
+        burger.style.position = "fixed"; 
+        navbar.style.position = "fixed";
+    } 
+    else { 
+        navbar.style.display = "none"; 
+    }
+})
+
+
+// hamburger menu code ends
+
 let isHindi = false;
 const button = document.getElementById("translateBtn");
 
