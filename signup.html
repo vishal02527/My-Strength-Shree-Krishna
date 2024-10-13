@@ -114,7 +114,7 @@
           </div>
         </form>
       </div>
-      <p style="text-align: center">&copy; All rights reserved 2023</p>
+      <p style="text-align: center">&copy; All rights reserved <span id="copyright-year"></span></p>
     </main>
 
     <script>
@@ -125,6 +125,11 @@
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
       }
+    </script>
+    <script>
+      // Dynamic copyright year
+      const currentYear = new Date().getFullYear();
+      document.getElementById("copyright-year").textContent = currentYear;
     </script>
   </body>
 </html>
