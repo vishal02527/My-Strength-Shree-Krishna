@@ -199,6 +199,298 @@
         }
       }
 
+
+       /* image-slider --> */
+         
+.slider{
+    height: 100vh;
+    margin-top: 30px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.slider .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1150px;
+    height: 500px;
+    max-width: 70%;
+    left: 40%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgba(255, 254, 254, 0);
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.1):
+    text-shadow: 0 0 0 #0004;
+}
+
+.slider .list .item .content .title,
+.slider .list .item .content .type{
+    font-size: 4em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.slider .list .item .content .description{
+  margin-top: 60px;
+  color: yellow;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: bold;
+
+}
+
+.slider .list .item .type{
+    color: orangered;
+}
+.slider .list .item .button{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.slider .list .item .button button{
+   
+    border: none;
+    background-color: #eee;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.4s;
+    letter-spacing: 2px;
+}
+
+
+.slider .list .item .button button:hover{
+    letter-spacing: 3px;
+}
+.slider .list .item .button button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+
+
+
+
+
+/* Thumbnail Section  */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* nextPrevArrows Section  */
+.nextPrevArrows{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.nextPrevArrows button{
+  margin-top: 50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #14ff72cb;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+.nextPrevArrows button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+/* Animation Part */
+.slider .list .item:nth-child(1){
+    z-index: 1;
+}
+
+
+/* animation text in first item */
+.slider .list .item:nth-child(1) .content .title,
+.slider .list .item:nth-child(1) .content .type,
+.slider .list .item:nth-child(1) .content .description,
+.slider .list .item:nth-child(1) .content .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.slider .list .item:nth-child(1) .content .title{
+    animation-delay: 0.4s !important;
+}
+.slider .list .item:nth-child(1) .content .type{
+    animation-delay: 0.6s !important;
+}
+.slider .list .item:nth-child(1) .content .description{
+    animation-delay: 0.8s !important;
+}
+.slider .list .item:nth-child(1) .content .buttons{
+    animation-delay: 1s !important;
+}
+
+
+
+
+/* Animation for next button click */
+.slider.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.slider.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.slider.prev .list .item img{
+    z-index: 100;
+}
+
+
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+
+
+.slider.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+
+
+/* Animation for prev button click */
+.slider.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.slider.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.slider.prev .thumbnail .item:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.slider.next .nextPrevArrows button,
+.slider.prev .nextPrevArrows button{
+    pointer-events: none;
+}
+
+
+.slider.prev .list .item:nth-child(2) .content .title,
+.slider.prev .list .item:nth-child(2) .content .type,
+.slider.prev .list .item:nth-child(2) .content .description,
+.slider.prev .list .item:nth-child(2) .content .buttons
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .slider .list .item .content{
+        padding-right: 0;
+    }
+    .slider .list .item .content .title{
+        font-size: 50px;
+    }
+}
+          /* image-slider --> */
+        
+
       .navigation {
         display: flex;
         justify-content: space-between;
@@ -728,6 +1020,133 @@
           alt="Shree Krishna"
         />
       </div>
+      
+      <!-- image-slider -->
+            
+    <div class="slider">
+
+
+      <div class="list">
+
+          <div class="item">
+              <img src="./krishna image/peacock.png" alt="">
+
+              <div class="content">
+                 
+                  <div class="description">
+                       मैं सभी जीवों के हृदय में हूँ, या मैं सभी जीवों के हृदय में रहता हूँ। 
+                  </div>
+                  
+              </div>
+          </div>
+
+          <div class="item">
+              <img src="./krishna image/peacock feather.webp" alt="">
+
+              <div class="content">
+                  
+                  <div class="description">
+                    जिनका अज्ञान अपने ही ज्ञान से नष्ट हो जाता है| सूर्य की भांति, उन्हें ज्ञान सर्वोच्च को प्रकट करता है|
+                  </div>
+                  
+              </div>
+          </div>
+
+          <div class="item">
+              <img src="./krishna image/final rath.jpg" alt="">
+
+              <div class="content">
+                  
+                  <div class="description">
+                    यदि अर्जुन तुम युद्ध में वीरगति को प्राप्त होते हो तो तुम्हें स्वर्ग मिलेगा और यदि विजयी होते हो तो धरती का सुख पा जाओगे... इसलिए उठो, हे कौन्तेय (अर्जुन), और निश्चय करके युद्ध करो।
+                  </div>
+                  
+              </div>
+          </div>
+
+          <div class="item">
+              <img src="./krishna image/radha ji and krishna ji.jpg" alt="">
+
+              <div class="content">
+                  
+                  <div class="description">
+                    मनुष्य के शरीर में रहने वाला आलस्य ही उनका सबसे बड़ा शत्रु होता है, परिश्रम जैसा दूसरा कोई अन्य मित्र नहीं होता क्योंकि परिश्रम करने वाला कभी दु:खी नहीं होता है।
+                  </div>
+                 
+              </div>
+          </div>
+
+          
+          <div class="item">
+            <img src="./krishna image/sudharshan chakra.jpg" alt="">
+
+            <div class="content">
+                
+                <div class="description">
+                  चिंता से ही दुःख उत्पन्न होते हैं किसी अन्य कारण से नहीं, ऐसा निश्चित रूप से जानने वाला, चिंता से रहित होकर सुखी, शांत और सभी इच्छाओं से मुक्त हो जाता है।
+                </div>
+                
+            </div>
+          </div>
+
+        
+        <div class="item">
+          <img src="./krishna image/dark image of krishna ji.jpg" alt="">
+
+          <div class="content">
+             
+              <div class="description">
+                जो न कभी हर्षित होता है, न द्वेष करता है, न शोक करता है, न कामना करता है तथा जो शुभ और अशुभ सम्पूर्ण कर्मों का त्यागी है। वह भक्तियुक्त पुरुष मुझको प्रिय है।
+              </div>
+              
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="thumbnail">
+
+          <div class="item">
+              <img src="./krishna image/peacock.png" alt="">
+          </div>
+          <div class="item">
+              <img src="./krishna image/peacock feather.webp" alt="">
+          </div>
+          <div class="item">
+              <img src="./krishna image/final rath.jpg" alt="">
+          </div>
+          <div class="item">
+              <img src="./krishna image/radha ji and krishna ji.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="./krishna image/sudharshan chakra.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="./krishna image/dark image of krishna ji.jpg" alt="">
+      </div>
+
+      </div>
+
+
+      <div class="nextPrevArrows">
+          <button class="prev"> < </button>
+          <button class="next"> > </button>
+      </div>
+
+
+  </div>
+
+
+      <!-- image-slider -->
+
+
+
+
+
+
+
+
       <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
           हिंदी में पढ़ें
