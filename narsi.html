@@ -221,7 +221,6 @@
         text-align: center;
         position: relative;
         bottom: 0;
-        width: 100%;
       }
 
       .footer-content {
@@ -269,10 +268,10 @@
         font-size: 14px;
       }
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 980px) {
         .header {
           position: unset;
-          padding: 10px;
+          padding: 40px;
         }
         main h1 {
           font-size: 22px;
@@ -289,6 +288,11 @@
           flex-direction: column;
           margin-top: 20px;
           margin-right: 0 !important;
+        }
+        
+        .navbar .navbar-up{
+          display: flex;
+          flex-direction: column;
         }
 
         .searchForm button {
