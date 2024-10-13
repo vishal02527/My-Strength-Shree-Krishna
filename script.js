@@ -210,3 +210,33 @@ document.querySelectorAll(".faq-question").forEach((button) => {
   });
 });
 
+// script for sign up page 
+function saveUsername() {
+  // Save username and password in sessionStorage
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  localStorage.setItem("username", username);
+  localStorage.setItem("password", password);
+}
+(() => {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.from(forms).forEach(form => {
+  form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+
+    form.classList.add('was-validated')
+  }, false)
+})
+})()
+
+const currentYear = new Date().getFullYear();
+document.getElementById('year').textContent = currentYear;
+
