@@ -31,7 +31,7 @@ This website is dedicated to **Krishna’s devotion**. It serves as a spiritual 
 - **🔑 Signup/Login**: Create an account to join our growing community.
 - **🎨 Gallery**: A curated collection of devotional art, idols, and symbols.
 - **🎶 Morning Mantras Audio**: Begin your day with peaceful mantras.
-- **Shloks**:hifhly motivational shloks of shree krishna.
+- **Shloks**:highly motivational shloks of shree krishna.
 
 ---
 
