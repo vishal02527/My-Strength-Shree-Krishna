@@ -62,27 +62,26 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-        position: fixed; 
-        bottom: 30px; 
-        right: 30px; 
-        background-color: #330867;
+        position: fixed;
+        bottom: 22px;
+        right: 30px;
+        background-color: #e74c3c;
         color: white;
         border: none;
-        padding: 10px 15px;
+        padding: 13px 17px;
         cursor: pointer;
-        border-radius: 5px;
-        display: none; 
-        z-index: 1000; 
+        border-radius: 50%;  
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+        font-size: 18px;
+        display: none;
+        z-index: 1000;
+        transition: background-color 0.3s ease, transform 0.2s ease;
       }
 
-      .scroll-top-btn:hover {
-        background-color: #330867;
-      }
-
-      .scroll-top-btn:hover {
-        background-color: #330867;
-      }
-
+    .scroll-top-btn:hover {
+      background-color: #c0392b;  
+      transform: scale(1.1); 
+    }
       .content h1::selection,
       p::selection,
       h2::selection {
