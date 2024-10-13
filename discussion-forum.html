@@ -429,8 +429,8 @@
 
 
 
-      /* Mobile Responsive Styles */
-      @media (max-width: 768px) {
+      /* Responsive Styles */
+      @media (max-width: 980px) {
         .header {
           position: unset;
           padding: 10px;
@@ -450,6 +450,10 @@
           align-items: center;
         }
 
+        .navbar .navbar-up{
+          display: flex;
+          flex-direction: column;
+        }
         .navigation .navbar {
           flex-direction: column !important;
           margin-top: 20px;
@@ -457,13 +461,17 @@
         }
 
         .searchForm button {
-          top: -34px;
-          right: -130px;
-        }
-        .searchForm {
-          margin-top: 10px;
-          margin-bottom: -35px;
-        }
+        top: -34px;
+        right: -10px;
+      }
+      .searchForm{
+        margin-top: 10px;
+        margin-bottom: -35px;
+        display: contents;
+      }
+      .searchForm button i{
+        margin-left: 15rem;
+      }
 
         .navigation .navbar a {
           margin: 10px 0;

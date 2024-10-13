@@ -269,7 +269,7 @@
         font-size: 14px;
       }
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 980px) {
         .header {
           position: unset;
           padding: 10px;
@@ -284,6 +284,11 @@
           align-items: center;
         }
 
+        .navbar .navbar-up{
+          display: flex;
+          flex-direction: column;
+        }
+
         .navigation .navbar {
           display: flex;
           flex-direction: column;
@@ -293,12 +298,15 @@
 
         .searchForm button {
           top: -34px;
-          right: -130px;
+          right: 0px;
         }
         .searchForm {
           margin-top: 10px;
           margin-bottom: -35px;
         }
+        .searchForm button i{
+        margin-left: 15rem;
+      }
 
         .navigation .navbar a {
           margin: 10px 0;

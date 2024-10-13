@@ -18,346 +18,6 @@
         box-sizing: border-box;
         overflow-x: hidden;
       }
-      .scroll-top-btn {
-        position: fixed; /* Fixed position */
-        bottom: 30px; 
-        right: 30px; 
-        background-color: #330867;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        border-radius: 5px;
-        display: none; /* Initially hidden */
-        z-index: 1000; /* Ensure it appears above other content */
-      }
-
-      .scroll-top-btn:hover {
-        background-color: #330867;
-      }
-      p::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      main h1 {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
-
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
-
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
-
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
-
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 8px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-
-      main {
-        padding: 20px;
-      }
-      .content {
-        max-width: 900px;
-        margin: 70px auto 100px;
-        padding: 20px 40px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .imageDiv {
-        text-align: center;
-        margin: 20px 0px 0px;
-      }
-
-      .imageDiv img {
-        width: 48%;
-        height: 430px;
-      }
-
-      #translateBtnDiv {
-        position: relative;
-        top: 50px;
-        left: 250px;
-      }
-
-      #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
-          #314755 0%,
-          #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
-
-      .searchInput {
-        box-sizing: border-box;
-        width: 300px;
-        height: 35px;
-        padding: 5px 20px;
-        border-radius: 50px;
-        border: 0;
-      }
-      .searchInput:focus {
-        outline: 0;
-      }
-      .searchForm button {
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        position: relative;
-        top: 2px;
-        right: 55px;
-      }
-      .searchForm button i {
-        color: #555;
-        padding: 9px 15px;
-
-        font-size: 16px;
-        cursor: pointer;
-        transition: linear 0.16s;
-      }
-      .searchForm button i:hover {
-        color: #23d1c8;
-      }
-
-      footer {
-        background-color: #2c3e50;
-        color: #ecf0f1;
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 0px 10px 0px 60px;
-      }
-
-      .footer-section {
-        margin-bottom: 20px;
-      }
-
-      .footer-section h3 {
-        margin-bottom: 10px;
-        color: #f39c12;
-      }
-
-      .footer-section p {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-      .social-icons a i {
-        color: #ecf0f1;
-        margin: 0 8px;
-        font-size: 30px;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .social-icons a i:hover {
-        color: rgb(241, 203, 120);
-      }
-
-      .creatorDiv {
-        margin-top: 10px;
-      }
-
-      .creatorDiv p {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 14px;
-      }
-
-      @media screen and (max-width: 600px) {
-        .header {
-          position: unset;
-          padding: 10px;
-        }
-        main h1 {
-          font-size: 22px;
-        }
-
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .navigation .navbar {
-          display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-        }
-
-        .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 12px;
-        }
-
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
-        }
-
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-
-        .content {
-          width: 90%;
-          margin: 60px auto;
-          padding: 10px 15px;
-        }
-        .imageDiv {
-          margin: 20px 0px -20px;
-        }
-        .imageDiv img {
-          width: 300px;
-          height: 210px;
-        }
-
-        #translateBtnDiv {
-          left: 5px;
-        }
-        .content p {
-          font-size: 14px;
-        }
-
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        .footer-content {
-          flex-direction: column;
-          align-items: center;
-          margin: 0px 40px 0px 0px;
-        }
-
-        .footer-section p {
-          font-size: 14px;
-        }
-
-        .social-icons a i {
-          font-size: 22px;
-          margin: 5px;
-        }
-
-        .footer-section {
-          margin-bottom: 0;
-        }
-
-        .creatorDiv {
-          margin-top: 20px;
-          margin-right: 30px;
-        }
-
-        .creatorDiv p {
-          font-size: 12px;
-        }
-      }
-    </style>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
       p::selection {
         background-color: rgb(237, 204, 133);
         color: #000;
@@ -543,7 +203,6 @@
         text-align: center;
         position: relative;
         bottom: 0;
-        width: 100%;
       }
 
       .footer-content {
@@ -591,7 +250,7 @@
         font-size: 14px;
       }
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 980px) {
         .header {
           position: unset;
           padding: 10px;
@@ -606,6 +265,10 @@
           align-items: center;
         }
 
+        .navbar .navbar-up{
+          display: flex;
+          flex-direction: column;
+        }
         .navigation .navbar {
           display: flex;
           flex-direction: column;
@@ -621,6 +284,9 @@
           margin-top: 10px;
           margin-bottom: -35px;
         }
+        .searchForm button i{
+        margin-left: 15rem;
+      }
 
         .navigation .navbar a {
           margin: 10px 0;
