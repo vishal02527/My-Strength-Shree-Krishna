@@ -1,84 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery: Shree Krishna</title>
+    <script
+      src="https://kit.fontawesome.com/d74f12bccc.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        padding: 0;
+        margin: 0;
+        color: #333;
+        overflow-x: hidden;
+      }
+      .scroll-top-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none;
+        z-index: 1000;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery: Shree Krishna</title>
-  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-      padding: 0;
-      margin: 0;
-      color: #333;
-      overflow-x: hidden;
-    }
+      .scroll-top-btn:hover {
+        background-color: #330867;
+      }
+      .content {
+        padding: 20px 20px 100px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 900;
+        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .image-container {
+        margin: 40px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-    .scroll-top-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #330867;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      display: none;
-      z-index: 1000;
-    }
+      html {
+        background-image: linear-gradient(#eee, #aaa);
+        height: 100%;
+      }
 
-    .scroll-top-btn:hover {
-      background-color: #330867;
-    }
+      .img {
+        border: solid 2px;
+        border-bottom-color: rgb(233, 233, 145);
+        border-left-color: #eed;
+        border-right-color: #eed;
+        border-top-color: #ccb;
+        max-height: 90%; /* Limit height to leave some space */
+        max-width: 100%;
+        margin-top: 10px; /* Add a gap at the top */
+        margin-bottom: 10px; /* Add a gap at the bottom */
+        box-sizing: border-box;
+      }
 
-    .content {
-      padding: 20px 20px 100px;
-    }
+      .image-card {
+        background-color: #ddc;
+        border: solid 5vmin #eee;
+        border-bottom-color: #fff;
+        border-left-color: #eee;
+        border-radius: 2px;
+        border-right-color: #eee;
+        border-top-color: #ddd;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset,
+          0 5px 10px 5px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        display: flex; /* Flexbox to center image */
+        justify-content: center; /* Horizontally center the image */
+        align-items: center; /* Vertically center the image */
+        margin: 10vh 10vw;
+        height: 80vh;
+        padding: 8vmin;
+        position: relative;
+        text-align: center;
+      }
 
-    h1 {
-      text-align: center;
-      font-size: 36px;
-      font-weight: 900;
-      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+      .image-card:before {
+        border-radius: 2px;
+        bottom: -2vmin;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+        content: "";
+        left: -2vmin;
+        position: absolute;
+        right: -2vmin;
+        top: -2vmin;
+      }
 
-    .image-container {
-      margin: 40px 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+      .image-card:after {
+        border-radius: 2px;
+        bottom: -2.5vmin;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+        content: "";
+        left: -2.5vmin;
+        position: absolute;
+        right: -2.5vmin;
+        top: -2.5vmin;
+      }
 
-    .image-card {
-      margin: 15px;
-      border-radius: 10px;
-      height: 400px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
+      /* New responsive rules */
+      @media (max-width: 768px) {
+        .image-card {
+          margin: 5vh 5vw;
+          height: 60vh;
+        }
 
-    .image-card:hover {
-      transform: scale(1.08);
-    }
+        .img {
+          margin-top: 5px; /* Smaller gap for small screens */
+          margin-bottom: 5px; /* Smaller gap for small screens */
+        }
+      }
 
-    .image-card img {
-      width: 320px;
-      height: 400px;
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .image-card:hover img {
-      transform: scale(1.1);
-    }
+      .image-card {
+        margin: 15px;
+        border-radius: 10px;
+        height: 400px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+      .image-card:hover {
+        transform: scale(1.08);
+      }
+      .image-card img {
+        width: 320px;
+        height: 400px;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+      }
+      .image-card:hover img {
+        transform: scale(1.1);
+      }
 
     /* Lightbox Styles */
     .lightbox {
@@ -226,387 +295,224 @@
       color: #23d1c8;
     }
 
-    footer {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      padding-bottom: 2rem;
-      text-align: center;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
+      footer {
+  background-color: #1c3d5a;
+  color: #ffffff;
+  padding: 40px 0; /* Increased padding for more space */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 100%;
+}
 
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      max-width: 1200px;
-    }
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Spread items evenly across the footer */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  padding: 0 50px;
+  max-width: 1200px; /* Limit max width to keep it centered */
+  margin: 0 auto;
+}
 
-    .footer-section {
-      margin-bottom: 20px;
-    }
+.footer-section {
+  flex: 1;
+  margin: 20px; /* Add margin for spacing between sections */
+  min-width: 220px; /* Minimum width for smaller screens */
+}
 
-    .footer-section h3 {
-      margin-bottom: 10px;
-      color: #f39c12;
-    }
+.footer-section h3 {
+  font-size: 24px; /* Increased the heading size */
+  margin-bottom: 15px;
+  color: #f0c43f; /* Gold color */
+}
 
-    .footer-section p {
-      font-size: 16px;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+/* Quick Links Styling */
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
 
-    .social-icons a {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 2.1rem;
-      height: 2.1rem;
-      background-color: transparent;
-      border: 0.2rem solid #000000;
-      font-size: 1.2rem;
-      border-radius: 50%;
-      margin: 0.1rem 0.2rem 0.1rem 0;
-      transition: 0.3s ease;
-      color: #ffffff;
-      text-decoration: none;
-    }
+.footer-links li {
+  margin-bottom: 12px; /* Spacing between links */
+}
 
-    .social-icons a:hover {
-      color: rgb(255, 255, 255);
-      transform: scale(1.3) translateY(-5px);
-      background-color: #ac905c;
-      box-shadow: 0 0 25px #f0eaea;
-    }
+.footer-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px; /* Increased font size for better readability */
+  transition: color 0.3s ease;
+}
 
-    .creatorDiv {
-      margin-top: 10px;
-    }
+.footer-links a:hover {
+  color: #fce4a6; /* Lighter gold on hover */
+}
 
-    .creatorDiv p {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 14px;
-    }
+/* Faith Statement Section */
+.statement .faith-statement {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #fff;
+  max-height: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s ease-in-out;
+}
 
-    .caption {
-      margin-top: 25px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: 500;
-      font-size: 16px;
-      font-style: italic;
-      color: #f39c12;
-    }
+.read-more {
+  color: #f4d35e;
+  cursor: pointer;
+  text-decoration: underline;
+}
 
-    .caption::selection {
-      background-color: rgb(237, 204, 133);
-      color: #000;
-    }
+/* Social Icons Styling */
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 26px; /* Increased icon size */
+  margin-right: 15px; /* Spacing between icons */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f0c43f;
+}
+
+/* Footer Bottom Section */
+.creatorDiv {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  padding: 10px;
+  border-top: 1px solid #ffffff44; /* Subtle border for separation */
+}
+
+.creatorDiv p {
+  margin: 0;
+}
+
+
+
+
+
+
+
+      .caption {
+        margin-top: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        font-style: italic;
+        color: #f39c12;
+      }
+      .caption::selection {
+        background-color: rgb(237, 204, 133);
+        color: #000;
+      }
 
     /* Responsive Styles */
 
-    @media (max-width: 980px) {
-      .galleryMain {
-        position: unset;
+      @media (max-width: 980px) {
+        .galleryMain {
+          position: unset;
+        }
+        h1 {
+          font-size: 22px;
+        }
+        .image-card {
+          width: 280px;
+          height: 300px;
+          margin: 0;
+        }
+        .caption {
+          margin-top: 20px;
+          margin-bottom: 15px;
+          font-size: 14px;
+        }
+        .image-card img {
+          width: 100%;
+          height: 300px;
+        }
+        .lightbox {
+          top: 0;
+          left: -20px;
+        }
+        .close-btn {
+          top: 40px;
+          right: 40px;
+        }
+        .navigation {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navbar .navbar-up {
+          display: flex;
+          flex-direction: column;
+        }
+        .navigation .navbar {
+          display: flex;
+        }
+        .navigation .navbar a {
+          margin: 10px 0;
+          font-size: 14px;
+        }
+        .navigation .homeDiv #homeBtn {
+          min-width: 80px;
+        }
+        .navigation .homeDiv #homeBtn a {
+          font-size: 14px;
+        }
+        .searchForm button {
+          top: -34px;
+          right: -10px;
+        }
+        .searchForm {
+          margin-top: 10px;
+          margin-bottom: -35px;
+          display: contents;
+        }
+        .searchForm button i {
+          margin-left: 15rem;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+        }
+        .footer-section p {
+          font-size: 14px;
+        }
+        .social-icons a i {
+          font-size: 22px;
+          margin: 5px;
+        }
+        .footer-section {
+          margin-bottom: 0;
+        }
+        .creatorDiv {
+          margin-top: 20px;
+          margin-right: 30px;
+        }
+        .creatorDiv p {
+          font-size: 12px;
+        }
       }
-
-      h1 {
-        font-size: 22px;
-      }
-
-      .image-card {
-        width: 280px;
-        height: 350px;
-        margin: 0;
-      }
-
-      .caption {
-        margin-top: 20px;
-        margin-bottom: 15px;
-        font-size: 14px;
-      }
-
-      .image-card img {
-        width: 100%;
-        height: 350px;
-      }
-
-      .lightbox {
-        top: 0;
-        left: -20px;
-      }
-
-      .close-btn {
-        top: 40px;
-        right: 40px;
-      }
-
-      .navigation {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .navbar .navbar-up {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .navigation .navbar {
-        display: flex;
-      }
-
-      .navigation .navbar a {
-        margin: 10px 0;
-        font-size: 14px;
-      }
-
-      .navigation .homeDiv #homeBtn {
-        min-width: 80px;
-      }
-
-      .navigation .homeDiv #homeBtn a {
-        font-size: 14px;
-      }
-
-      .searchForm button {
-        top: -34px;
-        right: -10px;
-      }
-
-      .searchForm {
-        margin-top: 10px;
-        margin-bottom: -35px;
-        display: contents;
-      }
-
-      .searchForm button i {
-        margin-left: 15rem;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .footer-section p {
-        font-size: 14px;
-      }
-
-      .social-icons a i {
-        font-size: 22px;
-        margin: 5px;
-      }
-
-      .footer-section {
-        margin-bottom: 0;
-      }
-
-      .creatorDiv {
-        margin-top: 20px;
-        margin-right: 30px;
-      }
-
-      .creatorDiv p {
-        font-size: 12px;
-      }
-    }
-
-    .navigation-mob {
-      display: none;
-    }
-
-    @media (max-width:668px) {
-
-      .navigation{
-      display: none;
-
-      }
-      /* Mobile Navigation  Starts*/
-      /* Initially hide the mobile navbar (off-screen to the left) */
-      .navbar-mob {
-        position: fixed;
-        top: 0;
-        left: -60%;
-        /* Move it off-screen */
-        width: 60%;
-        /* Cover 60% of the screen width */
-        height: 100%;
-        background-color: #00000099;
-        /* Set a background color */
-        transition: left 0.3s ease;
-        /* Smooth slide effect */
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        /* Add some shadow for depth */
-        z-index: 1000;
-        /* Stay on top of other elements */
-      }
-
-      /* Show the navbar when 'active' class is added */
-      .navbar-mob.active {
-        left: 0;
-        /* Slide into view */
-      }
-
-      .navbar-up-mob {
-
-        /* border: 2px solid red; */
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        justify-content: space-evenly;
-        margin: 1rem 0.5rem;
-        color: #f8f8ff;
-      }
-
-      .navbar-up-mob>a {
-
-        color: #f8f8ff;
-      }
-
-      .navbar-up-mob>a:hover {
-
-        color: blue;
-      }
-
-      .mobile-nav-container {
-        /* border: 1px solid red; */
-        display: flex;
-        align-items: center;
-        width: 100%;
-        justify-content: space-around;
-      }
-
-      #homeBtn-mob {
-        background-image: linear-gradient(144deg,
-            #af40ff,
-            #5b42f3 50%,
-            #00ddeb);
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-
-        padding: 0.5rem 0.5rem;
-      }
-
-      #homeBtn-mob>a {
-
-        color: #ffffff;
-
-      }
-
-      .navigation-mob {
-        /* position: sticky;
-      /* border: 2px solid red; */
-        top: 0;
-        z-index: 888;
-        width: 100%;
-
-        display: flex;
-
-        justify-content: space-evenly;
-        align-items: center;
-
-      }
-
-      .searchForm-mob {
-        display: flex;
-        margin-left: auto;
-        border: 1px solid green;
-        background: white;
-        border-radius: 50px;
-        overflow: hidden;
-        width: 70%;
-      }
-
-      .searchInput-mob {
-        width: 100%;
-        height: 30px;
-        padding: 5px 12px;
-        border-radius: 50px;
-        border: 0;
-        font-size: 12px;
-      }
-
-      .searchForm-mob button {
-        background: transparent;
-        outline: none;
-        border: none;
-
-      }
-
-      .searchForm-mob button i {
-        padding: 9px 15px;
-        font-size: 15px;
-
-      }
-
-      #toggle-nav-mob {
-
-        margin: 1% 2%;
-      }
-
-
-      .button-29 {
-        align-items: center;
-        appearance: none;
-        background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-        border: 0;
-        border-radius: 6px;
-        box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
-        box-sizing: border-box;
-        color: #fff;
-        cursor: pointer;
-        display: inline-flex;
-        font-family: "JetBrains Mono", monospace;
-        height: 2.25rem;
-        justify-content: center;
-        line-height: 1;
-        list-style: none;
-        overflow: hidden;
-        padding: 0 0.5rem;
-        position: relative;
-        text-align: left;
-        text-decoration: none;
-        transition: box-shadow .15s, transform .15s;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        white-space: nowrap;
-        will-change: box-shadow, transform;
-        font-size: 1rem;
-      }
-
-      .button-29:focus {
-        box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-      }
-
-      .button-29:hover {
-        box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-        transform: translateY(-2px);
-      }
-
-      .button-29:active {
-        box-shadow: #3c4fe0 0 3px 7px inset;
-        transform: translateY(2px);
-      }
-
-      /* Mobile Navigation Ends */
-    }
-  </style>
-</head>
-
-<body>
-  <button id="scrollTopBtn" class="scroll-top-btn"> <i class="fas fa-arrow-up"></i></button>
-  <div class="galleryMain">
-    <div class="navigation">
-      <div class="homeDiv">
-        <button id="homeBtn"><a href="./index.html">Home</a></button>
-      </div>
+    </style>
+  </head>
+  <body>
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <div class="galleryMain">
+      <div class="navigation">
+        <div class="homeDiv">
+          <button id="homeBtn"><a href="./index.html">Home</a></button>
+        </div>
 
       <div class="navbar">
         <div class="navbar-up">
@@ -718,18 +624,32 @@
       </div>
     </div>
 
-    <!-- Lightbox Container -->
-    <div class="lightbox" onclick="closeLightbox()">
-      <span class="close-btn">&times;</span>
-      <img id="lightbox-img" src="" alt="Lightbox Image" />
-    </div>
-  </div>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>About Us</h3>
-        <p>Your description about the website and its purpose.</p>
+      <!-- Lightbox Container -->
+      <div class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Lightbox Image" />
       </div>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section statement ">
+          <h3>Statement on Faith </h3>
+          <p class="faith-statement">
+            Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
+        
+          </p>
+          <a href="devotional-resources.html" class="read-more">Read More</a>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scriptures.html">Scriptures</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
+            <li><a href="devotional-resources.html">Devotional Resources</a></li>
+          </ul>
+        </div>
 
       <div class="footer-section">
         <h3>Contact Us</h3>
