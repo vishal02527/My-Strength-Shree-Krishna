@@ -18,22 +18,22 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-    position: fixed; 
-    bottom: 20px; 
-    right: 20px; 
-    background-color: #330867;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none; 
-    z-index: 1000; 
-}
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #330867;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none;
+        z-index: 1000;
+      }
 
-.scroll-top-btn:hover {
-    background-color: #330867;
-}
+      .scroll-top-btn:hover {
+        background-color: #330867;
+      }
       .content {
         padding: 20px 20px 100px;
       }
@@ -52,6 +52,81 @@
         flex-wrap: wrap;
         justify-content: center;
       }
+
+      html {
+        background-image: linear-gradient(#eee, #aaa);
+        height: 100%;
+      }
+
+      .img {
+        border: solid 2px;
+        border-bottom-color: rgb(233, 233, 145);
+        border-left-color: #eed;
+        border-right-color: #eed;
+        border-top-color: #ccb;
+        max-height: 90%; /* Limit height to leave some space */
+        max-width: 100%;
+        margin-top: 10px; /* Add a gap at the top */
+        margin-bottom: 10px; /* Add a gap at the bottom */
+        box-sizing: border-box;
+      }
+
+      .image-card {
+        background-color: #ddc;
+        border: solid 5vmin #eee;
+        border-bottom-color: #fff;
+        border-left-color: #eee;
+        border-radius: 2px;
+        border-right-color: #eee;
+        border-top-color: #ddd;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset,
+          0 5px 10px 5px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        display: flex; /* Flexbox to center image */
+        justify-content: center; /* Horizontally center the image */
+        align-items: center; /* Vertically center the image */
+        margin: 10vh 10vw;
+        height: 80vh;
+        padding: 8vmin;
+        position: relative;
+        text-align: center;
+      }
+
+      .image-card:before {
+        border-radius: 2px;
+        bottom: -2vmin;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+        content: "";
+        left: -2vmin;
+        position: absolute;
+        right: -2vmin;
+        top: -2vmin;
+      }
+
+      .image-card:after {
+        border-radius: 2px;
+        bottom: -2.5vmin;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+        content: "";
+        left: -2.5vmin;
+        position: absolute;
+        right: -2.5vmin;
+        top: -2.5vmin;
+      }
+
+      /* New responsive rules */
+      @media (max-width: 768px) {
+        .image-card {
+          margin: 5vh 5vw;
+          height: 60vh;
+        }
+
+        .img {
+          margin-top: 5px; /* Smaller gap for small screens */
+          margin-bottom: 5px; /* Smaller gap for small screens */
+        }
+      }
+
       .image-card {
         margin: 15px;
         border-radius: 10px;
@@ -163,7 +238,6 @@
         background: none;
       }
 
-      
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
@@ -216,68 +290,109 @@
       }
 
       footer {
-        background-color: #2c3e50;
-        color: #ecf0f1;
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
+  background-color: #1c3d5a;
+  color: #ffffff;
+  padding: 40px 0; /* Increased padding for more space */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 100%;
+}
 
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 0px 10px 0px 60px;
-      }
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Spread items evenly across the footer */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  padding: 0 50px;
+  max-width: 1200px; /* Limit max width to keep it centered */
+  margin: 0 auto;
+}
 
-      .footer-section {
-        margin-bottom: 20px;
-      }
+.footer-section {
+  flex: 1;
+  margin: 20px; /* Add margin for spacing between sections */
+  min-width: 220px; /* Minimum width for smaller screens */
+}
 
-      .footer-section h3 {
-        margin-bottom: 10px;
-        color: #f39c12;
-      }
+.footer-section h3 {
+  font-size: 24px; /* Increased the heading size */
+  margin-bottom: 15px;
+  color: #f0c43f; /* Gold color */
+}
 
-      .footer-section p {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
+/* Quick Links Styling */
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
 
-      .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    background-color: transparent;
-    border: 0.2rem solid #000000;
-    font-size: 1.2rem;
-    border-radius: 50%;
-    margin:0.1rem 0.2rem 0.1rem 0;
-    transition: 0.3s ease;
-    color: #ffffff;
-    text-decoration: none;
+.footer-links li {
+  margin-bottom: 12px; /* Spacing between links */
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px; /* Increased font size for better readability */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fce4a6; /* Lighter gold on hover */
+}
+
+/* Faith Statement Section */
+.statement .faith-statement {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #fff;
+  max-height: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.read-more {
+  color: #f4d35e;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Social Icons Styling */
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 26px; /* Increased icon size */
+  margin-right: 15px; /* Spacing between icons */
+  transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color:  rgb(255, 255, 255);
-    transform: scale(1.3) translateY(-5px);
-    background-color: #ac905c;
-    box-shadow: 0 0 25px #f0eaea;
+  color: #f0c43f;
 }
-      .creatorDiv {
-        margin-top: 10px;
-      }
-      .creatorDiv p {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 14px;
-      }
+
+/* Footer Bottom Section */
+.creatorDiv {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  padding: 10px;
+  border-top: 1px solid #ffffff44; /* Subtle border for separation */
+}
+
+.creatorDiv p {
+  margin: 0;
+}
+
+
+
+
+
+
+
       .caption {
         margin-top: 25px;
         margin-bottom: 20px;
@@ -294,7 +409,7 @@
 
       /* Responsive Styles */
 
-      @media (max-width: 768px) {
+      @media (max-width: 980px) {
         .galleryMain {
           position: unset;
         }
@@ -302,8 +417,8 @@
           font-size: 22px;
         }
         .image-card {
-          width: 280px; 
-          height: 350px;
+          width: 280px;
+          height: 300px;
           margin: 0;
         }
         .caption {
@@ -313,7 +428,7 @@
         }
         .image-card img {
           width: 100%;
-          height: 350px;
+          height: 300px;
         }
         .lightbox {
           top: 0;
@@ -329,15 +444,12 @@
           align-items: center;
         }
 
-        .navbar .navbar-up{ 
-          display: flex ;
+        .navbar .navbar-up {
+          display: flex;
           flex-direction: column;
         }
         .navigation .navbar {
           display: flex;
-          flex-direction: column;
-          margin-top: 20px;
-          margin-right: 0 !important;
         }
         .navigation .navbar a {
           margin: 10px 0;
@@ -350,17 +462,21 @@
           font-size: 14px;
         }
         .searchForm button {
-        top: -34px;
-        right: -130px;
-      }
-      .searchForm{
-        margin-top: 10px;
-        margin-bottom: -35px;
-      }
+          top: -34px;
+          right: -10px;
+        }
+        .searchForm {
+          margin-top: 10px;
+          margin-bottom: -35px;
+          display: contents;
+        }
+        .searchForm button i {
+          margin-left: 15rem;
+        }
+
         .footer-content {
           flex-direction: column;
           align-items: center;
-          margin: 0px 40px 0px 0px;
         }
         .footer-section p {
           font-size: 14px;
@@ -379,7 +495,6 @@
         .creatorDiv p {
           font-size: 12px;
         }
-
       }
       
       #new-heading{
@@ -389,20 +504,22 @@
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <div class="galleryMain">
       <div class="navigation">
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-        
+
         <div class="navbar">
           <div class="navbar-up">
-          <a href="scriptures.html">Scriptures</a>
-          <a href="gallery.html" id="active">Gallery</a>
-          <a href="signup.html">Discussion Forum</a>
-          <a href="devotional-resources.html">Devotional Resources</a>
-        </div>
+            <a href="scriptures.html">Scriptures</a>
+            <a href="gallery.html" id="active">Gallery</a>
+            <a href="signup.html">Discussion Forum</a>
+            <a href="devotional-resources.html">Devotional Resources</a>
+          </div>
         </div>
         <form class="searchForm">
           <input
@@ -524,9 +641,23 @@
     </div>
     <footer>
       <div class="footer-content">
+        <div class="footer-section statement ">
+          <h3>Statement on Faith </h3>
+          <p class="faith-statement">
+            Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
+        
+          </p>
+          <a href="devotional-resources.html" class="read-more">Read More</a>
+        </div>
         <div class="footer-section">
-          <h3>About Us</h3>
-          <p>Your description about the website and its purpose.</p>
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scriptures.html">Scriptures</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
+            <li><a href="devotional-resources.html">Devotional Resources</a></li>
+          </ul>
         </div>
 
         <div class="footer-section">
@@ -538,11 +669,18 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-codepen"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        
+            <a href="https://github.com/vishal02527" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
         </div>
       </div>
       <div class="creatorDiv">
@@ -551,23 +689,26 @@
     </footer>
     <script src="script.js"></script>
     <script>
-      window.onscroll = function() {
-    toggleScrollTopButton();
-};
+      window.onscroll = function () {
+        toggleScrollTopButton();
+      };
 
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-function toggleScrollTopButton() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block"; // Show button after scrolling down
-    } else {
-        scrollTopBtn.style.display = "none"; // Hide button when at the top
-    }
-}
+      function toggleScrollTopButton() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block"; // Show button after scrolling down
+        } else {
+          scrollTopBtn.style.display = "none"; // Hide button when at the top
+        }
+      }
 
-scrollTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-  </script>
+      scrollTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+      };
+    </script>
   </body>
 </html>
