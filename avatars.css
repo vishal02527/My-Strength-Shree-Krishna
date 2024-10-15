@@ -9,7 +9,18 @@
     background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    white-space: nowrap; 
+    animation: typing 2s steps(30, end);
 
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%; 
+  }
 }
 .container{
     display: grid;
@@ -33,10 +44,28 @@
     border: 10px solid rgb(29, 90, 156);
     border-radius: 7px;
 }
-.row h1{
-    color: #095555;
-    
+.row h1 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #095555; /* Fallback color */
+  background: linear-gradient(90deg, #095555, #33cc99, #095555); /* Base gradient */
+  background-size: 200%; /* Expand the gradient for smooth movement */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+  animation: gradientAnimation 3s ease infinite; /* Apply the infinite gradient animation */
+  text-align: center;
 }
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%; /* Moves the gradient across the text */
+  }
+}
+
 .row button{
     color: white;
     /* border-image: linear-gradient(to right,#3acfd5 0%,#3a4ed5 100% )1;

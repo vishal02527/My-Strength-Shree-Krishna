@@ -153,6 +153,16 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        white-space: nowrap; 
+        animation: typing 2s steps(30, end);
+      }
+      @keyframes typing {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%; 
+        }
       }
 
       .resource-card {
@@ -164,9 +174,23 @@
       }
 
       .resource-card h2 {
-        color: #ab9353;
-        margin-top: 0;
+        color: #ab9353; 
+        background: linear-gradient(90deg, #ab9353, #ffd700, #ab9353);
+        background-size: 200%; 
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        animation: gradientAnimation 3s ease infinite; 
+        margin-top: 40px;
       }
+      @keyframes gradientAnimation {
+          0% {
+            background-position: 0%;
+          }
+          100% {
+            background-position: 200%; 
+          }
+        }
 
       .resource-card p {
         font-size: 18px;

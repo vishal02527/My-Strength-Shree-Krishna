@@ -45,6 +45,16 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        white-space: nowrap; 
+        animation: typing 2s steps(30, end);
+      }
+      @keyframes typing {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%; 
+        }
       }
       .image-container {
         margin: 40px 0;
@@ -398,10 +408,26 @@
         margin-bottom: 20px;
         text-align: center;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 25px;
         font-style: italic;
-        color: #f39c12;
+        color: #ab9353; /* Fallback color */
+        background: linear-gradient(90deg, #ab9353, #ffd700, #ab9353); /* Base gradient */
+        background-size: 200%; /* Make the gradient move */
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; /* Text fill is transparent to allow the gradient to show */
+        animation: gradientAnimation 3s ease infinite; /* Constant color changing animation */
+        text-align: center;
+        margin-top: 40px;
       }
+      @keyframes gradientAnimation {
+          0% {
+            background-position: 0%;
+          }
+          100% {
+            background-position: 200%; /* Move the gradient */
+          }
+        }
       .caption::selection {
         background-color: rgb(237, 204, 133);
         color: #000;
