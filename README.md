@@ -1,4 +1,4 @@
-# 🌸 My-Strength-Shree-Krishna 🌸
+# 🌸 My-Strength-Shree-Radha-Krishna 🌸
 
 🙏 **Hello everyone!** 🙏
 
@@ -17,7 +17,7 @@ _Project Admin, GSSoC-Ext._
 
 ## 🌟 Welcome to My-Strength-Shree-Krishna 🌟
 
-This website is dedicated to **Krishna’s devotion**. It serves as a spiritual hub, offering resources to guide you closer to **Lord Krishna**. With captivating wallpapers, mantras, and an interactive community, we aim to inspire and foster devotion.
+This website is dedicated to **Krishna’s devotion**. It serves as a spiritual hub, offering resources to guide you closer to **Lord Krishna**. With captivating wallpapers, mantras, and an interactive community, Shloks we aim to inspire and foster devotion.
 
 ![Krishna Devotion](https://github.com/vishal02527/My-Strength-Shree-Krishna/blob/main/images/Screenshot%202024-09-21%20192845.png)
 
@@ -26,11 +26,12 @@ This website is dedicated to **Krishna’s devotion**. It serves as a spiritual 
 ## 🦚 Divine Features of the Platform 🦚
 
 - **🙏 Devotional Content**: Find inspirational quotes, teachings, and texts related to Lord Krishna.
-- **📸 Krishna Wallpapers**: High-quality images of Krishna to keep you connected spiritually.
+- **📸 Krishna Wallpapers**: High-quality images of Krishna to keep you connected spirituall
 - **💬 Discussion Forum**: Engage with fellow devotees, share insights, and ask questions.
 - **🔑 Signup/Login**: Create an account to join our growing community.
 - **🎨 Gallery**: A curated collection of devotional art, idols, and symbols.
 - **🎶 Morning Mantras Audio**: Begin your day with peaceful mantras.
+- **Shloks**:highly motivational shloks of shree krishna.
 
 ---
 
