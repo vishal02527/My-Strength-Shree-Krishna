@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discussion Forum - Shree Krishna</title>
+    <title>Krishna Bhakti Forum - Login</title>
     <style>
+
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+
             color: #333;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+
         }
         h2::selection,
         label::selection {
@@ -33,10 +44,54 @@
             color: #ab9353;
             margin-top: 0;
             text-align: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .login-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-form::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background-image: url('/api/placeholder/100/100');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.2;
+        }
+
+        h2 {
+            color: #4a2b0f;
+            margin-top: 0;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+
+        }
+
         label {
             display: block;
             margin-bottom: 8px;
+
             color: #555;
         }
         input {
@@ -61,8 +116,44 @@
 
         .forgot-password:hover {
             color: #3b82f8;
+
+            color: #4a2b0f;
+            font-weight: 600;
         }
+
+        input {
+            width: 93%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #d1a054;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus {
+            border-color: #4a2b0f;
+            outline: none;
+            box-shadow: 0 0 5px rgba(74, 43, 15, 0.5);
+        }
+
+        .forgot-password {
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            color: #4a2b0f;
+            font-weight: 400;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forgot-password:hover {
+            color: #d1a054;
+
+        }
+
         button {
+
             display: block;
             background: linear-gradient(269deg, #0048ff, #0096ff);
             color: #fff;
@@ -201,3 +292,110 @@
 </script>
 </body>
 </html>
+
+            background: linear-gradient(135deg, #d1a054, #4a2b0f);
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(74, 43, 15, 0.3);
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .signup-link {
+            color: #4a2b0f;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .signup-link:hover {
+            color: #d1a054;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .login-form {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input, button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form" id="loginForm">
+            <h2>Enter Krishna's Bhakti Forum</h2>
+            <form id="form" action="./discussion-forum.html" method="GET">
+                <label for="username">Devotee Name:</label>
+                <input type="text" id="username" name="username" required />
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+                
+                <a class="forgot-password" href="">Forgot your sacred words?</a>
+                
+                <button type="submit">Begin Your Spiritual Journey</button>
+                
+                <div class="signup">
+                    New to Krishna's path? <a class="signup-link" href="./signup.html">Join the community</a>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+            
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
+            
+            if (enteredUsername === storedUsername && enteredPassword === storedPassword) {
+                localStorage.setItem("isLoggedIn", "true");
+                window.location.href = "./discussion-forum.html";
+            } else {
+                alert("Invalid devotee name or password. Please try again with blessings from Lord Krishna.");
+            }
+        });
+    </script>
+</body>
+</html>
+

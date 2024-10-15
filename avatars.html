@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Krishna: My Strength</title>
+    <script
+      src="https://kit.fontawesome.com/d74f12bccc.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="avatars.css">
+    <style>
+        body{
+        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      .header {
+        text-align: center;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0px 6px 10px #ccc;
+      }
+
+      .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navigation .homeDiv #homeBtn {
+        align-items: center;
+        background-image: linear-gradient(
+          144deg,
+          #af40ff,
+          #5b42f3 50%,
+          #00ddeb
+        );
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: flex;
+        font-family: Phantomsans, sans-serif;
+        justify-content: center;
+        line-height: 0.8em;
+        max-width: 100%;
+        min-width: 110px;
+        padding: 3px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .navigation .homeDiv #homeBtn:active,
+      .navigation .homeDiv #homeBtn:hover {
+        outline: 0;
+      }
+
+      .navigation .homeDiv #homeBtn a {
+        background-color: rgb(5, 6, 45);
+        color: #fff;
+        font-size: 16px;
+        padding: 16px 24px;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+        text-decoration: none;
+      }
+
+      .navigation .homeDiv #homeBtn:hover a {
+        background: none;
+      }
+      .navigation {
+        justify-content: space-between;
+      }
+      .navigation .navbar {
+        display: flex;
+        /* margin-right: 350px !important; */
+      }
+      .navigation .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: ease-in 0.3s;
+        border: 2px solid #fff;
+        padding: 10px 15px;
+        border-radius: 20px;
+      }
+      .navigation .navbar a:hover {
+        color: rgb(250, 219, 153);
+        border: 2px solid rgb(250, 219, 153);
+      }
+
+      .searchInput {
+        box-sizing: border-box;
+        width: 280px;
+        height: 35px;
+        padding: 5px 20px;
+        border-radius: 50px;
+        border: 0;
+      }
+      .searchInput:focus {
+        outline: 0;
+      }
+      .searchForm button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        position: relative;
+        top: 2px;
+        right: 55px;
+      }
+      .searchForm button i {
+        color: #555;
+        padding: 9px 15px;
+
+        font-size: 16px;
+        cursor: pointer;
+        transition: linear 0.16s;
+      }
+      .searchForm button i:hover {
+        color: #23d1c8;
+      }
+      footer {
+  background-color: #1c3d5a;
+  color: #ffffff;
+  padding: 40px 0; /* Increased padding for more space */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Spread items evenly across the footer */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  padding: 0 50px;
+  max-width: 1200px; /* Limit max width to keep it centered */
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px; /* Add margin for spacing between sections */
+  min-width: 220px; /* Minimum width for smaller screens */
+}
+
+.footer-section h3 {
+  font-size: 24px; /* Increased the heading size */
+  margin-bottom: 15px;
+  color: #f0c43f; /* Gold color */
+}
+
+/* Quick Links Styling */
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px; /* Spacing between links */
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px; /* Increased font size for better readability */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fce4a6; /* Lighter gold on hover */
+}
+.social-icons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        background-color: transparent;
+        border: 0.2rem solid #000000;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        margin: 0.1rem 0.2rem 0.1rem 0;
+        transition: 0.3s ease;
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .social-icons a:hover {
+        color: rgb(255, 255, 255);
+        transform: scale(1.3) translateY(-5px);
+        background-color: #ac905c;
+        box-shadow: 0 0 25px #f0eaea;
+      }
+      .creatorDiv {
+        margin-top: 10px;
+      }
+      .creatorDiv p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+      .read-more {
+        color: #f4d35e;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .creatorDiv {
+      margin-top: 10px;
+      }
+      .creatorDiv {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      padding: 10px;
+      border-top: 1px solid #ffffff44;
+      }
+      .creatorDiv p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+      }
+
+</style>
+</head>
+<body>
+    <!-- <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button> -->
+    <div class="header">
+      <div class="navigation">
+        <div class="homeDiv">
+          <button id="homeBtn"><a href="./index.html">Home</a></button>
+        </div>
+        <div class="navbar">
+          <div class="navbar-up">
+            <a href="scriptures.html">Scriptures</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+            <a href="devotional-resources.html">Devotional Resources</a>
+            <a href="avatars.html">Avatars</a>
+          </div>
+        </div>
+        <form class="searchForm">
+          <input
+            type="text"
+            class="searchInput"
+            placeholder="Search all the content"
+          />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="main">
+      <h1 class="heading">Avatars of Lord Vishnu</h1>
+        <div class="container">
+          
+            <div class="row row1">
+                <img src="images/Matsya.jpeg" alt="">
+                <h1>Matsya</h1>
+                <p>Matsya is the first of the ten primary avatars of the Hindu god Vishnu, and is often depicted as a fish</p>
+                <p>In the story of Matsya, Vishnu took the form of a fish to save the first man, Manu, from a great flood. Manu caught a small fish that grew to a giant size, and when the flood came, Manu tied his boat to the fish's horn and was saved.</p>
+                <p>Matsya is considered to have saved the world and the holy Vedas from a demon. The legends of Matsya are full of symbolism, and the story is considered to be a flood myth, a common theme across cultures. </p>
+                <p>There are few temples dedicated to Matsya, but the best known are the Matsya Narayana temples in Nagalapuram, Andhra Pradesh; Chennai, Tamil Nadu; and Bellary, Karnataka.</p>
+                <button>Read More</button>
+            </div>
+            <div class="row row2">
+              <img src="images/Kurma.jpeg" alt="">
+              <h1>Kurma</h1>
+              <p>In Hinduism, Kurmavatara is the second incarnation of the Hindu god Vishnu as a tortoise.</p>
+              <p>In the legend of the churning of the Ocean of Milk, also known as the Samudra Manthana, Kurma dives to the bottom of the ocean to support the cosmic mountain Meru on his back. The devas and asuras then stand on opposite sides of the mountain and churn the ocean to release treasures.</p>
+              <p> Vishnu takes the form of Kurma to save the earth from a cosmic mishap and to avoid a feud between the gods and demons. </p>
+              <p>The Kurma avatar holds great significance and offers valuable lessons on the importance of resilience, selflessness, and determination.</p>
+              <button>Read More</button>
+            </div>
+            <div class="row row3">
+              <img src="images/Varaha.jpg" alt="">
+              <h1>Varaha</h1>
+              <p>Varaha is the avatara of the Hindu god Vishnu, in the form of a boar. Varaha is generally listed as third in the Dashavatara, the ten principal avataras of Vishnu.</p>
+              <p>Varaha is completely a boar or in an anthropomorphic form, with a boar's head and the human body. His consort, Bhumi, the earth goddess, is a goddess lifted by Varaha.</p>
+              <p>The Shatapatha Brahmana narrates that the universe was primordial waters. Varaha lifts the earth goddess Bhumi out of the cosmic ocean when the demon Hiranyaksha stole the earth goddess and hid her in the primordial waters, Vishnu appeared as Varaha to rescue her. Varaha killed Hiranyaksha and retrieved the earth goddess from the cosmic ocean, lifting it on his tusks, and restored her to her place in the universe.</p>
+              <button>Read More</button>
+            </div>
+            <div class="row row4">
+              <img src="images/Narasimha.jpg" alt="">
+              <h1>Narasimha</h1>
+              <p>The Narasimha avatar is the fourth avatar of the Hindu god Vishnu, and is known as the lion god. The story of Narasimha is about his protection of his devotee Prahlada from his evil father, the demon king Hiranyakashipu. </p>
+              <p>Narasimha is half-man and half-lion, with a thick neck, large shoulders, and a slender abdomen and waist. He has a curly mane of hair, sharp teeth, and leonine facial features.Narasimha is known as the "Great Protector" who protects his devotees from evil.</p>
+              <p>Narasimha emerged from a pillar to kill Hiranyakashipu, who was trying to kill Prahlada. After killing Hiranyakashipu, Narasimha installed Prahlada as the rightful king.</p>
+              <button>Read More</button>
+            </div>
+            <div class="row row5">
+              <img src="images/vaman.jpg" alt="">
+              <h1>Vamana</h1>
+              <p>The story of Vamana is about the Hindu god Vishnu's fifth avatar, who took the form of a dwarf to defeat the demon king Bali and restore cosmic order.</p>
+              <p>Vishnu appeared as a dwarf Brahmin named Vamana and visited the court of the demon king Bali. Vamana asked for as much land as he could cover in three steps. Bali granted the request, and Vamana grew to a giant size. With his first two steps, Vamana covered the Earth and the space between the Earth and the heavens. When there was nowhere left to go, Bali offered to let Vamana place his foot on his head for the third step. Vamana then used the pressure of his foot to send Bali to rule the netherworld.</p>
+              <p>The story teaches that one should surrender to God, keep promises, and not take anything for granted.</p>
+              <button>Read More</button>
+            </div>
+            <div class="row row6">
+              <img src="images/Parashurama.jpg" alt="">
+              <h1>Parashurama</h1>
+              <p>Parashurama is the sixth avatar of the Hindu god Vishnu and is known for his role in correcting the cosmic equilibrium by destroying the Kshatriya class.</p>
+              <p>Parashurama was born to the Brahmin sage Jamadagni and the princess Renuka. He was born with the traits of a Kshatriya, such as aggression and valor, and is known as a "Brahmin-Kshatriya".</p>
+              <p>When Jamadagni suspected Renuka of an unchaste thought, he ordered Parashurama to cut off her head. To avenge his father's murder, Parashurama killed all the male Kshatriyas on earth 21 times, filling five lakes with their blood. </p>
+              <p>Parashurama is prophesied to become the guru of Kalki, the 10th and final avatar of Vishnu.</p>
+              <button>Read More</button>
+            </div>
+            <div class="row row7">
+              <img src="images/Rama.jpeg" alt="">
+              <h1>Rama</h1>
+              <p> Lord Rama is worshipped as the seventh and one of the most popular avatars of Vishnu.</p>
+              <p>According to the Ramayana, Rama was born to Dasaratha and his first wife Kausalya in Ayodhya, the capital of the Kingdom of Kosala. His siblings included Lakshmana, Bharata, and Shatrughna. He married Sita. Born in a royal family, Rama's life is described in the Hindu texts as one challenged by unexpected changes, such as an exile into impoverished and difficult circumstances, and challenges of ethical questions and moral dilemmas.[8] The most notable story involving Rama is the kidnapping of Sita by the demon-king Ravana, followed by Rama and Lakshmana's journey to rescue her.</p>
+              <p>The entire life story of Rama, Sita and their companions allegorically discusses duties, rights and social responsibilities of an individual. It illustrates dharma and dharmic living through model characters.</p>
+              <button>Read More</button>
+            </div>
+            <div class="row row8">
+              <img src="images/Krishna_avatar.jpg" alt="">
+              <h1>Krishna</h1>
+              <p>He is worshipped as the eighth avatar of Vishnu and also as the Supreme God in his own right. He is the god of protection, compassion, tenderness, and love; and is widely revered among Hindu divinities. Krishna's birthday is celebrated every year by Hindus on Krishna Janmashtami. </p>
+              <p>The name Krishna means "black" or "dark blue". He is also known by many other names, including Mohan, Govinda, and Keev.</p>
+              <p> He is a central figure in the Mahabharata, the Bhagavata Purana, the Brahma Vaivarta Purana, and the Bhagavad Gita, and is mentioned in many Hindu philosophical, theological, and mythological texts.[19] They portray him in various perspectives: as a god-child, a prankster, a model lover, a divine hero, and the universal supreme being. His iconography reflects these legends and shows him in different stages of his life, such as an infant eating butter, a young boy playing a flute, a young boy with Radha or surrounded by female devotees, or a friendly charioteer giving counsel to Arjuna.</p>
+              <button>Read More</button>
+            </div>
+            <div class="row row9">
+              <img src="images/Budha.jpeg" alt="">
+              <h1>Budha</h1>
+              <p>Gautama Buddha, the founder of Buddhism, is commonly included as an avatar of Vishnu in Hinduism. Buddha is sometimes depicted in Hindu scriptures as a preacher who deludes and leads asuras and heretics away from the path of the Vedic scriptures, but another view praises him a compassionate teacher who preached the path of ahimsa (non-violence).</p>
+              <p> According to the Vaishnava Puranas, Vishnu took the form of the Buddha to restore order after the daityas defeated the devas in battle.</p>
+              <p>Buddhist texts written by bikshus often begin with a Saraswati stotra, which pays homage to the Hindu goddess of learning. It's not uncommon to see an idol of Lord Ganesh in a Buddhist temple. </p>
+              <button>Read More</button>
+            </div>
+            <div class="row row10">
+              <img src="images/Kalki.avif" alt="">
+              <h1>Kalki</h1>
+              <p>Kalki is the prophesied tenth and final incarnation of the Hindu god Vishnu. According to Vaishnava cosmology, Kalki is destined to appear at the end of the Kali Yuga, the last of the four ages in the cycle of existence (Krita). His arrival will mark the end of the Kali Yuga and herald the beginning of the Satya Yuga, the most virtuous age, before the ultimate dissolution of the universe (Mahapralaya).</p>
+              <p>In the Puranas, Kalki is depicted as the avatar who will rejuvenate existence by ending the darkest period of adharma (unrighteousness) and restoring dharma (righteousness). He is described as riding a white horse named Devadatta and wielding a fiery sword. The portrayal of Kalki varies across different Puranas, and his narrative is also found in other traditions, including the Kalachakra-Tantra of Tibetan Buddhism and Sikh texts.</p>
+              <button>Read More</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+      <div class="footer-content">
+       
+        <div class="footer-section statement ">
+          <h3>Statement on Faith </h3>
+          <p class="faith-statement">
+            Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
+        
+          </p>
+          <a href="devotional-resources.html" class="read-more">Read More</a>
+        </div>
+        <div class="footer-section">
+
+          <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="scriptures.html">Scriptures</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
+        <li><a href="devotional-resources.html">Devotional Resources</a></li>
+      </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://github.com/vishal02527" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+
+    
+
+      </div>
+      <div class="creatorDiv">
+        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    </footer>
+</body>
+</html>
