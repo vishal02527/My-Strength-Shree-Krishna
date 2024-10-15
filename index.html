@@ -108,7 +108,19 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        white-space: nowrap; 
+        animation: typing 2s steps(30, end);
       }
+
+      @keyframes typing {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%; 
+        }
+      }
+
       .content {
         max-width: 900px;
         margin: 100px auto;
@@ -156,9 +168,37 @@
         color: #444;
       }
 
-      h1,
+      h1{
+        font-size: 36px;
+        font-weight: 900;
+        color: #ab9353; 
+        background: linear-gradient(90deg, #ab9353, #ffd700, #ab9353); 
+        background-size: 200%; 
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        animation: gradientAnimation 3s ease infinite; 
+        text-align: center;
+        margin-top: 40px;
+      }
       h2 {
-        color: #ab9353;
+        color: #ab9353; 
+        background: linear-gradient(90deg, #ab9353, #ffd700, #ab9353);
+        background-size: 200%; 
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        animation: gradientAnimation 3s ease infinite;
+        text-align: center;
+        margin-top: 40px;
+      }
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 200%; 
+        }
       }
 
       @media (max-width: 768px) {
