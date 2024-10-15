@@ -14,7 +14,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-
+    <!-- CDN for Smooth Scrolling CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
     <style>
       .chatbot-container {
         position: fixed;
@@ -62,17 +66,17 @@
         overflow-x: hidden;
       }
       .scroll-top-btn {
-        position: fixed; 
-        bottom: 30px; 
-        right: 30px; 
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
         background-color: #330867;
         color: white;
         border: none;
         padding: 10px 15px;
         cursor: pointer;
         border-radius: 5px;
-        display: none; 
-        z-index: 1000; 
+        display: none;
+        z-index: 1000;
       }
 
       .scroll-top-btn:hover {
@@ -304,129 +308,115 @@
         color: #23d1c8;
       }
       footer {
-  background-color: #1c3d5a;
-  color: #ffffff;
-  padding: 40px 0; /* Increased padding for more space */
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  width: 100%;
-}
+        background-color: #1c3d5a;
+        color: #ffffff;
+        padding: 40px 0; /* Increased padding for more space */
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        width: 100%;
+      }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between; /* Spread items evenly across the footer */
-  align-items: flex-start;
-  flex-wrap: wrap; /* Ensure responsiveness */
-  padding: 0 50px;
-  max-width: 1200px; /* Limit max width to keep it centered */
-  margin: 0 auto;
-}
+      .footer-content {
+        display: flex;
+        justify-content: space-between; /* Spread items evenly across the footer */
+        align-items: flex-start;
+        flex-wrap: wrap; /* Ensure responsiveness */
+        padding: 0 50px;
+        max-width: 1200px; /* Limit max width to keep it centered */
+        margin: 0 auto;
+      }
 
-.footer-section {
-  flex: 1;
-  margin: 20px; /* Add margin for spacing between sections */
-  min-width: 220px; /* Minimum width for smaller screens */
-}
+      .footer-section {
+        flex: 1;
+        margin: 20px; /* Add margin for spacing between sections */
+        min-width: 220px; /* Minimum width for smaller screens */
+      }
 
-.footer-section h3 {
-  font-size: 24px; /* Increased the heading size */
-  margin-bottom: 15px;
-  color: #f0c43f; /* Gold color */
-}
+      .footer-section h3 {
+        font-size: 24px; /* Increased the heading size */
+        margin-bottom: 15px;
+        color: #f0c43f; /* Gold color */
+      }
 
-/* Quick Links Styling */
-.footer-links {
-  list-style-type: none;
-  padding: 0;
-}
+      /* Quick Links Styling */
+      .footer-links {
+        list-style-type: none;
+        padding: 0;
+      }
 
-.footer-links li {
-  margin-bottom: 12px; /* Spacing between links */
-}
+      .footer-links li {
+        margin-bottom: 12px; /* Spacing between links */
+      }
 
-.footer-links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px; /* Increased font size for better readability */
-  transition: color 0.3s ease;
-}
+      .footer-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px; /* Increased font size for better readability */
+        transition: color 0.3s ease;
+      }
 
-.footer-links a:hover {
-  color: #fce4a6; /* Lighter gold on hover */
-}
+      .footer-links a:hover {
+        color: #fce4a6; /* Lighter gold on hover */
+      }
 
-/* Faith Statement Section */
-.statement .faith-statement {
-  line-height: 1.6;
-  margin-bottom: 10px;
-  color: #fff;
-  max-height: 70px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: max-height 0.3s ease-in-out;
-}
+      /* Faith Statement Section */
+      .statement .faith-statement {
+        line-height: 1.6;
+        margin-bottom: 10px;
+        color: #fff;
+        max-height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: max-height 0.3s ease-in-out;
+      }
 
-.read-more {
-  color: #f4d35e;
-  cursor: pointer;
-  text-decoration: underline;
-}
+      .read-more {
+        color: #f4d35e;
+        cursor: pointer;
+        text-decoration: underline;
+      }
 
-/* Social Icons Styling */
-.social-icons {
-  display: flex;
-}
+      /* Social Icons Styling */
+      .social-icons {
+        display: flex;
+      }
 
-.social-icons a {
-  color: #ffffff;
-  font-size: 26px; /* Increased icon size */
-  margin-right: 15px; /* Spacing between icons */
-  transition: color 0.3s ease;
-}
+      .social-icons a {
+        color: #ffffff;
+        font-size: 26px; /* Increased icon size */
+        margin-right: 15px; /* Spacing between icons */
+        transition: color 0.3s ease;
+      }
 
-.social-icons a:hover {
-  color: #f0c43f;
-}
+      .social-icons a:hover {
+        color: #f0c43f;
+      }
 
-/* Footer Bottom Section */
-.creatorDiv {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  padding: 10px;
-  border-top: 1px solid #ffffff44; /* Subtle border for separation */
-}
+      /* Footer Bottom Section */
+      .creatorDiv {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+        padding: 10px;
+        border-top: 1px solid #ffffff44; /* Subtle border for separation */
+      }
 
-.creatorDiv p {
-  margin: 0;
-}
+      .creatorDiv p {
+        margin: 0;
+      }
 
+      @media (max-width: 768px) {
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          padding: 0 20px;
+        }
 
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-    
-  }
-
-  .footer-section {
-    text-align: center;
-    margin: 15px 0;
-    
-  }
- 
-}
-
-
-
+        .footer-section {
+          text-align: center;
+          margin: 15px 0;
+        }
+      }
       .social-icons a {
         display: inline-flex;
         justify-content: center;
@@ -494,7 +484,7 @@
         .footer-content {
           flex-direction: column;
           align-items: center;
-          
+
           margin: 0px 40px 0px 0px;
         }
         .footer-section p {
@@ -504,7 +494,7 @@
           font-size: 22px;
           margin: 5px;
         }
-        
+
         .footer-section {
           margin-bottom: 0;
         }
@@ -1153,25 +1143,25 @@
 
     <footer>
       <div class="footer-content">
-       
-        <div class="footer-section statement ">
-          <h3>Statement on Faith </h3>
+        <div class="footer-section statement">
+          <h3>Statement on Faith</h3>
           <p class="faith-statement">
-            Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
-        
+            Faith isn't just about something we believe; it is integral to our
+            very existence, it's about how we live...
           </p>
           <a href="devotional-resources.html" class="read-more">Read More</a>
         </div>
         <div class="footer-section">
-
           <h3>Quick Links</h3>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="scriptures.html">Scriptures</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
-        <li><a href="devotional-resources.html">Devotional Resources</a></li>
-      </ul>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scriptures.html">Scriptures</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
+            <li>
+              <a href="devotional-resources.html">Devotional Resources</a>
+            </li>
+          </ul>
         </div>
 
         <div class="footer-section">
@@ -1196,14 +1186,13 @@
             ></a>
           </div>
         </div>
-
-    
-
       </div>
       <div class="creatorDiv">
         <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
+    <!-- CDN for Smooth Scrolling JS -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
 
     <script>
