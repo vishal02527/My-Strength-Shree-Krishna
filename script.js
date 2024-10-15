@@ -1,6 +1,5 @@
 let isHindi = false;
 const button = document.getElementById("translateBtn");
-
 function toggleLanguage() {
   const contentEnglish = document.getElementById("content-english");
   const contentHindi = document.getElementById("content-hindi");
@@ -210,3 +209,102 @@ document.querySelectorAll(".faq-question").forEach((button) => {
   });
 });
 
+let speechSynthesisUtterance;
+let isPaused = false;
+
+// Read aloud feature
+function readAloud() {
+  // Get all text content from the body or a specific section
+  const contentDiv = document.querySelector('.content');
+  const textToRead = contentDiv.innerText;
+
+  // Check for speech synthesis support
+  if ('speechSynthesis' in window) {
+      // Stop any ongoing speech before creating a new utterance
+      window.speechSynthesis.cancel(); 
+
+      speechSynthesisUtterance = new SpeechSynthesisUtterance(textToRead);
+      speechSynthesisUtterance.lang = 'en-US'; // Change this to the desired language code (e.g., 'hi-IN' for Hindi)
+
+      // Optional: Set additional properties
+      speechSynthesisUtterance.rate = 1; // Speed of speech (default is 1)
+      speechSynthesisUtterance.pitch = 1; // Pitch of the voice (default is 1)
+
+      // Speak the text
+      window.speechSynthesis.speak(speechSynthesisUtterance);
+  } else {
+      alert("Sorry, your browser does not support speech synthesis.");
+  }
+}
+
+
+// Function to pause the speech
+function pauseSpeech(){
+  if(window.speechSynthesis.speaking && !isPaused){
+    window.speechSynthesis.pause();
+    isPaused = true;
+  }
+}
+
+// Function to resume the speech
+function resumeSpeech() {
+  if (isPaused) {
+      window.speechSynthesis.resume();
+      isPaused = false;
+  }
+}
+// Function to stop the speech
+function stopSpeech() {
+  window.speechSynthesis.cancel();
+  isPaused = false; // Reset pause state
+}
+
+// Readaloud in scripture page
+function readAloudScripture() {
+  // Get all text content from the body or a specific section
+  const contentDiv = document.getElementById('content-english')
+  const textToRead = contentDiv.innerText;
+
+  // Check for speech synthesis support
+  if ('speechSynthesis' in window) {
+      // Stop any ongoing speech before creating a new utterance
+      window.speechSynthesis.cancel(); 
+
+      speechSynthesisUtterance = new SpeechSynthesisUtterance(textToRead);
+      speechSynthesisUtterance.lang = 'en-US'; // Change this to the desired language code (e.g., 'hi-IN' for Hindi)
+
+      // Optional: Set additional properties
+      speechSynthesisUtterance.rate = 1; // Speed of speech (default is 1)
+      speechSynthesisUtterance.pitch = 1; // Pitch of the voice (default is 1)
+
+      // Speak the text
+      window.speechSynthesis.speak(speechSynthesisUtterance);
+  } else {
+      alert("Sorry, your browser does not support speech synthesis.");
+  }
+}
+
+// For avatars section readAloud
+function readAloadAvatar() {
+  // Get all text content from the body or a specific section
+  const contentDiv = document.querySelector('.container')
+  const textToRead = contentDiv.innerText;
+
+  // Check for speech synthesis support
+  if ('speechSynthesis' in window) {
+      // Stop any ongoing speech before creating a new utterance
+      window.speechSynthesis.cancel(); 
+
+      speechSynthesisUtterance = new SpeechSynthesisUtterance(textToRead);
+      speechSynthesisUtterance.lang = 'en-US'; // Change this to the desired language code (e.g., 'hi-IN' for Hindi)
+
+      // Optional: Set additional properties
+      speechSynthesisUtterance.rate = 1; // Speed of speech (default is 1)
+      speechSynthesisUtterance.pitch = 1; // Pitch of the voice (default is 1)
+
+      // Speak the text
+      window.speechSynthesis.speak(speechSynthesisUtterance);
+  } else {
+      alert("Sorry, your browser does not support speech synthesis.");
+  }
+}

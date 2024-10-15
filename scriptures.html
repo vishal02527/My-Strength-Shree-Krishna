@@ -67,7 +67,7 @@
         margin-bottom: 20px;
       }
 
-      #translateBtn {
+      #translateBtn, #readAloudBtn {
         border: 0;
         padding: 15px 25px;
         color: #fff;
@@ -80,9 +80,22 @@
         background-size: 200% auto;
         font-size: 16px;
         cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: background-position 0.4s ease-in-out, transform 0.3s ease-in-out;
       }
-      #translateBtn:hover {
+      #translateBtn:hover, #readAloudBtn:hover{
         background-position: right center;
+        transform: translateY(-3px);
+      }
+      #translateBtn:active, #readAloudBtn:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+    
+      #translateBtn:focus, #readAloudBtn:focus {
+          outline: none;
+          box-shadow: 0 0 0 4px rgba(38, 160, 218, 0.5);
       }
 
       .content p {
@@ -490,6 +503,18 @@
       <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
           हिंदी में पढ़ें
+        </button>
+        <button onclick="readAloudScripture()" id="readAloudBtn">
+          Read Aloud
+        </button>
+        <button onclick="pauseSpeech()" id="readAloudBtn">
+          Pause
+        </button>
+        <button onclick="resumeSpeech()" id="readAloudBtn">
+          Resume
+        </button>
+        <button onclick="stopSpeech()" id="readAloudBtn">
+          Stop
         </button>
       </div>
       <div id="content-english">
