@@ -1319,7 +1319,7 @@
         </div>
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span id="copyright-year"></span>, Created by Vishal.</p>
       </div>
     </footer>
     <script src="script.js"></script>
@@ -1344,6 +1344,11 @@
       scrollTopBtn.onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
       };
+    </script>
+    <script>
+      // Dynamic copyright year
+      const currentYear = new Date().getFullYear();
+      document.getElementById("copyright-year").textContent = currentYear;
     </script>
   </body>
 </html>

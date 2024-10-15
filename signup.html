@@ -165,7 +165,7 @@
             </form>
         </div>
         <footer>
-            <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
+            <p>&copy; <span id="copyright-year"></span> Krishna Bhakti Forum. All rights reserved.</p>
         </footer>
     </div>
     <script>
@@ -176,5 +176,10 @@
             localStorage.setItem("password", password);
         }
     </script>
+    <script>
+        // Dynamic copyright year
+        const currentYear = new Date().getFullYear();
+        document.getElementById("copyright-year").textContent = currentYear;
+      </script>
 </body>
 </html>
