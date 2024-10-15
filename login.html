@@ -137,6 +137,27 @@
             font-size: 14px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
+        .back-home {
+            background: linear-gradient(135deg, #4a2b0f, #d1a054);
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+        }
+
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(74, 43, 15, 0.3);
+        }
+
+
 
         @media (max-width: 480px) {
             .container {
@@ -177,6 +198,7 @@
                 </div>
             </form>
         </div>
+        <a class="back-home" href="./index.html">Back to Home</a>
         <footer>
             <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
         </footer>

@@ -81,6 +81,18 @@
             box-shadow: 0 0 5px rgba(74, 43, 15, 0.5);
         }
 
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            cursor: pointer;
+            color: #4a2b0f;
+        }
+
         button {
             background: linear-gradient(135deg, #d1a054, #4a2b0f);
             color: #fff;
@@ -123,6 +135,32 @@
             font-size: 14px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .back-home {
+            background: linear-gradient(135deg, #4a2b0f, #d1a054);
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+        }
+
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(74, 43, 15, 0.3);
+        }
+
 
         @media (max-width: 480px) {
             .container {
@@ -147,7 +185,7 @@
     <div class="container">
         <div class="signup-form" id="signupForm">
             <h2>Join Krishna Bhakti Forum</h2>
-            <form id="form" action="./discussion-forum.html" method="GET">
+            <form id="form" action="./discussion-forum.html" method="GET" onsubmit="return validateForm()">
                 <label for="username">Devotee Name:</label>
                 <input type="text" id="username" name="username" required />
                 
@@ -155,8 +193,19 @@
                 <input type="email" id="email" name="email" required />
                 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required />
-                
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required />
+                    <span class="toggle-password" onclick="togglePasswordVisibility('password')">Show</span>
+                </div>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <div class="password-container">
+                    <input type="password" id="confirm-password" name="confirm-password" required />
+                    <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">Show</span>
+                </div>
+
+                <div class="error" id="error-message"></div>
+
                 <button onclick="saveUsername()">Begin Your Spiritual Journey</button>
                 
                 <div class="login">
@@ -164,6 +213,7 @@
                 </div>
             </form>
         </div>
+        <a class="back-home" href="./index.html">Back to Home</a>
         <footer>
             <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
         </footer>
@@ -175,6 +225,34 @@
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
         }
+
+        function togglePasswordVisibility(id) {
+            const passwordField = document.getElementById(id);
+            const toggleBtn = passwordField.nextElementSibling;
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleBtn.textContent = "Hide";
+            } else {
+                passwordField.type = "password";
+                toggleBtn.textContent = "Show";
+            }
+        }
+        function validateForm() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value; // Corrected ID here
+            const errorMessage = document.getElementById("error-message");
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match!";
+                return false;
+            }
+
+            errorMessage.textContent = ""; // Clear error message
+            saveUsername(); // Save username and password to localStorage
+            return true;
+        }
+
     </script>
 </body>
 </html>
