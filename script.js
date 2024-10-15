@@ -1,3 +1,11 @@
+function smoothScrolling() {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('body'),
+    smooth: true,
+    lerp: 0.03
+});
+}
+smoothScrolling();
 let isHindi = false;
 const button = document.getElementById("translateBtn");
 
