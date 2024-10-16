@@ -210,3 +210,29 @@ document.querySelectorAll(".faq-question").forEach((button) => {
   });
 });
 
+// Get all links in the navigation bar
+const links = document.querySelectorAll('.navbar a');
+
+// Function to remove active class from all links
+function removeAllActive() {
+  links.forEach(link => {
+    link.removeAttribute('id');
+  });
+}
+
+// Function to add active class to the current link
+function addActive(link) {
+  removeAllActive();
+  link.setAttribute('id', 'active');
+}
+
+// Get the current URL
+const currentUrl = window.location.href;
+
+// Get the link that matches the current URL
+const currentLink = Array.from(links).find(link => link.href === currentUrl);
+
+// Add active class to the current link
+if (currentLink) {
+  addActive(currentLink);
+}
