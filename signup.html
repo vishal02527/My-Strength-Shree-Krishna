@@ -26,13 +26,13 @@
         .container {
             width: 100%;
             max-width: 400px;
-            padding: 10px;
+            padding: 20px;
         }
 
         .signup-form {
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             padding: 30px;
             position: relative;
             overflow: hidden;
@@ -67,9 +67,9 @@
         }
 
         input {
-            width: 95%; 
+            width: 95%;
             padding: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border: 1px solid #d1a054;
             border-radius: 5px;
             font-size: 16px;
@@ -83,7 +83,7 @@
         }
 
         .password-container {
-            position: relative; 
+            position: relative;
         }
 
         .eye-icon {
@@ -120,7 +120,7 @@
 
         .login {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
             font-size: 14px;
         }
 
@@ -146,12 +146,12 @@
         .google-signin {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .back-home {
             text-align: center;
-            margin-top: 15px; /* Adjust spacing as needed */
+            margin-top: 15px;
         }
 
         .back-home-link {
@@ -228,7 +228,6 @@
                 </div>
             </form>
 
-            <!-- Back to Home link -->
             <div class="back-home">
                 <a href="./index.html" class="back-home-link">Back to Home Page</a>
             </div>
@@ -254,23 +253,21 @@
         }
 
         function validateAndSave(event) {
-            event.preventDefault(); // Prevent the form from submitting immediately
+            event.preventDefault();
             const username = document.getElementById("username").value;
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
             if (username === "" || email === "" || password === "") {
                 alert("Please fill in all fields.");
-                return false; // Stop the function if any field is empty
+                return false;
             }
 
-            // Save username and password to localStorage
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
 
-            // Redirect to the discussion forum page
-            window.location.href = "./discussion-forum.html"; // Change this to your target page
-            return true; // Allow the form submission
+            window.location.href = "./discussion-forum.html";
+            return true;
         }
     </script>
 </body>

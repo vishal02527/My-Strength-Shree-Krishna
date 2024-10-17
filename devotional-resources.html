@@ -426,7 +426,9 @@
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn"> <i class="fas fa-arrow-up"></i></button>
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
@@ -438,18 +440,18 @@
             <a href="scriptures.html">Scriptures</a>
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-            <a href="devotional-resources.html" id="active"
-              >Devotional Resources</a
-            >
+            <a href="devotional-resources.html" id="active">Devotional Resources</a>
           </div>
         </div>
-        <form class="searchForm">
+        <form class="searchForm" onsubmit="return false;">
           <input
             type="text"
+            id="searchInput"
             class="searchInput"
             placeholder="Search all the content"
+            onkeyup="searchResources()"
           />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
     </div>
@@ -510,9 +512,7 @@
             Shree Krishna. Listen to the divine vibrations and bring positivity
             to your mornings.
           </p>
-          <a href="./morning-mantra-audio.html" class="cta-button"
-            >Listen Now</a
-          >
+          <a href="./morning-mantra-audio.html" class="cta-button">Listen Now</a>
         </div>
 
         <!-- Resource 5 Card -->
@@ -523,8 +523,7 @@
             href="./pdf_files/Shree-Radha-Chalisa.pdf"
             class="cta-button"
             download
-            >Download Now</a
-          >
+            >Download Now</a>
         </div>
 
         <!-- Resource 6 Card -->
@@ -546,11 +545,10 @@
 
     <footer>
       <div class="footer-content">
-        <div class="footer-section statement ">
-          <h3>Statement on Faith </h3>
+        <div class="footer-section statement">
+          <h3>Statement on Faith</h3>
           <p class="faith-statement">
             Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
-        
           </p>
           <a href="devotional-resources.html" class="read-more">Read More</a>
         </div>
@@ -574,17 +572,9 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="https://github.com/vishal02527" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
+            <a href="https://github.com/vishal02527" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+            <a href="https://www.linkedin.com/in/vishal-kumar-8303a3283" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </div>
@@ -592,7 +582,7 @@
         <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
+
     <script>
       window.onscroll = function () {
         toggleScrollTopButton();
@@ -614,6 +604,22 @@
       scrollTopBtn.onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
       };
+
+      // Function to filter resources by search input
+      function searchResources() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const resourceCards = document.querySelectorAll('.resource-card');
+
+        resourceCards.forEach(function(card) {
+          const title = card.querySelector('h2').textContent.toLowerCase();
+          if (title.includes(input)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
     </script>
-  </body>
+</body>
+
 </html>

@@ -393,15 +393,29 @@
 
 
 
-      .caption {
-        margin-top: 25px;
-        margin-bottom: 20px;
-        text-align: center;
-        font-weight: 500;
-        font-size: 16px;
-        font-style: italic;
-        color: #f39c12;
-      }
+.caption {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  font-style: italic;
+  color: #e67e22; 
+  font-family: 'Playfair Display', serif;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); 
+  letter-spacing: 2px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.caption:hover {
+  color: #d35400;
+  transform: scale(1.05); 
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); 
+  cursor: pointer;
+}
+
+
       .caption::selection {
         background-color: rgb(237, 204, 133);
         color: #000;
@@ -514,6 +528,7 @@
             <a href="gallery.html" id="active">Gallery</a>
             <a href="signup.html">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
+            <a href="avatars.html">Avatars</a>
           </div>
         </div>
         <form class="searchForm">

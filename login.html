@@ -72,7 +72,7 @@
         }
 
         input {
-            width: 95%; /* Use full width */
+            width: 95%;
             padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #d1a054;
@@ -165,44 +165,6 @@
             justify-content: center;
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #d1a054;
-            border-radius: 10px;
-            width: 80%; /* Could be more or less, depending on screen size */
-            text-align: center;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
         @media (max-width: 480px) {
             .container {
                 padding: 10px;
@@ -267,21 +229,11 @@
                      data-logo_alignment="left">
                 </div>
             </div>
-
         </div>
         <footer>
             <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
         </footer>
     </div>
-
-    <!-- Modal for Custom Alert -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p id="modal-message"></p>
-        </div>
-    </div>
-
     <script>
         function togglePasswordVisibility() {
             const passwordInput = document.getElementById('password');
@@ -300,36 +252,30 @@
         document.getElementById('form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form submission
 
-            // Custom validation example
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
             if (username === "" || password === "") {
-                showModal("Please fill in all fields.");
+                alert("Please fill in all fields.");
             } else {
                 // Assuming some validation fails
-                showModal("Incorrect username or password.");
+                alert("Incorrect username or password.");
             }
-
-            // If the validation is successful, uncomment the line below to submit
-            // this.submit();
         });
 
-        function showModal(message) {
-            document.getElementById("modal-message").innerText = message;
-            document.getElementById("myModal").style.display = "block";
+        function handleCredentialResponse(response) {
+            const user = jwt_decode(response.credential);
+            localStorage.setItem("username", user.name);
+            localStorage.setItem("email", user.email);
+            localStorage.setItem("isLoggedIn", "true");
+            window.location.href = "./discussion-forum.html"; // Redirect after successful login
         }
 
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById("myModal");
-            if (event.target === modal) {
-                closeModal();
-            }
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "533616281722-3gijg2u8b6aue0878sbmna6cs6q1lquc.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
         }
     </script>
 </body>
