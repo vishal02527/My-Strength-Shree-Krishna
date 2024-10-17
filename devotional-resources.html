@@ -21,6 +21,8 @@
         padding: 0;
         box-sizing: border-box;
         overflow-x: hidden;
+        height:100%;
+        width:100%;
       }
       .scroll-top-btn {
         position: fixed; /* Fixed position */
@@ -136,10 +138,7 @@
 
       /* Main content styles */
 
-      main {
-        padding: 20px;
-      }
-
+   
       .content {
         padding: 20px 120px;
         margin-bottom: 50px;
@@ -231,6 +230,7 @@
   font-family: 'Poppins', sans-serif;
   position: relative;
   width: 100%;
+  margin: 18rem 0rem 0rem 0rem;
 }
 
 .footer-content {
@@ -239,7 +239,7 @@
   align-items: flex-start;
   flex-wrap: wrap; /* Ensure responsiveness */
   padding: 0 50px;
-  max-width: 1200px; /* Limit max width to keep it centered */
+  /* Limit max width to keep it centered */
   margin: 0 auto;
 }
 
@@ -423,6 +423,158 @@
           font-size: 12px;
         }
       }
+
+
+      .nav {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        user-select: none;
+      
+        & .btn {
+          background-color: rgba(255,255,255,0.5);
+          color: rgba(0,0,0,0.7);
+          border: 2px solid rgba(0,0,0,0.6);
+          margin: 0 0.25rem;
+          padding: 0.75rem;
+          border-radius: 50%;
+          cursor: pointer;
+      
+          &:hover {
+            background-color: rgba(255,255,255,0.3);
+          }
+        }
+      }
+      
+      main {
+        position: relative;
+        width: 100%;
+        height: 42rem;
+        margin: -1rem 0rem -18rem 0rem;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      }
+      
+      .item {
+        width: 200px;
+        height: 300px;
+        list-style-type: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+        box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+        transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+      
+        &:nth-child(1), &:nth-child(2) {
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          transform: none;
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+        }
+      
+        &:nth-child(3) { left: 50%; }
+        &:nth-child(4) { left: calc(50% + 220px); }
+        &:nth-child(5) { left: calc(50% + 440px); }
+        &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+      }
+      
+      .content {
+        width: min(30vw,400px);
+        position: absolute;
+        top: 50%;
+        left: 3rem;
+        transform: translateY(-50%);
+        font: 400 0.85rem helvetica,sans-serif;
+        color: white;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+        opacity: 0;
+        display: none;
+      
+        & .title {
+          font-family: 'arial-black';
+          text-transform: uppercase;
+          font-size: 2rem;
+        }
+      
+        & .description {
+          line-height: 1.7;
+          margin: 1rem 0 1.5rem;
+          font-size: 1rem;
+        }
+    
+        & button {
+          width: fit-content;
+          background-color: rgba(0,0,0,0.1);
+          color: white;
+          border: 2px solid white;
+          border-radius: 0.25rem;
+          padding: 0.75rem;
+          cursor: pointer;
+          font-size: 1rem;
+        }
+      }
+      
+      .item:nth-of-type(2) .content {
+        display: block;
+        animation: show 0.75s ease-in-out 0.3s forwards;
+      }
+      
+      @keyframes show {
+        0% {
+          filter: blur(5px);
+          transform: translateY(calc(-50% + 75px));
+        }
+        100% {
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+      
+     
+      @media (width > 650px) and (width < 900px) {
+        .content {
+          & .title        { font-size: 1rem; }
+          & .description  { font-size: 0.7rem; }
+          & button        { font-size: 0.7rem; }
+        }
+        .item {
+          width: 160px;
+          height: 270px;
+      
+          &:nth-child(3) { left: 50%; }
+          &:nth-child(4) { left: calc(50% + 170px); }
+          &:nth-child(5) { left: calc(50% + 340px); }
+          &:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
+        }
+      }
+      
+      @media (width < 650px) {
+        .content {
+          & .title        { font-size: 0.9rem; }
+          & .description  { font-size: 0.65rem; }
+          & button        { font-size: 0.7rem; }
+        }
+        .item {
+          width: 130px;
+          height: 220px;
+      
+          &:nth-child(3) { left: 50%; }
+          &:nth-child(4) { left: calc(50% + 140px); }
+          &:nth-child(5) { left: calc(50% + 280px); }
+          &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
+        }
+      }
+
+     
     </style>
   </head>
   <body>
@@ -457,91 +609,99 @@
     </div>
 
     <main>
-      <div class="content">
-        <h1>Devotional Resources</h1>
-        <!-- Resource 1 Card -->
-        <div class="resource-card">
-          <h2>Bhagavad Gita PDF</h2>
-          <p>
-            Download a PDF version of the Bhagavad Gita for easy access to its
+      <ul class='slider'>
+        <li class='item' style="background-image: url('images/gita.jpeg')">
+          <div class='content'>
+            <h2 class='title'>"Bhagavad Gita PDF"</h2>
+            <p class='description'>
+              Download a PDF version of the Bhagavad Gita for easy access to its
             divine verses. Dive into the teachings of Shree Krishna anytime,
             anywhere.
-          </p>
-          <a
-            href="./pdf_files/Bhagavad-gita-hindi.pdf"
-            class="cta-button"
-            download
-            >Download Now</a
-          >
-        </div>
-
-        <!-- Resource 2 Card -->
-        <div class="resource-card">
-          <h2>Stories Of Devotees</h2>
-          <p>
-            Immerse yourself in the divine love of devotees with their beloved
-            Shree Krishna with our collection of awesome stories.
-          </p>
-          <a href="./stories-of-devotees.html" class="cta-button">Read Now</a>
-        </div>
-
-        <!-- Resource 3 Card -->
-        <div class="resource-card">
-          <h2>Shree Krishna Padawali</h2>
-          <p>
-            Dive into the transcendental realm with our curated collection of
-            pad, bhajans, devotional thoughts and daily spiritual quotes in
-            Shree Krishna Padawali, each note resonating with the divine energy
-            of Krishna. These soul-stirring melodies have been carefully
-            selected to elevate your spiritual experience and foster a deeper
-            connection with the divine.
-          </p>
-          <a
-            href="https://shreekrishnapadawali.netlify.app/"
-            target="_blank"
-            class="cta-button"
-            >Visit Now</a
-          >
-        </div>
-
-        <!-- Resource 4 Card -->
-        <div class="resource-card">
-          <h2>Morning Mantras Audio</h2>
-          <p>
-            Start your day with the soothing chants and mantras dedicated to
-            Shree Krishna. Listen to the divine vibrations and bring positivity
-            to your mornings.
-          </p>
-          <a href="./morning-mantra-audio.html" class="cta-button">Listen Now</a>
-        </div>
-
-        <!-- Resource 5 Card -->
-        <div class="resource-card">
-          <h2>Shri Radha Chalisa PDF</h2>
-          <p>Blessed your life with the reading of Shree Radhika Chalisa.</p>
-          <a
+            </p>
+            <a  href="./pdf_files/Bhagavad-gita-hindi.pdf" target="_blank">
+            <button>Download Now</button>
+          </a>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('images/storied of devotee.jpeg')">
+          <div class='content'>
+            <h2 class='title'>"Stories Of Devotees"</h2>
+            <p class='description'>  Immerse yourself in the divine love of devotees with their beloved
+              Shree Krishna with our collection of awesome stories. </p>
+              <a href="./stories-of-devotees.html" target="_blank"> 
+            <button>Read Now</button>
+          </a>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('images/pahadi.jpg')">
+          <div class='content'>
+            <h2 class='title'>Shree Krishna Padawali</h2>
+            <p class='description'> Dive into the transcendental realm with our curated collection of
+              pad, bhajans, devotional thoughts and daily spiritual quotes in
+              Shree Krishna Padawali, each note resonating with the divine energy
+              of Krishna. These soul-stirring melodies have been carefully
+              selected to elevate your spiritual experience and foster a deeper
+              connection with the divine.</p>
+              <a
+              href="https://shreekrishnapadawali.netlify.app/"
+              target="_blank">
+            <button>Visit now</button>
+          </a>
+          </div>
+        </li>
+    
+        <li class='item' style="background-image: url('images/morning.jpeg')">
+          <div class='content'>
+            <h2 class='title'>Morning Mantras Audio</h2>
+            <p class='description'>  Start your day with the soothing chants and mantras dedicated to
+              Shree Krishna. Listen to the divine vibrations and bring positivity
+              to your mornings.  </p>
+              <a href="./morning-mantra-audio.html" target="_blank">
+                 <button>Listen Now</button>
+              </a>
+           
+          </div>
+        </li>
+      
+        <li class='item' style="background-image: url('images/radha.jpeg')">
+          <div class='content'>
+            <h2 class='title'>Shri Radha Chalisa PDF</h2>
+            <p class='description'>
+              Blessed your life with the reading of Shree Radhika Chalisa.
+            </p>
+            <a
             href="./pdf_files/Shree-Radha-Chalisa.pdf"
-            class="cta-button"
-            download
-            >Download Now</a>
-        </div>
+            target="_blank">
+            
+            <button>Download Now</button>
+            </a>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('images/dvine.jpeg')">
+          <div class='content'>
+            <h2 class='title'>Divine and beautiful wallpapers</h2>
+            <p class='description'>    Immerse yourself in a serene and spiritual journey through our
+              carefully curated selection of captivating images. Explore these
+              enchanting visuals capturing moments of tranquility, devotion, and
+              beauty. Each wallpaper encapsulates a unique essence that seeks to
+              inspire and uplift. Feel free to download and adorn your screens
+              with these divine creations, inviting moments of reflection and
+              peace into your daily life.  </p>
+              <a href="./divine-wallpapers.html" target="_blank">
 
-        <!-- Resource 6 Card -->
-        <div class="resource-card">
-          <h2>Divine and beautiful wallpapers</h2>
-          <p>
-            Immerse yourself in a serene and spiritual journey through our
-            carefully curated selection of captivating images. Explore these
-            enchanting visuals capturing moments of tranquility, devotion, and
-            beauty. Each wallpaper encapsulates a unique essence that seeks to
-            inspire and uplift. Feel free to download and adorn your screens
-            with these divine creations, inviting moments of reflection and
-            peace into your daily life.
-          </p>
-          <a href="./divine-wallpapers.html" class="cta-button">Explore Now</a>
-        </div>
-      </div>
+                <button>Explore more</button>
+              </a>
+          </div>
+        </li>
+      </ul>
+      <nav class='nav'>
+        <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+        <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+      </nav>
     </main>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <footer>
       <div class="footer-content">
@@ -620,6 +780,18 @@
         });
       }
     </script>
+
+    <Script>
+      const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+}
+
+document.addEventListener('click',activate,false);
+    </Script>
 </body>
 
 </html>
