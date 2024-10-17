@@ -111,16 +111,16 @@
       }
       .content {
         max-width: 900px;
-        margin: 100px auto;
+        margin: 16px auto;
         padding: 20px 40px;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
       #translateBtnDiv {
-        position: relative;
-        top: 70px;
-        left: 270px;
+        display: flex;
+        justify-content: center; 
+        margin-top: 80px;
       }
 
       #translateBtn {
@@ -140,10 +140,15 @@
       #translateBtn:hover {
         background-position: right center;
       }
+      .image-container{
+          display: flex;
+          justify-content: center; 
+          margin-top: 20px; 
+      }
       .krishna-image {
-        margin: 10px 0px 10px 550px;
-        width: 27%;
-        height: 480px;
+        margin: 10px 10px 10px 10px;
+        width: 40%;
+        height: 500px;
         border-radius: 15px;
         transition: opacity 5s ease-in-out;
       }
@@ -723,12 +728,14 @@
     <div class="indexMain">
       <div class="headDiv">
         <h1>Shree Krishna - My Strength</h1>
+        <div class="image-container">
         <img
           src="./images/krishna-home-image.jpg"
           id="krishnaImage"
           class="krishna-image"
           alt="Shree Krishna"
         />
+      </div>
       </div>
       <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
