@@ -17,6 +17,17 @@
         color: #333;
         overflow-x: hidden;
       }
+      .tog-btn{
+        background:transparent;
+        border:0;
+        border-radius:10px;
+      }
+      .tog-btn:hover{
+        cursor: pointer;
+      }.mode{
+        width:2rem;margin:0;padding:0
+      }
+
       .scroll-top-btn {
         position: fixed;
         bottom: 30px;
@@ -525,6 +536,12 @@
           />
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
+        <div >
+          <button id="theme" class="tog-btn">
+            <img id="tog-btn" class="mode" src="images/light-icon.png">
+            <img id="toggle" class="mode" src="images/night-mode.png">
+        </button>
+        </div>
       </div>
     </div>
     <div class="content">

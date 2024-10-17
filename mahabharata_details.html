@@ -44,6 +44,16 @@
             font-size: 24px;
             font-weight: bold;
         }
+        .tog-btn{
+        background:transparent;
+        border:0;
+        border-radius:10px;
+      }
+      .tog-btn:hover{
+        cursor: pointer;
+      }.mode{
+        width:2rem;margin:0;padding:0
+      }
 
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
@@ -134,6 +144,10 @@
 </head>
 <body>
     <button id="languageToggle" class="language-toggle" onclick="toggleLanguage()">हिंदी में पढ़ें</button>
+    <button id="theme" class="tog-btn">
+        <img id="tog-btn" class="mode" src="images/light-icon.png">
+        <img id="toggle" class="mode" src="images/night-mode.png">
+    </button>
 
     <div class="content">
         <a href="scriptures.html" class="back-button" data-translate="back">← Back to Scriptures</a>
