@@ -111,7 +111,7 @@
 
       .navigation .navbar {
         display: flex;
-        margin-right: 350px !important;
+        /*margin-right: 350px !important;*/
       }
       .navigation .navbar a {
         color: #fff;
@@ -157,34 +157,119 @@
 
       .resource-card {
         background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 15px; /* Slightly rounded corners */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for more depth */
         padding: 20px;
         margin-bottom: 20px;
-      }
-
-      .resource-card h2 {
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+        overflow: hidden; /* Ensures child elements don't overflow */
+        position: relative; /* Allows positioning of pseudo-elements */
+    }
+    
+    .resource-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); /* Subtle gradient overlay */
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s ease; /* Smooth transition for overlay */
+        border-radius: 15px; /* Matches card's border radius */
+    }
+    
+    .resource-card:hover {
+        transform: translateY(-5px); /* Slightly lifts the card on hover */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for emphasis */
+    }
+    
+    
+    .resource-card h2 {
         color: #ab9353;
         margin-top: 0;
-      }
-
-      .resource-card p {
+        position: relative; /* Enables pseudo-elements */
+        z-index: 2; /* Places text above the overlay */
+    }
+    
+    .resource-card p {
         font-size: 18px;
         line-height: 1.6;
         color: #333;
         margin-bottom: 15px;
-      }
+        position: relative; /* Allows layering with pseudo-elements */
+        z-index: 2; /* Places text above the overlay */
+    }
+    
+    
+    
 
       .cta-button {
         display: inline-block;
         background: linear-gradient(269deg, #0048ff, #0096ff);
         color: #fff;
         text-decoration: none;
-        padding: 10px 20px;
+        padding: 12px 24px;
         margin-top: 0px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-      }
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 0.75s ease-out;
+        transform: translate(-50%, -50%) rotate(45deg);
+        opacity: 0;
+    }
+    
+    .cta-button:hover::before {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+    }
+    
+    .cta-button:hover {
+        background: linear-gradient(269deg, #527adf, #7fc8fd);
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+        transform: translateY(-4px);
+    }
+    
+    .cta-button:active {
+        transform: translateY(0);
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .cta-button::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.1);
+        transition: opacity 0.4s ease;
+        opacity: 0;
+    }
+    
+    .cta-button:hover::after {
+        opacity: 1;
+    }
+
 
       .searchInput {
         box-sizing: border-box;
@@ -345,12 +430,7 @@
         .resource-card p {
           font-size: 14px;
         }
-        .cta-button {
-          font-size: 14px;
-          padding: 10px;
-          margin-top: 5px;
-          border-radius: 5px;
-        }
+        
 
         .header {
           position: unset;
@@ -441,6 +521,7 @@
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html" id="active">Devotional Resources</a>
+            <a href="avatars.html">Avatars</a>
           </div>
         </div>
         <form class="searchForm" onsubmit="return false;">
