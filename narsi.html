@@ -103,6 +103,16 @@
       .navigation .homeDiv #homeBtn:hover {
         outline: 0;
       }
+      .tog-btn{
+        background:transparent;
+        border:0;
+        border-radius:10px;
+      }
+      .tog-btn:hover{
+        cursor: pointer;
+      }.mode{
+        width:2rem;margin:0;padding:0
+      }
 
       .navigation .homeDiv #homeBtn a {
         background-color: rgb(5, 6, 45);
@@ -391,6 +401,12 @@
           />
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
+        <div >
+          <button id="theme" class="tog-btn">
+            <img id="tog-btn" class="mode" src="images/light-icon.png">
+            <img id="toggle" class="mode" src="images/night-mode.png">
+        </button>
+        </div>
       </div>
     </div>
 
