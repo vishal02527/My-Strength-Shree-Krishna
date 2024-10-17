@@ -149,145 +149,151 @@
         transform: scale(1.1);
       }
 
-      /* Lightbox Styles */
-      .lightbox {
-        display: none;
-        position: fixed;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-      }
-      .lightbox img {
-        max-width: 80%;
-        max-height: 80%;
-        border-radius: 10px;
-      }
-      .close-btn {
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 30px;
-        color: #fff;
-      }
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
 
-      .galleryMain {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
+    .lightbox img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
 
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    .close-btn {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 30px;
+      color: #fff;
+    }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
+    .galleryMain {
+      text-align: center;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0px 6px 10px #ccc;
+    }
+
+    .navigation {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navigation .homeDiv #homeBtn {
+      align-items: center;
+      background-image: linear-gradient(144deg,
           #af40ff,
           #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
+          #00ddeb);
+      border: 0;
+      border-radius: 8px;
+      box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+      box-sizing: border-box;
+      color: #ffffff;
+      display: flex;
+      font-family: Phantomsans, sans-serif;
+      justify-content: center;
+      line-height: 0.8em;
+      max-width: 100%;
+      min-width: 110px;
+      padding: 3px;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
+    .navigation .homeDiv #homeBtn:active,
+    .navigation .homeDiv #homeBtn:hover {
+      outline: 0;
+    }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
+    .navigation .homeDiv #homeBtn a {
+      background-color: rgb(5, 6, 45);
+      color: #fff;
+      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      transition: 300ms;
+      text-decoration: none;
+    }
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
+    .navigation .homeDiv #homeBtn:hover a {
+      background: none;
+    }
 
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 5px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-      #active {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
+    .navigation .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: ease-in 0.3s;
+      border: 2px solid #fff;
+      padding: 10px 15px;
+      border-radius: 20px;
+    }
 
-      .searchInput {
-        box-sizing: border-box;
-        width: 300px;
-        height: 35px;
-        padding: 5px 20px;
-        border-radius: 50px;
-        border: 0;
-      }
-      .searchInput:focus {
-        outline: 0;
-      }
-      .searchForm button {
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        position: relative;
-        top: 2px;
-        right: 55px;
-      }
-      .searchForm button i {
-        color: #555;
-        padding: 9px 15px;
+    .navigation .navbar a:hover {
+      color: rgb(250, 219, 153);
+      border: 2px solid rgb(250, 219, 153);
+    }
 
-        font-size: 16px;
-        cursor: pointer;
-        transition: linear 0.16s;
-      }
-      .searchForm button i:hover {
-        color: #23d1c8;
-      }
+    #active {
+      color: rgb(250, 219, 153);
+      border: 2px solid rgb(250, 219, 153);
+    }
+
+    .searchInput {
+      box-sizing: border-box;
+      width: 300px;
+      height: 35px;
+      padding: 5px 20px;
+      border-radius: 50px;
+      border: 0;
+    }
+
+    .searchInput:focus {
+      outline: 0;
+    }
+
+    .searchForm button {
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      position: relative;
+      top: 2px;
+      right: 55px;
+    }
+
+    .searchForm button i {
+      color: #555;
+      padding: 9px 15px;
+
+      font-size: 16px;
+      cursor: pointer;
+      transition: linear 0.16s;
+    }
+
+    .searchForm button i:hover {
+      color: #23d1c8;
+    }
 
       footer {
   background-color: #1c3d5a;
@@ -407,7 +413,7 @@
         color: #000;
       }
 
-      /* Responsive Styles */
+    /* Responsive Styles */
 
       @media (max-width: 980px) {
         .galleryMain {
@@ -496,6 +502,186 @@
           font-size: 12px;
         }
       }
+      .navigation-mob {
+      display: none;
+    }
+      @media(max-width :668px){
+        .navigation {
+        display: none;
+
+      }
+        /* Mobile Navigation  Starts*/
+      /* Initially hide the mobile navbar (off-screen to the left) */
+      .navbar-mob {
+        position: fixed;
+        top: 0;
+        left: -60%;
+        /* Move it off-screen */
+        width: 60%;
+        /* Cover 60% of the screen width */
+        height: 100%;
+        background-color: #00000099;
+        /* Set a background color */
+        transition: left 0.3s ease;
+        /* Smooth slide effect */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        /* Add some shadow for depth */
+        z-index: 1000;
+        /* Stay on top of other elements */
+      }
+
+      /* Show the navbar when 'active' class is added */
+      .navbar-mob.active {
+        left: 0;
+        /* Slide into view */
+      }
+
+      .navbar-up-mob {
+
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-evenly;
+        margin: 1rem 0.5rem;
+        color: #f8f8ff;
+      }
+
+      .navbar-up-mob>a {
+
+        color: #f8f8ff;
+      }
+
+      .navbar-up-mob>a:hover {
+
+        color: blue;
+      }
+
+      .mobile-nav-container {
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+      }
+
+      #homeBtn-mob {
+        background-image: linear-gradient(144deg,
+            #af40ff,
+            #5b42f3 50%,
+            #00ddeb);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+
+        padding: 0.5rem 0.5rem;
+      }
+
+      #homeBtn-mob>a {
+
+        color: #ffffff;
+
+      }
+
+      .navigation-mob {
+        /* position: sticky;
+      /* border: 2px solid red; */
+        top: 0;
+        z-index: 888;
+        width: 100%;
+
+        display: flex;
+
+        justify-content: space-evenly;
+        align-items: center;
+
+      }
+
+      .searchForm-mob {
+        display: flex;
+        margin-left: auto;
+        border: 1px solid green;
+        background: white;
+        border-radius: 50px;
+        overflow: hidden;
+        width: 70%;
+      }
+
+      .searchInput-mob {
+        width: 100%;
+        height: 30px;
+        padding: 5px 12px;
+        border-radius: 50px;
+        border: 0;
+        font-size: 12px;
+      }
+
+      .searchForm-mob button {
+        background: transparent;
+        outline: none;
+        border: none;
+
+      }
+
+      .searchForm-mob button i {
+        padding: 9px 15px;
+        font-size: 15px;
+
+      }
+
+      #toggle-nav-mob {
+
+        margin: 1% 2%;
+      }
+
+
+      .button-29 {
+        align-items: center;
+        appearance: none;
+        background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+        border: 0;
+        border-radius: 6px;
+        box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono", monospace;
+        height: 2.25rem;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding: 0 0.5rem;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s, transform .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow, transform;
+        font-size: 1rem;
+      }
+
+      .button-29:focus {
+        box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+      }
+
+      .button-29:hover {
+        box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        transform: translateY(-2px);
+      }
+
+      .button-29:active {
+        box-shadow: #3c4fe0 0 3px 7px inset;
+        transform: translateY(2px);
+      }
+
+      /* Mobile Navigation Ends */
+      }
     </style>
   </head>
   <body>
@@ -508,126 +694,118 @@
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
 
-        <div class="navbar">
-          <div class="navbar-up">
-            <a href="scriptures.html">Scriptures</a>
-            <a href="gallery.html" id="active">Gallery</a>
-            <a href="signup.html">Discussion Forum</a>
-            <a href="devotional-resources.html">Devotional Resources</a>
+      <div class="navbar">
+        <div class="navbar-up">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html" id="active">Gallery</a>
+          <a href="signup.html">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
             <a href="avatars.html">Avatars</a>
-          </div>
         </div>
-        <form class="searchForm">
-          <input
-            type="text"
-            class="searchInput"
-            placeholder="Search all the content"
-          />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+    <!-- Mobile Navigation Bar -->
+    <div class="navigation-mob">
+      <div class="mobile-nav-container">
+        <div class="homeDiv-mob">
+          <button id="homeBtn-mob"><a href="./index.html">Home</a></button>
+        </div>
+
+        <form class="searchForm-mob">
+          <input type="text" class="searchInput-mob" placeholder="Search all the content" />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </form>
+
+        <button id="toggle-nav-mob" class="button-29" role="button">
+          <i class="fa-solid fa-list"></i>
+        </button>
+      </div>
+
+      <div class="navbar-mob">
+        <div class="navbar-up-mob">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+          <a href="avatars.html">Avatars</a>
+
+        </div>
       </div>
     </div>
-    <div class="content">
-      <h1>Gallery - Shree Krishna</h1>
 
-      <div class="image-container">
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img1.jpg')"
-          >
-            <img src="./images/krishna-img1.jpg" alt="Shree Krishna Image 1" />
-          </div>
-          <div class="caption">Shree Krishna</div>
+    <!-- Mobile Navigation Bar -->
+  </div>
+  <div class="content">
+    <h1>Gallery - Shree Krishna</h1>
+
+    <div class="image-container">
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img1.jpg')">
+          <img src="./images/krishna-img1.jpg" alt="Shree Krishna Image 1" />
         </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img9.jpg')"
-          >
-            <img src="./images/krishna-img9.jpg" alt="Shree Krishna Image 2" />
-          </div>
-          <div class="caption">Shree Radhavallabh Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img10.jpg')"
-          >
-            <img src="./images/krishna-img10.jpg" alt="Shree Krishna Image 3" />
-          </div>
-          <div class="caption">Shree Radha Raman Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img4.jpg')"
-          >
-            <img src="./images/krishna-img4.jpg" alt="Shree Krishna Image 4" />
-          </div>
-          <div class="caption">Shree Banke Bihari Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img5.jpg')"
-          >
-            <img src="./images/krishna-img5.jpg" alt="Shree Krishna Image 5" />
-          </div>
-          <div class="caption">Shree Govind Dev Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img6.jpg')"
-          >
-            <img src="./images/krishna-img6.jpg" alt="Shree Krishna Image 6" />
-          </div>
-          <div class="caption">Shree Radha Krishna Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img7.jpg')"
-          >
-            <img src="./images/krishna-img7.jpg" alt="Shree Krishna Image 7" />
-          </div>
-          <div class="caption">Shree Yugal Kishor Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img8.jpg')"
-          >
-            <img src="./images/krishna-img8.jpg" alt="Shree Krishna Image 8" />
-          </div>
-          <div class="caption">Shree Panduranga Vitthal Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img11.jpg')"
-          >
-            <img
-              src="./images/krishna-img11.jpg"
-              alt="Shree Krishna Image 11"
-            />
-          </div>
-          <div class="caption">Shree Nath Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img12.jpg')"
-          >
-            <img
-              src="./images/krishna-img12.jpg"
-              alt="Shree Krishna Image 12"
-            />
-          </div>
-          <div class="caption">Shree Dwarkadhish Ji</div>
-        </div>
+        <div class="caption">Shree Krishna</div>
       </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img9.jpg')">
+          <img src="./images/krishna-img9.jpg" alt="Shree Krishna Image 2" />
+        </div>
+        <div class="caption">Shree Radhavallabh Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img10.jpg')">
+          <img src="./images/krishna-img10.jpg" alt="Shree Krishna Image 3" />
+        </div>
+        <div class="caption">Shree Radha Raman Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img4.jpg')">
+          <img src="./images/krishna-img4.jpg" alt="Shree Krishna Image 4" />
+        </div>
+        <div class="caption">Shree Banke Bihari Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img5.jpg')">
+          <img src="./images/krishna-img5.jpg" alt="Shree Krishna Image 5" />
+        </div>
+        <div class="caption">Shree Govind Dev Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img6.jpg')">
+          <img src="./images/krishna-img6.jpg" alt="Shree Krishna Image 6" />
+        </div>
+        <div class="caption">Shree Radha Krishna Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img7.jpg')">
+          <img src="./images/krishna-img7.jpg" alt="Shree Krishna Image 7" />
+        </div>
+        <div class="caption">Shree Yugal Kishor Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img8.jpg')">
+          <img src="./images/krishna-img8.jpg" alt="Shree Krishna Image 8" />
+        </div>
+        <div class="caption">Shree Panduranga Vitthal Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img11.jpg')">
+          <img src="./images/krishna-img11.jpg" alt="Shree Krishna Image 11" />
+        </div>
+        <div class="caption">Shree Nath Ji</div>
+      </div>
+      <div>
+        <div class="image-card" onclick="openLightbox('./images/krishna-img12.jpg')">
+          <img src="./images/krishna-img12.jpg" alt="Shree Krishna Image 12" />
+        </div>
+        <div class="caption">Shree Dwarkadhish Ji</div>
+      </div>
+    </div>
 
       <!-- Lightbox Container -->
       <div class="lightbox" onclick="closeLightbox()">
@@ -656,55 +834,68 @@
           </ul>
         </div>
 
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: +1 234 567 890</p>
-        </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: info@example.com</p>
+        <p>Phone: +1 234 567 890</p>
+      </div>
 
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="https://github.com/vishal02527" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-          </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://github.com/vishal02527" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://codepen.io/Vishal-Kumar25" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+          <a href="https://www.linkedin.com/in/vishal-kumar-8303a3283" target="_blank"><i
+              class="fa-brands fa-linkedin"></i></a>
         </div>
       </div>
-      <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
-    <script>
-      window.onscroll = function () {
-        toggleScrollTopButton();
-      };
+    </div>
+    <div class="creatorDiv">
+      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    window.onscroll = function () {
+      toggleScrollTopButton();
+    };
 
-      const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-      function toggleScrollTopButton() {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollTopBtn.style.display = "block"; // Show button after scrolling down
-        } else {
-          scrollTopBtn.style.display = "none"; // Hide button when at the top
-        }
+    function toggleScrollTopButton() {
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        scrollTopBtn.style.display = "block"; // Show button after scrolling down
+      } else {
+        scrollTopBtn.style.display = "none"; // Hide button when at the top
       }
+    }
 
-      scrollTopBtn.onclick = function () {
-        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
-      };
-    </script>
-  </body>
+    // Mobile Navigation Toggle
+    const toggleButton = document.getElementById('toggle-nav-mob');
+    const navbarMob = document.querySelector('.navbar-mob');
+    const toggleIcon = toggleButton.querySelector('i');
+
+    toggleButton.addEventListener('click', () => {
+      navbarMob.classList.toggle('active');
+
+
+      if (navbarMob.classList.contains('active')) {
+        toggleIcon.classList.remove('fa-list');
+        toggleIcon.classList.add('fa-times');
+      } else {
+        toggleIcon.classList.remove('fa-times');
+        toggleIcon.classList.add('fa-list');
+      }
+    });
+    // Mobile Navigation Toggle
+
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+    };
+  </script>
+</body>
+
 </html>

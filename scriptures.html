@@ -1,228 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scriptures: Shree Krishna</title>
-    <script
-      src="https://kit.fontawesome.com/d74f12bccc.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Add any specific styles or scripts for this page if needed -->
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-      }
-      .scroll-top-btn {
-        position: fixed; /* Fixed position */
-        bottom: 30px; 
-        right: 30px; 
-        background-color: #330867;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        border-radius: 5px;
-        display: none; /* Initially hidden */
-        z-index: 1000; /* Ensure it appears above other content */
-      }
 
-      .scroll-top-btn:hover {
-        background-color: #330867;
-      }
-      p::selection,
-      h2::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      .scripture-details h3::selection,
-      li::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scriptures: Shree Krishna</title>
+  <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
+  <!-- Add any specific styles or scripts for this page if needed -->
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      color: #333;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-      .content {
-        padding: 20px 120px;
-        margin-bottom: 50px;
-      }
-      .content h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 36px;
-        font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      #translateBtnDiv {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin-bottom: 20px;
-      }
+    .scroll-top-btn {
+      position: fixed;
+      /* Fixed position */
+      bottom: 30px;
+      right: 30px;
+      background-color: #330867;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      display: none;
+      /* Initially hidden */
+      z-index: 1000;
+      /* Ensure it appears above other content */
+    }
 
-      #translateBtn {
-        border: 0;
-        padding: 15px 25px;
-        color: #fff;
-        background-image: linear-gradient(
-          to right,
+    .scroll-top-btn:hover {
+      background-color: #330867;
+    }
+
+    p::selection,
+    h2::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    .scripture-details h3::selection,
+    li::selection {
+      background-color: rgb(237, 204, 133);
+      color: #000;
+    }
+
+    .content {
+      padding: 20px 120px;
+      margin-bottom: 50px;
+    }
+
+    .content h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #translateBtnDiv {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      margin-bottom: 20px;
+    }
+
+    #translateBtn {
+      border: 0;
+      padding: 15px 25px;
+      color: #fff;
+      background-image: linear-gradient(to right,
           #314755 0%,
           #26a0da 51%,
-          #314755 100%
-        );
-        background-size: 200% auto;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #translateBtn:hover {
-        background-position: right center;
-      }
+          #314755 100%);
+      background-size: 200% auto;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-      .content p {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 15px;
-      }
-      .scripture-card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-      h2 {
-        color: #ab9353;
-        margin-top: 0;
-      }
-      .scripture-details {
-        margin-top: 10px;
-      }
-      .scripture-details h3 {
-        color: #ab9353;
-      }
-      .scriptMain {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
-      .navigation {
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    #translateBtn:hover {
+      background-position: right center;
+    }
 
-      .navigation .homeDiv #homeBtn {
-        align-items: center;
-        background-image: linear-gradient(
-          144deg,
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .scripture-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #ab9353;
+      margin-top: 0;
+    }
+
+    .scripture-details {
+      margin-top: 10px;
+    }
+
+    .scripture-details h3 {
+      color: #ab9353;
+    }
+
+    .scriptMain {
+      text-align: center;
+      background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0px 6px 10px #ccc;
+    }
+
+    .navigation {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navigation .homeDiv #homeBtn {
+      align-items: center;
+      background-image: linear-gradient(144deg,
           #af40ff,
           #5b42f3 50%,
-          #00ddeb
-        );
-        border: 0;
-        border-radius: 8px;
-        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
-        text-decoration: none;
-        cursor: pointer;
-      }
+          #00ddeb);
+      border: 0;
+      border-radius: 8px;
+      box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+      box-sizing: border-box;
+      color: #ffffff;
+      display: flex;
+      font-family: Phantomsans, sans-serif;
+      justify-content: center;
+      line-height: 0.8em;
+      max-width: 100%;
+      min-width: 110px;
+      padding: 3px;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-      .navigation .homeDiv #homeBtn:active,
-      .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
-      }
+    .navigation .homeDiv #homeBtn:active,
+    .navigation .homeDiv #homeBtn:hover {
+      outline: 0;
+    }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
+    .navigation .homeDiv #homeBtn a {
+      background-color: rgb(5, 6, 45);
+      color: #fff;
+      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      transition: 300ms;
+      text-decoration: none;
+    }
 
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
+    .navigation .homeDiv #homeBtn:hover a {
+      background: none;
+    }
 
-      .navigation .navbar {
-        display: flex;
-      }
+    .navigation .navbar {
+      display: flex;
+    }
 
-      .navigation .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 5px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
-      }
-      .navigation .navbar a:hover {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
-      #active {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
+    .navigation .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: ease-in 0.3s;
+      border: 2px solid #fff;
+      padding: 10px 15px;
+      border-radius: 20px;
+    }
 
-      .searchInput {
-        box-sizing: border-box;
-        width: 300px;
-        height: 35px;
-        padding: 5px 20px;
-        border-radius: 50px;
-        border: 0;
-      }
-      .searchInput:focus {
-        outline: 0;
-      }
-      .searchForm button {
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        position: relative;
-        top: 2px;
-        right: 55px;
-      }
-      .searchForm button i {
-        color: #555;
-        padding: 9px 15px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: linear 0.16s;
-        margin-left: 1rem;
-      }
-      .searchForm button i:hover {
-        color: #23d1c8;
-      }
+    .navigation .navbar a:hover {
+      color: rgb(250, 219, 153);
+      border: 2px solid rgb(250, 219, 153);
+    }
+
+    #active {
+      color: rgb(250, 219, 153);
+      border: 2px solid rgb(250, 219, 153);
+    }
+
+    .searchInput {
+      box-sizing: border-box;
+      width: 300px;
+      height: 35px;
+      padding: 5px 20px;
+      border-radius: 50px;
+      border: 0;
+    }
+
+    .searchInput:focus {
+      outline: 0;
+    }
+
+    .searchForm button {
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      position: relative;
+      top: 2px;
+      right: 55px;
+    }
+
+    .searchForm button i {
+      color: #555;
+      padding: 9px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: linear 0.16s;
+      margin-left: 1rem;
+    }
+
+    .searchForm button i:hover {
+      color: #23d1c8;
+    }
 
 
 
@@ -333,21 +348,21 @@
 
    
 
-      .social-icons a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 2.1rem;
-        height: 2.1rem;
-        background-color: transparent;
-        border: 0.2rem solid #000000;
-        font-size: 1.2rem;
-        border-radius: 50%;
-        margin: 0.1rem 0.2rem 0.1rem 0;
-        transition: 0.3s ease;
-        color: #ffffff;
-        text-decoration: none;
-      }
+    .social-icons a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      background-color: transparent;
+      border: 0.2rem solid #000000;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      margin: 0.1rem 0.2rem 0.1rem 0;
+      transition: 0.3s ease;
+      color: #ffffff;
+      text-decoration: none;
+    }
 
       .social-icons a:hover {
         color: rgb(255, 255, 255);
@@ -374,37 +389,44 @@
           flex-direction: column;
         }
 
-        #translateBtn {
-          padding: 12px 20px;
-          font-size: 14px;
-        }
-        .content h1 {
-          font-size: 22px;
-        }
-        .scriptMain {
-          position: unset;
-        }
-        .scripture-card {
-          padding: 10px 20px;
-          margin-right: 10px;
-        }
-        .scripture-card h2 {
-          font-size: 20px;
-        }
-        .content p {
-          font-size: 14px;
-        }
+      #translateBtn {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
 
-        .searchForm button {
+      .content h1 {
+        font-size: 22px;
+      }
+
+      .scriptMain {
+        position: unset;
+      }
+
+      .scripture-card {
+        padding: 10px 20px;
+        margin-right: 10px;
+      }
+
+      .scripture-card h2 {
+        font-size: 20px;
+      }
+
+      .content p {
+        font-size: 14px;
+      }
+
+      .searchForm button {
         top: -34px;
         right: -10px;
       }
-      .searchForm{
+
+      .searchForm {
         margin-top: 10px;
         margin-bottom: -35px;
         display: contents;
       }
-      .searchForm button i{
+
+      .searchForm button i {
         margin-left: 15rem;
       }
         .scripture-details h3 {
@@ -455,6 +477,187 @@
   margin: 0;
 }
       }
+
+      .navigation-mob {
+      display: none;
+    }
+      @media(max-width :668px){
+        .navigation {
+        display: none;
+
+      }
+        /* Mobile Navigation  Starts*/
+      /* Initially hide the mobile navbar (off-screen to the left) */
+      .navbar-mob {
+        position: fixed;
+        top: 0;
+        left: -60%;
+        /* Move it off-screen */
+        width: 60%;
+        /* Cover 60% of the screen width */
+        height: 100%;
+        background-color: #00000099;
+        /* Set a background color */
+        transition: left 0.3s ease;
+        /* Smooth slide effect */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        /* Add some shadow for depth */
+        z-index: 1000;
+        /* Stay on top of other elements */
+      }
+
+      /* Show the navbar when 'active' class is added */
+      .navbar-mob.active {
+        left: 0;
+        /* Slide into view */
+      }
+
+      .navbar-up-mob {
+
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-evenly;
+        margin: 1rem 0.5rem;
+        color: #f8f8ff;
+      }
+
+      .navbar-up-mob>a {
+
+        color: #f8f8ff;
+      }
+
+      .navbar-up-mob>a:hover {
+
+        color: blue;
+      }
+
+      .mobile-nav-container {
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+      }
+
+      #homeBtn-mob {
+        background-image: linear-gradient(144deg,
+            #af40ff,
+            #5b42f3 50%,
+            #00ddeb);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+
+        padding: 0.5rem 0.5rem;
+      }
+
+      #homeBtn-mob>a {
+
+        color: #ffffff;
+
+      }
+
+      .navigation-mob {
+        /* position: sticky;
+      /* border: 2px solid red; */
+        top: 0;
+        z-index: 888;
+        width: 100%;
+
+        display: flex;
+
+        justify-content: space-evenly;
+        align-items: center;
+
+      }
+
+      .searchForm-mob {
+        display: flex;
+        margin-left: auto;
+        border: 1px solid green;
+        background: white;
+        border-radius: 50px;
+        overflow: hidden;
+        width: 70%;
+      }
+
+      .searchInput-mob {
+        width: 100%;
+        height: 30px;
+        padding: 5px 12px;
+        border-radius: 50px;
+        border: 0;
+        font-size: 12px;
+      }
+
+      .searchForm-mob button {
+        background: transparent;
+        outline: none;
+        border: none;
+
+      }
+
+      .searchForm-mob button i {
+        padding: 9px 15px;
+        font-size: 15px;
+
+      }
+
+      #toggle-nav-mob {
+
+        margin: 1% 2%;
+      }
+
+
+      .button-29 {
+        align-items: center;
+        appearance: none;
+        background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+        border: 0;
+        border-radius: 6px;
+        box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono", monospace;
+        height: 2.25rem;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding: 0 0.5rem;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s, transform .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow, transform;
+        font-size: 1rem;
+      }
+
+      .button-29:focus {
+        box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+      }
+
+      .button-29:hover {
+        box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        transform: translateY(-2px);
+      }
+
+      .button-29:active {
+        box-shadow: #3c4fe0 0 3px 7px inset;
+        transform: translateY(2px);
+      }
+
+      /* Mobile Navigation Ends */
+      }
     </style>
   </head>
   <body>
@@ -465,25 +668,53 @@
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
 
-        <div class="navbar">
-          <div class="navbar-up">
-            <a href="scriptures.html" id="active">Scriptures</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="signup.html">Discussion Forum</a>
-            <a href="devotional-resources.html">Devotional Resources</a>
+      <div class="navbar">
+        <div class="navbar-up">
+          <a href="scriptures.html" id="active">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="signup.html">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
             <a href="avatars.html">Avatars</a>
-          </div>
         </div>
-        <form class="searchForm">
-          <input
-            type="text"
-            class="searchInput"
-            placeholder="Search all the content"
-          />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <form class="searchForm">
+        <input type="text" class="searchInput" placeholder="Search all the content" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+    <!-- Mobile Navigation Bar -->
+    <div class="navigation-mob">
+      <div class="mobile-nav-container">
+        <div class="homeDiv-mob">
+          <button id="homeBtn-mob"><a href="./index.html">Home</a></button>
+        </div>
+
+        <form class="searchForm-mob">
+          <input type="text" class="searchInput-mob" placeholder="Search all the content" />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </form>
+
+        <button id="toggle-nav-mob" class="button-29" role="button">
+          <i class="fa-solid fa-list"></i>
+        </button>
+      </div>
+
+      <div class="navbar-mob">
+        <div class="navbar-up-mob">
+          <a href="scriptures.html">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+          <a href="avatars.html">Avatars</a>
+
+        </div>
       </div>
     </div>
+
+    <!-- Mobile Navigation Bar -->
+  </div>
 
     <div class="content">
       <h1>Scriptures</h1>
@@ -634,55 +865,70 @@
             <li><a href="devotional-resources.html">Devotional Resources</a></li>
         </div>
 
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: +1 234 567 890</p>
-        </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: info@example.com</p>
+        <p>Phone: +1 234 567 890</p>
+      </div>
 
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="https://github.com/vishal02527" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-          </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://github.com/vishal02527" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://codepen.io/Vishal-Kumar25" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+          <a href="https://www.linkedin.com/in/vishal-kumar-8303a3283" target="_blank"><i
+              class="fa-brands fa-linkedin"></i></a>
         </div>
       </div>
-      <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
-    <script>
-      window.onscroll = function () {
-        toggleScrollTopButton();
-      };
+    </div>
+    <div class="creatorDiv">
+      <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    window.onscroll = function () {
+      toggleScrollTopButton();
+    };
 
-      const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-      function toggleScrollTopButton() {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollTopBtn.style.display = "block"; // Show button after scrolling down
-        } else {
-          scrollTopBtn.style.display = "none"; // Hide button when at the top
-        }
+    function toggleScrollTopButton() {
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        scrollTopBtn.style.display = "block"; // Show button after scrolling down
+      } else {
+        scrollTopBtn.style.display = "none"; // Hide button when at the top
       }
+    }
 
-      scrollTopBtn.onclick = function () {
-        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
-      };
-    </script>
-  </body>
+
+    // Mobile Navigation Toggle
+
+    const toggleButton = document.getElementById('toggle-nav-mob');
+    const navbarMob = document.querySelector('.navbar-mob');
+    const toggleIcon = toggleButton.querySelector('i');
+
+    toggleButton.addEventListener('click', () => {
+      navbarMob.classList.toggle('active');
+
+
+      if (navbarMob.classList.contains('active')) {
+        toggleIcon.classList.remove('fa-list');
+        toggleIcon.classList.add('fa-times');
+      } else {
+        toggleIcon.classList.remove('fa-times');
+        toggleIcon.classList.add('fa-list');
+      }
+    });
+    // Mobile Navigation Toggle
+
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+    };
+  </script>
+</body>
+
 </html>
