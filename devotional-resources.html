@@ -636,6 +636,76 @@
           }
         });
       }
+      //adding dark theme 
+let theme = document.querySelector("#theme");
+let toggle = document.querySelector("#toggle");
+let togBtn = document.querySelector("#tog-btn");
+let mainHeading = document.querySelector("main h1");
+let content = document.querySelector(".content");
+
+let currMode = "light";
+
+theme?.addEventListener("click", () => {
+  if (currMode === "light") {
+    currMode = "dark";
+    
+    // Check if document.body exists
+    if (document.body) {
+      document.body.style.backgroundImage = "url('image.jpg')";
+    }
+
+    // Check if mainHeading exists
+    if (mainHeading) {
+      mainHeading.style.color = "white";
+    }
+
+    // Check if content exists
+    if (content) {
+      content.style.backgroundColor = "black";
+      content.style.color = "white";
+    }
+
+    // Check if toggle exists
+    if (toggle) {
+      toggle.style.display = "none";
+    }
+
+    // Check if togBtn exists
+    if (togBtn) {
+      togBtn.style.display = "block";
+    }
+  } else {
+    currMode = "light";
+
+    // Check if document.body exists
+    if (document.body) {
+      document.body.style.backgroundImage = "url('https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg')";
+    }
+
+    // Check if mainHeading exists
+    if (mainHeading) {
+      mainHeading.style.background = "linear-gradient(to right, #30cfd0 20%, #330867 100%)";
+      mainHeading.style.webkitBackgroundClip = "text";
+      mainHeading.style.webkitTextFillColor = "transparent";
+    }
+
+    // Check if content exists
+    if (content) {
+      content.style.backgroundColor = "white";
+      content.style.color = "#333";
+    }
+
+    // Check if toggle exists
+    if (toggle) {
+      toggle.style.display = "block";
+    }
+
+    // Check if togBtn exists
+    if (togBtn) {
+      togBtn.style.display = "none";
+    }
+  }
+});
     </script>
 </body>
 
