@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Krishna Bhakti Forum - Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
         .chatbot-container {
@@ -104,7 +105,7 @@
         }
 
         input {
-            width: 93%;
+            width: 95%;
             padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #d1a054;
@@ -119,17 +120,35 @@
             box-shadow: 0 0 5px rgba(74, 43, 15, 0.5);
         }
 
+        .password-container {
+            position: relative;
+        }
+
+        .eye-icon {
+            position: absolute;
+            top: 35%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #4a2b0f;
+            transition: color 0.3s;
+        }
+
+        .eye-icon:hover {
+            color: #d1a054;
+        }
+
         button {
             background: linear-gradient(135deg, #d1a054, #4a2b0f);
             color: #fff;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
             font-size: 18px;
             width: 100%;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         button:hover {
@@ -168,6 +187,22 @@
             margin-top: 20px;
         }
 
+        .back-home {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back-home-link {
+            color: #4a2b0f;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .back-home-link:hover {
+            color: #d1a054;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 10px;
@@ -186,14 +221,13 @@
             }
         }
     </style>
-    <!-- Include Google Platform Library -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div class="container">
         <div class="signup-form" id="signupForm">
             <h2>Join Krishna Bhakti Forum</h2>
-            <form id="form" action="./discussion-forum.html" method="GET">
+            <form id="form" action="./discussion-forum.html" method="GET" onsubmit="return validateAndSave(event);">
                 <label for="username">Devotee Name:</label>
                 <input type="text" id="username" name="username" required />
                 
@@ -201,12 +235,14 @@
                 <input type="email" id="email" name="email" required />
                 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required />
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required />
+                    <i class="fas fa-eye eye-icon" onclick="togglePassword()"></i>
+                </div>
 
-                <!-- Step 3: Google Sign-In Button -->
                 <div class="google-signin">
                     <div id="g_id_onload"
-                         data-client_id="533616281722-3gijg2u8b6aue0878sbmna6cs6q1lquc.apps.googleusercontent.com"
+                         data-client_id="YOUR_GOOGLE_CLIENT_ID"
                          data-context="signup"
                          data-ux_mode="popup"
                          data-login_uri="http://localhost:5502/"
@@ -223,12 +259,16 @@
                     </div>
                 </div>
 
-                <button onclick="saveUsername()">Begin Your Spiritual Journey</button>
+                <button type="submit">Begin Your Spiritual Journey</button>
                 
                 <div class="login">
                     Already on the path? <a class="login-link" href="./login.html">Login</a>
                 </div>
             </form>
+
+            <div class="back-home">
+                <a href="./index.html" class="back-home-link">Back to Home Page</a>
+            </div>
         </div>
         <footer>
             <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
@@ -251,11 +291,36 @@
   
 
     <script>
-        function saveUsername() {
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const eyeIcon = document.querySelector(".eye-icon");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
+
+        function validateAndSave(event) {
+            event.preventDefault();
             const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
+
+            if (username === "" || email === "" || password === "") {
+                alert("Please fill in all fields.");
+                return false;
+            }
+
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
+
+            window.location.href = "./discussion-forum.html";
+            return true;
         }
     </script>
 </body>
