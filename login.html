@@ -6,6 +6,44 @@
     <title>Krishna Bhakti Forum - Login</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        .chatbot-container {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      .chatbot-button {
+        border: none;
+        border-radius: 50%;
+        padding: 5px; /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
+      }
+
+      .chatbot-button img {
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
+      }
+
+      .tooltip-text {
+        display: none; /* Hide by default */
+        position: absolute;
+        bottom: 100%; /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333; /* Background color for tooltip */
+        color: #fff; /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .chatbot-button:hover .tooltip-text {
+        display: block; /* Show on hover */
+      }
         
         body {
             font-family: 'Poppins', sans-serif;
@@ -138,6 +176,12 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
+        .google-signin {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 10px;
@@ -156,6 +200,8 @@
             }
         }
     </style>
+    <!-- Include Google Platform Library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div class="container">
@@ -176,11 +222,45 @@
                     New to Krishna's path? <a class="signup-link" href="./signup.html">Join the community</a>
                 </div>
             </form>
+
+            <!-- Google Sign-In Button -->
+            <div class="google-signin">
+                <div id="g_id_onload"
+                     data-client_id="533616281722-3gijg2u8b6aue0878sbmna6cs6q1lquc.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-login_uri="http://localhost:5502/"
+                     data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="rectangular"
+                     data-theme="outline"
+                     data-text="sign_in_with"
+                     data-size="large"
+                     data-logo_alignment="left">
+                </div>
+            </div>
+
         </div>
         <footer>
             <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
         </footer>
     </div>
+
+      <!-- Chatbot code added here -->
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="panditji.png" alt="chatbot" />
+        <span class="tooltip-text">
+          Radhe Radhe🙏<br />
+          How can I help You?🌸
+        </span>
+      </button>
+    </div>
+  </a>
+  
     <script>
         document.getElementById("form").addEventListener("submit", function (event) {
             event.preventDefault();
@@ -198,6 +278,25 @@
                 alert("Invalid devotee name or password. Please try again with blessings from Lord Krishna.");
             }
         });
+
+        function handleCredentialResponse(response) {
+            const user = jwt_decode(response.credential);
+            // Here you can access user information
+            console.log(user);
+
+            // Set user info to localStorage or handle login
+            localStorage.setItem("username", user.name);
+            localStorage.setItem("email", user.email);
+            localStorage.setItem("isLoggedIn", "true");
+            window.location.href = "./discussion-forum.html"; // Redirect after successful login
+        }
+
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "533616281722-3gijg2u8b6aue0878sbmna6cs6q1lquc.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+        }
     </script>
 </body>
 </html>
