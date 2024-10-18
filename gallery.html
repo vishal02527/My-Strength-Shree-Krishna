@@ -9,6 +9,46 @@
       crossorigin="anonymous"
     ></script>
     <style>
+
+.chatbot-container {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      .chatbot-button {
+        border: none;
+        border-radius: 50%;
+        padding: 5px; /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
+      }
+
+      .chatbot-button img {
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
+      }
+
+      .tooltip-text {
+        display: none; /* Hide by default */
+        position: absolute;
+        bottom: 100%; /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333; /* Background color for tooltip */
+        color: #fff; /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .chatbot-button:hover .tooltip-text {
+        display: block; /* Show on hover */
+      }
+
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-image: var(--bg-color);
@@ -393,15 +433,29 @@
 
 
 
-      .caption {
-        margin-top: 25px;
-        margin-bottom: 20px;
-        text-align: center;
-        font-weight: 500;
-        font-size: 16px;
-        font-style: italic;
-        color: #f39c12;
-      }
+.caption {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  font-style: italic;
+  color: #e67e22; 
+  font-family: 'Playfair Display', serif;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); 
+  letter-spacing: 2px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.caption:hover {
+  color: #d35400;
+  transform: scale(1.05); 
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); 
+  cursor: pointer;
+}
+
+
       .caption::selection {
         background-color: rgb(237, 204, 133);
         color: #000;
@@ -648,6 +702,8 @@
         <img id="lightbox-img" src="" alt="Lightbox Image" />
       </div>
     </div>
+
+
     <footer>
       <div class="footer-content">
         <div class="footer-section statement ">
@@ -696,6 +752,20 @@
         <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
+
+      <!-- Chatbot code added here -->
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="panditji.png" alt="chatbot" />
+        <span class="tooltip-text">
+          Radhe Radhe🙏<br />
+          How can I help You?🌸
+        </span>
+      </button>
+    </div>
+  </a>
+
     <script src="script.js"></script>
     <script>
       var icon=document.getElementById("icon");

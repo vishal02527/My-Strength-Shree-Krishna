@@ -131,6 +131,89 @@
         --secondary-color: #fff;
       }
 
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    overflow: auto;
+    border: 1px solid #ccc; /* Optional: adds a border to the chat container */
+    border-radius: 8px; /* Optional: rounds the corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+.chat-area {
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.message {
+    margin: 10.1px 0; /* Increased margin for better spacing between messages */
+    padding: 15px 20px; /* Increased padding for better spacing inside the message */
+    border-radius: 10px; /* Increased border radius for a softer look */
+    max-width: 70%; /* Limit the width of messages */
+    word-wrap: break-word; /* Ensures long words break nicely */
+    position: relative; /* For pseudo-elements (optional) */
+}
+
+.user-message {
+    background-color: #cce5ff; /* Light blue background for user messages */
+    align-self: flex-end; /* Align user messages to the right */
+    box-shadow: 0 2px 5px rgba(49, 48, 48, 0.2); /* Optional: adds shadow for depth */
+    margin-left: auto; /* Ensure user messages are pushed to the right */
+    margin-top: 10px; /* Space above chatbot messages */
+    margin-bottom: 10px; /* Space below user messages */
+    border-radius: 10px; /* Rounded corners for the border */
+    padding: 15px; /* Increase padding to create space between text and border */
+    max-width: 50%; /* Decreased width of user messages */
+}
+
+.ai-message {
+    background-color: #e6e6f4; /* Light gray background for bot messages */
+    align-self: flex-start; /* Align bot messages to the left */
+   /* box-shadow: 0 2px 5px rgba(198, 197, 197, 0.2);  Optional: adds shadow for depth */
+   margin-top: 10px; /* Space above chatbot messages */
+    margin-right: auto; /* Ensure AI messages are pushed to the left */
+    padding: 15px 20px; /* Added padding to increase space inside the border */
+    border: 1px solid #ccc; /* Border for bot messages */
+    border-radius: 10px; /* Rounded corners for the border */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        padding: 5px;
+    }
+
+    .message {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+body {
+    font-size: 16px;
+}
+
+.message {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+
     </style>
 
 
@@ -376,7 +459,7 @@
           document.getElementById("image-input").value = "";
         });
 
-      function clearImagePreview() {
+        function clearImagePreview() {
         const previewContainer = document.getElementById("image-preview");
         if (previewContainer) {
           const previewImage = previewContainer.getElementsByTagName("img")[0];
@@ -384,6 +467,8 @@
           previewContainer.style.display = "none";
         }
       }
+    </script>
+
     </script>
     <script>
       var icon=document.getElementById("icon");
