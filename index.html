@@ -55,7 +55,7 @@
         display: block; /* Show on hover */
       }
       body {
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
@@ -113,7 +113,7 @@
         max-width: 900px;
         margin: 100px auto;
         padding: 20px 40px;
-        background-color: #fff;
+        background-color: var(--primary-color);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
@@ -621,7 +621,7 @@
         max-width: 900px;
         margin: 50px auto;
         padding: 20px;
-        background-color: #fff;
+        background-color: var(--primary-color);
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
@@ -647,11 +647,11 @@
         width: 100%;
         padding: 15px;
         text-align: left;
-        background-color: #f7f7f7;
+        background-color: var(--ternary-color);
         border: none;
         font-size: 18px;
         font-weight: bold;
-        color: #333;
+        color: var(--secondary-color);
         cursor: pointer;
         outline: none;
         transition: background-color 0.3s ease;
@@ -687,6 +687,30 @@
         }
       }
       /* faq css end */
+
+      #content-english p{
+        color: var(--secondary-color);
+      }
+      #content-hindi p{
+        color: var(--secondary-color);
+      }
+
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+        --ternary-color: #f7f7f7;
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+        --ternary-color: rgba(32, 26, 26, 0.785);
+      }
     </style>
   </head>
   <body>
@@ -705,6 +729,7 @@
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
             <a href="avatars.html">Avatars</a>
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
         <form class="searchForm">
@@ -1207,6 +1232,18 @@
     <script src="script.js"></script>
 
     <script>
+      var icon=document.getElementById("icon");
+
+      icon.onclick = function() {
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+          icon.src="images/sun.png";
+        }
+        else{
+          icon.src="images/moon.png";
+        }
+      }
+      
       window.onscroll = function () {
         toggleScrollTopButton();
       };

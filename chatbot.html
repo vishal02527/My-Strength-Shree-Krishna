@@ -21,6 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
   </head>
   <body class="bg-[#1B63AC] flex items-center justify-center min-h-screen">
+    <img src="images/moon.png" id="icon">
     <div id="Loader"></div>
     <div
       class="flex flex-col items-center justify-center w-full max-w-xl space-y-4"
@@ -33,7 +34,7 @@
         />
       </div>
 
-      <div class="chat-container w-full bg-white p-4 rounded-lg shadow-md">
+      <div class="chat-container w-full p-4 rounded-lg shadow-md">
         <div id="output-field" class="text-center text-lg font-semibold mb-3">
          
             🌸🌸🌸How can I help you today?🌸🌸🌸
@@ -94,6 +95,41 @@
     </div>
 
     <style>
+      .chat-container {
+        width: 100%;
+        max-width: 500px;
+        background-color: var(--primary-color);
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-color); /* Optional: to visualize the centering */
+      }
+
+      #output-field{
+          color: var(--secondary-color);
+      }
+
+      #icon{
+          width: 30px;
+          cursor: pointer;
+          position: absolute;
+          right: 125px;
+          top: 50px;
+      }
+
+      :root{
+        --bg-color: #eef4f9;
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+      }
+      .dark-theme{
+        --bg-color: #afb1b2;
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+      }
 
 .chat-container {
     display: flex;
@@ -177,9 +213,10 @@ body {
 .message {
     font-size: 1rem;
     margin: 0.5rem 0;
-}
 
     </style>
+
+
 
     <script type="importmap">
       {
@@ -434,6 +471,18 @@ body {
 
     </script>
     <script>
+      var icon=document.getElementById("icon");
+
+    icon.onclick = function() {
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+      icon.src="images/sun.png";
+    }
+    else{
+      icon.src="images/moon.png";
+    }
+  }
+
       var loader = document.getElementById("Loader");
       window.addEventListener("load", function () {
         loader.style.display = "none";

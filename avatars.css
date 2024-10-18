@@ -19,7 +19,7 @@
 .row{
     /* max-width: 30vw; */
     /* max-height: 80vh; */
-    border: 2px solid rgb(17, 15, 59);
+    border: 2px solid var(--secondary-color);
     border-radius: 10px;
     padding: 13px;
     display: flex;
@@ -34,9 +34,13 @@
     border-radius: 7px;
 }
 .row h1{
-    color: #095555;
-    
+    color: var(--ternary-color);   
 }
+
+.row p{
+    color: var(--secondary-color);
+}
+
 .row button{
     color: white;
     /* border-image: linear-gradient(to right,#3acfd5 0%,#3a4ed5 100% )1;
@@ -241,3 +245,19 @@
     }
    
   }
+
+  #icon{
+    width: 30px;
+    cursor: pointer;
+}
+
+:root{
+  --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+  --secondary-color: #0e0e0e;
+  --ternary-color: #095555;
+}
+.dark-theme{
+  --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+  --secondary-color: #fff;
+  --ternary-color: #ab9353;
+}
