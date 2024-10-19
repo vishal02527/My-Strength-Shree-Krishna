@@ -1,0 +1,149 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #bfcf82, #f0f8ff); /* Gradient background */
+}
+
+/* Heading Section */
+.heading {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: rgba(240, 248, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.heading h1 {
+    font-size: 42px;
+    color: #00509e;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    margin: 0;
+    background: -webkit-linear-gradient(#ff6f61, #ff9a85);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Prasadam Section */
+.prasadam-section {
+    text-align: center;
+    padding: 60px;
+    background-color: #ffffff;
+    background: linear-gradient(to right, #ffffff, #f9f9f9); /* Soft gradient for section */
+    border-radius: 20px;
+    margin: 30px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+/* Recipe Cards Layout */
+.recipe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+/* Recipe Cards */
+.recipe-card {
+    background-color: #9db683;
+    border-radius: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Image Styling within Recipe Cards */
+.recipe-card img {
+    width: 100%;                      /* Ensures the image takes full width of its container */
+    height: 200px;                    /* Sets a fixed height for all images */
+    object-fit: cover;                /* Ensures the image covers the entire area without stretching */
+    border-radius: 10px;              /* Adds rounded corners to the image */
+    margin-bottom: 15px;              /* Adds space below the image */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the image */
+}
+
+/* Recipe Cards Hover Effect */
+.recipe-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effect for the image itself */
+.recipe-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+
+/* Card Titles */
+.recipe-card h3 {
+    color: #ff6f61;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Card Text */
+.recipe-card p {
+    color: #444;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-card {
+        max-width: 100%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    img {
+        max-width: 90%;            /* Reduces the size of the image on smaller screens */
+    }
+}
+
+ #homeBtn {
+    background-color: #4caf50; /* Green button */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+#homeBtn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Additional styles for mobile responsiveness */
+@media (max-width: 600px) {
+            
+#homeBtn{
+    font-size: 16px;
+    padding: 10px;
+    }
+}
+    
