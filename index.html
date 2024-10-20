@@ -242,18 +242,24 @@
     font-weight: bold;
     line-height: 1.3em;
 }
-.slider .list .item .content .description{
+
+
+ .slider .list .item .content .description{
   margin-top: 60px;
   color: yellow;
   font-size: 2em;
   font-style: italic;
   font-weight: bold;
+  opacity: 1;
 
 }
 
 .slider .list .item .type{
     color: orangered;
-}
+} 
+
+
+
 .slider .list .item .button{
     display: grid;
     grid-template-columns: repeat(2, 130px);
@@ -356,8 +362,8 @@
 .slider .list .item:nth-child(1) .content .buttons
 {
     transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
+    filter: blur(40px);
+    opacity: 2;
     animation: showContent .5s 1s linear 1 forwards;
 }
 @keyframes showContent{
