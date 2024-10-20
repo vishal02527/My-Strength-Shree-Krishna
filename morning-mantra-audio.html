@@ -23,8 +23,8 @@
       }
       .scroll-top-btn {
         position: fixed; /* Fixed position */
-        bottom: 30px; 
-        right: 30px; 
+        bottom: 30px;
+        right: 30px;
         background-color: #330867;
         color: white;
         border: none;
@@ -423,7 +423,7 @@
             Krishna. Feel the positive energy and tranquility with each mantra.
           </p>
           <div class="audioBtnDiv">
-            <audio controls>
+            <audio class="mantra-audio" controls>
               <source
                 src="./audios/Soothing-Krishna-Chants.mp3"
                 type="audio/mpeg"
@@ -448,7 +448,7 @@
             serenity. Let the divine vibrations guide you through your day.
           </p>
           <div class="audioBtnDiv">
-            <audio controls>
+            <audio class="mantra-audio" controls>
               <source src="./audios/morning-bliss.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
@@ -465,7 +465,7 @@
             flute.
           </p>
           <div class="audioBtnDiv">
-            <audio controls>
+            <audio class="mantra-audio" controls>
               <source
                 src="./audios/Krishna-Relaxing-Flute.mp3"
                 type="audio/mpeg"
@@ -490,7 +490,7 @@
             positivity and divine blessings. Enhance your spiritual experience.
           </p>
           <div class="audioBtnDiv">
-            <audio controls>
+            <audio class="mantra-audio" controls>
               <source
                 src="./audios/Radiant-Krishna-Arti.mp3"
                 type="audio/mpeg"
@@ -512,7 +512,7 @@
           <h2>Sri Krishna Ashtakam</h2>
           <p>Listen to this powerfull and devine Krishna Ashtakam.</p>
           <div class="audioBtnDiv">
-            <audio controls>
+            <audio class="mantra-audio" controls>
               <source
                 src="./audios/Sri-Krishna-Ashtakam.mp3"
                 type="audio/mpeg"
@@ -586,6 +586,21 @@
       scrollTopBtn.onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
       };
+
+      // Get all audio elements
+        const audioElements = document.querySelectorAll('.mantra-audio');
+
+        audioElements.forEach(audio => {
+            audio.addEventListener('play', () => {
+                // Pause all other audio elements when one is played
+                audioElements.forEach(otherAudio => {
+                    if (otherAudio !== audio) {
+                        otherAudio.pause();
+                    }
+                });
+            });
+        });
+
     </script>
   </body>
 </html>
