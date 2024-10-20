@@ -1347,10 +1347,16 @@
 
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      window.addEventListener('load',()=>  {
+        const year=document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+    </script>
 
     <script>
       window.onscroll = function () {
