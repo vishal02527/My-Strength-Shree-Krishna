@@ -43,11 +43,17 @@ body {
 
 /* Recipe Cards Layout */
 .recipe-container {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     justify-items: center;
-    padding: 0 20px;
+    padding: 0 20px; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 0 auto;
+    padding: 25px;
 }
 
 /* Recipe Cards */
