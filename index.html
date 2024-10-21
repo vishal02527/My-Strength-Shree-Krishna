@@ -60,6 +60,10 @@
         padding: 0;
         margin: 0;
         overflow-x: hidden;
+        
+
+        
+       
       }
       .scroll-top-btn {
         position: fixed; 
@@ -141,20 +145,17 @@
         background-position: right center;
       }
       .krishna-image {
-        margin: 10px 0px 10px 550px;
-        width: 27%;
+        width: 70%;
         height: 480px;
         border-radius: 15px;
+        padding-left: 80px;
         transition: opacity 5s ease-in-out;
+        /* margin: 10px 0px 10px 550px;*/
       }
       .krishna-image.fade {
         opacity: 0;
       }
-      .indexMain p {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #444;
-      }
+      
 
       h1,
       h2 {
@@ -165,9 +166,7 @@
         .header {
           padding: 10px;
         }
-        .indexMain .headDiv h1 {
-          font-size: 20px;
-        }
+        
         .content {
           width: 90%;
           margin: 80px auto;
@@ -183,11 +182,11 @@
           font-size: 14px;
           margin: 10px;
         }
-        .krishna-image {
+        /* .krishna-image {
           margin: 10px 0px 0px 22px;
           width: 85%;
           height: 350px;
-        }
+        } */
         .content p {
           font-size: 14px;
         }
@@ -686,6 +685,89 @@
           font-size: 20px;
         }
       }
+      .headDiv {
+            display: flex;
+        }
+      .Intro {
+        margin-top: 10px;
+          flex: 1; /* Optional: This makes both elements take equal width */
+          padding: 10px;
+          margin: 5px;
+      }
+      .Intro h1{
+        margin-left:120px;
+        background-color: white;
+        padding:10px;
+      }
+      .Intro p{
+        margin-left:120px;
+        background-color: white;
+        padding:50px;
+      }
+      .indexMain p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #444;
+      }
+      
+
+  .button-container {
+    margin-left: 29%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 buttons per row */
+    grid-gap: 20px; /* Space between buttons */
+    max-width: 600px; /* Maximum width for the layout */
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for a modern look */
+    /* background-color: #fff; White background for the button container */
+    border-radius: 10px; /* Rounded corners for the container */
+}
+
+/* Button Styles */
+.custom-button {
+    width:100px;
+    height: 100px;
+    
+    /* color: white; Button text color */
+    border: none;
+  
+    text-align: center;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover effect */
+.custom-button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .button-container {
+        grid-template-columns: 1fr 1fr; /* 2 buttons per row for smaller screens */
+    }
+}
+
+.read-more{
+  padding: 5px;
+  background-color: ;
+}
+
+.name{
+  padding-top: 0%;
+  margin-left:20px;
+}
+
+.button-container a{
+  text-decoration: none;
+}
+
+      
       /* faq css end */
     </style>
   </head>
@@ -702,16 +784,9 @@
           <div class="navbar-up">
             <a href="scriptures.html">Scriptures</a>
             <a href="gallery.html">Gallery</a>
-            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
-            
-         <a href="quiz.html">Quiz</a>
-         <a href="DIgital.html">DigitalResources</a>
-         <a href="Personalized.html">ToDoList</a>
-         <a href="Feedback.html">Feedbackform</a>
-         <a href="partner.html">Partner</a>
-         <a href="avatars.html">Avatars</a>
-
+            <a href="avatars.html">Avatars</a>
+            <a href="temple.html">Temples</a>
           </div>
         </div>
         <form class="searchForm">
@@ -728,14 +803,38 @@
     </div>
     <div class="indexMain">
       <div class="headDiv">
-        <h1>Shree Krishna - My Strength</h1>
-        <img
-          src="./images/krishna-home-image.jpg"
-          id="krishnaImage"
-          class="krishna-image"
-          alt="Shree Krishna"
-        />
+        <div class="Intro">
+          <h1>Shree Krishna - My Strength</h1>
+          <p>Lord Krishna, a central figure in Hinduism, is the eighth incarnation of Lord Vishnu and is revered as the Supreme God in many traditions. Born in Mathura to Devaki and Vasudeva, he played a pivotal role in the Mahabharata, guiding the Pandavas and delivering the Bhagavad Gita's spiritual teachings to Arjuna. Krishna is known for his divine love with Radha, his mischievous childhood tales in Vrindavan, and his role as a protector and friend. Representing love, wisdom, and devotion, Krishna's life and teachings continue to inspire millions, symbolizing the triumph of good over evil.<br><a class="read-more" href="life.html">Read more.....</a></p>
+          
+        </div>
+        <div class="Intro">
+          <img
+            src="./images/krishna-home-image.jpg"
+            id="krishnaImage"
+            class="krishna-image"
+            alt="Shree Krishna"
+          />
+        </div>
       </div>
+
+
+      
+
+      <div class="button-container">
+        
+        
+        <a href="fest.html"><img class="custom-button"src="images/festival.png"><p class="name">Festivals</p></a>
+        <a href="#" onclick="showLoginForm()"><img class="custom-button"src="images/Discussion.png"><p class="name">Bhakti Forum</p></a>
+        <a href="quiz.html"><img class="custom-button"src="images/quiz.png"><p class="name">Quiz</p></a>
+        <a href="Personalized.html"><img class="custom-button"src="images/TODO.png"><p class="name">TO-DO-LIST</p></a>
+        <a href="Feedback.html"><img class="custom-button"src="images/feedback.png"><p class="name">Feedback</p></a>
+        <a href="partner.html"><img class="custom-button"src="images/Partner.png"><p class="name">Partner</p></a>
+        <a href="DIgital.html"><img class="custom-button"src="images/resourse.png"><p class="name"></p>Resources</p></a>
+        <a href="stories.html"><img class="custom-button"src="images/stories.png"><p class="name">Stories</p></a>
+    </div>
+
+
       <div id="translateBtnDiv">
         <button onclick="toggleLanguage()" id="translateBtn">
           हिंदी में पढ़ें

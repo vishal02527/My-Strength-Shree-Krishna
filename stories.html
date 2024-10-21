@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Navigation</title>
+    
+
+<style>
+
+body{
+  font-family: Arial, sans-serif;
+  background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+  overflow-x: hidden;
+  color:#444444;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+
+.heading{
+  
+  font-size: 22px;
+
+  text-align: center;
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+
+h2{
+  color:#ab9353;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+.content p {
+  font-size: 16px;
+  }
+
+.content h1::selection,
+p::selection,
+h2::selection {
+  background-color: rgb(237, 204, 133);
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .content-div {
+            display: none;
+            padding: 20px;
+            
+            border: 1px solid #ccc;
+        
+            width: 90%;
+  
+  padding: 10px 15px;
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .active {
+            display: block;
+        }
+
+        .button-container {
+            margin-top: 10px;
+            align-items: center;
+            margin-left: 46%;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 class="heading">Krishna's Stories</h1>
+
+    <div id="div1" class="content-div active">
+        <h1> Krishna and the Churning of Butter</h1>
+        <p>One day, little Krishna was caught stealing butter from the village houses. Mother Yashoda tied him to a wooden mortar as punishment. Despite being bound, Krishna managed to drag the heavy mortar between two trees, causing them to crash down, freeing two divine beings who had been cursed into tree form.</p>
+
+        <h2>Lesson:</h2><p> Even in difficult circumstances, one can find liberation and growth. Obstacles may lead to new opportunities, and kindness can set others free from their struggles.</p>
+    </div>
+
+    <div id="div2" class="content-div">
+        <h1> Krishna and the Fruit Seller</h1>
+        <p>As a young boy, Krishna once saw a fruit seller in his village. He ran inside his home and brought a handful of grains in exchange for fruit. But by the time he reached her, most of the grains had slipped through his fingers. Despite this, the fruit seller gave him all her fruits with a smile. Later, she found her basket filled with precious jewels as a divine blessing.</p>
+
+        <h2>Lesson: </h2><p>Acts of selfless kindness and generosity often bring unexpected rewards. Giving without expectation leads to divine grace.</p>
+
+
+    </div>
+
+    <div id="div3" class="content-div">
+       <h1> Krishna and the Broken Pot</h1>
+        <p>Young Krishna loved butter and would often steal it with his friends. Once, Mother Yashoda caught him eating butter from a pot. To teach him a lesson, she scolded him, but Krishna’s innocent eyes and mischievous smile softened her heart. Krishna promised not to steal again, but he kept his playful nature alive.</p>
+
+    <h2> Lesson: </h2><p>Innocence and mischief can coexist with love and understanding. When dealing with children or others, patience and compassion can guide them in the right direction.</p>
+
+
+    </div>
+
+    <div id="div3" class="content-div">
+        <h1> Krishna Lifting the Govardhan Hill</h1>
+        <p>When the people of Vrindavan prepared to worship the rain god, Indra, Krishna encouraged them to instead worship Mount Govardhan for providing shelter and resources. Angered by this, Indra sent heavy rains to destroy the village. Krishna then lifted the Govardhan Hill with his little finger to protect everyone from the storm.</p>
+        
+        <h2>Lesson:</h2><p> Faith in one's inner strength and wisdom can overcome even the greatest challenges. By taking a stand for what is right, one can protect and serve others without fear.</p>
+        
+        
+    </div>
+
+    <div id="div3" class="content-div">
+       <h1>The Kaliya Serpent</h1>
+        <p>The Yamuna River in Vrindavan was once poisoned by a multi-headed serpent, Kaliya. The villagers were terrified as the serpent’s venom killed livestock and turned the water toxic. Krishna fearlessly jumped into the river and danced on Kaliya’s heads, subduing him without killing him. Kaliya begged for mercy, and Krishna ordered him to leave the river forever, restoring peace.</p>
+
+        <h2>Lesson: </h2><p>Courage and compassion go hand in hand. While it's important to stand up to evil, it is equally important to offer mercy and a chance for redemption.</p>
+    </div>
+
+    <div class="button-container">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        // Get all the divs
+        const divs = document.querySelectorAll('.content-div');
+        let currentIndex = 0;
+
+        // Function to show the current div and hide the others
+        function showDiv(index) {
+            divs.forEach((div, i) => {
+                div.classList.remove('active');
+                if (i === index) {
+                    div.classList.add('active');
+                }
+            });
+        }
+
+        // Next button click event
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % divs.length;
+            showDiv(currentIndex);
+        });
+
+        // Previous button click event
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + divs.length) % divs.length;
+            showDiv(currentIndex);
+        });
+    </script>
+
+</body>
+</html>
