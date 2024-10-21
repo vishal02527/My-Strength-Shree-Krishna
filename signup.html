@@ -231,8 +231,14 @@
             </form>
         </div>
         <footer>
-            <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
+            <p>&copy; <span  id="cyear"></span> Krishna Bhakti Forum. All rights reserved.</p>
         </footer>
+        <script>
+            window.addEventListener('load',()=>  {
+              const year= document.getElementById('cyear');
+              year.innerHTML=new Date().getFullYear();
+            });
+        </script>
     </div>
 
 
