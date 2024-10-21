@@ -91,14 +91,46 @@
       }
 
       .header {
-        text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0px 6px 10px #ccc;
-      }
+  text-align: center;
+  background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+  padding: 20px 20px; /* Increased padding for more space */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0px 6px 10px #ccc;
+  min-height: 80px; /* Added minimum height */
+}
+
+.navigation {
+  display: flex;
+  justify-content: center; /* Center the nav links */
+  align-items: center;
+}
+
+.navigation .navbar-up {
+  display: flex;
+  gap: 15px; /* Add some gap between nav links */
+  flex-wrap: wrap; /* Allow wrapping if content is too wide */
+  margin-top: 10px; /* Added margin to prevent overlap */
+}
+
+.navigation .navbar-up a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: ease-in 0.3s;
+  border: 2px solid #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.navigation .navbar-up a:hover {
+  color: rgb(250, 219, 153);
+  border: 2px solid rgb(250, 219, 153);
+}
+
       .indexMain .headDiv h1 {
         margin-top: 40px;
         text-align: center;
@@ -477,7 +509,7 @@
           margin-right: 0 !important;
         }
         .navbar .navbar-up {
-          gap: 20px;
+          gap: 10px;
           display: flex;
         }
 
