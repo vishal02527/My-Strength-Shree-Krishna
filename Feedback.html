@@ -143,7 +143,13 @@
         </form>
     </div>
     <footer>
-        <p>&copy; Shree Krishna - My Strength. All rights reserved.</p>
+        <p>&copy;<span  id="cyear"></span> Shree Krishna - My Strength. All rights reserved.</p>
     </footer>
+    <script>
+        window.addEventListener('load',()=>  {
+          const year= document.getElementById('cyear');
+          year.innerHTML=new Date().getFullYear();
+        });
+      </script>
 </body>
 </html>

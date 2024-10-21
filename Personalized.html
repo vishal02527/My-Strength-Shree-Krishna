@@ -153,8 +153,14 @@
     <button class="home-button" onclick="goHome()">Home</button> <!-- Home button -->
 
     <footer>
-        &copy; Shree Krishna - My Strength. All rights reserved.
+        &copy;<span  id="cyear"></span> Shree Krishna - My Strength. All rights reserved.
     </footer>
+    <script>
+        window.addEventListener('load',()=>  {
+          const year= document.getElementById('cyear');
+          year.innerHTML=new Date().getFullYear();
+        });
+    </script>
 
     <script>
         // JavaScript to handle form submission and display the tasks

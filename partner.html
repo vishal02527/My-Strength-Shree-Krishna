@@ -90,8 +90,14 @@
         <button class="home-button" onclick="window.location.href='index.html'">Home</button>
 
         <footer>
-            &copy; Shree Krishna - My Strength. All rights reserved.
+            &copy;<span  id="cyear"></span> Shree Krishna - My Strength. All rights reserved.
         </footer>
+        <script>
+            window.addEventListener('load',()=>  {
+              const year= document.getElementById('cyear');
+              year.innerHTML=new Date().getFullYear();
+            });
+        </script>
     </div>
 </body>
 </html>
