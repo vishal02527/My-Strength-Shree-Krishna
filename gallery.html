@@ -9,54 +9,17 @@
       crossorigin="anonymous"
     ></script>
     <style>
-
-.chatbot-container {
-        position: fixed;
-        bottom: 20px; /* Adjust as needed */
-        right: 90px; /* Adjust as needed */
-        z-index: 1000; /* Ensure it appears above other elements */
-      }
-
-      .chatbot-button {
-        border: none;
-        border-radius: 50%;
-        padding: 5px; /* Smaller padding */
-        cursor: pointer;
-        position: relative;
-        width: 50px; /* Adjusted size */
-        height: 50px; /* Adjusted size */
-      }
-
-      .chatbot-button img {
-        width: 30px; /* Adjusted image size */
-        height: 30px; /* Adjusted image size */
-      }
-
-      .tooltip-text {
-        display: none; /* Hide by default */
-        position: absolute;
-        bottom: 100%; /* Position above the button */
-        right: 50%;
-        transform: translateX(50%);
-        background-color: #333; /* Background color for tooltip */
-        color: #fff; /* Tooltip text color */
-        padding: 5px;
-        border-radius: 5px;
-        white-space: nowrap; /* Prevent text from wrapping */
-      }
-
-      .chatbot-button:hover .tooltip-text {
-        display: block; /* Show on hover */
-      }
-
+      /* General body styling */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        padding: 0;
+        background-size: cover;
         margin: 0;
         color: #333;
         overflow-x: hidden;
       }
+
+      /* Enhancing the scroll-top button */
       .scroll-top-btn {
         position: fixed;
         bottom: 30px;
@@ -66,17 +29,21 @@
         border: none;
         padding: 10px 15px;
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 50%;
         display: none;
         z-index: 1000;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
       }
 
       .scroll-top-btn:hover {
-        background-color: #330867;
+        background-color: #30cfd0;
       }
+
       .content {
-        padding: 20px 20px 100px;
+        padding: 20px;
       }
+
       h1 {
         text-align: center;
         font-size: 36px;
@@ -86,139 +53,75 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
+      /* Responsive image container styling */
       .image-container {
-        margin: 40px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
       }
 
-      html {
-        background-image: linear-gradient(#eee, #aaa);
-        height: 100%;
-      }
-
-      .img {
-        border: solid 2px;
-        border-bottom-color: rgb(233, 233, 145);
-        border-left-color: #eed;
-        border-right-color: #eed;
-        border-top-color: #ccb;
-        max-height: 90%; /* Limit height to leave some space */
-        max-width: 100%;
-        margin-top: 10px; /* Add a gap at the top */
-        margin-bottom: 10px; /* Add a gap at the bottom */
-        box-sizing: border-box;
-      }
-
+      /* Styling for individual image cards */
       .image-card {
-        background-color: #ddc;
-        border: solid 5vmin #eee;
-        border-bottom-color: #fff;
-        border-left-color: #eee;
-        border-radius: 2px;
-        border-right-color: #eee;
-        border-top-color: #ddd;
-        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset,
-          0 5px 10px 5px rgba(0, 0, 0, 0.25);
-        box-sizing: border-box;
-        display: flex; /* Flexbox to center image */
-        justify-content: center; /* Horizontally center the image */
-        align-items: center; /* Vertically center the image */
-        margin: 10vh 10vw;
-        height: 80vh;
-        padding: 8vmin;
         position: relative;
-        text-align: center;
-      }
-
-      .image-card:before {
-        border-radius: 2px;
-        bottom: -2vmin;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
-        content: "";
-        left: -2vmin;
-        position: absolute;
-        right: -2vmin;
-        top: -2vmin;
-      }
-
-      .image-card:after {
-        border-radius: 2px;
-        bottom: -2.5vmin;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
-        content: "";
-        left: -2.5vmin;
-        position: absolute;
-        right: -2.5vmin;
-        top: -2.5vmin;
-      }
-
-      /* New responsive rules */
-      @media (max-width: 768px) {
-        .image-card {
-          margin: 5vh 5vw;
-          height: 60vh;
-        }
-
-        .img {
-          margin-top: 5px; /* Smaller gap for small screens */
-          margin-bottom: 5px; /* Smaller gap for small screens */
-        }
-      }
-
-      .image-card {
-        margin: 15px;
-        border-radius: 10px;
-        height: 400px;
         overflow: hidden;
+        border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         cursor: pointer;
-        transition: transform 0.3s ease-in-out;
       }
-      .image-card:hover {
-        transform: scale(1.08);
-      }
+
       .image-card img {
-        width: 320px;
-        height: 400px;
+        width: 100%;
+        height: 100%;
         border-radius: 10px;
         transition: transform 0.3s ease-in-out;
+        object-fit: cover;
       }
+
+      .image-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      }
+
       .image-card:hover img {
         transform: scale(1.1);
       }
 
-      /* Lightbox Styles */
+      /* Lightbox styling for larger images */
       .lightbox {
         display: none;
         position: fixed;
-        top: 50px;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.9);
         justify-content: center;
         align-items: center;
         z-index: 10;
       }
+
       .lightbox img {
         max-width: 80%;
         max-height: 80%;
         border-radius: 10px;
       }
+
       .close-btn {
         position: absolute;
-        top: 50px;
-        right: 20px;
+        top: 20px;
+        right: 30px;
         cursor: pointer;
         font-size: 30px;
         color: #fff;
       }
 
+      /* Navigation bar styling */
       .galleryMain {
         text-align: center;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        background: rgba(255, 255, 255, 0.9);
         padding: 10px 20px;
         position: sticky;
         top: 0;
@@ -227,554 +130,248 @@
       }
 
       .navigation {
-        padding: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 10px;
       }
 
       .navigation .homeDiv #homeBtn {
+        display: flex;
         align-items: center;
-        background-image: linear-gradient(
-          144deg,
-          #af40ff,
-          #5b42f3 50%,
-          #00ddeb
-        );
+        background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
         border: 0;
         border-radius: 8px;
         box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        font-family: Phantomsans, sans-serif;
-        justify-content: center;
-        line-height: 0.8em;
-        max-width: 100%;
-        min-width: 110px;
-        padding: 3px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
         text-decoration: none;
         cursor: pointer;
+        transition: background 0.3s ease;
       }
 
-      .navigation .homeDiv #homeBtn:active,
       .navigation .homeDiv #homeBtn:hover {
-        outline: 0;
+        background: linear-gradient(144deg, #5b42f3, #00ddeb 50%, #af40ff);
       }
 
-      .navigation .homeDiv #homeBtn a {
-        background-color: rgb(5, 6, 45);
-        color: #fff;
-        font-size: 16px;
-        padding: 16px 24px;
-        border-radius: 6px;
-        width: 100%;
-        height: 100%;
-        transition: 300ms;
-        text-decoration: none;
-      }
-
-      .navigation .homeDiv #homeBtn:hover a {
-        background: none;
-      }
-
+      /* Navbar links styling */
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 5px;
         font-size: 16px;
         font-weight: 500;
-        transition: ease-in 0.3s;
+        margin: 0 15px;
+        padding: 10px 20px;
         border: 2px solid #fff;
-        padding: 10px 15px;
         border-radius: 20px;
+        transition: all 0.3s ease;
       }
+
       .navigation .navbar a:hover {
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
       }
-      #active {
-        color: rgb(250, 219, 153);
-        border: 2px solid rgb(250, 219, 153);
-      }
 
-      .searchInput {
-        box-sizing: border-box;
-        width: 300px;
-        height: 35px;
-        padding: 5px 20px;
-        border-radius: 50px;
-        border: 0;
-      }
-      .searchInput:focus {
-        outline: 0;
-      }
-      .searchForm button {
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        position: relative;
-        top: 2px;
-        right: 55px;
-      }
-      .searchForm button i {
-        color: #555;
-        padding: 9px 15px;
-
-        font-size: 16px;
-        cursor: pointer;
-        transition: linear 0.16s;
-      }
-      .searchForm button i:hover {
-        color: #23d1c8;
-      }
-
+      /* Footer Styling */
       footer {
-  background-color: #1c3d5a;
-  color: #ffffff;
-  padding: 40px 0; /* Increased padding for more space */
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  width: 100%;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between; /* Spread items evenly across the footer */
-  align-items: flex-start;
-  flex-wrap: wrap; /* Ensure responsiveness */
-  padding: 0 50px;
-  max-width: 1200px; /* Limit max width to keep it centered */
-  margin: 0 auto;
-}
-
-.footer-section {
-  flex: 1;
-  margin: 20px; /* Add margin for spacing between sections */
-  min-width: 220px; /* Minimum width for smaller screens */
-}
-
-.footer-section h3 {
-  font-size: 24px; /* Increased the heading size */
-  margin-bottom: 15px;
-  color: #f0c43f; /* Gold color */
-}
-
-/* Quick Links Styling */
-.footer-links {
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-links li {
-  margin-bottom: 12px; /* Spacing between links */
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px; /* Increased font size for better readability */
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #fce4a6; /* Lighter gold on hover */
-}
-
-/* Faith Statement Section */
-.statement .faith-statement {
-  line-height: 1.6;
-  margin-bottom: 10px;
-  color: #fff;
-  max-height: 70px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: max-height 0.3s ease-in-out;
-}
-
-.read-more {
-  color: #f4d35e;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-/* Social Icons Styling */
-.social-icons {
-  display: flex;
-}
-
-.social-icons a {
-  color: #ffffff;
-  font-size: 26px; /* Increased icon size */
-  margin-right: 15px; /* Spacing between icons */
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #f0c43f;
-}
-
-/* Footer Bottom Section */
-.creatorDiv {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  padding: 10px;
-  border-top: 1px solid #ffffff44; /* Subtle border for separation */
-}
-
-.creatorDiv p {
-  margin: 0;
-}
-
-
-
-
-
-
-
-.caption {
-  margin-top: 35px;
-  margin-bottom: 25px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 30px;
-  font-style: italic;
-  color: #e67e22; 
-  font-family: 'Playfair Display', serif;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); 
-  letter-spacing: 2px;
-  line-height: 1.5;
-  transition: all 0.3s ease;
-}
-
-.caption:hover {
-  color: #d35400;
-  transform: scale(1.05); 
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); 
-  cursor: pointer;
-}
-
-
-      .caption::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
+        background-color: #1c3d5a;
+        color: #ffffff;
+        padding: 40px 20px;
+        font-family: "Poppins", sans-serif;
+        width: 100%;
       }
 
-      /* Responsive Styles */
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-      @media (max-width: 980px) {
-        .galleryMain {
-          position: unset;
-        }
-        h1 {
-          font-size: 22px;
-        }
-        .image-card {
-          width: 280px;
-          height: 300px;
-          margin: 0;
-        }
-        .caption {
-          margin-top: 20px;
-          margin-bottom: 15px;
-          font-size: 14px;
-        }
-        .image-card img {
-          width: 100%;
-          height: 300px;
-        }
-        .lightbox {
-          top: 0;
-          left: -20px;
-        }
-        .close-btn {
-          top: 40px;
-          right: 40px;
-        }
-        .navigation {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+      .footer-section {
+        flex: 1;
+        margin: 20px;
+        min-width: 220px;
+      }
 
-        .navbar .navbar-up {
-          display: flex;
-          flex-direction: column;
-        }
-        .navigation .navbar {
-          display: flex;
-        }
+      .footer-section h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #f0c43f;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #fce4a6;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+      }
+
+      .social-icons a {
+        color: #ffffff;
+        font-size: 24px;
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #f0c43f;
+      }
+
+      /* Responsive design improvements */
+      @media (max-width: 768px) {
         .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 14px;
+          padding: 10px;
+          margin: 0 5px;
         }
-        .navigation .homeDiv #homeBtn {
-          min-width: 80px;
+
+        .scroll-top-btn {
+          bottom: 15px;
+          right: 15px;
         }
-        .navigation .homeDiv #homeBtn a {
-          font-size: 14px;
-        }
-        .searchForm button {
-          top: -34px;
-          right: -10px;
-        }
-        .searchForm {
-          margin-top: 10px;
-          margin-bottom: -35px;
-          display: contents;
-        }
-        .searchForm button i {
-          margin-left: 15rem;
+
+        .image-card {
+          height: auto;
         }
 
         .footer-content {
           flex-direction: column;
           align-items: center;
         }
-        .footer-section p {
-          font-size: 14px;
-        }
-        .social-icons a i {
-          font-size: 22px;
-          margin: 5px;
-        }
-        .footer-section {
-          margin-bottom: 0;
-        }
-        .creatorDiv {
-          margin-top: 20px;
-          margin-right: 30px;
-        }
-        .creatorDiv p {
-          font-size: 12px;
-        }
       }
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn">
-      <i class="fas fa-arrow-up"></i>
-    </button>
+    <!-- Navigation and Header -->
     <div class="galleryMain">
       <div class="navigation">
         <div class="homeDiv">
-          <button id="homeBtn"><a href="./index.html">Home</a></button>
+          <button id="homeBtn"><a href="#">Home</a></button>
         </div>
-
         <div class="navbar">
-          <div class="navbar-up">
-            <a href="scriptures.html">Scriptures</a>
-            <a href="gallery.html" id="active">Gallery</a>
-            <a href="signup.html">Discussion Forum</a>
-            <a href="devotional-resources.html">Devotional Resources</a>
-            <a href="avatars.html">Avatars</a>
-          </div>
+          <a href="#about">About</a>
+          <a href="#gallery" id="active">Gallery</a>
+          <a href="#contact">Contact</a>
         </div>
         <form class="searchForm">
-          <input
-            type="text"
-            class="searchInput"
-            placeholder="Search all the content"
-          />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" class="searchInput" placeholder="Search..." />
+          <button type="submit">
+            <i class="fa fa-search"></i>
+          </button>
         </form>
       </div>
     </div>
+
+    <!-- Main Content -->
     <div class="content">
-      <h1>Gallery - Shree Krishna</h1>
-
-      <div class="image-container">
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img1.jpg')"
-          >
-            <img src="./images/krishna-img1.jpg" alt="Shree Krishna Image 1" />
-          </div>
-          <div class="caption">Shree Krishna</div>
+      <h1>Gallery of Shree Krishna</h1>
+      <div class="image-container" id="gallery">
+        <div class="image-card">
+          <img src="https://via.placeholder.com/320x400" alt="Image 1" />
         </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img9.jpg')"
-          >
-            <img src="./images/krishna-img9.jpg" alt="Shree Krishna Image 2" />
-          </div>
-          <div class="caption">Shree Radhavallabh Ji</div>
+        <div class="image-card">
+          <img src="https://via.placeholder.com/320x400" alt="Image 2" />
         </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img10.jpg')"
-          >
-            <img src="./images/krishna-img10.jpg" alt="Shree Krishna Image 3" />
-          </div>
-          <div class="caption">Shree Radha Raman Ji</div>
+        <div class="image-card">
+          <img src="https://via.placeholder.com/320x400" alt="Image 3" />
         </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img4.jpg')"
-          >
-            <img src="./images/krishna-img4.jpg" alt="Shree Krishna Image 4" />
-          </div>
-          <div class="caption">Shree Banke Bihari Ji</div>
+        <div class="image-card">
+          <img src="https://via.placeholder.com/320x400" alt="Image 4" />
         </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img5.jpg')"
-          >
-            <img src="./images/krishna-img5.jpg" alt="Shree Krishna Image 5" />
-          </div>
-          <div class="caption">Shree Govind Dev Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img6.jpg')"
-          >
-            <img src="./images/krishna-img6.jpg" alt="Shree Krishna Image 6" />
-          </div>
-          <div class="caption">Shree Radha Krishna Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img7.jpg')"
-          >
-            <img src="./images/krishna-img7.jpg" alt="Shree Krishna Image 7" />
-          </div>
-          <div class="caption">Shree Yugal Kishor Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img8.jpg')"
-          >
-            <img src="./images/krishna-img8.jpg" alt="Shree Krishna Image 8" />
-          </div>
-          <div class="caption">Shree Panduranga Vitthal Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img11.jpg')"
-          >
-            <img
-              src="./images/krishna-img11.jpg"
-              alt="Shree Krishna Image 11"
-            />
-          </div>
-          <div class="caption">Shree Nath Ji</div>
-        </div>
-        <div>
-          <div
-            class="image-card"
-            onclick="openLightbox('./images/krishna-img12.jpg')"
-          >
-            <img
-              src="./images/krishna-img12.jpg"
-              alt="Shree Krishna Image 12"
-            />
-          </div>
-          <div class="caption">Shree Dwarkadhish Ji</div>
-        </div>
-      </div>
-
-      <!-- Lightbox Container -->
-      <div class="lightbox" onclick="closeLightbox()">
-        <span class="close-btn">&times;</span>
-        <img id="lightbox-img" src="" alt="Lightbox Image" />
       </div>
     </div>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn">
+      <i class="fa fa-arrow-up"></i>
+    </button>
 
+    <!-- Footer -->
     <footer>
       <div class="footer-content">
-        <div class="footer-section statement ">
-          <h3>Statement on Faith </h3>
-          <p class="faith-statement">
-            Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
-        
+        <div class="footer-section about">
+          <h3>About Lord Krishna</h3>
+          <p>
+            Lord Krishna is one of the most revered and beloved deities in
+            Hinduism. Known for his wisdom and playfulness, his teachings in
+            the Bhagavad Gita inspire millions.
           </p>
-          <a href="devotional-resources.html" class="read-more">Read More</a>
         </div>
-        <div class="footer-section">
+        <div class="footer-section quick-links">
           <h3>Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="scriptures.html">Scriptures</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
-            <li><a href="devotional-resources.html">Devotional Resources</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: +1 234 567 890</p>
-        </div>
-
-        <div class="footer-section">
+        <div class="footer-section social">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="https://github.com/vishal02527" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-      </div>
-      <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
       </div>
     </footer>
 
-      <!-- Chatbot code added here -->
-  <a href="chatbot.html">
-    <div class="fixed bottom-0 right-2 chatbot-container">
-      <button class="chatbot-button group">
-        <img class="h-20" src="panditji.png" alt="chatbot" />
-        <span class="tooltip-text">
-          Radhe Radhe🙏<br />
-          How can I help You?🌸
-        </span>
-      </button>
-    </div>
-  </a>
-
-    <script src="script.js"></script>
+    <!-- JavaScript for Scroll to Top Button -->
     <script>
-      window.onscroll = function () {
-        toggleScrollTopButton();
-      };
-
       const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-      function toggleScrollTopButton() {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollTopBtn.style.display = "block"; // Show button after scrolling down
+      window.onscroll = function () {
+        if (window.scrollY > 300) {
+          scrollTopBtn.style.display = "block";
         } else {
-          scrollTopBtn.style.display = "none"; // Hide button when at the top
+          scrollTopBtn.style.display = "none";
         }
-      }
+      };
 
       scrollTopBtn.onclick = function () {
-        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+        window.scrollTo({ top: 0, behavior: "smooth" });
       };
+
+      // Lightbox functionality
+      const images = document.querySelectorAll(".image-card img");
+      const lightbox = document.createElement("div");
+      lightbox.classList.add("lightbox");
+      document.body.appendChild(lightbox);
+
+      const closeBtn = document.createElement("span");
+      closeBtn.classList.add("close-btn");
+      closeBtn.innerHTML = "&times;";
+      lightbox.appendChild(closeBtn);
+
+      closeBtn.onclick = function () {
+        lightbox.style.display = "none";
+      };
+
+      images.forEach((img) => {
+        img.onclick = function () {
+          lightbox.style.display = "flex";
+          const lightboxImg = document.createElement("img");
+          lightboxImg.src = img.src;
+          lightbox.innerHTML = "";
+          lightbox.appendChild(closeBtn);
+          lightbox.appendChild(lightboxImg);
+        };
+      });
     </script>
   </body>
 </html>
