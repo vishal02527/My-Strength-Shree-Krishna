@@ -51,7 +51,7 @@
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         padding: 0;
         margin: 0;
         color: #333;
@@ -81,7 +81,7 @@
         text-align: center;
         font-size: 36px;
         font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background: var(--primary-color);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -550,6 +550,18 @@
           font-size: 12px;
         }
       }
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #ab9353;
+      }
     </style>
   </head>
   <body>
@@ -569,6 +581,7 @@
             <a href="signup.html">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
             <a href="avatars.html">Avatars</a>
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
         <form class="searchForm">
@@ -755,6 +768,17 @@
 
     <script src="script.js"></script>
     <script>
+      var icon=document.getElementById("icon");
+
+icon.onclick = function() {
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
+    icon.src="images/sun.png";
+  }
+  else{
+    icon.src="images/moon.png";
+  }
+}
       window.onscroll = function () {
         toggleScrollTopButton();
       };
