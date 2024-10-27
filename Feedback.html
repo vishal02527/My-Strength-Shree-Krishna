@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: 'Poppins', sans-serif; /* Changed font */
+            background-color: var(--primary-color); /* Light blue background */
+            color: #2e4a7e; /* Dark blue text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Column layout for footer positioning */
+            justify-content: center; /* Centering vertically */
+            align-items: center; /* Centering horizontally */
+            min-height: 100vh; /* Full height for vertical centering */
+            background-image: var(--primary-color); /* Gradient background */
+        }
+
+        .container {
+            flex: 1; /* Allows the container to take up the remaining space */
+            width: 500px;
+            margin: 40px; /* Reduced margin for responsiveness */
+            padding: 40px; /* Increased padding */
+            background-color: var(--secondary-color); /* White background */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+            border: 2px solid #ffeb3b; /* Yellow border */
+            position: relative;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3f51b5; /* Krishna's blue */
+            font-size: 2.5em; /* Increased font size */
+            margin-bottom: 20px;
+            text-transform: uppercase; /* Uppercase letters */
+            letter-spacing: 1px; /* Spacing between letters */
+        }
+
+        label {
+            font-weight: 600; /* Bold label */
+            margin: 15px 0 5px; /* Adjusted margin */
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px; /* Increased padding */
+            margin: 5px 0 15px; /* Adjusted margin */
+            border: 1px solid #9e9e9e; /* Gray border */
+            border-radius: 8px; /* Rounded edges */
+            transition: border-color 0.3s;
+            font-size: 1em; /* Consistent font size */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #3f51b5; /* Krishna's blue */
+            outline: none;
+            box-shadow: 0 0 5px rgba(63, 81, 181, 0.5); /* Focus shadow */
+        }
+
+        button {
+            background-color: #ffeb3b; /* Yellow button */
+            color: #2e4a7e; /* Dark blue text */
+            border: none;
+            border-radius: 8px; /* Rounded button */
+            padding: 12px 20px; /* Increased padding */
+            cursor: pointer;
+            font-size: 1.1em; /* Increased font size */
+            transition: background-color 0.3s, transform 0.2s; /* Added transform effect */
+            display: block;
+            width: 100%;
+            font-weight: 600; /* Bold button text */
+        }
+
+        button:hover {
+            background-color: #ffe082; /* Light yellow on hover */
+            transform: translateY(-2px); /* Hover lift effect */
+        }
+
+        footer {
+            padding: 10px 0; /* Added padding for spacing */
+            text-align: center;
+            color: #3f51b5; /* Krishna's blue */
+            font-size: 0.9em;
+        }
+
+        .hidden {
+            display: none; /* Honeypot */
+        }
+
+        .home-button {
+            margin-bottom: 20px; /* Spacing below the button */
+            padding: 10px 20px; /* Padding for the button */
+            font-size: 1.1em; /* Font size */
+            color: #fff; /* White text */
+            background-color: #3f51b5; /* Krishna's blue */
+            border: none;
+            border-radius: 8px; /* Rounded button */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Hover effects */
+        }
+
+        .home-button:hover {
+            background-color: #303f9f; /* Darker blue on hover */
+            transform: translateY(-2px); /* Hover lift effect */
+        }
+        #icon{
+          width: 30px;
+          cursor: pointer;
+          position: absolute;
+          right: 50px;
+          top: 50px;
+      }
+      :root{
+        --primary-color: #f0f8ff;
+        --secondary-color: #ffffff;
+      }
+      .dark-theme{
+        --primary-color: #474444;
+        --secondary-color: #0e0e0e;
+      }
+    </style>
+</head>
+<body>
+    <img src="images/moon.png" id="icon">
+    <button class="home-button" onclick="location.href='index.html';">Home</button> <!-- Home Button -->
+    <div class="container">
+        <h1>User Feedback</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="Enter your access key generate using web3forms">
+
+            <!-- Form Inputs -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Feedback:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden">
+
+            <button type="submit">Submit Form</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; Shree Krishna - My Strength. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

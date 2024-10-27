@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--primary-color); /* Light blue background */
+            color: #2e4a7e; /* Dark blue text */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3f51b5; /* Krishna's blue */
+            margin: 20px 0;
+            font-size: 36px; /* Larger heading */
+        }
+
+        #quizContainer {
+            background-color: #e3f2fd; /* Light background color */
+            border-radius: 10px;
+            padding: 30px; /* Increased padding */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin: 20px auto; /* Center the form */
+            max-width: 600px; /* Limit width of quiz container */
+        }
+
+        p {
+            font-size: 24px; /* Larger question text */
+        }
+
+        .optionBtn {
+            display: block;
+            background-color: #ffeb3b; /* Yellow button */
+            border: none;
+            padding: 15px 30px; /* Increased padding */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Larger font size */
+            margin: 10px auto; /* Center buttons */
+            transition: background-color 0.3s;
+            width: 100%; /* Full width */
+        }
+
+        .optionBtn:hover {
+            background-color: #ffc107; /* Darker yellow on hover */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px; /* Larger result text */
+            color: #3f51b5; /* Krishna's blue */
+        }
+
+        #score {
+            font-size: 22px; /* Larger score text */
+            color: #2e4a7e; /* Dark blue */
+        }
+
+        #homeBtn {
+            background-color: #4caf50; /* Green button */
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        #homeBtn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        #nextBtn {
+            background-color: #2196F3; /* Blue button */
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            color: white;
+            display: none; /* Initially hidden */
+        }
+
+        #nextBtn:hover {
+            background-color: #1976D2; /* Darker blue on hover */
+        }
+
+        /* Additional styles for mobile responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            .optionBtn {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            #homeBtn, #nextBtn {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+        #icon{
+          width: 30px;
+          cursor: pointer;
+          position: absolute;
+          right: 50px;
+          top: 50px;
+      }
+      :root{
+        --primary-color: #f0f8ff;
+      }
+      .dark-theme{
+        --primary-color: #474444;
+      }
+    </style>
+</head>
+<body>
+    <img src="images/moon.png" id="icon">
+    <h1>Krishna Quiz</h1>
+    <div id="quizContainer">
+        <p id="question"></p>
+        <button class="optionBtn" id="option1" onclick="checkAnswer('option1')"></button>
+        <button class="optionBtn" id="option2" onclick="checkAnswer('option2')"></button>
+        <button class="optionBtn" id="option3" onclick="checkAnswer('option3')"></button>
+        <button class="optionBtn" id="option4" onclick="checkAnswer('option4')"></button>
+    </div>
+    <div id="result"></div>
+    <div id="score"></div>
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+    <br>
+    <button id="homeBtn" onclick="goHome()">Home</button>
+
+    <script>
+        // JavaScript for quiz functionality
+        const quizData = [
+            {
+                question: "What is the name of Krishna's father?",
+                options: ["Vasudeva", "Nanda", "Yashoda", "Kamsa"],
+                answer: "Vasudeva"
+            },
+            {
+                question: "Which river did Krishna cross during his childhood?",
+                options: ["Ganges", "Yamuna", "Saraswati", "Godavari"],
+                answer: "Yamuna"
+            },
+            {
+                question: "What instrument does Krishna famously play?",
+                options: ["Flute", "Veena", "Tabla", "Harmonium"],
+                answer: "Flute"
+            },
+            {
+                question: "What is Krishna's favorite food?",
+                options: ["Butter", "Rice", "Pulses", "Fruits"],
+                answer: "Butter"
+            },
+            {
+                question: "Who is Krishna's beloved?",
+                options: ["Radharani", "Sita", "Draupadi", "Laxmi"],
+                answer: "Radharani"
+            },
+            {
+                question: "What is the name of Krishna's childhood friend?",
+                options: ["Arjuna", "Balarama", "Yashoda", "Draupadi"],
+                answer: "Balarama"
+            },
+            {
+                question: "Which demon did Krishna defeat during his childhood?",
+                options: ["Putana", "Kamsa", "Trinavarta", "Bakasura"],
+                answer: "Putana"
+            },
+            {
+                question: "What is Krishna's role in the Mahabharata?",
+                options: ["Warrior", "Charioteer", "King", "Adviser"],
+                answer: "Charioteer"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            document.getElementById("question").innerText = currentQuestion.question;
+            document.getElementById("option1").innerText = currentQuestion.options[0];
+            document.getElementById("option2").innerText = currentQuestion.options[1];
+            document.getElementById("option3").innerText = currentQuestion.options[2];
+            document.getElementById("option4").innerText = currentQuestion.options[3];
+            document.getElementById("result").innerText = ""; // Clear previous result
+
+            // Reset button colors
+            const options = document.querySelectorAll(".optionBtn");
+            options.forEach(option => {
+                option.style.backgroundColor = "#ffeb3b"; // Reset to default
+                option.disabled = false; // Enable buttons
+            });
+
+            // Hide Next button initially
+            document.getElementById("nextBtn").style.display = "none";
+        }
+
+        function checkAnswer(selectedOption) {
+            const selectedAnswer = document.getElementById(selectedOption).innerText;
+            const correctAnswer = quizData[currentQuestionIndex].answer;
+
+            // Highlight selected option
+            const options = document.querySelectorAll(".optionBtn");
+            options.forEach(option => {
+                option.disabled = true; // Disable all option buttons
+                if (option.innerText === correctAnswer) {
+                    option.style.backgroundColor = "lightgreen"; // Green for correct
+                }
+                if (option.innerText === selectedAnswer && selectedAnswer !== correctAnswer) {
+                    option.style.backgroundColor = "lightcoral"; // Red for wrong
+                }
+            });
+
+            // Update result message
+            if (selectedAnswer === correctAnswer) {
+                score++;
+                document.getElementById("result").innerText = "Correct! The answer is: " + correctAnswer;
+            } else {
+                document.getElementById("result").innerText = "Wrong! The correct answer is: " + correctAnswer;
+            }
+
+            // Show Next button
+            document.getElementById("nextBtn").style.display = "inline-block"; 
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("result").innerText = "Quiz Finished!";
+            document.getElementById("score").innerText = `Your score: ${score} out of ${quizData.length}`;
+            document.getElementById("nextBtn").style.display = "none"; // Hide Next button
+        }
+
+        function goHome() {
+            // Implement the home functionality (e.g., redirecting to home page)
+            window.location.href = "index.html"; // Replace with your home page URL
+        }
+
+        // Load the first question on page load
+        loadQuestion();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

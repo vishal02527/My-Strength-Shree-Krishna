@@ -6,9 +6,48 @@
     <title>Mahabharata Details</title>
     <script src="https://kit.fontawesome.com/d74f12bccc.js" crossorigin="anonymous"></script>
     <style>
+        .chatbot-container {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      .chatbot-button {
+        border: none;
+        border-radius: 50%;
+        padding: 5px; /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
+      }
+
+      .chatbot-button img {
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
+      }
+
+      .tooltip-text {
+        display: none; /* Hide by default */
+        position: absolute;
+        bottom: 100%; /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333; /* Background color for tooltip */
+        color: #fff; /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .chatbot-button:hover .tooltip-text {
+        display: block; /* Show on hover */
+      }
+
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+            background-image: var(--bg-color);
             color: #333;
             padding: 0;
             margin: 0;
@@ -25,7 +64,7 @@
             margin-bottom: 40px;
             font-size: 36px;
             font-weight: 900;
-            background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+            background: var(--ternary-color);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -34,7 +73,7 @@
         .content p {
             font-size: 18px;
             line-height: 1.6;
-            color: #555;
+            color: var(--secondary-color);
             margin-bottom: 15px;
         }
 
@@ -80,14 +119,15 @@
         }
 
         .section {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
             border-radius: 10px;
             padding: 20px;
             margin-top: 30px;
         }
 
         .section h3 {
-            color: #330867;
+            color: var(--forth-color);
             margin-top: 0;
         }
 
@@ -130,9 +170,32 @@
         .language-toggle:hover {
             background-color: #8c7a44;
         }
+
+        #icon{
+          width: 30px;
+          cursor: pointer;
+          position: absolute;
+          right:135px;
+          top: 25px;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+        --ternary-color: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        --forth-color: #330867;
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+        --ternary-color: #ab9353;
+        --forth-color: lightblue;
+      }
     </style>
 </head>
 <body>
+    <img src="images/moon.png" id="icon">
     <button id="languageToggle" class="language-toggle" onclick="toggleLanguage()">हिंदी में पढ़ें</button>
 
     <div class="content">
@@ -148,6 +211,18 @@
         <h2 data-translate="key-elements">Key Elements</h2>
         <p data-translate="elements-text">The epic contains many philosophical and devotional material, such as a discussion of the four "goals of life" or puruṣārtha. The most important philosophical discussion is the Bhagavad Gita, which is contained in the Bhishma Parva of the epic.</p>
 
+        <h2 data-translate="structure">Structure and Composition</h2>
+        <p data-translate="structure-text">The Mahabharata is divided into 18 parvas or books, each containing several chapters. The epic's structure encompasses a wide range of narratives, stories, and philosophical discourses, intertwining various genres of literature, including history, myth, and moral teachings.</p>
+
+        <h2 data-translate="central-theme">Central Themes</h2>
+        <p data-translate="theme-text">The Mahabharata addresses themes such as duty (dharma), righteousness, justice, and the consequences of one’s actions (karma). The complex interplay of fate and free will is also a recurring theme, highlighting the moral dilemmas faced by the characters.</p>
+
+        <h2 data-translate="influence">Influence and Legacy</h2>
+        <p data-translate="influence-text">The Mahabharata has had a profound influence on Indian culture, religion, and philosophy. It has inspired numerous adaptations in literature, theater, television, and film. The Bhagavad Gita, as part of this epic, is revered as a sacred scripture and continues to guide spiritual and moral discourse worldwide.</p>
+
+        <h2 data-translate="moral-lessons">Moral Lessons</h2>
+        <p data-translate="lessons-text">The Mahabharata offers timeless lessons on life’s complexities, the importance of standing by one's principles, the consequences of greed and pride, and the need for forgiveness, compassion, and understanding.</p>
+
         <div class="section">
             <h3 data-translate="stories-characters">Notable Stories and Characters</h3>
             <ul>
@@ -156,6 +231,16 @@
                 <li data-translate="story-3"><strong>The Game of Dice:</strong> A pivotal moment where the Pandavas lose their kingdom and are exiled.</li>
                 <li data-translate="story-4"><strong>The Bhagavad Gita:</strong> Krishna's counsel to Arjuna on the battlefield of Kurukshetra.</li>
                 <li data-translate="story-5"><strong>Bhishma's Vow:</strong> The story of Bhishma's lifelong celibacy and his unparalleled devotion to duty.</li>
+                <li data-translate="story-6"><strong>Karna's Identity:</strong> The revelation of Karna's true heritage as the eldest son of Kunti, which adds complexity to the battle of Kurukshetra.</li>
+                <li data-translate="story-7"><strong>Abhimanyu's Valor:</strong> The young warrior Abhimanyu's heroic entry into the Chakravyuha formation and his tragic death during the war.</li>
+                <li data-translate="story-8"><strong>Yudhishthira's Wisdom:</strong> Yudhishthira's encounter with a mystical crane (Yaksha) that tests his wisdom through a series of moral questions.</li>
+                <li data-translate="story-9"><strong>Drona's Betrayal:</strong> The story of how Drona, the Pandavas' teacher, is tricked into laying down his arms, leading to his demise.</li>
+                <li data-translate="story-10"><strong>Gandhari's Curse:</strong> The heartbroken mother Gandhari curses Krishna, blaming him for the destruction of her sons in the war.</li>
+                <li data-translate="story-11"><strong>The Rajasuya Yajna:</strong> Yudhishthira's grand sacrifice that declares him as the emperor, and the fateful insult to Duryodhana during the event.</li>
+                <li data-translate="story-12"><strong>Ekalavya's Sacrifice:</strong> The tale of Ekalavya, who sacrifices his thumb as a tribute to Drona, despite never being accepted as his disciple.</li>
+                <li data-translate="story-13"><strong>Shakuni's Deceit:</strong> Shakuni's plotting, which leads to the downfall of the Pandavas and the ultimate conflict between the cousins.</li>
+                <li data-translate="story-14"><strong>Krishna's Peace Proposal:</strong> Krishna's attempt to mediate peace between the Pandavas and Kauravas, which ultimately fails, leading to war.</li>
+                <li data-translate="story-15"><strong>Bhima and Duryodhana's Duel:</strong> The final battle between Bhima and Duryodhana, where Bhima strikes a fatal blow, fulfilling his vow.</li>
             </ul>
         </div>
 
@@ -168,6 +253,55 @@
                 <li data-translate="teaching-4"><strong>The Futility of War:</strong> Despite being a war epic, the Mahabharata ultimately shows the devastating effects of conflict.</li>
                 <li data-translate="teaching-5"><strong>Divine Intervention:</strong> The role of gods, particularly Krishna, in human affairs.</li>
                 <li data-translate="teaching-6"><strong>The Complexity of Morality:</strong> The epic often presents moral dilemmas with no clear right answer.</li>
+                <li data-translate="teaching-7"><strong>Selflessness:</strong> The value of sacrificing personal desires for the greater good, as seen in Arjuna's moral struggle.</li>
+                <li data-translate="teaching-8"><strong>Leadership:</strong> The qualities of good leadership, exemplified by Yudhishthira’s decisions and responsibilities as a king.</li>
+                <li data-translate="teaching-9"><strong>Humility:</strong> The importance of humility, shown through characters who choose righteousness over ego.</li>
+                <li data-translate="teaching-10"><strong>Resilience:</strong> Overcoming adversity through perseverance, as demonstrated by the Pandavas during their exile.</li>
+                <li data-translate="teaching-11"><strong>Forgiveness:</strong> The value of forgiveness, especially seen in Yudhishthira’s actions after the war.</li>
+                <li data-translate="teaching-12"><strong>Justice:</strong> Upholding justice even in difficult situations, illustrated by the trials and decisions made by the Pandavas.</li>
+                <li data-translate="teaching-13"><strong>Consequences of Pride:</strong> The destructive nature of pride, highlighted by Duryodhana’s downfall.</li>
+                <li data-translate="teaching-14"><strong>Friendship:</strong> The bond of true friendship, exemplified by Krishna and Arjuna’s relationship.</li>
+                <li data-translate="teaching-15"><strong>Compassion:</strong> The need for compassion, as seen in Bhishma’s advice and decisions during the war.</li>
+                <li data-translate="teaching-16"><strong>Patience:</strong> The virtue of patience, illustrated by the Pandavas waiting through years of exile.</li>
+                <li data-translate="teaching-17"><strong>Detachment:</strong> Learning to detach from material desires, as Krishna teaches in the Bhagavad Gita.</li>
+                <li data-translate="teaching-18"><strong>Truthfulness:</strong> The significance of truth, upheld by Yudhishthira throughout the epic.</li>
+                <li data-translate="teaching-19"><strong>Equality:</strong> The recognition of all beings as equal, highlighted by the Mahabharata’s many teachings on caste and duty.</li>
+                <li data-translate="teaching-20"><strong>Wisdom of Elders:</strong> The respect for elders and their wisdom, especially seen in Bhishma’s guidance.</li>
+                <li data-translate="teaching-21"><strong>Generosity:</strong> The importance of charity and generosity, demonstrated by Karna’s actions throughout his life.</li>
+                <li data-translate="teaching-22"><strong>Family Loyalty:</strong> The complexity of family loyalty and duty, as portrayed by the relationships between the Kauravas and Pandavas.</li>
+                <li data-translate="teaching-23"><strong>Integrity:</strong> Staying true to one’s word, shown through Bhishma’s vow and Karna’s promises.</li>
+                <li data-translate="teaching-24"><strong>Spirituality:</strong> The pursuit of spiritual growth and enlightenment, emphasized by Krishna’s teachings to Arjuna.</li>
+                <li data-translate="teaching-25"><strong>Non-attachment:</strong> The concept of non-attachment to the outcomes of actions, a core teaching of the Bhagavad Gita.</li>
+                <li data-translate="teaching-26"><strong>Peace:</strong> The importance of striving for peace over conflict, as Krishna attempts to mediate between the cousins.</li>
+                <li data-translate="teaching-27"><strong>Destiny vs. Free Will:</strong> The delicate balance between fate and free will, discussed throughout the epic.</li>
+                <li data-translate="teaching-28"><strong>Consequences of Deceit:</strong> The downfall caused by deceit, as seen in Shakuni’s manipulation of the dice game.</li>
+                <li data-translate="teaching-29"><strong>Respect for Women:</strong> The role and respect for women, shown through Draupadi’s dignity despite her suffering.</li>
+                <li data-translate="teaching-30"><strong>Service:</strong> The value of serving others selflessly, exemplified by the characters who support the Pandavas.</li>
+                <li data-translate="teaching-31"><strong>Mental Strength:</strong> The importance of mental fortitude, as Arjuna faces his inner conflicts before the battle.</li>
+                <li data-translate="teaching-32"><strong>Guidance:</strong> The role of a mentor or guide, like Krishna’s role as Arjuna’s charioteer and spiritual guide.</li>
+                <li data-translate="teaching-33"><strong>Unity in Diversity:</strong> The coexistence of various cultures and beliefs, as the Mahabharata brings together diverse elements of society.</li>
+                <li data-translate="teaching-34"><strong>Respect for Teachers:</strong> The reverence for gurus, despite their human flaws, as seen in the relationship between Drona and his students.</li>
+                <li data-translate="teaching-35"><strong>Revenge:</strong> The destructive nature of seeking revenge, highlighted by the ongoing conflict between the cousins.</li>
+                <li data-translate="teaching-36"><strong>Forging Alliances:</strong> The strategic importance of forming alliances, as the Pandavas gain support from various kingdoms.</li>
+                <li data-translate="teaching-37"><strong>Trust:</strong> The consequences of misplaced trust, as Duryodhana trusts Shakuni’s devious plans.</li>
+                <li data-translate="teaching-38"><strong>Endurance:</strong> The need for endurance during tough times, as the Pandavas endure exile with grace.</li>
+                <li data-translate="teaching-39"><strong>Righteous Rule:</strong> The ideal of righteous governance, exemplified by Yudhishthira’s just reign.</li>
+                <li data-translate="teaching-40"><strong>Equality in Friendship:</strong> The friendship between Krishna and Arjuna shows the equality and mutual respect in true friendships.</li>
+                <li data-translate="teaching-41"><strong>Value of Education:</strong> The critical role of education, emphasized through the training of the Pandavas and Kauravas under Drona.</li>
+                <li data-translate="teaching-42"><strong>Faith:</strong> The power of faith in divine will, seen through the devotion of the Pandavas to Krishna.</li>
+                <li data-translate="teaching-43"><strong>Listening to Good Advice:</strong> The downfall of characters like Duryodhana, who ignore wise counsel.</li>
+                <li data-translate="teaching-44"><strong>Facing Fear:</strong> The courage to face one's fears, as Arjuna confronts his doubts before battle.</li>
+                <li data-translate="teaching-45"><strong>Balancing Emotion with Reason:</strong> The balance between emotion and reason, highlighted in Krishna’s advice to Arjuna to control his emotions.</li>
+                <li data-translate="teaching-46"><strong>Facing Consequences:</strong> The inevitable consequences of one’s actions, as each character faces the outcomes of their choices.</li>
+                <li data-translate="teaching-47"><strong>Self-Reflection:</strong> The importance of self-reflection, as seen when Yudhishthira contemplates his actions and responsibilities.</li>
+                <li data-translate="teaching-48"><strong>Impermanence of Life:</strong> The transient nature of life and material wealth, a recurring theme in the Mahabharata.</li>
+                <li data-translate="teaching-49"><strong>Compassion for Enemies:</strong> Showing compassion even towards enemies, as seen in the way the Pandavas treat fallen Kauravas.</li>
+                <li data-translate="teaching-50"><strong>Fulfilling Promises:</strong> The sacredness of vows and promises, illustrated by Bhishma’s vow of celibacy and duty.</li>
+                <li data-translate="teaching-51"><strong>Role of Women in Society:</strong> The complex roles of women, as portrayed by characters like Draupadi and Kunti, who display strength and resilience.</li>
+                <li data-translate="teaching-52"><strong>The Illusion of Power:</strong> The futility of chasing power and wealth, as Duryodhana’s greed leads to his destruction.</li>
+                <li data-translate="teaching-53"><strong>Renewal and Rebirth:</strong> The cycles of destruction and renewal, a metaphor for personal growth and transformation.</li>
+                <li data-translate="teaching-54"><strong>Importance of Gratitude:</strong> The value of being grateful for what one has, a teaching that runs through the narrative of the Pandavas.</li>
+                <li data-translate="teaching-55"><strong>Hope:</strong> Maintaining hope even in the darkest of times, as the Pandavas never give up despite the hardships they face.</li>
             </ul>
         </div>
 
@@ -178,9 +312,68 @@
                 <li data-translate="quote-2">"The greatest enemy is one's own self." - Yudhishthira</li>
                 <li data-translate="quote-3">"There is no greater force than destiny." - Bhishma</li>
                 <li data-translate="quote-4">"Victory attained by violence is tantamount to a defeat, for it is momentary." - Attributed to the Mahabharata</li>
-            </ul>
+                <li data-translate="quote-5">"In the battlefield of life, the real victory is the conquest of oneself." - Arjuna</li>
+                <li data-translate="quote-6">"What is right is not always popular, and what is popular is not always right." - Krishna</li>
+                <li data-translate="quote-7">"A person is made great by their actions, not by their birth." - Karna</li>
+                <li data-translate="quote-8">"True strength is not the absence of weakness but the ability to overcome it." - Bhima</li>
+                <li data-translate="quote-9">"The mind is everything; what you think, you become." - Yudhishthira</li>
+                <li data-translate="quote-10">"Forgiveness is the noblest form of revenge." - Krishna</li>
+                <li data-translate="quote-11">"Live according to your dharma; the path of righteousness is the path to true fulfillment." - Vyasa</li>
+                <li data-translate="quote-12">"An individual’s greatness is determined by their character, not their status." - Kunti</li>
+                <li data-translate="quote-13">"A warrior is one who fights for justice, not for personal gain." - Arjuna</li>
+                <li data-translate="quote-14">"Knowledge is the greatest weapon; use it wisely." - Bhishma</li>
+                <li data-translate="quote-15">"We are shaped by our thoughts; we become what we think." - Krishna</li>
+                <li data-translate="quote-16">"Desire is the root of all suffering; conquer your desires." - Yudhishthira</li>
+                <li data-translate="quote-17">"The true measure of a leader is how well they serve others." - Drona</li>
+                <li data-translate="quote-18">"In the face of adversity, courage is the true mark of a hero." - Arjuna</li>
+                <li data-translate="quote-19">"A true friend is one who stands by you in your darkest hour." - Draupadi</li>
+                <li data-translate="quote-20">"The fruits of action are not to be desired; act for the sake of duty." - Krishna</li>
+                <li data-translate="quote-21">"Victory is not merely the absence of defeat but the presence of righteousness." - Bhishma</li>
+                <li data-translate="quote-22">"Life is a journey; the path is as important as the destination." - Vyasa</li>
+                <li data-translate="quote-23">"Even the greatest of warriors can fall; humility is key." - Dronacharya</li>
+                <li data-translate="quote-24">"The only way to conquer fear is to face it." - Arjuna</li>
+                <li data-translate="quote-25">"Suffering is a part of life; it teaches us valuable lessons." - Kunti</li>
+                <li data-translate="quote-26">"Real strength lies in the ability to forgive." - Krishna</li>
+                <li data-translate="quote-27">"Happiness is found in selflessness, not selfishness." - Draupadi</li>
+                <li data-translate="quote-28">"Wisdom is knowing what to do; virtue is doing it." - Yudhishthira</li>
+                <li data-translate="quote-29">"The world is a reflection of our actions; act wisely." - Bhima</li>
+                <li data-translate="quote-30">"Your destiny is shaped by your actions, not by your desires." - Krishna</li>
+                <li data-translate="quote-31">"In times of crisis, the true nature of a person is revealed." - Bhishma</li>
+                <li data-translate="quote-32">"Hope is the light that guides us through darkness." - Arjuna</li>
+                <li data-translate="quote-33">"A noble heart does not hold onto anger; it seeks peace." - Kunti</li>
+                <li data-translate="quote-34">"It is better to live one day as a lion than a hundred years as a sheep." - Karna</li>
+                <li data-translate="quote-35">"Understanding is deeper than knowledge; there are many who know you, but very few who understand you." - Drona</li>
+                <li data-translate="quote-36">"Your duty is to act, but never to the fruits of your actions." - Krishna</li>
+                <li data-translate="quote-37">"Pride precedes a fall; humility leads to true greatness." - Yudhishthira</li>
+                <li data-translate="quote-38">"Every end is a new beginning; embrace change." - Vyasa</li>
+                <li data-translate="quote-39">"To err is human, to forgive divine." - Krishna</li>
+                <li data-translate="quote-40">"Strength is not just physical; it is also emotional and mental." - Bhima</li>
+                <li data-translate="quote-41">"One should not be too proud of victories; remember that defeat is a part of life." - Arjuna</li>
+                <li data-translate="quote-42">"Compassion is the essence of humanity." - Kunti</li>
+                <li data-translate="quote-43">"True wisdom is knowing when to speak and when to remain silent." - Dronacharya</li>
+                <li data-translate="quote-44">"Life is fleeting; cherish each moment." - Krishna</li>
+                <li data-translate="quote-45">"Peace comes from within; do not seek it without." - Arjuna</li>
+                <li data-translate="quote-46">"Respect those who have earned it; it is a mark of a true leader." - Bhishma</li>
+                <li data-translate="quote-47">"Life is a test of character; your actions define you." - Yudhishthira</li>
+                <li data-translate="quote-48">"Every conflict holds the potential for resolution; seek understanding." - Krishna</li>
+                <li data-translate="quote-49">"A wise person learns more from their enemies than a fool from their friends." - Karna</li>
+                <li data-translate="quote-50">"The journey of a thousand miles begins with a single step." - Vyasa</li>
+                            </ul>
         </div>
     </div>
+
+         <!-- Chatbot code added here -->
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="panditji.png" alt="chatbot" />
+        <span class="tooltip-text">
+          Radhe Radhe🙏<br />
+          How can I help You?🌸
+        </span>
+      </button>
+    </div>
+  </a>
 
     <script src="script.js"></script>
     <script>
@@ -194,12 +387,32 @@
                 'historical-text': 'Traditionally, the authorship of the Mahabharata is attributed to Vyasa. Its longest version consists of over 100,000 śloka or over 200,000 individual verse lines (each shloka is a couplet), and long prose passages. About 1.8 million words in total, the Mahabharata is roughly ten times the length of the Iliad and the Odyssey combined, or about four times the length of the Ramayana.',
                 'key-elements': 'Key Elements',
                 'elements-text': 'The epic contains many philosophical and devotional material, such as a discussion of the four "goals of life" or puruṣārtha. The most important philosophical discussion is the Bhagavad Gita, which is contained in the Bhishma Parva of the epic.',
+                'structure': 'Structure and Composition',
+                'structure-text': 'The Mahabharata is divided into 18 parvas or books, each containing several chapters. The epic\'s structure encompasses a wide range of narratives, stories, and philosophical discourses, intertwining various genres of literature, including history, myth, and moral teachings.',
+                'central-theme': 'Central Themes',
+                'theme-text': 'The Mahabharata addresses themes such as duty (dharma), righteousness, justice, and the consequences of one’s actions (karma). The complex interplay of fate and free will is also a recurring theme, highlighting the moral dilemmas faced by the characters.',
+                'influence': 'Influence and Legacy',
+                'influence-text': 'The Mahabharata has had a profound influence on Indian culture, religion, and philosophy. It has inspired numerous adaptations in literature, theater, television, and film. The Bhagavad Gita, as part of this epic, is revered as a sacred scripture and continues to guide spiritual and moral discourse worldwide.',
+                'moral-lessons': 'Moral Lessons',
+                'lessons-text': 'The Mahabharata offers timeless lessons on life’s complexities, the importance of standing by one\'s principles, the consequences of greed and pride, and the need for forgiveness, compassion, and understanding.',
+                
                 'stories-characters': 'Notable Stories and Characters',
                 'story-1': '<strong>The Pandavas and Kauravas:</strong> The central characters of the epic, two groups of cousins fighting for the throne of Hastinapura.',
                 'story-2': '<strong>Draupadi\'s Swayamvara:</strong> The contest where Arjuna wins Draupadi\'s hand in marriage.',
                 'story-3': '<strong>The Game of Dice:</strong> A pivotal moment where the Pandavas lose their kingdom and are exiled.',
                 'story-4': '<strong>The Bhagavad Gita:</strong> Krishna\'s counsel to Arjuna on the battlefield of Kurukshetra.',
                 'story-5': '<strong>Bhishma\'s Vow:</strong> The story of Bhishma\'s lifelong celibacy and his unparalleled devotion to duty.',
+                'story-6': '<strong>Karna\'s Identity:</strong> The revelation of Karna\'s true heritage as the eldest son of Kunti, which adds complexity to the battle of Kurukshetra.',
+                'story-7': '<strong>Abhimanyu\'s Valor:</strong> The young warrior Abhimanyu’s heroic entry into the Chakravyuha formation and his tragic death during the war.',
+                'story-8': '<strong>Yudhishthira\'s Wisdom:</strong> Yudhishthira\'s encounter with a mystical crane (Yaksha) that tests his wisdom through a series of moral questions.',
+                'story-9': '<strong>Drona\'s Betrayal:</strong> The story of how Drona, the Pandavas\' teacher, is tricked into laying down his arms, leading to his demise.',
+                'story-10': '<strong>Gandhari\'s Curse:</strong> The heartbroken mother Gandhari curses Krishna, blaming him for the destruction of her sons in the war.',
+                'story-11': '<strong>The Rajasuya Yajna:</strong> Yudhishthira\'s grand sacrifice that declares him as the emperor, and the fateful insult to Duryodhana during the event.',
+                'story-12': '<strong>Ekalavya\'s Sacrifice:</strong> The tale of Ekalavya, who sacrifices his thumb as a tribute to Drona, despite never being accepted as his disciple.',
+                'story-13': '<strong>Shakuni\'s Deceit:</strong> Shakuni\'s plotting, which leads to the downfall of the Pandavas and the ultimate conflict between the cousins.',
+                'story-14': '<strong>Krishna’s Peace Proposal:</strong> Krishna\'s attempt to mediate peace between the Pandavas and Kauravas, which ultimately fails, leading to war.',
+                'story-15': '<strong>Bhima and Duryodhana\'s Duel:</strong> The final battle between Bhima and Duryodhana, where Bhima strikes a fatal blow, fulfilling his vow.',
+
                 'important-teachings': 'Important Teachings',
                 'teaching-1': '<strong>Dharma (Righteousness):</strong> The importance of following one\'s duty and moral law.',
                 'teaching-2': '<strong>Karma:</strong> The law of cause and effect, emphasizing the importance of right action.',
@@ -207,11 +420,108 @@
                 'teaching-4': '<strong>The Futility of War:</strong> Despite being a war epic, the Mahabharata ultimately shows the devastating effects of conflict.',
                 'teaching-5': '<strong>Divine Intervention:</strong> The role of gods, particularly Krishna, in human affairs.',
                 'teaching-6': '<strong>The Complexity of Morality:</strong> The epic often presents moral dilemmas with no clear right answer.',
+                'teaching-7': '<strong>Selflessness:</strong> The value of sacrificing personal desires for the greater good, as seen in Arjuna\'s moral struggle.',
+                'teaching-8': '<strong>Leadership:</strong> The qualities of good leadership, exemplified by Yudhishthira\'s decisions and responsibilities as a king.',
+                'teaching-9': '<strong>Humility:</strong> The importance of humility, shown through characters who choose righteousness over ego.',
+                'teaching-10': '<strong>Resilience:</strong> Overcoming adversity through perseverance, as demonstrated by the Pandavas during their exile.',
+                'teaching-11': '<strong>Forgiveness:</strong> The value of forgiveness, especially seen in Yudhishthira\'s actions after the war.',
+                'teaching-12': '<strong>Justice:</strong> Upholding justice even in difficult situations, illustrated by the trials and decisions made by the Pandavas.',
+                'teaching-13': '<strong>Consequences of Pride:</strong> The destructive nature of pride, highlighted by Duryodhana\'s downfall.',
+                'teaching-14': '<strong>Friendship:</strong> The bond of true friendship, exemplified by Krishna and Arjuna\'s relationship.',
+                'teaching-15': '<strong>Compassion:</strong> The need for compassion, as seen in Bhishma\'s advice and decisions during the war.',
+                'teaching-16': '<strong>Patience:</strong> The virtue of patience, illustrated by the Pandavas waiting through years of exile.',
+                'teaching-17': '<strong>Detachment:</strong> Learning to detach from material desires, as Krishna teaches in the Bhagavad Gita.',
+                'teaching-18': '<strong>Truthfulness:</strong> The significance of truth, upheld by Yudhishthira throughout the epic.',
+                'teaching-19': '<strong>Equality:</strong> The recognition of all beings as equal, highlighted by the Mahabharata\'s many teachings on caste and duty.',
+                'teaching-20': '<strong>Wisdom of Elders:</strong> The respect for elders and their wisdom, especially seen in Bhishma\'s guidance.',
+                'teaching-21': '<strong>Generosity:</strong> The importance of charity and generosity, demonstrated by Karna\'s actions throughout his life.',
+                'teaching-22': '<strong>Family Loyalty:</strong> The complexity of family loyalty and duty, as portrayed by the relationships between the Kauravas and Pandavas.',
+                'teaching-23': '<strong>Integrity:</strong> Staying true to one\'s word, shown through Bhishma\'s vow and Karna\'s promises.',
+                'teaching-24': '<strong>Spirituality:</strong> The pursuit of spiritual growth and enlightenment, emphasized by Krishna\'s teachings to Arjuna.',
+                'teaching-25': '<strong>Non-attachment:</strong> The concept of non-attachment to the outcomes of actions, a core teaching of the Bhagavad Gita.',
+                'teaching-26': '<strong>Peace:</strong> The importance of striving for peace over conflict, as Krishna attempts to mediate between the cousins.',
+                'teaching-27': '<strong>Destiny vs. Free Will:</strong> The delicate balance between fate and free will, discussed throughout the epic.',
+                'teaching-28': '<strong>Consequences of Deceit:</strong> The downfall caused by deceit, as seen in Shakuni\'s manipulation of the dice game.',
+                'teaching-29': '<strong>Respect for Women:</strong> The role and respect for women, shown through Draupadi\'s dignity despite her suffering.',
+                'teaching-30': '<strong>Service:</strong> The value of serving others selflessly, exemplified by the characters who support the Pandavas.',
+                'teaching-31': '<strong>Mental Strength:</strong> The importance of mental fortitude, as Arjuna faces his inner conflicts before the battle.',
+                'teaching-32': '<strong>Guidance:</strong> The role of a mentor or guide, like Krishna\'s role as Arjuna\'s charioteer and spiritual guide.',
+                'teaching-33': '<strong>Unity in Diversity:</strong> The coexistence of various cultures and beliefs, as the Mahabharata brings together diverse elements of society.',
+                'teaching-34': '<strong>Respect for Teachers:</strong> The reverence for gurus, despite their human flaws, as seen in the relationship between Drona and his students.',
+                'teaching-35': '<strong>Revenge:</strong> The destructive nature of seeking revenge, highlighted by the ongoing conflict between the cousins.',
+                'teaching-36': '<strong>Forging Alliances:</strong> The strategic importance of forming alliances, as the Pandavas gain support from various kingdoms.',
+                'teaching-37': '<strong>Trust:</strong> The consequences of misplaced trust, as Duryodhana trusts Shakuni\'s devious plans.',
+                'teaching-38': '<strong>Endurance:</strong> The need for endurance during tough times, as the Pandavas endure exile with grace.',
+                'teaching-39': '<strong>Righteous Rule:</strong> The ideal of righteous governance, exemplified by Yudhishthira\'s just reign.',
+                'teaching-40': '<strong>Equality in Friendship:</strong> The friendship between Krishna and Arjuna shows the equality and mutual respect in true friendships.',
+                'teaching-41': '<strong>Value of Education:</strong> The critical role of education, emphasized through the training of the Pandavas and Kauravas under Drona.',
+                'teaching-42': '<strong>Faith:</strong> The power of faith in divine will, seen through the devotion of the Pandavas to Krishna.',
+                'teaching-43': '<strong>Listening to Good Advice:</strong> The downfall of characters like Duryodhana, who ignore wise counsel.',
+                'teaching-44': '<strong>Facing Fear:</strong> The courage to face one\'s fears, as Arjuna confronts his doubts before battle.',
+                'teaching-45': '<strong>Balancing Emotion with Reason:</strong> The balance between emotion and reason, highlighted in Krishna\'s advice to Arjuna to control his emotions.',
+                'teaching-46': '<strong>Facing Consequences:</strong> The inevitable consequences of one\'s actions, as each character faces the outcomes of their choices.',
+                'teaching-47': '<strong>Self-Reflection:</strong> The importance of self-reflection, as seen when Yudhishthira contemplates his actions and responsibilities.',
+                'teaching-48': '<strong>Impermanence of Life:</strong> The transient nature of life and material wealth, a recurring theme in the Mahabharata.',
+                'teaching-49': '<strong>Compassion for Enemies:</strong> Showing compassion even towards enemies, as seen in the way the Pandavas treat fallen Kauravas.',
+                'teaching-50': '<strong>Fulfilling Promises:</strong> The sacredness of vows and promises, illustrated by Bhishma\'s vow of celibacy and duty.',
+                'teaching-51': '<strong>Role of Women in Society:</strong> The complex roles of women, as portrayed by characters like Draupadi and Kunti, who display strength and resilience.',
+                'teaching-52': '<strong>The Illusion of Power:</strong> The futility of chasing power and wealth, as Duryodhana’s greed leads to his destruction.',
+                'teaching-53': '<strong>Renewal and Rebirth:</strong> The cycles of destruction and renewal, a metaphor for personal growth and transformation.',
+                'teaching-54': '<strong>Importance of Gratitude:</strong> The value of being grateful for what one has, a teaching that runs through the narrative of the Pandavas.',
+                'teaching-55': '<strong>Hope:</strong> Maintaining hope even in the darkest of times, as the Pandavas never give up despite the hardships they face.',
+
+
                 'famous-quotes': 'Famous Quotes',
                 'quote-1': '"I am Time grown old to destroy the world." - Krishna',
                 'quote-2': '"The greatest enemy is one\'s own self." - Yudhishthira',
                 'quote-3': '"There is no greater force than destiny." - Bhishma',
-                'quote-4': '"Victory attained by violence is tantamount to a defeat, for it is momentary." - Attributed to the Mahabharata'
+                'quote-4': '"Victory attained by violence is tantamount to a defeat, for it is momentary." - Attributed to the Mahabharata',
+                'quote-5': '"In the battlefield of life, the real victory is the conquest of oneself." - Arjuna',
+                'quote-6': '"What is right is not always popular, and what is popular is not always right." - Krishna',
+                'quote-7': '"A person is made great by their actions, not by their birth." - Karna',
+                'quote-8': '"True strength is not the absence of weakness but the ability to overcome it." - Bhima',
+                'quote-9': '"The mind is everything; what you think, you become." - Yudhishthira',
+                'quote-10': '"Forgiveness is the noblest form of revenge." - Krishna',
+                'quote-11': '"Live according to your dharma; the path of righteousness is the path to true fulfillment." - Vyasa',
+                'quote-12': '"An individual’s greatness is determined by their character, not their status." - Kunti',
+                'quote-13': '"A warrior is one who fights for justice, not for personal gain." - Arjuna',
+                'quote-14': '"Knowledge is the greatest weapon; use it wisely." - Bhishma',
+                'quote-15': '"We are shaped by our thoughts; we become what we think." - Krishna',
+                'quote-16': '"Desire is the root of all suffering; conquer your desires." - Yudhishthira',
+                'quote-17': '"The true measure of a leader is how well they serve others." - Drona',
+                'quote-18': '"In times of crisis, the true nature of a person is revealed." - Arjuna',
+                'quote-19': '"A true friend is one who stands by you in your darkest hour." - Draupadi',
+                'quote-20': '"The fruits of action are not to be desired; act for the sake of duty." - Krishna',
+                'quote-21': '"Victory is not merely the absence of defeat but the presence of righteousness." - Bhishma',
+                'quote-22': '"Life is a journey; the path is as important as the destination." - Vyasa',
+                'quote-23': '"Even the greatest of warriors can fall; humility is key." - Dronacharya',
+                'quote-24': '"The only way to conquer fear is to face it." - Arjuna',
+                'quote-25': '"Suffering is a part of life; it teaches us valuable lessons." - Kunti',
+                'quote-26': '"Real strength lies in the ability to forgive." - Krishna',
+                'quote-27': '"Happiness is found in selflessness, not selfishness." - Draupadi',
+                'quote-28': '"Wisdom is knowing what to do; virtue is doing it." - Yudhishthira',
+                'quote-29': '"The world is a reflection of our actions; act wisely." - Bhima',
+                'quote-30': '"Your destiny is shaped by your actions, not by your desires." - Krishna',
+                'quote-31': '"In the face of adversity, courage is the true mark of a hero." - Bhishma',
+                'quote-32': '"Hope is the light that guides us through darkness." - Arjuna',
+                'quote-33': '"A noble heart does not hold onto anger; it seeks peace." - Kunti',
+                'quote-34': '"It is better to live one day as a lion than a hundred years as a sheep." - Karna',
+                'quote-35': '"Understanding is deeper than knowledge; there are many who know you, but very few who understand you." - Drona',
+                'quote-36': '"Your duty is to act, but never to the fruits of your actions." - Krishna',
+                'quote-37': '"Pride precedes a fall; humility leads to true greatness." - Yudhishthira',
+                'quote-38': '"Every end is a new beginning; embrace change." - Vyasa',
+                'quote-39': '"To err is human, to forgive divine." - Krishna',
+                'quote-40': '"Strength is not just physical; it is also emotional and mental." - Bhima',
+                'quote-41': '"One should not be too proud of victories; remember that defeat is a part of life." - Arjuna',
+                'quote-42': '"Compassion is the essence of humanity." - Kunti',
+                'quote-43': '"True wisdom is knowing when to speak and when to remain silent." - Dronacharya',
+                'quote-44': '"Life is fleeting; cherish each moment." - Krishna',
+                'quote-45': '"Peace comes from within; do not seek it without." - Arjuna',
+                'quote-46': '"Respect those who have earned it; it is a mark of a true leader." - Bhishma',
+                'quote-47': '"Life is a test of character; your actions define you." - Yudhishthira',
+                'quote-48': '"Every conflict holds the potential for resolution; seek understanding." - Krishna',
+                'quote-49': '"A wise person learns more from their enemies than a fool from their friends." - Karna',
+                'quote-50': '"The journey of a thousand miles begins with a single step." - Vyasa',
             },
             'hi': {
                 'back': '← धर्मग्रंथों पर वापस जाएं',
@@ -222,12 +532,33 @@
                 'historical-text': 'परंपरागत रूप से, महाभारत की रचना व्यास को दी जाती है। इसका सबसे लंबा संस्करण 100,000 से अधिक श्लोक या 200,000 से अधिक व्यक्तिगत पंक्तियों (प्रत्येक श्लोक एक युग्मक है) और लंबे गद्य अंशों से युक्त है। कुल मिलाकर लगभग 1.8 मिलियन शब्द, महाभारत इलियड और ओडिसी के संयुक्त लंबाई का लगभग दस गुना, या रामायण की लंबाई का लगभग चार गुना है।',
                 'key-elements': 'प्रमुख तत्व',
                 'elements-text': 'इस महाकाव्य में कई दार्शनिक और भक्तिपूर्ण सामग्री शामिल है, जैसे कि जीवन के चार "लक्ष्यों" या पुरुषार्थ पर चर्चा। सबसे महत्वपूर्ण दार्शनिक चर्चा भगवद गीता है, जो महाकाव्य के भीष्म पर्व में निहित है।',
+                'structure': 'संरचना और रचना',
+                'structure-text': 'महाभारत को 18 पर्वों या पुस्तकों में विभाजित किया गया है, जिनमें से प्रत्येक में कई अध्याय होते हैं। इस महाकाव्य की संरचना विभिन्न कथाओं, कहानियों, और दार्शनिक प्रवचनों का एक व्यापक संग्रह है, जो इतिहास, पौराणिक कथाओं, और नैतिक शिक्षा सहित विभिन्न साहित्यिक शैलियों को आपस में जोड़ता है।',
+                'central-theme': 'केंद्रीय विषय',
+                'theme-text': 'महाभारत कर्तव्य (धर्म), न्याय, और व्यक्ति के कार्यों के परिणाम (कर्म) जैसे विषयों को संबोधित करता है। भाग्य और स्वतंत्र इच्छा के जटिल तालमेल को भी इस महाकाव्य में बार-बार दिखाया गया है, जिससे पात्रों द्वारा सामना की जाने वाली नैतिक दुविधाओं को उजागर किया जाता है।',
+                'influence': 'प्रभाव और विरासत',
+                'influence-text': 'महाभारत का भारतीय संस्कृति, धर्म और दर्शन पर गहरा प्रभाव पड़ा है। इसने साहित्य, नाटक, टेलीविजन, और फिल्म में अनेक रूपांतरणों को प्रेरित किया है। इस महाकाव्य का एक हिस्सा, भगवद गीता, एक पवित्र शास्त्र के रूप में पूजनीय है और यह आज भी आध्यात्मिक और नैतिक चर्चाओं को मार्गदर्शित करता है।',
+                'moral-lessons': 'नैतिक शिक्षाएं',
+                'lessons-text': 'महाभारत जीवन की जटिलताओं, सिद्धांतों पर टिके रहने के महत्व, लालच और घमंड के परिणाम, और क्षमा, करुणा, और समझ की आवश्यकता पर कालातीत पाठ प्रदान करता है।',
+
                 'stories-characters': 'उल्लेखनीय कहानियाँ और पात्र',
                 'story-1': '<strong>पांडव और कौरव:</strong> महाकाव्य के केंद्रीय पात्र, चचेरे भाइयों के दो समूह जो हस्तिनापुर के सिंहासन के लिए लड़ रहे हैं।',
                 'story-2': '<strong>द्रौपदी का स्वयंवर:</strong> वह प्रतियोगिता जहाँ अर्जुन द्रौपदी का हाथ जीतता है।',
                 'story-3': '<strong>द्यूत क्रीड़ा:</strong> एक महत्वपूर्ण क्षण जहाँ पांडव अपना राज्य खो देते हैं और निर्वासित हो जाते हैं।',
                 'story-4': '<strong>भगवद गीता:</strong> कुरुक्षेत्र के युद्धक्षेत्र पर अर्जुन को कृष्ण का उपदेश।',
                 'story-5': '<strong>भीष्म की प्रतिज्ञा:</strong> भीष्म के आजीवन ब्रह्मचर्य और कर्तव्य के प्रति उनकी अद्वितीय निष्ठा की कहानी।',
+                'story-6': '<strong>कर्ण की पहचान:</strong> कर्ण की असली पहचान, जो कुंती के सबसे बड़े पुत्र के रूप में उजागर होती है, जिससे कुरुक्षेत्र युद्ध की जटिलता बढ़ जाती है।',
+                'story-7': '<strong>अभिमन्यु का पराक्रम:</strong> युवा योद्धा अभिमन्यु की चक्रव्यूह में वीरतापूर्ण प्रवेश और युद्ध में उसकी दुखद मृत्यु।',
+                'story-8': '<strong>युधिष्ठिर की बुद्धिमत्ता:</strong> युधिष्ठिर की एक रहस्यमयी बगुला (यक्ष) से मुलाकात, जो उनकी बुद्धि को नैतिक प्रश्नों की श्रृंखला के माध्यम से परखता है।',
+                'story-9': '<strong>द्रोण की धोखाधड़ी:</strong> यह कहानी कि कैसे पांडवों के शिक्षक द्रोण को धोखा देकर अपने हथियार त्यागने के लिए मजबूर किया जाता है, जिसके परिणामस्वरूप उनकी मृत्यु हो जाती है।',
+                'story-10': '<strong>गांधारी का श्राप:</strong> दुःखी मां गांधारी कृष्ण को श्राप देती है, उन्हें युद्ध में अपने पुत्रों के विनाश का दोषी ठहराती है।',
+                'story-11': '<strong>राजसूय यज्ञ:</strong> युधिष्ठिर का भव्य यज्ञ, जो उन्हें सम्राट घोषित करता है, और इस आयोजन के दौरान दुर्योधन का अपमान।',
+                'story-12': '<strong>एकलव्य का बलिदान:</strong> एकलव्य की कहानी, जो द्रोण को श्रद्धांजलि के रूप में अपना अंगूठा बलिदान करता है, भले ही उसे कभी उनका शिष्य नहीं माना गया।',
+                'story-13': '<strong>शकुनि का धोखा:</strong> शकुनि की चालें, जो पांडवों के पतन और अंततः चचेरे भाइयों के बीच संघर्ष का कारण बनती हैं।',
+                'story-14': '<strong>कृष्ण का शांति प्रस्ताव:</strong> पांडवों और कौरवों के बीच शांति स्थापित करने का कृष्ण का प्रयास, जो अंततः विफल हो जाता है और युद्ध की ओर ले जाता है।',
+                'story-15': '<strong>भीम और दुर्योधन का द्वंद्व:</strong> भीम और दुर्योधन के बीच अंतिम लड़ाई, जिसमें भीम घातक प्रहार करता है, अपनी प्रतिज्ञा पूरी करता है।',
+
+
                 'important-teachings': 'महत्वपूर्ण शिक्षाएँ',
                 'teaching-1': '<strong>धर्म (नैतिकता):</strong> अपने कर्तव्य और नैतिक कानून का पालन करने का महत्व।',
                 'teaching-2': '<strong>कर्म:</strong> कारण और प्रभाव का नियम, सही कार्य के महत्व पर जोर देना।',
@@ -235,11 +566,108 @@
                 'teaching-4': '<strong>युद्ध की व्यर्थता:</strong> एक युद्ध महाकाव्य होने के बावजूद, महाभारत अंततः संघर्ष के विनाशकारी प्रभावों को दिखाता है।',
                 'teaching-5': '<strong>दैवीय हस्तक्षेप:</strong> मानव मामलों में देवताओं, विशेष रूप से कृष्ण की भूमिका।',
                 'teaching-6': '<strong>नैतिकता की जटिलता:</strong> महाकाव्य अक्सर नैतिक दुविधाओं को प्रस्तुत करता है जिनका कोई स्पष्ट उत्तर नहीं होता।',
+                'teaching-7': '<strong>शक्ति का दुरुपयोग:</strong> महाकाव्य में दिखाया गया है कि कैसे शक्ति का दुरुपयोग विनाश का कारण बनता है।',
+                'teaching-8': '<strong>परिवार का महत्व:</strong> परिवार की एकता और संबंधों की शक्ति को दर्शाया गया है।',
+                'teaching-9': '<strong>सच्ची मित्रता:</strong> मित्रता का महत्व, जैसे कि कृष्ण और अर्जुन के बीच।',
+                'teaching-10': '<strong>समर्पण:</strong> अपने कर्तव्यों के प्रति समर्पण का मूल्य।',
+                'teaching-11': '<strong>स्वयं के लिए खड़े होना:</strong> अन्याय के खिलाफ खड़े होने का महत्व।',
+                'teaching-12': '<strong>विनम्रता:</strong> विनम्रता और सम्मान का महत्व, जो महाभारत में कई पात्रों द्वारा प्रदर्शित होता है।',
+                'teaching-13': '<strong>प्रेरणा:</strong> विपरीत परिस्थितियों में भी प्रेरणा बनाए रखना।',
+                'teaching-14': '<strong>सत्य की खोज:</strong> सत्य की खोज में कठिनाइयों का सामना करना।',
+                'teaching-15': '<strong>स्वतंत्रता का महत्व:</strong> व्यक्तिगत स्वतंत्रता और आत्म-निर्णय की आवश्यकता।',
+                'teaching-16': '<strong>शिक्षा का मूल्य:</strong> ज्ञान और शिक्षा की भूमिका का महत्व।',
+                'teaching-17': '<strong>न्याय की खोज:</strong> न्याय की खोज में संघर्ष और बलिदान।',
+                'teaching-18': '<strong>समाज में सेवा:</strong> समाज के प्रति सेवा और दायित्व का महत्व।',
+                'teaching-19': '<strong>आशा की किरण:</strong> कठिनाई में भी आशा बनाए रखना।',
+                'teaching-20': '<strong>समर्पण की ताकत:</strong> कर्तव्य के प्रति समर्पण से बड़ी से बड़ी बाधा को पार किया जा सकता है।',
+                'teaching-21': '<strong>विरासत का महत्व:</strong> अपने पूर्वजों की विरासत को सम्मानित करना।',
+                'teaching-22': '<strong>समय का महत्व:</strong> समय की सही प्रबंधन की आवश्यकता।',
+                'teaching-23': '<strong>बचपन का महत्व:</strong> बच्चों को सही मार्गदर्शन देने का महत्व।',
+                'teaching-24': '<strong>संघर्ष का मूल्य:</strong> संघर्ष और मेहनत के द्वारा सफलता प्राप्त करना।',
+                'teaching-25': '<strong>निष्कर्ष की महत्ता:</strong> उचित निष्कर्ष पर पहुंचने का महत्व।',
+                'teaching-26': '<strong>दया और सहानुभूति:</strong> दूसरों के प्रति दया और सहानुभूति का मूल्य।',
+                'teaching-27': '<strong>परिस्थितियों का सामना:</strong> विपरीत परिस्थितियों में संयम बनाए रखना।',
+                'teaching-28': '<strong>कर्म का फल:</strong> कर्म के फल को स्वीकार करना और उसे निभाना।',
+                'teaching-29': '<strong>धैर्य का मूल्य:</strong> धैर्य और सहनशीलता का महत्व।',
+                'teaching-30': '<strong>सहयोग की शक्ति:</strong> सहयोग और एकता की शक्ति।',
+                'teaching-31': '<strong>आत्म-नियंत्रण:</strong> इच्छाओं और प्रवृत्तियों पर नियंत्रण रखना।',
+                'teaching-32': '<strong>सच्चाई की जीत:</strong> अंत में सच्चाई की हमेशा जीत होती है।',
+                'teaching-33': '<strong>नैतिकता का मूल्य:</strong> नैतिकता और ईमानदारी का महत्व।',
+                'teaching-34': '<strong>सकारात्मकता:</strong> सकारात्मक दृष्टिकोण बनाए रखना।',
+                'teaching-35': '<strong>सामाजिक न्याय:</strong> समानता और सामाजिक न्याय की आवश्यकता।',
+                'teaching-36': '<strong>संवेदनशीलता:</strong> दूसरों की भावनाओं और स्थितियों के प्रति संवेदनशील रहना।',
+                'teaching-37': '<strong>संतुलन:</strong> जीवन में संतुलन बनाए रखना।',
+                'teaching-38': '<strong>सत्य और असत्य का संघर्ष:</strong> सत्य और असत्य के बीच निरंतर संघर्ष।',
+                'teaching-39': '<strong>अधिकार और दायित्व:</strong> अधिकारों और दायित्वों का संतुलन।',
+                'teaching-40': '<strong>क्षमा का मूल्य:</strong> क्षमा करने की शक्ति और उसका महत्व।',
+                'teaching-41': '<strong>प्रतिभा का सम्मान:</strong> प्रतिभा और कार्यकुशलता का सम्मान करना।',
+                'teaching-42': '<strong>अनुशासन का महत्व:</strong> अनुशासन और नियमों का पालन।',
+                'teaching-43': '<strong>प्रेरणा का स्रोत:</strong> प्रेरणा पाने के लिए सही स्रोतों का चयन करना।',
+                'teaching-44': '<strong>संजीवनी का महत्व:</strong> अच्छे कार्यों की प्रभावशीलता।',
+                'teaching-45': '<strong>संवाद की आवश्यकता:</strong> संवाद और बातचीत की आवश्यकता।',
+                'teaching-46': '<strong>जीवन का उद्देश्य:</strong> जीवन का सही उद्देश्य समझना।',
+                'teaching-47': '<strong>विचारशीलता:</strong> अपने विचारों और कार्यों पर विचार करना।',
+                'teaching-48': '<strong>संघर्ष और साधना:</strong> संघर्ष और साधना के माध्यम से सफलता प्राप्त करना।',
+                'teaching-49': '<strong>अनुकरणीयता:</strong> अनुकरणीय बनने का प्रयास करना।',
+                'teaching-50': '<strong>संस्कारों का महत्व:</strong> संस्कारों और मूल्यों का पालन करना।',
+                'teaching-51': '<strong>महिलाओं की भूमिका:</strong> द्रौपदी और कुंती जैसे पात्रों द्वारा प्रदर्शित महिलाओं की जटिल भूमिकाएँ, जो शक्ति और सहनशीलता का उदाहरण हैं।',
+                'teaching-52': '<strong>शक्ति का भ्रम:</strong> शक्ति और धन की खोज की व्यर्थता, जैसा कि दुर्योधन की लालच उसकी विनाश का कारण बनती है।',
+                'teaching-53': '<strong>नवीनीकरण और पुनर्जन्म:</strong> विनाश और नवीनीकरण के चक्र, व्यक्तिगत विकास और परिवर्तन का एक रूपक।',
+                'teaching-54': '<strong>आभार का महत्व:</strong> जो कुछ भी है उसके लिए आभारी रहने का मूल्य, जो पांडवों की कथा में महत्वपूर्ण है।',
+                'teaching-55': '<strong>आशा:</strong> सबसे अंधेरे समय में भी आशा बनाए रखना, क्योंकि पांडव कभी हार नहीं मानते।',
+
                 'famous-quotes': 'प्रसिद्ध उद्धरण',
                 'quote-1': '"मैं संसार का नाश करने के लिए बढ़ा हुआ काल हूँ।" - कृष्ण',
                 'quote-2': '"सबसे बड़ा शत्रु स्वयं का अहंकार है।" - युधिष्ठिर',
                 'quote-3': '"नियति से बड़ी कोई शक्ति नहीं है।" - भीष्म',
-                'quote-4': '"हिंसा से प्राप्त विजय पराजय के समान है, क्योंकि वह क्षणिक होती है।" - महाभारत से संबंधित'
+                'quote-4': '"हिंसा से प्राप्त विजय पराजय के समान है, क्योंकि वह क्षणिक होती है।" - महाभारत से संबंधित',
+                'quote-5': '"जीवन के युद्धभूमि में, असली विजय आत्मा पर विजय है।" - अर्जुन',
+                'quote-6': '"जो सही है वह हमेशा लोकप्रिय नहीं होता, और जो लोकप्रिय है वह हमेशा सही नहीं होता।" - कृष्ण',
+                'quote-7': '"एक व्यक्ति की महानता उसके कार्यों से निर्धारित होती है, न कि उसके जन्म से।" - कर्ण',
+                'quote-8': '"सच्ची शक्ति कमजोरी की अनुपस्थिति नहीं है, बल्कि इसे पार करने की क्षमता है।" - भीम',
+                'quote-9': '"मन सब कुछ है; तुम जो सोचते हो, वही बन जाते हो।" - युधिष्ठिर',
+                'quote-10': '"क्षमाशीलता प्रतिशोध का सबसे उदात्त रूप है।" - कृष्ण',
+                'quote-11': '"अपने धर्म के अनुसार जियो; धर्म के मार्ग पर चलना सच्ची पूर्णता की ओर ले जाता है।" - व्यास',
+                'quote-12': '"एक व्यक्ति की महानता उसके चरित्र से होती है, न कि उसके पद से।" - कुंती',
+                'quote-13': '"एक योद्धा वही है जो न्याय के लिए लड़ता है, व्यक्तिगत लाभ के लिए नहीं।" - अर्जुन',
+                'quote-14': '"ज्ञान सबसे बड़ा हथियार है; इसका उपयोग बुद्धिमानी से करो।" - भीष्म',
+                'quote-15': '"हमारे कार्यों से दुनिया एक परछाई है; बुद्धिमानी से कार्य करो।" - कृष्ण',
+                'quote-16': '"इच्छा सभी दुखों की जड़ है; अपनी इच्छाओं पर विजय प्राप्त करो।" - युधिष्ठिर',
+                'quote-17': '"एक नेता की असली माप यह है कि वह दूसरों की सेवा कितनी अच्छी तरह करता है।" - द्रोण',
+                'quote-18': '"संकट के समय में, एक व्यक्ति की असली प्रकृति प्रकट होती है।" - अर्जुन',
+                'quote-19': '"सच्चा मित्र वही है जो आपकी अंधेरी घड़ी में आपके साथ खड़ा रहे।" - द्रौपदी',
+                'quote-20': '"कार्यों के फल की कामना मत करो; अपने कर्तव्य के लिए कार्य करो।" - कृष्ण',
+                'quote-21': '"विजय केवल पराजय की अनुपस्थिति नहीं है, बल्कि धर्म की उपस्थिति है।" - भीष्म',
+                'quote-22': '"जीवन एक यात्रा है; रास्ता उतना ही महत्वपूर्ण है जितना गंतव्य।" - व्यास',
+                'quote-23': '"यहाँ तक कि सबसे बड़े योद्धा भी गिर सकते हैं; विनम्रता ही असली महानता है।" - द्रोणाचार्य',
+                'quote-24': '"डर पर काबू पाने का एकमात्र तरीका उसका सामना करना है।" - अर्जुन',
+                'quote-25': '"दुख जीवन का एक हिस्सा है; यह हमें मूल्यवान पाठ सिखाता है।" - कुंती',
+                'quote-26': '"सच्ची शक्ति क्षमा करने की क्षमता में है।" - कृष्ण',
+                'quote-27': '"खुशी आत्मत्याग में है, आत्मकेंद्रितता में नहीं।" - द्रौपदी',
+                'quote-28': '"सच्ची बुद्धि यह है कि क्या करना है, नैतिकता यह है कि इसे करना।" - युधिष्ठिर',
+                'quote-29': '"दुनिया हमारे कार्यों का प्रतिबिंब है; बुद्धिमानी से कार्य करो।" - भीम',
+                'quote-30': '"तुम्हारी नियति तुम्हारे कार्यों से निर्धारित होती है, न कि तुम्हारी इच्छाओं से।" - कृष्ण',
+                'quote-31': '"संकट के समय में, साहस सच्चे नायक की पहचान है।" - भीष्म',
+                'quote-32': '"अंधकार में आशा ही वह प्रकाश है जो हमें मार्गदर्शन करता है।" - अर्जुन',
+                'quote-33': '"एक महान हृदय क्रोध को नहीं रखता; यह शांति की तलाश करता है।" - कुंती',
+                'quote-34': '"एक शेर की तरह एक दिन जीना बेहतर है, बजाय एक भेड़ की तरह सौ साल जीने के।" - कर्ण',
+                'quote-35': '"सच्ची बुद्धिमता जानने में है कि कब बोलना है और कब चुप रहना है।" - द्रोणाचार्य',
+                'quote-36': '"जीवन क्षणभंगुर है; प्रत्येक पल को संजोकर रखो।" - कृष्ण',
+                'quote-37': '"उनका सम्मान करो जिन्होंने इसे अर्जित किया है; यह एक सच्चे नेता का प्रतीक है।" - भीष्म',
+                'quote-38': '"जीवन एक चरित्र की परीक्षा है; आपके कार्य आपको परिभाषित करते हैं।" - युधिष्ठिर',
+                'quote-39': '"हर संघर्ष समाधान की क्षमता रखता है; समझ की तलाश करो।" - कृष्ण',
+                'quote-40': '"एक बुद्धिमान व्यक्ति अपने दुश्मनों से अधिक सीखता है, बनिस्बत एक मूर्ख के अपने दोस्तों से।" - कर्ण',
+                'quote-41': '"हजार मील की यात्रा एक ही कदम से शुरू होती है।" - व्यास',
+                'quote-42': '"वास्तविक सुख आंतरिक संतोष में है, बाहरी चीज़ों में नहीं।" - कृष्ण',
+                'quote-43': '"एक सही मार्ग पर चलने से ही सही परिणाम मिलते हैं।" - अर्जुन',
+                'quote-44': '"जब भी तुम हंसते हो, तुम जीवन को अपनी भक्ति दिखाते हो।" - द्रौपदी',
+                'quote-45': '"कभी हार मत मानो; असफलता केवल एक नया प्रारंभ है।" - भीष्म',
+                'quote-46': '"जो दूसरों की सेवा करता है, वही असली नायक है।" - युधिष्ठिर',
+                'quote-47': '"अन्याय का प्रतिरोध करना ही सच्चा धर्म है।" - कर्ण',
+                'quote-48': '"एक व्यक्ति की महानता उसके विचारों में है, उसके कार्यों में नहीं।" - द्रोणाचार्य',
+                'quote-49': '"जीवन में कठिनाइयों का सामना करते हुए ही सच्चा साहस प्रकट होता है।" - व्यास',
+                'quote-50': '"सच्ची विजय वही है जो आत्मा की विजय है।" - कृष्ण',
+
             }
         };
 

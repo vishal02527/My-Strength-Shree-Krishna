@@ -1,164 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discussion Forum - Shree Krishna</title>
+    <title>Krishna Bhakti Forum - Login</title>
     <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
-        color: #333;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      h2::selection,
-      label::selection {
-        background-color: rgb(237, 204, 133);
-        color: #000;
-      }
-      main {
-        padding: 20px;
-      }
-      .login-form {
-        max-width: 400px;
-        margin: 150px auto 0px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-      }
-      h2 {
-        color: #ab9353;
-        margin-top: 0;
-        text-align: center;
-      }
-      label {
-        display: block;
-        margin-bottom: 8px;
-        color: #555;
-      }
-      input {
-        width: 93%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      input:focus {
-        border: 2px solid #ffc107;
-        outline: 0;
-      }
-      .forgot-password {
-        display: block;
-        margin-top: 2px;
-        margin-bottom: 12px;
-        color: #6b7290;
-        font-weight: 400;
-        text-decoration: none;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        .chatbot-container {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
       }
 
-      .forgot-password:hover {
-        color: #3b82f8;
-      }
-      button {
-        display: block;
-        background: linear-gradient(269deg, #0048ff, #0096ff);
-        color: #fff;
-        padding: 10px 20px;
-        border: 0;
-        border-radius: 5px;
+      .chatbot-button {
+        border: none;
+        border-radius: 50%;
+        padding: 5px; /* Smaller padding */
         cursor: pointer;
-        transition: background-color 0.3s;
-        margin-left: 160px;
-      }
-      .signup {
-        text-align: center;
-        margin-block: 12px;
-      }
-      .signup-link {
-        color: #6b7290;
-        font-weight: 500;
-        text-decoration: none;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
       }
 
-      .signup-link:hover {
-        color: #3b82f8;
-        text-decoration: underline;
+      .chatbot-button img {
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
       }
 
-      @media (max-width: 768px) {
+      .tooltip-text {
+        display: none; /* Hide by default */
+        position: absolute;
+        bottom: 100%; /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333; /* Background color for tooltip */
+        color: #fff; /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .chatbot-button:hover .tooltip-text {
+        display: block; /* Show on hover */
+      }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
         .login-form {
-          max-width: 280px;
-        }
-        label {
-          font-size: 14px;
+            background-color: var(--primary-color);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px var(--forth-color);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .login-form h2 {
-          font-size: 20px;
+        .login-form::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background-image: url('/api/placeholder/100/100');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.2;
         }
+
+        h2 {
+            color: var(--ternary-color);
+            margin-top: 0;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--ternary-color);
+            font-weight: 600;
+        }
+
+        input {
+            width: 93%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #d1a054;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--ternary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(74, 43, 15, 0.5);
+        }
+
+        .forgot-password {
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            color: var(--ternary-color);
+            font-weight: 400;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forgot-password:hover {
+            color: #d1a054;
+        }
+
         button {
-          margin-left: 95px;
+            background: linear-gradient(135deg, #d1a054, #4a2b0f);
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 10px;
         }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(74, 43, 15, 0.3);
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+
+        .signup-link {
+            color: var(--ternary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .signup-link:hover {
+            color: #d1a054;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--secondary-color);
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .google-signin {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .login-form {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input, button {
+                font-size: 14px;
+            }
+        }
+        #icon{
+          width: 30px;
+          cursor: pointer;
+          position: absolute;
+          right: 125px;
+          top: 50px;
+      }
+      :root{
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+        --ternary-color: #4a2b0f;
+        --forth-color: rgba(0, 0, 0, 0.2);
+      }
+      .dark-theme{
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+        --ternary-color: #ab9353;
+        --forth-color: rgba(250, 244, 244, 0.2);
       }
     </style>
-  </head>
-  <body>
-    <main>
-      <div class="login-form" id="loginForm">
-        <h2>Login</h2>
-        <form id="form" action="./discussion-forum.html" method="GET">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required />
+    <!-- Include Google Platform Library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <img src="images/moon.png" id="icon">
+    <div class="container">
+        <div class="login-form" id="loginForm">
+            <h2>Enter Krishna's Bhakti Forum</h2>
+            <form id="form" action="./discussion-forum.html" method="GET">
+                <label for="username">Devotee Name:</label>
+                <input type="text" id="username" name="username" required />
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+                
+                <a class="forgot-password" href="">Forgot your sacred words?</a>
+                
+                <button type="submit">Begin Your Spiritual Journey</button>
+                
+                <div class="signup">
+                    New to Krishna's path? <a class="signup-link" href="./signup.html">Join the community</a>
+                </div>
+            </form>
 
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
+            <!-- Google Sign-In Button -->
+            <div class="google-signin">
+                <div id="g_id_onload"
+                     data-client_id="533616281722-3gijg2u8b6aue0878sbmna6cs6q1lquc.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-login_uri="http://localhost:5502/"
+                     data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="rectangular"
+                     data-theme="outline"
+                     data-text="sign_in_with"
+                     data-size="large"
+                     data-logo_alignment="left">
+                </div>
+            </div>
 
-          <a class="forgot-password" href="">Forgot password?</a>
+        </div>
+        <footer>
+            <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
+        </footer>
+    </div>
 
-          <button>Login</button>
-
-          <div class="signup">
-            Don't have an account?
-            <a class="signup-link" href="./signup.html">Signup</a>
-          </div>
-          <!-- Change the button type to "submit" -->
-        </form>
-      </div>
-      <p style="text-align: center">&copy; All rights reserved 2023</p>
-    </main>
-
+      <!-- Chatbot code added here -->
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="panditji.png" alt="chatbot" />
+        <span class="tooltip-text">
+          Radhe Radhe🙏<br />
+          How can I help You?🌸
+        </span>
+      </button>
+    </div>
+  </a>
+  
     <script>
-      document
-        .getElementById("form")
-        .addEventListener("submit", function (event) {
-          // Retrieve stored username and password from localStorage
-          const storedUsername = localStorage.getItem("username");
-          const storedPassword = localStorage.getItem("password");
+        var icon=document.getElementById("icon");
 
-          // Get user input
-          const enteredUsername = document.getElementById("username").value;
-          const enteredPassword = document.getElementById("password").value;
-
-          // Check if the entered username and password match the stored values
-          if (
-            enteredUsername === storedUsername &&
-            enteredPassword === storedPassword
-          ) {
-            // Successful login - allow the form submission
-
-            // Set 'isLoggedIn' to true upon successful login
-            localStorage.setItem("isLoggedIn", "true");
-            // Redirect to discussion forum with username
-            window.location.href = "./discussion-forum.html";
-          } else {
-            // Prevent form submission if login fails
+icon.onclick = function() {
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
+    icon.src="images/sun.png";
+  }
+  else{
+    icon.src="images/moon.png";
+  }
+}
+        document.getElementById("form").addEventListener("submit", function (event) {
             event.preventDefault();
-            alert("Invalid username or password. Please try again.");
-          }
+            
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+            
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
+            
+            if (enteredUsername === storedUsername && enteredPassword === storedPassword) {
+                localStorage.setItem("isLoggedIn", "true");
+                window.location.href = "./discussion-forum.html";
+            } else {
+                alert("Invalid devotee name or password. Please try again with blessings from Lord Krishna.");
+            }
         });
+
+        function handleCredentialResponse(response) {
+            const user = jwt_decode(response.credential);
+            // Here you can access user information
+            console.log(user);
+
+            // Set user info to localStorage or handle login
+            localStorage.setItem("username", user.name);
+            localStorage.setItem("email", user.email);
+            localStorage.setItem("isLoggedIn", "true");
+            window.location.href = "./discussion-forum.html"; // Redirect after successful login
+        }
+
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "533616281722-3gijg2u8b6aue0878sbmna6cs6q1lquc.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+        }
     </script>
-  </body>
+</body>
 </html>
