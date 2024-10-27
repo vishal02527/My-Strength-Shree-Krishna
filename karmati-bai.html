@@ -11,7 +11,7 @@
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         color: #333;
         margin: 0;
         padding: 0;
@@ -44,7 +44,7 @@
         text-align: center;
         font-size: 36px;
         font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background: var(--primary-color);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -143,7 +143,8 @@
         max-width: 900px;
         margin: 70px auto 100px;
         padding: 20px 40px;
-        background-color: #fff;
+        background-color: var(--ternary-color);
+        color: var(--secondary-color);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
@@ -372,6 +373,22 @@
           font-size: 12px;
         }
       }
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        --secondary-color: #0e0e0e;
+        --ternary-color: #fff;
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #ab9353;
+        --secondary-color: #fff;
+        --ternary-color: #0e0e0e;
+      }
     </style>
   </head>
 
@@ -388,6 +405,7 @@
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
         <form class="searchForm">
@@ -538,6 +556,17 @@
     </footer>
     <script src="script.js"></script>
     <script>
+      var icon=document.getElementById("icon");
+
+icon.onclick = function() {
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
+    icon.src="images/sun.png";
+  }
+  else{
+    icon.src="images/moon.png";
+  }
+}
       window.onscroll = function () {
         toggleScrollTopButton();
       };

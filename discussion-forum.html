@@ -50,7 +50,7 @@
       }
 
       body {
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
@@ -632,6 +632,17 @@
           font-size: 12px;
         }
       }
+
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+      }
     </style>
   </head>
   <body>
@@ -651,6 +662,7 @@
               >Discussion Forum</a
             >
             <a href="devotional-resources.html">Devotional Resources</a>
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
         <form class="searchForm">
@@ -771,6 +783,18 @@
     </footer>
 
     <script>
+      var icon=document.getElementById("icon");
+
+icon.onclick = function() {
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
+    icon.src="images/sun.png";
+  }
+  else{
+    icon.src="images/moon.png";
+  }
+}
+
       const user = document.getElementById("user");
 
       // Add the new post to the data

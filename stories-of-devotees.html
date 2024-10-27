@@ -49,7 +49,7 @@
       }
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         color: #333;
         margin: 0;
         padding: 0;
@@ -79,7 +79,7 @@
         text-align: center;
         font-size: 36px;
         font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background: var(--secondary-color);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -180,7 +180,7 @@
       }
 
       .devotee-list-item {
-        background-color: #fff;
+        background-color: var(--primary-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin-bottom: 10px;
       }
@@ -369,6 +369,20 @@
           font-size: 16px;
         }
       }
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: #fff;
+        --secondary-color: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #0e0e0e;
+        --secondary-color: #ab9353;
+      }
     </style>
   </head>
 
@@ -386,6 +400,7 @@
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
         <form class="searchForm">
