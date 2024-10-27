@@ -4,138 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devotion To-Do List</title>
-    <style>
-        /* CSS Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Light blue background */
-            color: #2e4a7e; /* Dark blue text */
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+    <style> body {
+       /* background: url("  ") center/cover no-repeat;*/
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    height: 100vh;
+        font-family: "Helvetica", sans-serif;
+        color: #f0f8ff;
+        background: rgba(34, 49, 63, 0.7);
+      }
+      
+      .container {
+       /*background: rgba(34, 49, 63, 0.7);*/
+        border-radius: 12px;
+        padding: 10px;
+        width: 600px;
+        margin: auto;
+       /* height:600px;*/
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        color: #f5f7fa;
+      }
+      
+      .main-heading {
+        margin-top:0%;
+        text-align: center;
+        border-bottom: 1px solid #8fb596;
+        padding-bottom: 10px;
+        font-size: 2rem;
+        color: #90b4dc; /* Light green for the main heading */
+        margin-top:0;
+      }
+      
+      h2 {
+        color: #f1f2c9ec;
+        margin-bottom: 10px;
+      }
+      
+      #taskInput,
+      #searchInput {
+        width: calc(100% - 20px);
+        padding: 11px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        border: none;
+        background-color: rgba(177, 153, 153, 0.2);
+        color: #f0f8ff;
+      }
+      
+      #taskInput::placeholder,
+      #searchInput::placeholder {
+        color: #e0f3df;
+      }
+      
+      #addTaskButton {
+        width: 100%;
+        padding: 10px;
+        background-color: #519a5e;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #f0f8ff;
+        transition: background-color 0.3s ease;
+      }
+      
+      #addTaskButton:hover {
+        background-color: #7aa580;
+      }
+      
+      button {margin-top: 0%;
+        margin-left: 0%;
+        padding: 10px;
+        margin-right: 10px;
+        background-color: #489857;
+        color: #f0f8ff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      button:hover {
+        background-color: #398b44;
+      }
+      
+      /* Task Display Styling */
+      ul {
+        list-style-type: disc;
+        padding: 0;
+      }
+      
+      li {
+        background-color: rgba(255, 223, 186, 0.8);
+        border-radius: 8px;
+        margin-bottom: 8px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      li span {
+        color: #5a4a2c; /* Dark brown for task text to contrast with bg */
+        margin-right: 10px;
+      }
+      
+      #pendingTasks li {
+        border-left: 5px solid #ffeb0add; /* Accent color for pending tasks */
+      }
+      
+      #completedTasks li {
+        border-left: 5px solid #3a7a46; /* Accent color for completed tasks */
+      }
+      
+      /* Styling for the Pomodoro section */
+      .pomodoro-container {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 250px;
+          background-color: #fff;
+          padding: 1rem;
+          border-radius: 10px;
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      
+      .pomodoro-section {
+          text-align: center;
+      }
+      
+      .timer {
+          font-size: 3rem;
+          font-weight: bold;
+          color: #444cf7;
+          margin-bottom: 10px;
+      }
+      
+      .timer-controls button {
+          padding: 10px;
+          margin: 5px;
+          font-size: 1rem;
+          background-color: #444cf7;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      
+      .timer-controls button:hover {
+          background-color: #3330e3;
+      }
+      
+      @media screen and (max-width: 600px) {
+          .container {
+              width: 90%;
+          }
+      
+          .pomodoro-container {
+              width: 90%;
+              top: auto;
+              bottom: 20px;
+              right: auto;
+              left: 20px;
+          }
+      }
+      
+      .custom-alert {
+          position: fixed;
+          top: 30px; /* Creates space from the top of the screen */
+          left: 50%;
+          transform: translateX(-50%); /* Centers the alert horizontally */
+          background-color: #444cf7;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+          font-size: 1rem;
+          z-index: 1000;
+          opacity: 0.9;
+          transition: opacity 0.3s ease-in-out;
+          display: none;
+      }
+      </style>
+     
 
-        h1 {
-            color: #3f51b5; /* Krishna's blue */
-            margin: 20px 0;
-            font-size: 36px; /* Larger heading */
-        }
 
-        h2 {
-            font-size: 28px; /* Larger subheading */
-            color: #3f51b5; /* Krishna's blue */
-        }
-
-        form {
-            background-color: #e3f2fd; /* Light background color */
-            border-radius: 10px;
-            padding: 30px; /* Increased padding */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            margin: 20px auto; /* Center the form */
-        }
-
-        label {
-            display: block;
-            margin: 15px 0; /* Increased margin */
-            font-size: 20px; /* Larger font size */
-        }
-
-        input[type="text"] {
-            padding: 15px; /* Increased padding */
-            border: 2px solid #ccc; /* Thicker border */
-            border-radius: 5px;
-            width: 400px; /* Increased width */
-            font-size: 18px; /* Larger font size */
-        }
-
-        button {
-            background-color: #ffeb3b; /* Yellow button */
-            border: none;
-            padding: 15px 30px; /* Increased padding */
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px; /* Larger font size */
-            color: #2e4a7e; /* Dark blue text */
-            transition: background-color 0.3s;
-            margin-top: 15px; /* Increased margin */
-        }
-
-        button:hover {
-            background-color: #ffc107; /* Darker yellow on hover */
-        }
-
-        #taskList {
-            margin-top: 20px;
-            background-color: #e3f2fd;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            display: inline-block;
-            max-width: 600px; /* Limit width of task list */
-        }
-
-        #taskList ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        #taskList li {
-            margin: 10px 0; /* Increased margin */
-            padding: 15px; /* Increased padding */
-            border: 2px solid #ccc; /* Thicker border */
-            border-radius: 5px;
-            background-color: #ffffff; /* White background for list items */
-            font-size: 18px; /* Larger font size */
-        }
-
-        /* Progress bar styles */
-        .progress-container {
-            width: 100%;
-            background-color: #ddd;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .progress-bar {
-            height: 30px; /* Increased height */
-            width: 0; /* Default to 0% */
-            background-color: #3f51b5; /* Krishna's blue */
-            border-radius: 5px;
-            text-align: center;
-            color: white;
-            line-height: 30px; /* Center text vertically */
-            font-size: 16px; /* Font size for progress text */
-        }
-
-        footer {
-            margin-top: 30px;
-            font-size: 1.2em; /* Larger footer text */
-            color: #3f51b5; /* Krishna's blue */
-        }
-
-        .home-button {
-            margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 18px;
-            color: white;
-            background-color: #4CAF50; /* Green button */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .home-button:hover {
-            background-color: #45a049; /* Darker green on hover */
-        }
-    </style>
+    
+  
 </head>
 <body>
-    <h1>Devotion To-Do List</h1>
+<!----   <h1 class="main-heading">Devotion To-Do List</h1>-->
     
-    <form id="devotionForm">
+    <!--<form id="devotionForm">
         <label for="task">Add a Task (e.g., Prayer, Chanting):</label>
         <input type="text" id="task" name="task" required>
 
@@ -148,59 +211,226 @@
     <h2>Your Tasks:</h2>
     <div id="taskList">
         <ul id="listItems"></ul> <!-- Unordered list for tasks -->
-    </div>
-<br>
-    <button class="home-button" onclick="goHome()">Home</button> <!-- Home button -->
+    <!--</div>
+<br>-->
 
-    <footer>
+<div class="container">
+    <h1 class="container-heading">Devotional To Do List</h1>
+
+    <h2>Add Task</h2>
+    <input type="text" id="taskInput" placeholder="Enter task (like praying , chanting)">
+    <button id="addTaskButton">Add Task </button>
+
+    <h2>Search Tasks</h2>
+    <input type="text" id="searchInput" placeholder="Search tasks..." style="width: 95%;">
+
+    <h2>Pending Tasks</h2>
+    <ul id="pendingTasks" class="task-list"></ul>
+
+    <h2>Completed Tasks</h2>
+    <ul id="completedTasks" class="task-list"></ul>
+</div>
+
+
+
+
+
+
+
+
+<footer>
+    
+<button class="home-button" onclick="goHome()">Home</button> <!-- Home button -->
         &copy; Shree Krishna - My Strength. All rights reserved.
     </footer>
 
     <script>
-        // JavaScript to handle form submission and display the tasks
-        document.getElementById("devotionForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting
+ document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('addTaskButton').addEventListener('click', addTask);
+});
 
-            const taskInput = document.getElementById("task").value;
-            const progressInput = document.getElementById("progress").value;
 
-            // Create a new list item for the task
-            const taskList = document.getElementById("listItems");
-            const listItem = document.createElement("li");
-            listItem.innerHTML = `<strong>Task:</strong> ${taskInput} <br> <strong>Progress:</strong> ${progressInput}`;
+//Scroll bar funtion 
+document.addEventListener('DOMContentLoaded', function() {
+    const addTaskButton = document.getElementById('addTaskButton');
+    const taskInput = document.getElementById('taskInput');
+    const pendingTasks = document.getElementById('pendingTasks');
+    const completedTasks = document.getElementById('completedTasks');
 
-            // Create a progress bar
-            const progressContainer = document.createElement("div");
-            progressContainer.className = "progress-container";
+    // Function to add a task to Pending Tasks
+    addTaskButton.addEventListener('click', function() {
+        const taskText = taskInput.value.trim();
+        if (taskText) {
+            const newTask = document.createElement('li');
+            newTask.textContent = taskText;
 
-            const progressBar = document.createElement("div");
-            progressBar.className = "progress-bar";
-            progressBar.innerHTML = progressInput; // Display progress text
+            // Add a checkbox for completing tasks
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    completedTasks.appendChild(newTask);
+                    pendingTasks.removeChild(newTask);
+                }
+            });
 
-            // Set width based on progress
-            if (progressInput.toLowerCase() === "completed") {
-                progressBar.style.width = "100%";
-            } else if (progressInput.toLowerCase() === "halfway") {
-                progressBar.style.width = "50%";
-            } else {
-                progressBar.style.width = "0%"; // Default for "Pending"
-            }
-
-            progressContainer.appendChild(progressBar);
-            listItem.appendChild(progressContainer);
-            
-            // Append the new task to the list
-            taskList.appendChild(listItem);
-
-            // Clear the input fields
-            document.getElementById("task").value = '';
-            document.getElementById("progress").value = '';
-        });
-
-        // Function to go back to the home page
-        function goHome() {
-            window.location.href = 'index.html'; // Change to your home page URL
+            newTask.prepend(checkbox);
+            pendingTasks.appendChild(newTask);
+            taskInput.value = ''; 
         }
-    </script>
+    });
+});
+
+
+
+function addTask() {
+    const taskInput = document.getElementById('taskInput');
+    const taskText = taskInput.value.trim();
+
+    if (taskText !== '') {
+        const task = {
+            text: taskText,
+            date: new Date(),
+            completed: false
+        };
+
+        // Add task to the pending tasks list
+        addTaskToList(task, 'pendingTasks');
+        taskInput.value = '';
+    }
+}
+function addTaskToList(task, listId) {
+    const list = document.getElementById(listId);
+    const listItem = document.createElement('li');
+
+    const taskNumber = document.createElement('span');
+    taskNumber.textContent = (list.children.length + 1) + '. '; // Incremental numbering
+
+    const taskText = document.createElement('span');
+    taskText.textContent = task.text;
+
+    const completeButton = document.createElement('button');
+    completeButton.textContent = 'Complete';
+    completeButton.addEventListener('click', () => {
+        completeTask(task, listId);
+    });
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', () => {
+        deleteTask(task, listId);
+    });
+
+    listItem.appendChild(taskNumber);
+    listItem.appendChild(taskText);
+
+    // Add "Complete" button for pending tasks only
+    if (listId === 'pendingTasks') {
+        listItem.appendChild(completeButton);
+    }
+
+    listItem.appendChild(deleteButton);
+
+    list.appendChild(listItem);
+}
+
+
+function toggleTaskStatus(task, listId) {
+    task.completed = !task.completed;
+    const list = document.getElementById(listId);
+
+    // Remove task from the current list
+    const listItem = findListItem(task, listId);
+    listItem.remove();
+
+    // Add task to the appropriate list
+    const targetListId = task.completed ? 'completedTasks' : 'pendingTasks';
+    addTaskToList(task, targetListId);
+}
+
+function completeTask(task, listId) {
+    if (listId === 'pendingTasks') {
+        const list = document.getElementById(listId);
+
+        // Remove task from the current list
+        const listItem = findListItem(task, listId);
+        listItem.remove();
+
+        // Add task to the completed tasks list
+        addTaskToList(task, 'completedTasks');
+    }
+
+    // Ensure the checkbox is unchecked after completing the task
+    task.completed = true;
+    document.getElementById('taskInput').value = '';
+}
+
+function deleteTask(task, listId) {
+    const list = document.getElementById(listId);
+
+    // Remove task from the current list
+    const listItem = findListItem(task, listId);
+    listItem.remove();
+}
+
+function findListItem(task, listId) {
+    const list = document.getElementById(listId);
+    const listItems = list.getElementsByTagName('li');
+
+    for (let i = 0; i < listItems.length; i++) {
+        const listItem = listItems[i];
+        if (listItem.containsText(task.text)) {
+            return listItem;
+        }
+    }
+
+    return null;
+}
+
+// Helper function to check if an element contains text
+HTMLElement.prototype.containsText = function (text) {
+    return this.innerText.toLowerCase().includes(text.toLowerCase());
+};
+
+
+
+// Search Funtion 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('addTaskButton').addEventListener('click', addTask);
+
+    // Add event listener for search input
+    document.getElementById('searchInput').addEventListener('input', searchTasks);
+});
+
+function searchTasks() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+    filterTaskList('pendingTasks', searchTerm);
+    filterTaskList('completedTasks', searchTerm);
+}
+
+function filterTaskList(listId, searchTerm) {
+    const list = document.getElementById(listId);
+    const listItems = list.getElementsByTagName('li');
+
+    for (let i = 0; i < listItems.length; i++) {
+        const listItem = listItems[i];
+        const taskText = listItem.innerText.toLowerCase();
+
+        // Show or hide the task based on search term match
+        if (taskText.includes(searchTerm)) {
+            listItem.style.display = '';
+        } else {
+            listItem.style.display = 'none';
+        }
+    }
+}
+</script>
+
+
+
+
+
+       
 </body>
 </html>
