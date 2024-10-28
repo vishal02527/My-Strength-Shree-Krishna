@@ -11,7 +11,7 @@
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         color: #333;
         margin: 0;
         padding: 0;
@@ -44,7 +44,7 @@
         text-align: center;
         font-size: 36px;
         font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background: var(--ternary-color);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -144,9 +144,10 @@
         max-width: 900px;
         margin: 70px auto 100px;
         padding: 20px 40px;
-        background-color: #fff;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px var(--forth-color);
       }
 
       .imageDiv {
@@ -373,6 +374,24 @@
           font-size: 12px;
         }
       }
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+        --ternary-color: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        --forth-color: rgba(0, 0, 0, 0.1);
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+        --ternary-color: #ab9353;
+        --forth-color: rgba(244, 240, 240, 0.1);
+      }
     </style>
   </head>
 
@@ -389,6 +408,7 @@
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
         <form class="searchForm">
@@ -541,9 +561,15 @@
         </div>
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
+    <script>
+      window.addEventListener('load',()=>  {
+        const year= document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+    </script>
     <script src="script.js"></script>
     <script>
       window.onscroll = function () {
