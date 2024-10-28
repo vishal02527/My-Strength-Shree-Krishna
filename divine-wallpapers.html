@@ -53,7 +53,7 @@
         display: block; /* Show on hover */
       }
       body {
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
@@ -171,7 +171,7 @@
         margin-bottom: 50px;
         font-size: 36px;
         font-weight: 900;
-        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background: var(--primary-color);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -404,6 +404,19 @@
           font-size: 12px;
         }
       }
+
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #ab9353;
+      }
     </style>
   </head>
   <body>
@@ -421,6 +434,7 @@
             <a href="devotional-resources.html" id="active"
               >Devotional Resources</a
             >
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
         <form class="searchForm">
@@ -1358,9 +1372,15 @@
         </div>
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
+    <script>
+      window.addEventListener('load',()=>  {
+        const year= document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+  </script>
 
     
       <!-- Chatbot code added here -->
@@ -1378,6 +1398,17 @@
 
     <script src="script.js"></script>
     <script>
+      var icon=document.getElementById("icon");
+
+icon.onclick = function() {
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
+    icon.src="images/sun.png";
+  }
+  else{
+    icon.src="images/moon.png";
+  }
+}
       window.onscroll = function () {
         toggleScrollTopButton();
       };
