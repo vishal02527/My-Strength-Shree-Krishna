@@ -14,6 +14,26 @@ Thanks & Regards,
 _Project Admin, GSSoC-Ext._
 
 ---
+<table align="center">
+    <thead align="center">
+        <tr border: 2px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+      <tr>
+          <td><img alt="Stars" src="https://img.shields.io/github/stars/vishal02527/My-Strength-Shree-Krishna?style=flat&logo=github"/></td>
+          <td><img alt="Forks" src="https://img.shields.io/github/forks/vishal02527/My-Strength-Shree-Krishna?style=flat&logo=github"/></td>
+          <td><img alt="Issues" src="https://img.shields.io/github/issues/vishal02527/My-Strength-Shree-Krishna?style=flat&logo=github"/></td>
+          <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/vishal02527/My-Strength-Shree-Krishna?style=flat&logo=github"/></td>
+          <td><img alt="Closed Pull Requests" src="https://img.shields.io/github/issues-pr-closed/vishal02527/My-Strength-Shree-Krishna?style=flat&color=critical&logo=github"/></td>
+      </tr>
+    </tbody>
+</table>
 
 ## 🌟 Welcome to My-Strength-Shree-Krishna 🌟
 
