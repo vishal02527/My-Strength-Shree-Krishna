@@ -637,12 +637,15 @@
         </div>
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
-
-
-    
+    <script>
+      window.addEventListener('load',()=>  {
+        const year= document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+    </script>
       <!-- Chatbot code added here -->
   <a href="chatbot.html">
     <div class="fixed bottom-0 right-2 chatbot-container">
