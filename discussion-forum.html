@@ -9,8 +9,48 @@
       crossorigin="anonymous"
     ></script>
     <style>
+
+.chatbot-container {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      .chatbot-button {
+        border: none;
+        border-radius: 50%;
+        padding: 5px; /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
+      }
+
+      .chatbot-button img {
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
+      }
+
+      .tooltip-text {
+        display: none; /* Hide by default */
+        position: absolute;
+        bottom: 100%; /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333; /* Background color for tooltip */
+        color: #fff; /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .chatbot-button:hover .tooltip-text {
+        display: block; /* Show on hover */
+      }
+
       body {
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
@@ -28,8 +68,8 @@
       }
       .scroll-top-btn {
         position: fixed; /* Fixed position */
-        bottom: 30px; 
-        right: 30px; 
+        bottom: 30px;
+        right: 30px;
         background-color: #330867;
         color: white;
         border: none;
@@ -336,108 +376,148 @@
       }
 
       footer {
-  background-color: #1c3d5a;
-  color: #ffffff;
-  padding: 40px 0; /* Increased padding for more space */
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  width: 100%;
-}
+        background-color: #1c3d5a;
+        color: #ffffff;
+        padding: 40px 0; /* Increased padding for more space */
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        width: 100%;
+      }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between; /* Spread items evenly across the footer */
-  align-items: flex-start;
-  flex-wrap: wrap; /* Ensure responsiveness */
-  padding: 0 50px;
-  max-width: 1200px; /* Limit max width to keep it centered */
-  margin: 0 auto;
-}
+      .footer-content {
+        display: flex;
+        justify-content: space-between; /* Spread items evenly across the footer */
+        align-items: flex-start;
+        flex-wrap: wrap; /* Ensure responsiveness */
+        padding: 0 50px;
+        max-width: 1200px; /* Limit max width to keep it centered */
+        margin: 0 auto;
+      }
 
-.footer-section {
-  flex: 1;
-  margin: 20px; /* Add margin for spacing between sections */
-  min-width: 220px; /* Minimum width for smaller screens */
-}
+      .footer-section {
+        flex: 1;
+        margin: 20px; /* Add margin for spacing between sections */
+        min-width: 220px; /* Minimum width for smaller screens */
+      }
 
-.footer-section h3 {
-  font-size: 24px; /* Increased the heading size */
-  margin-bottom: 15px;
-  color: #f0c43f; /* Gold color */
-}
+      .footer-section h3 {
+        font-size: 24px; /* Increased the heading size */
+        margin-bottom: 15px;
+        color: #f0c43f; /* Gold color */
+      }
 
-/* Quick Links Styling */
-.footer-links {
-  list-style-type: none;
-  padding: 0;
-}
+      /* Quick Links Styling */
+      .footer-links {
+        list-style-type: none;
+        padding: 0;
+      }
 
-.footer-links li {
-  margin-bottom: 12px; /* Spacing between links */
-}
+      .footer-links li {
+        margin-bottom: 12px; /* Spacing between links */
+      }
 
-.footer-links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px; /* Increased font size for better readability */
-  transition: color 0.3s ease;
-}
+      .footer-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px; /* Increased font size for better readability */
+        transition: color 0.3s ease;
+      }
 
-.footer-links a:hover {
-  color: #fce4a6; /* Lighter gold on hover */
-}
+      .footer-links a:hover {
+        color: #fce4a6; /* Lighter gold on hover */
+      }
 
-/* Faith Statement Section */
-.statement .faith-statement {
-  line-height: 1.6;
-  margin-bottom: 10px;
-  color: #fff;
-  max-height: 70px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: max-height 0.3s ease-in-out;
-}
+      /* Faith Statement Section */
+      .statement .faith-statement {
+        line-height: 1.6;
+        margin-bottom: 10px;
+        color: #fff;
+        max-height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: max-height 0.3s ease-in-out;
+      }
 
-.read-more {
-  color: #f4d35e;
-  cursor: pointer;
-  text-decoration: underline;
-}
+      .read-more {
+        color: #f4d35e;
+        cursor: pointer;
+        text-decoration: underline;
+      }
 
-/* Social Icons Styling */
-.social-icons {
-  display: flex;
-}
+      /* Social Icons Styling */
+      .social-icons {
+        display: flex;
+      }
 
-.social-icons a {
-  color: #ffffff;
-  font-size: 26px; /* Increased icon size */
-  margin-right: 15px; /* Spacing between icons */
-  transition: color 0.3s ease;
-}
+      .social-icons a {
+        color: #ffffff;
+        font-size: 26px; /* Increased icon size */
+        margin-right: 15px; /* Spacing between icons */
+        transition: color 0.3s ease;
+      }
 
-.social-icons a:hover {
-  color: #f0c43f;
-}
+      .social-icons a:hover {
+        color: #f0c43f;
+      }
 
-/* Footer Bottom Section */
-.creatorDiv {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  padding: 10px;
-  border-top: 1px solid #ffffff44; /* Subtle border for separation */
-}
+      /* Footer Bottom Section */
+      .creatorDiv {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+        padding: 10px;
+        border-top: 1px solid #ffffff44; /* Subtle border for separation */
+      }
 
-.creatorDiv p {
-  margin: 0;
-}
+      .creatorDiv p {
+        margin: 0;
+      }
 
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
 
+      .modal-content {
+        background-color: #fff;
 
+        border-radius: 10px;
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+      }
 
+      .modal h3 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 30px;
+      }
+      .modal button {
+        background-color: #da1e09;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 800;
+      }
 
+      .modal button.cancel {
+        background-color: #85888e;
+      }
 
+      .modal button:hover {
+        opacity: 0.9;
+      }
 
       /* Mobile Responsive Styles */
       @media (max-width: 768px) {
@@ -554,10 +634,23 @@
           font-size: 12px;
         }
       }
+
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+      }
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn">   <i class="fas fa-arrow-up"></i></button>
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
@@ -571,6 +664,7 @@
               >Discussion Forum</a
             >
             <a href="devotional-resources.html">Devotional Resources</a>
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
         <form class="searchForm">
@@ -598,10 +692,8 @@
       <h3 id="user"><!-- username will be dynamically added here --></h3>
       <div class="user-BtnDiv">
         <div class="logDeleteBtnDiv">
-          <button class="logout-btn" onclick="logout()">Logout</button>
-          <button class="delete-btn" onclick="deleteAccount()">
-            Delete Account
-          </button>
+          <button class="logout-btn">Logout</button>
+          <button class="delete-btn">Delete Account</button>
         </div>
       </div>
 
@@ -631,26 +723,42 @@
         </form>
       </div>
     </main>
+    <div id="logoutModal" class="modal">
+      <div class="modal-content">
+        <h3>Are you sure you want to logout?</h3>
+        <button id="confirmLogout">Logout</button>
+        <button class="cancel" id="cancelLogout">Cancel</button>
+      </div>
+    </div>
 
+    <!-- Delete Account Confirmation Modal -->
+    <div id="deleteModal" class="modal">
+      <div class="modal-content">
+        <h3>Are you sure you want to delete your account?</h3>
+        <button id="confirmDelete">Delete</button>
+        <button class="cancel" id="cancelDelete">Cancel</button>
+      </div>
+    </div>
     <footer>
       <div class="footer-content">
-
-        <div class="footer-section statement ">
-          <h3>Statement on Faith </h3>
+        <div class="footer-section statement">
+          <h3>Statement on Faith</h3>
           <p class="faith-statement">
-            Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
-        
+            Faith isn't just about something we believe; it is integral to our
+            very existence, it's about how we live...
           </p>
           <a href="devotional-resources.html" class="read-more">Read More</a>
         </div>
         <div class="footer-section">
-          <h3 >Quick Links</h3>
+          <h3>Quick Links</h3>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="scriptures.html">Scriptures</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
-            <li><a href="devotional-resources.html">Devotional Resources</a></li>
+            <li>
+              <a href="devotional-resources.html">Devotional Resources</a>
+            </li>
           </ul>
         </div>
 
@@ -678,11 +786,29 @@
         </div>
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
+    <script>
+      window.addEventListener('load',()=>  {
+        const year = document.getElementById('cyear');
+        year.innerHTML =new Date().getFullYear();
+      });
+    </script>
 
     <script>
+      var icon=document.getElementById("icon");
+
+icon.onclick = function() {
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
+    icon.src="images/sun.png";
+  }
+  else{
+    icon.src="images/moon.png";
+  }
+}
+
       const user = document.getElementById("user");
 
       // Add the new post to the data
@@ -796,6 +922,20 @@
         // Redirect to the signup page after deleting the account
         window.location.href = "./signup.html";
       }
+
+      <!-- Chatbot code added here -->
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="panditji.png" alt="chatbot" />
+        <span class="tooltip-text">
+          Radhe Radhe🙏<br />
+          How can I help You?🌸
+        </span>
+      </button>
+    </div>
+  </a>
+
     </script>
     <script src="script.js"></script>
     <script>
@@ -819,6 +959,49 @@
       scrollTopBtn.onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
       };
+    </script>
+    <script>
+      // Logout modal functionality
+      const logoutBtn = document.querySelector(".logout-btn"); // Corrected selector for logout button
+      const logoutModal = document.getElementById("logoutModal");
+      const confirmLogout = document.getElementById("confirmLogout");
+      const cancelLogout = document.getElementById("cancelLogout");
+
+      logoutBtn.addEventListener("click", () => {
+        logoutModal.style.display = "flex";
+      });
+
+      cancelLogout.addEventListener("click", () => {
+        logoutModal.style.display = "none";
+      });
+
+      confirmLogout.addEventListener("click", () => {
+        // Add your logout logic here
+        alert("Logged out successfully");
+        logout();
+        logoutModal.style.display = "none";
+      });
+
+      // Delete modal functionality
+      const deleteBtn = document.querySelector(".delete-btn"); // Corrected selector for delete button
+      const deleteModal = document.getElementById("deleteModal");
+      const confirmDelete = document.getElementById("confirmDelete");
+      const cancelDelete = document.getElementById("cancelDelete");
+
+      deleteBtn.addEventListener("click", () => {
+        deleteModal.style.display = "flex";
+      });
+
+      cancelDelete.addEventListener("click", () => {
+        deleteModal.style.display = "none";
+      });
+
+      confirmDelete.addEventListener("click", () => {
+        // Add your delete account logic here
+        alert("Account deleted successfully");
+        deleteAccount();
+        deleteModal.style.display = "none";
+      });
     </script>
   </body>
 </html>

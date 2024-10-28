@@ -6,10 +6,48 @@
     <title>Krishna Bhakti Forum - Login</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        .chatbot-container {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      .chatbot-button {
+        border: none;
+        border-radius: 50%;
+        padding: 5px; /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
+      }
+
+      .chatbot-button img {
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
+      }
+
+      .tooltip-text {
+        display: none; /* Hide by default */
+        position: absolute;
+        bottom: 100%; /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333; /* Background color for tooltip */
+        color: #fff; /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .chatbot-button:hover .tooltip-text {
+        display: block; /* Show on hover */
+      }
         
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('/api/placeholder/1920/1080');
+            background-color: var(--primary-color);
             background-size: cover;
             background-position: center;
             color: #333;
@@ -29,9 +67,9 @@
         }
 
         .login-form {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: var(--primary-color);
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px var(--forth-color);
             padding: 30px;
             position: relative;
             overflow: hidden;
@@ -51,7 +89,7 @@
         }
 
         h2 {
-            color: #4a2b0f;
+            color: var(--ternary-color);
             margin-top: 0;
             text-align: center;
             font-size: 28px;
@@ -61,7 +99,7 @@
         label {
             display: block;
             margin-bottom: 8px;
-            color: #4a2b0f;
+            color: var(--ternary-color);
             font-weight: 600;
         }
 
@@ -76,7 +114,7 @@
         }
 
         input:focus {
-            border-color: #4a2b0f;
+            border-color: var(--ternary-color);
             outline: none;
             box-shadow: 0 0 5px rgba(74, 43, 15, 0.5);
         }
@@ -85,7 +123,7 @@
             display: block;
             margin-top: -10px;
             margin-bottom: 20px;
-            color: #4a2b0f;
+            color: var(--ternary-color);
             font-weight: 400;
             text-decoration: none;
             transition: color 0.3s;
@@ -117,10 +155,11 @@
             text-align: center;
             margin-top: 20px;
             font-size: 14px;
+            color: var(--secondary-color);
         }
 
         .signup-link {
-            color: #4a2b0f;
+            color: var(--ternary-color);
             font-weight: 600;
             text-decoration: none;
             transition: color 0.3s;
@@ -133,7 +172,7 @@
         footer {
             text-align: center;
             margin-top: 20px;
-            color: #fff;
+            color: var(--secondary-color);
             font-size: 14px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
@@ -161,11 +200,31 @@
                 font-size: 14px;
             }
         }
+        #icon{
+          width: 30px;
+          cursor: pointer;
+          position: absolute;
+          right: 125px;
+          top: 50px;
+      }
+      :root{
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+        --ternary-color: #4a2b0f;
+        --forth-color: rgba(0, 0, 0, 0.2);
+      }
+      .dark-theme{
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+        --ternary-color: #ab9353;
+        --forth-color: rgba(250, 244, 244, 0.2);
+      }
     </style>
     <!-- Include Google Platform Library -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
+    <img src="images/moon.png" id="icon">
     <div class="container">
         <div class="login-form" id="loginForm">
             <h2>Enter Krishna's Bhakti Forum</h2>
@@ -206,10 +265,41 @@
 
         </div>
         <footer>
-            <p>&copy; 2023 Krishna Bhakti Forum. All rights reserved.</p>
+            <p>&copy; <span  id="cyear"></span> Krishna Bhakti Forum. All rights reserved.</p>
         </footer>
+        <script>
+            window.addEventListener('load',()=>  {
+              const year= document.getElementById('cyear');
+              year.innerHTML=new Date().getFullYear();
+            });
+        </script>
     </div>
+
+      <!-- Chatbot code added here -->
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="panditji.png" alt="chatbot" />
+        <span class="tooltip-text">
+          Radhe Radhe🙏<br />
+          How can I help You?🌸
+        </span>
+      </button>
+    </div>
+  </a>
+  
     <script>
+        var icon=document.getElementById("icon");
+
+icon.onclick = function() {
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
+    icon.src="images/sun.png";
+  }
+  else{
+    icon.src="images/moon.png";
+  }
+}
         document.getElementById("form").addEventListener("submit", function (event) {
             event.preventDefault();
             
