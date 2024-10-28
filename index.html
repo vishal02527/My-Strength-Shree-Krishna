@@ -644,8 +644,11 @@
       }
 
       .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        padding: 15px;
+        padding: 10px;
         text-align: left;
         background-color: var(--ternary-color);
         border: none;
@@ -656,7 +659,17 @@
         outline: none;
         transition: background-color 0.3s ease;
       }
-
+      .arrow{
+        width:12px;
+        height:12px;
+        border:solid black;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        transition: transform 0.3s ease;
+      }
+      [aria-expanded="true"] .arrow {
+        transform: rotate(-135deg); /* Rotation when expanded */
+      }
       .faq-question:hover {
         background-color: #e6e6e6;
       }
@@ -742,7 +755,9 @@
          <a href="Feedback.html">Feedbackform</a>
          <a href="partner.html">Partner</a>
          <a href="avatars.html">Avatars</a>
-         <img src="images/moon.png" id="icon">
+         <a href="prasadam.html">Prasadam Section</a>
+
+
           </div>
         </div>
         <form class="searchForm">
@@ -1108,6 +1123,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             Who is Lord Sri Krishna?
+            <span class="arrow"></span>
           </button>
           <div class="faq-answer">
             <p>
@@ -1120,6 +1136,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             What are the teachings of Sri Krishna in the Bhagavad Gita?
+            <span class="arrow"></span>
           </button>
           <div class="faq-answer">
             <p>
@@ -1132,6 +1149,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             What is the significance of the name ‘Krishna’?
+            <span class="arrow"></span>
           </button>
           <div class="faq-answer">
             <p>
@@ -1146,6 +1164,7 @@
           <button class="faq-question" aria-expanded="false">
             How can we incorporate the teachings of Lord Krishna into our daily
             life?
+            <span class="arrow"></span>
           </button>
           <div class="faq-answer">
             <p>
@@ -1161,6 +1180,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             What is the significance of the Krishna Janmashtami festival?
+            <span class="arrow"></span>
           </button>
           <div class="faq-answer">
             <p>
@@ -1175,6 +1195,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             What is the concept of Krishna Leela?
+            <span class="arrow"></span>
           </button>
           <div class="faq-answer">
             <p>
@@ -1239,10 +1260,22 @@
 
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
+    <script>
+      window.addEventListener('load',()=>  {
+        const year= document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+    </script>
     <script src="script.js"></script>
+    <script>
+      window.addEventListener('load',()=>  {
+        const year= document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+    </script>
 
     <script>
       var icon=document.getElementById("icon");
