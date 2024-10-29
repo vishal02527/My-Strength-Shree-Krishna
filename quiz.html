@@ -10,20 +10,20 @@
         body {
             font-family: Arial, sans-serif;
             background-color: var(--primary-color); /* Light blue background */
-            color: #2e4a7e; /* Dark blue text */
+            color: var(--question-color); /* Dark blue text */
             margin: 0;
             padding: 20px;
             text-align: center;
         }
 
         h1 {
-            color: #3f51b5; /* Krishna's blue */
+            color: var(--heading-color); /* Krishna's blue */
             margin: 20px 0;
             font-size: 36px; /* Larger heading */
         }
 
         #quizContainer {
-            background-color: #e3f2fd; /* Light background color */
+            background-color: var(--quizContainer-color); /* Light background color */
             border-radius: 10px;
             padding: 30px; /* Increased padding */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,7 +38,7 @@
 
         .optionBtn {
             display: block;
-            background-color: #ffeb3b; /* Yellow button */
+            background-color: var(--opnbtn-color); /* Yellow button */
             border: none;
             padding: 15px 30px; /* Increased padding */
             border-radius: 5px;
@@ -50,18 +50,18 @@
         }
 
         .optionBtn:hover {
-            background-color: #ffc107; /* Darker yellow on hover */
+            background-color: var(--opnbtnHover-color) !important; /* Darker yellow on hover */
         }
 
         #result {
             margin-top: 20px;
             font-size: 22px; /* Larger result text */
-            color: #3f51b5; /* Krishna's blue */
+            color: var(--result-color); /* Krishna's blue */
         }
 
         #score {
             font-size: 22px; /* Larger score text */
-            color: #2e4a7e; /* Dark blue */
+            color: var(--score-color); /* Dark blue */
         }
 
         #homeBtn {
@@ -122,12 +122,54 @@
           right: 50px;
           top: 50px;
       }
+      .correct {
+            background-color: var(--correct-color) !important;
+        }
+        
+        .incorrect {
+            background-color: var(--incorrect-color) !important;
+        }
+
       :root{
         --primary-color: #f0f8ff;
+        --heading-color: #3f51b5;
+        --quizContainer-color: #e3f2fd;
+        --question-color: #2e4a7e;
+        --opnbtn-color: #ffeb3b;
+        --opnbtnHover-color: #ffc107;
+        --correct-color: green !important;
+        --incorrect-color: red !important;
+        --result-color: #3f51b5;
+        --score-color: #2e4a7e;
       }
       .dark-theme{
-        --primary-color: #474444;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --heading-color: gold;
+        --quizContainer-color: transparent;
+        --question-color: gold;
+        --result-color: gold;
+        --score-color: aqua;
       }
+
+
+      /* customization for some borders */
+      .dark-theme #quizContainer{
+        border: 2px solid aqua;
+        box-shadow: 0px 0px 10px 3px aqua;
+      }
+
+      .dark-theme .optionBtn {
+        background-color: rgb(28, 59, 137) !important; 
+        /* light mode colors becoming higher specifity so important is required */
+        border: 2px solid aqua;
+        box-shadow: 3px 3px 4px aqua;
+        color: white;
+    }
+
+    .dark-theme .optionBtn:hover{
+        background-color: rgb(21, 46, 109) !important;
+    }
+
     </style>
 </head>
 <body>
@@ -205,8 +247,10 @@
 
             // Reset button colors
             const options = document.querySelectorAll(".optionBtn");
+            const root = document.documentElement;
+            const color = getComputedStyle(root).getPropertyValue(`--opnbtn-color`).trim();
             options.forEach(option => {
-                option.style.backgroundColor = "#ffeb3b"; // Reset to default
+                option.style.backgroundColor = color; // Reset to default
                 option.disabled = false; // Enable buttons
             });
 
@@ -218,29 +262,29 @@
             const selectedAnswer = document.getElementById(selectedOption).innerText;
             const correctAnswer = quizData[currentQuestionIndex].answer;
 
-            // Highlight selected option
             const options = document.querySelectorAll(".optionBtn");
             options.forEach(option => {
                 option.disabled = true; // Disable all option buttons
                 if (option.innerText === correctAnswer) {
-                    option.style.backgroundColor = "lightgreen"; // Green for correct
+                    option.style.setProperty("background-color", "green", "important"); // Green for correct
                 }
                 if (option.innerText === selectedAnswer && selectedAnswer !== correctAnswer) {
-                    option.style.backgroundColor = "lightcoral"; // Red for wrong
+                    option.style.setProperty("background-color", "red", "important"); // Red for wrong
                 }
             });
-
+        
             // Update result message
             if (selectedAnswer === correctAnswer) {
                 score++;
                 document.getElementById("result").innerText = "Correct! The answer is: " + correctAnswer;
             } else {
-                document.getElementById("result").innerText = "Wrong! The correct answer is: " + correctAnswer;
+                document.getElementById("result").innerText = "Wrong! The correct answer is: " +        correctAnswer;
             }
-
+        
             // Show Next button
             document.getElementById("nextBtn").style.display = "inline-block"; 
         }
+
 
         function nextQuestion() {
             currentQuestionIndex++;
