@@ -201,9 +201,12 @@
 
       .navigation {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
       }
 
       .navigation .homeDiv #homeBtn {
@@ -255,18 +258,26 @@
       }
       .navigation .navbar {
         display: flex;
-        /* margin-right: 350px !important; */
+    gap: 20px; /* Space between links */
+    flex-direction: row; /* Ensure horizontal alignment */
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* Adjust to center content */
+    width: 100%; /* Ensures it spans horizontally */
       }
       .navigation .navbar a {
         color: #fff;
-        text-decoration: none;
-        margin: 0 5px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: ease-in 0.3s;
-        border: 2px solid #fff;
-        padding: 10px 15px;
-        border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: ease-in 0.3s;
+    display: inline-flex; /* Inline-flex for horizontal orientation */
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
       }
       .navigation .navbar a:hover {
         color: rgb(250, 219, 153);
