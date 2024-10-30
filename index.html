@@ -284,6 +284,21 @@
         border: 2px solid rgb(250, 219, 153);
       }
 
+      #icon {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  margin-right: 20px; /* Adds space between icon and search bar */
+  cursor: pointer;
+  margin-top: 60px;
+}
+
+      .searchForm {
+  display: flex;
+  align-items: center;
+  /* position: relative; */
+  width: fit-content;
+}
+
       .searchInput {
         box-sizing: border-box;
         width: 280px;
@@ -291,25 +306,25 @@
         padding: 5px 20px;
         border-radius: 50px;
         border: 0;
-      }
+            }
       .searchInput:focus {
         outline: 0;
       }
       .searchForm button {
         padding: 0;
-        border: 0;
-        background-color: transparent;
-        position: relative;
-        top: 2px;
-        right: 55px;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
       }
       .searchForm button i {
         color: #555;
-        padding: 9px 15px;
-
-        font-size: 16px;
-        cursor: pointer;
-        transition: linear 0.16s;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.16s linear;
+  padding: 10px;
       }
       .searchForm button i:hover {
         color: #23d1c8;
