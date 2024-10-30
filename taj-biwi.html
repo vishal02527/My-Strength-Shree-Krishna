@@ -384,6 +384,298 @@
         --ternary-color: #ab9353;
         --forth-color: rgba(244, 240, 240, 0.1);
       }
+    :root {
+            --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+            --primary-color: #fff;
+            --secondary-color: #0e0e0e;
+            --ternary-color: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+            --forth-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-theme {
+            --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+            --primary-color: #0e0e0e;
+            --secondary-color: #fff;
+            --ternary-color: #ab9353;
+            --forth-color: rgba(244, 240, 240, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: var(--bg-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .header {
+            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem;
+            box-shadow: 0px 6px 10px #ccc;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-btn {
+            background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+            border: none;
+            border-radius: 8px;
+            padding: 3px;
+            cursor: pointer;
+        }
+
+        .logo-btn a {
+            background-color: rgb(5, 6, 45);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            display: block;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 300ms;
+        }
+
+        .logo-btn:hover a {
+            background: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid #fff;
+            border-radius: 20px;
+            transition: ease-in 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: rgb(250, 219, 153);
+            border-color: rgb(250, 219, 153);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .theme-toggle img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-left: auto;
+        }
+
+        .search-input {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: none;
+            width: 300px;
+        }
+
+        .search-input:focus {
+            outline: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .search-btn:hover i {
+            color: #23d1c8;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 2rem 0;
+            font-weight: 900;
+            background: var(--ternary-color);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-image {
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .content-container {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 0 10px var(--forth-color);
+        }
+
+        .language-toggle {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .toggle-btn {
+            background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+            background-size: 200% auto;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .toggle-btn:hover {
+            background-position: right center;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary-color);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #330867;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            z-index: 1000;
+        }
+
+        .scroll-top:hover {
+            background-color: #330867;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #f39c12;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: #ecf0f1;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: rgb(241, 203, 120);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .search-container {
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .image-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .gallery-image {
+                width: 100%;
+                max-width: 300px;
+                height: 210px;
+            }
+        }
     </style>
   </head>
 
@@ -416,17 +708,18 @@
 
     <main>
       <h1>Taj Biwi: A Tapestry of Devotion Woven in Love</h1>
-      <div class="imageDiv">
+      <div class="image-gallery">
         <img src="./images/tajbibi.png" alt="ताज बीवी" />
       </div>
 
-      <div id="translateBtnDiv">
-        <button onclick="toggleLanguage()" id="translateBtn">
+      <div class="language-toggle">
+        <button class="toggle-btn" onclick="toggleLanguage()">
           हिंदी में पढ़ें
         </button>
       </div>
-      <div class="content">
-        <div id="content-english">
+
+      <div class="content-container">
+        <div id="content-english" class="article-content">
           <p>
             Taj Biwi, a name that resonates with divine love and unwavering
             devotion, embarked on a spiritual journey that unfolded against the
@@ -472,7 +765,8 @@
             transcends time and echoes through eternity.
           </p>
         </div>
-        <div id="content-hindi" style="display: none">
+
+        <div id="content-hindi" class="article-content" style="display: none">
           <p>
             ताज बीवी, एक ऐसा नाम जो दिव्य प्रेम और अटूट भक्ति को प्रतिबिंबित
             करता है, ने एक आध्यात्मिक यात्रा शुरू की जो मुगल वैभव की पृष्ठभूमि
@@ -524,6 +818,10 @@
       </div>
     </main>
 
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+  </button>
+  
     <footer>
       <div class="footer-content">
         <div class="footer-section">
