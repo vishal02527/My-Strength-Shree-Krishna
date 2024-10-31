@@ -13,9 +13,49 @@
       crossorigin="anonymous"
     ></script>
     <style>
+
+.chatbot-container {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      .chatbot-button {
+        border: none;
+        border-radius: 50%;
+        padding: 5px; /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
+      }
+
+      .chatbot-button img {
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
+      }
+
+      .tooltip-text {
+        display: none; /* Hide by default */
+        position: absolute;
+        bottom: 100%; /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333; /* Background color for tooltip */
+        color: #fff; /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .chatbot-button:hover .tooltip-text {
+        display: block; /* Show on hover */
+      }
+
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         color: #333;
         margin: 0;
         padding: 0;
@@ -156,7 +196,7 @@
       }
 
       .resource-card {
-        background-color: #fff;
+        background-color: var(--primary-color);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
@@ -171,7 +211,7 @@
       .resource-card p {
         font-size: 18px;
         line-height: 1.6;
-        color: #333;
+        color: var(--secondary-color);
         margin-bottom: 15px;
       }
 
@@ -423,10 +463,30 @@
           font-size: 12px;
         }
       }
+
+      #icon{
+          width: 30px;
+          cursor: pointer;
+      }
+      :root{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+        --ternary-color: #f7f7f7;
+      }
+      .dark-theme{
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+        --ternary-color: rgba(32, 26, 26, 0.785);
+      }
+
     </style>
   </head>
   <body>
-    <button id="scrollTopBtn" class="scroll-top-btn"> <i class="fas fa-arrow-up"></i></button>
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <div class="header">
       <div class="navigation">
         <div class="homeDiv">
@@ -438,18 +498,19 @@
             <a href="scriptures.html">Scriptures</a>
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
-            <a href="devotional-resources.html" id="active"
-              >Devotional Resources</a
-            >
+            <a href="devotional-resources.html" id="active">Devotional Resources</a>
+            <img src="images/moon.png" id="icon">
           </div>
         </div>
-        <form class="searchForm">
+        <form class="searchForm" onsubmit="return false;">
           <input
             type="text"
+            id="searchInput"
             class="searchInput"
             placeholder="Search all the content"
+            onkeyup="searchResources()"
           />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
     </div>
@@ -510,9 +571,7 @@
             Shree Krishna. Listen to the divine vibrations and bring positivity
             to your mornings.
           </p>
-          <a href="./morning-mantra-audio.html" class="cta-button"
-            >Listen Now</a
-          >
+          <a href="./morning-mantra-audio.html" class="cta-button">Listen Now</a>
         </div>
 
         <!-- Resource 5 Card -->
@@ -523,8 +582,7 @@
             href="./pdf_files/Shree-Radha-Chalisa.pdf"
             class="cta-button"
             download
-            >Download Now</a
-          >
+            >Download Now</a>
         </div>
 
         <!-- Resource 6 Card -->
@@ -546,11 +604,18 @@
 
     <footer>
       <div class="footer-content">
+<<<<<<< HEAD:frontend/devotional-resources.html
         <div class="footer-section statement ">
           <h3>Statement on Faith </h3>
           <p class="faith-statement">
             Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
         
+=======
+        <div class="footer-section statement">
+          <h3>Statement on Faith</h3>
+          <p class="faith-statement">
+            Faith isn't just about something we believe; it is integral to our very existence, it's about how we live...
+>>>>>>> 65758a39e3f6bbe968b655ab6ad6120c328aa7ca:devotional-resources.html
           </p>
           <a href="devotional-resources.html" class="read-more">Read More</a>
         </div>
@@ -574,26 +639,49 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="https://github.com/vishal02527" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/vishal-kumar-8303a3283"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
+            <a href="https://github.com/vishal02527" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://codepen.io/Vishal-Kumar25" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+            <a href="https://www.linkedin.com/in/vishal-kumar-8303a3283" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
     <script>
+      window.addEventListener('load',()=>  {
+        const year= document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+    </script>
+      <!-- Chatbot code added here -->
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="panditji.png" alt="chatbot" />
+        <span class="tooltip-text">
+          Radhe Radhe🙏<br />
+          How can I help You?🌸
+        </span>
+      </button>
+    </div>
+  </a>
+
+    <script src="script.js"></script>
+
+
+    <script>
+      icon.onclick = function() {
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+          icon.src="images/sun.png";
+        }
+        else{
+          icon.src="images/moon.png";
+        }
+      }
+
       window.onscroll = function () {
         toggleScrollTopButton();
       };
@@ -614,6 +702,27 @@
       scrollTopBtn.onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
       };
+
+      // Function to filter resources by search input
+      function searchResources() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const resourceCards = document.querySelectorAll('.resource-card');
+
+        resourceCards.forEach(function(card) {
+          const title = card.querySelector('h2').textContent.toLowerCase();
+          if (title.includes(input)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
     </script>
+<<<<<<< HEAD:frontend/devotional-resources.html
   </body>
 </html>
+=======
+</body>
+
+</html>
+>>>>>>> 65758a39e3f6bbe968b655ab6ad6120c328aa7ca:devotional-resources.html
