@@ -8,8 +8,9 @@
     <style>
         /* CSS Styles */
         body {
+            background-image:url("lord.png");
             font-family: Arial, sans-serif;
-            background-color: var(--primary-color); /* Light blue background */
+            background-color: rgb(152, 152, 52);
             color: var(--question-color); /* Dark blue text */
             margin: 0;
             padding: 20px;
@@ -17,13 +18,16 @@
         }
 
         h1 {
-            color: var(--heading-color); /* Krishna's blue */
-            margin: 20px 0;
-            font-size: 36px; /* Larger heading */
+            color: rgb(230, 221, 40);
+            margin: 5px 0;
+            margin-bottom:60px;
+            font-weight:900;
+            font-size: 3rem; /* Larger heading */
         }
 
         #quizContainer {
-            background-color: var(--quizContainer-color); /* Light background color */
+           
+            background-color: rgb(116, 120, 7);
             border-radius: 10px;
             padding: 30px; /* Increased padding */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,14 +42,14 @@
 
         .optionBtn {
             display: block;
-            background-color: var(--opnbtn-color); /* Yellow button */
+            background-color: blue;
             border: none;
             padding: 15px 30px; /* Increased padding */
             border-radius: 5px;
             cursor: pointer;
             font-size: 18px; /* Larger font size */
             margin: 10px auto; /* Center buttons */
-            transition: background-color 0.3s;
+            transition: 0.3s;
             width: 100%; /* Full width */
         }
 
@@ -65,34 +69,37 @@
         }
 
         #homeBtn {
-            background-color: #4caf50; /* Green button */
+           
+            top:70px;
+            background-color: #777913; /* Green button */
             border: none;
             padding: 15px 30px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 25px;
             margin-top: 20px;
-            color: white;
+            color: black;
         }
 
         #homeBtn:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: yellowgreen /* Darker green on hover */
         }
 
         #nextBtn {
-            background-color: #2196F3; /* Blue button */
+          
+            background-color: #7e8410; /* Blue button */
             border: none;
             padding: 15px 30px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 1.5rem;
             margin-top: 20px;
-            color: white;
+            color: black;
             display: none; /* Initially hidden */
         }
 
         #nextBtn:hover {
-            background-color: #1976D2; /* Darker blue on hover */
+            background-color: #897537; /* Darker blue on hover */
         }
 
         /* Additional styles for mobile responsiveness */
@@ -169,12 +176,28 @@
     .dark-theme .optionBtn:hover{
         background-color: rgb(21, 46, 109) !important;
     }
-
+    .krishnaImg{
+        position:absolute;
+        border:2px solid aqua;
+        box-shadow: 5px 5px aqua;
+        top :100px;
+        left:10px;
+        height:800px;
+        width:550px;
+    }
+     
+    .krishnaImg:hover{
+        left:7px;
+        top:97px;
+        transition: ease-in;
+        box-shadow:8px 8px aqua;
+    } 
     </style>
 </head>
 <body>
     <img src="images/moon.png" id="icon">
-    <h1>Krishna Quiz</h1>
+    <h1 >Unravel the Mysteries of the Divine :<br>
+    LORD KRISHNA</h1>
     <div id="quizContainer">
         <p id="question"></p>
         <button class="optionBtn" id="option1" onclick="checkAnswer('option1')"></button>
@@ -187,6 +210,7 @@
     <button id="nextBtn" onclick="nextQuestion()">Next</button>
     <br>
     <button id="homeBtn" onclick="goHome()">Home</button>
+   
 
     <script>
         // JavaScript for quiz functionality
@@ -232,7 +256,7 @@
                 answer: "Charioteer"
             }
         ];
-
+         
         let currentQuestionIndex = 0;
         let score = 0;
 
@@ -245,6 +269,8 @@
             document.getElementById("option4").innerText = currentQuestion.options[3];
             document.getElementById("result").innerText = ""; // Clear previous result
 
+            document.getElementById("question").style.color='rgb(22, 29, 75)';
+            document.getElementById("question").style.fontSize='1.6rem';
             // Reset button colors
             const options = document.querySelectorAll(".optionBtn");
             const root = document.documentElement;
@@ -277,8 +303,14 @@
             if (selectedAnswer === correctAnswer) {
                 score++;
                 document.getElementById("result").innerText = "Correct! The answer is: " + correctAnswer;
+                document.getElementById("result").style.color='white';
+                document.getElementById("result").style.fontWeight="700";
+                document.getElementById("result").style.fontSize="2rem";
             } else {
                 document.getElementById("result").innerText = "Wrong! The correct answer is: " +        correctAnswer;
+                document.getElementById("result").style.color='white';
+                document.getElementById("result").style.fontWeight="700";
+                document.getElementById("result").style.fontSize="2rem";
             }
         
             // Show Next button
@@ -298,7 +330,15 @@
         function showFinalResult() {
             document.getElementById("quizContainer").style.display = "none";
             document.getElementById("result").innerText = "Quiz Finished!";
+            document.getElementById("result").style.position="absolute";
+            document.getElementById("result").style.top="240px";
+            document.getElementById("result").style.left="800px";
             document.getElementById("score").innerText = `Your score: ${score} out of ${quizData.length}`;
+            document.getElementById("score").style.position='absolute';
+            document.getElementById("score").style.left="700px";
+            document.getElementById("score").style.color='white';
+            document.getElementById("score").style.fontSize="3rem";
+            document.getElementById("score").style.fontWeight="600"; 
             document.getElementById("nextBtn").style.display = "none"; // Hide Next button
         }
 
