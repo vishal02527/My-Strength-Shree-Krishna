@@ -156,11 +156,13 @@
     .header {
       position: unset;
       margin-right: 0;
+      
     }
     .navigation {
       display: flex;
       flex-direction: column;
       align-items: center;
+      
     }
     .navigation .navbar {
       display: flex;
@@ -260,4 +262,21 @@
   --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
   --secondary-color: #fff;
   --ternary-color: #ab9353;
+}
+
+
+.home-button {
+  display: block;
+  background-color: mediumseagreen; 
+  color: black; 
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-align: center;
+  margin: 20px auto; /* Center the button */
+  width: 100px;
+  transition: 0.2s;
+  margin-top: 3px;
+    
 }
