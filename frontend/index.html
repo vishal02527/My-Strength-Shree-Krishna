@@ -481,6 +481,7 @@
         .footer-content {
           flex-direction: column;
           align-items: center;
+
           margin: 0px 40px 0px 0px;
         }
         .footer-section p {
@@ -490,6 +491,7 @@
           font-size: 22px;
           margin: 5px;
         }
+
         .footer-section {
           margin-bottom: 0;
         }
@@ -737,7 +739,7 @@
             <a href="devotional-resources.html">Devotional Resources</a>
             <a href="avatars.html">Avatars</a>
             <a href="quiz.html">Quiz</a>
-            <a href="DIgital.html">DigitalResources</a>
+            <a href="DIgital.html">Digital Resources</a>
             <a href="Personalized.html">ToDoList</a>
             <a href="Feedback.html">Feedbackform</a>
             <a href="partner.html">Partner</a>
@@ -1243,9 +1245,6 @@
             ></a>
           </div>
         </div>
-
-    
-
       </div>
       <div class="creatorDiv">
         <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
@@ -1258,7 +1257,6 @@
       });
     </script>
     <script src="script.js"></script>
-
     <script>
       window.addEventListener('load',()=>  {
         const year= document.getElementById('cyear');
@@ -1299,5 +1297,26 @@
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
       };
     </script>
+
+
+    <script>
+        // Function to redirect to quiz.html
+        document.getElementById('quiz-button').onclick = function() {
+            window.location.href = 'challenges/index.html'; // Adjust the path if necessary
+        };
+    </script>
+
+    <br /><br />
+    <link rel="stylesheet" href="visi.css">
+    <!-- ############### Footer ############### -->
+    <div class="visitor-counter">
+    <div>Visitor</div>
+    <div class="website-counter"></div>
+    </div>
+    <script src="path/to/visitorCounter.js"></script>
+    <script src="./assets/css/visitors.css"></script>
+    <script src="visi.js"></script>
+    
+
   </body>
 </html>
