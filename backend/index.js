@@ -33,11 +33,15 @@ app.use(session({
 
 
 // Connect to MongoDB
+let isMongoconnected = false
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => console.log('MongoDB connected'))
+  .then(() => {
+    console.log('MongoDB connected');
+    isMongoconnected = true
+  })
   .catch(err => console.error('MongoDB connection error:', err));
 
 

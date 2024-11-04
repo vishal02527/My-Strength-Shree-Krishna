@@ -1,260 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Krishna Bhakti Forum - Sign Up</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-        .chatbot-container {
-        position: fixed;
-        bottom: 20px; /* Adjust as needed */
-        right: 90px; /* Adjust as needed */
-        z-index: 1000; /* Ensure it appears above other elements */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Bhakti Forum - Sign Up</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    .chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      /* Adjust as needed */
+      right: 90px;
+      /* Adjust as needed */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
+
+    .chatbot-button {
+      border: none;
+      border-radius: 50%;
+      padding: 5px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+    }
+
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
+
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
+    }
+
+    .chatbot-button:hover .tooltip-text {
+      display: block;
+      /* Show on hover */
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--primary-color);
+      background-size: cover;
+      background-position: center;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    .signup-form {
+      background-color: var(--primary-color);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px var(--forth-color);
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signup-form::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 100px;
+      height: 100px;
+      background-image: url('/api/placeholder/100/100');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.2;
+    }
+
+    h2 {
+      color: var(--ternary-color);
+      margin-top: 0;
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ternary-color);
+      font-weight: 600;
+    }
+
+    input {
+      width: 93%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #d1a054;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus {
+      border-color: var(--ternary-color);
+      outline: none;
+      box-shadow: 0 0 5px rgba(74, 43, 15, 0.5);
+    }
+
+    button {
+      background: linear-gradient(135deg, #d1a054, #4a2b0f);
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-size: 18px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(74, 43, 15, 0.3);
+    }
+
+    .login {
+      color: var(--secondary-color);
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .login-link {
+      color: var(--ternary-color);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .login-link:hover {
+      color: #d1a054;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: var(--secondary-color);
+      font-size: 14px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .google-signin {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px;
       }
 
-      .chatbot-button {
-        border: none;
-        border-radius: 50%;
-        padding: 5px; /* Smaller padding */
-        cursor: pointer;
-        position: relative;
-        width: 50px; /* Adjusted size */
-        height: 50px; /* Adjusted size */
+      .signup-form {
+        padding: 20px;
       }
 
-      .chatbot-button img {
-        width: 30px; /* Adjusted image size */
-        height: 30px; /* Adjusted image size */
+      h2 {
+        font-size: 24px;
       }
 
-      .tooltip-text {
-        display: none; /* Hide by default */
-        position: absolute;
-        bottom: 100%; /* Position above the button */
-        right: 50%;
-        transform: translateX(50%);
-        background-color: #333; /* Background color for tooltip */
-        color: #fff; /* Tooltip text color */
-        padding: 5px;
-        border-radius: 5px;
-        white-space: nowrap; /* Prevent text from wrapping */
+      input,
+      button {
+        font-size: 14px;
       }
+    }
 
-      .chatbot-button:hover .tooltip-text {
-        display: block; /* Show on hover */
-      }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--primary-color);
-            background-size: cover;
-            background-position: center;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    #icon {
+      width: 30px;
+      cursor: pointer;
+      position: absolute;
+      right: 125px;
+      top: 50px;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-        }
+    :root {
+      --primary-color: #fff;
+      --secondary-color: #0e0e0e;
+      --ternary-color: #4a2b0f;
+      --forth-color: rgba(0, 0, 0, 0.2);
+    }
 
-        .signup-form {
-            background-color: var(--primary-color);
-            border-radius: 15px;
-            box-shadow: 0 4px 20px var(--forth-color);
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .signup-form::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 100px;
-            height: 100px;
-            background-image: url('/api/placeholder/100/100');
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.2;
-        }
-
-        h2 {
-            color: var(--ternary-color);
-            margin-top: 0;
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--ternary-color);
-            font-weight: 600;
-        }
-
-        input {
-            width: 93%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #d1a054;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        input:focus {
-            border-color: var(--ternary-color);
-            outline: none;
-            box-shadow: 0 0 5px rgba(74, 43, 15, 0.5);
-        }
-
-        button {
-            background: linear-gradient(135deg, #d1a054, #4a2b0f);
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            font-size: 18px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(74, 43, 15, 0.3);
-        }
-
-        .login {
-            color: var(--secondary-color);
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .login-link {
-            color: var(--ternary-color);
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .login-link:hover {
-            color: #d1a054;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            color: var(--secondary-color);
-            font-size: 14px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        .google-signin {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .signup-form {
-                padding: 20px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            input, button {
-                font-size: 14px;
-            }
-        }
-        #icon{
-          width: 30px;
-          cursor: pointer;
-          position: absolute;
-          right: 125px;
-          top: 50px;
-      }
-      :root{
-        --primary-color: #fff;
-        --secondary-color: #0e0e0e;
-        --ternary-color: #4a2b0f;
-        --forth-color: rgba(0, 0, 0, 0.2);
-      }
-      .dark-theme{
-        --primary-color: #0e0e0e;
-        --secondary-color: #fff;
-        --ternary-color: #ab9353;
-        --forth-color: rgba(250, 244, 244, 0.2);
-      }
-    </style>
-    <!-- Include Google Platform Library -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    .dark-theme {
+      --primary-color: #0e0e0e;
+      --secondary-color: #fff;
+      --ternary-color: #ab9353;
+      --forth-color: rgba(250, 244, 244, 0.2);
+    }
+  </style>
+  <!-- Include Google Platform Library -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
+
 <body>
-    <img src="images/moon.png" id="icon">
-    <div class="container">
-        <div class="signup-form" id="signupForm">
-            <h2>Join Krishna Bhakti Forum</h2>
-            <form id="form" action="./discussion-forum.html" method="GET">
-                <label for="username">Devotee Name:</label>
-                <input type="text" id="username" name="username" required />
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required />
+  <img src="images/moon.png" id="icon">
+  <div class="container">
+    <div class="signup-form" id="signupForm">
+      <h2>Join Krishna Bhakti Forum</h2>
+      <form id="form" action="./discussion-forum.html" method="GET">
+        <label for="username">Devotee Name:</label>
+        <input type="text" id="username" name="username" required />
 
-                <!-- Step 3: Google Sign-In Button -->
-                <div class="google-signin">
-                    <div id="g_id_onload"
-                         data-client_id="533616281722-3gijg2u8b6aue0878sbmna6cs6q1lquc.apps.googleusercontent.com"
-                         data-context="signup"
-                         data-ux_mode="popup"
-                         data-login_uri="http://localhost:5502/"
-                         data-auto_prompt="false">
-                    </div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
 
-                    <div class="g_id_signin"
-                         data-type="standard"
-                         data-shape="rectangular"
-                         data-theme="outline"
-                         data-text="sign_in_with"
-                         data-size="large"
-                         data-logo_alignment="left">
-                    </div>
-                </div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
 
-          <button onclick="saveUsername()">Sign Up</button>
-          <div class="login">
-            Already have an account?
-            <a class="login-link" href="./login_mongo.html">Login</a>
+        <!-- Step 3: Google Sign-In Button -->
+        <div class="google-signin">
+          <div id="g_id_onload"
+            data-client_id="533616281722-3gijg2u8b6aue0878sbmna6cs6q1lquc.apps.googleusercontent.com"
+            data-context="signup" data-ux_mode="popup" data-login_uri="http://localhost:5502/" data-auto_prompt="false">
           </div>
-        </form>
-      </div>
-      <p style="text-align: center">&copy; All rights reserved 2023</p>
-    </main>
 
+          <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+            data-text="sign_in_with" data-size="large" data-logo_alignment="left">
+          </div>
+        </div>
+
+        <button onclick="saveUsername()">Begin Your Spiritual Journey</button>
+
+        <div class="login">
+          Already on the path? <a class="login-link" id="loginLink">Login</a>
+        </div>
+      </form>
+    </div>
+    <footer>
+      <p>&copy; <span id="cyear"></span> Krishna Bhakti Forum. All rights reserved.</p>
+    </footer>
     <script>
+      const isMongoconnected = true;
+      const loginLink = document.getElementById('loginLink');
+      loginLink.href = isMongoconnected ? './login_mongo.html' : './login.html';
+
+      window.addEventListener('load', () => {
+        const year = document.getElementById('cyear');
+        year.innerHTML = new Date().getFullYear();
+      });
+
       document.getElementById("form").addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -294,29 +316,15 @@
             alert('An error occurred during signup. Please try again.');
           });
       });
-                <button onclick="saveUsername()">Begin Your Spiritual Journey</button>
-                
-                <div class="login">
-                    Already on the path? <a class="login-link" href="./login.html">Login</a>
-                </div>
-            </form>
-        </div>
-        <footer>
-            <p>&copy; <span  id="cyear"></span> Krishna Bhakti Forum. All rights reserved.</p>
-        </footer>
-        <script>
-            window.addEventListener('load',()=>  {
-              const year= document.getElementById('cyear');
-              year.innerHTML=new Date().getFullYear();
-            });
-        </script>
-    </div>
+    </script>
+  </div>
 
-    <script src="script.js"></script>
+
+  <script src="script.js"></script>
 
 
 
-      <!-- Chatbot code added here -->
+  <!-- Chatbot code added here -->
   <a href="chatbot.html">
     <div class="fixed bottom-0 right-2 chatbot-container">
       <button class="chatbot-button group">
@@ -328,15 +336,16 @@
       </button>
     </div>
   </a>
-  
 
-    <script>
-        function saveUsername() {
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            localStorage.setItem("username", username);
-            localStorage.setItem("password", password);
-        }
-    </script>
+
+  <script>
+    function saveUsername() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+    }
+  </script>
 </body>
+
 </html>
