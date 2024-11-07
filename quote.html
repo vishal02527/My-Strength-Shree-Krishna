@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        .quote-container {
+            width: 50vw; /* Container width */
+            height: 100vh; /* Full height */
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: flex-start; /* Align items to the top */
+            gap: 40px; /* Adds spacing between items */
+            margin-bottom: 3vh;
+            margin-top: 3vh;
+        }
+
+        .one {
+            color: #3f51b5;
+            font-size: 36px;
+            margin: 0; /* Remove default margin */
+        }
+
+        .quote-input-row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quote-input {
+            width: 40vw; /* Increased width for better visibility */
+            height: 40vh; /* Height of the input box */
+            padding: 15px; /* Padding for the text inside */
+            font-size: 1.5em; /* Larger font size for better readability */
+            border: 1px solid #ddd; /* Border around the input */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #f9f9f9; /* Light background */
+            box-sizing: border-box; /* Ensures padding is included in the width/height */
+            text-align: left; /* Align text to the left */
+            transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+        }
+
+        .quote-input::placeholder {
+            color: #aaa; /* Lighter color for the placeholder */
+            font-size: 1.2em; /* Size for the placeholder text */
+            font-style: italic; /* Italic style for placeholder text */
+            line-height: 1.5; /* Adjust line height for positioning */
+        }
+
+        .quote-input:focus {
+            outline: none; /* Remove default outline */
+            background-color: #fff; /* Change background on focus */
+            border-color: #6200ea; /* Change border color on focus */
+        }
+
+        .new-quote-button {
+            padding: 10px 20px; /* Button padding */
+            font-size: 1.2em; /* Increased font size for better visibility */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners for button */
+            background-color: #6200ea; /* Primary color */
+            color: white; /* Text color */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .new-quote-button:hover {
+            background-color: #3700b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-container">
+        <div class="quote-text">
+            <h1 class="one">Quote Generator</h1>
+        </div>
+        <div class="quote-input-row">
+            <input type="text" class="quote-input" id="quoteText" placeholder="Click 'New Quote' to generate a quote!" readonly />
+            <button class="new-quote-button" onclick="generateQuote()">New Quote</button>
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            "The purpose of our lives is to be happy.",
+            "Life is what happens when you're busy making other plans.",
+            "Get busy living or get busy dying.",
+            "You only live once, but if you do it right, once is enough.",
+            "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+            "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+            "The only impossible journey is the one you never begin.",
+            "You miss 100% of the shots you don’t take.",
+            "The way to get started is to quit talking and begin doing.",
+            "Life is really simple, but we insist on making it complicated.",
+            "The future belongs to those who believe in the beauty of their dreams.",
+            "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+            "You must be the change you wish to see in the world.",
+            "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+            "Happiness is not something ready-made. It comes from your own actions.",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+            "It does not matter how slowly you go as long as you do not stop.",
+            "Your time is limited, so don’t waste it living someone else’s life.",
+            "The mind is everything. What you think you become.",
+            "Dream big and dare to fail.",
+            "If you want to live a happy life, tie it to a goal, not to people or things.",
+            "In the middle of every difficulty lies opportunity.",
+            "The best way to predict your future is to create it.",
+            "You have to expect things of yourself before you can do them.",
+            "The only limit to our realization of tomorrow will be our doubts of today.",
+            "Believe you can and you're halfway there.",
+            "Act as if what you do makes a difference. It does.",
+            "Success usually comes to those who are too busy to be looking for it.",
+            "Don’t be afraid to give up the good to go for the great.",
+            "I find that the harder I work, the more luck I seem to have.",
+            "Success is how high you bounce when you hit bottom.",
+            "The biggest risk is not taking any risk.",
+            "Opportunities don't happen. You create them.",
+            "Don't watch the clock; do what it does. Keep going.",
+            "If you are not willing to risk the usual, you will have to settle for the ordinary.",
+            "The road to success and the road to failure are almost exactly the same.",
+            "If you want to achieve greatness stop asking for permission.",
+            "You can’t use up creativity. The more you use, the more you have.",
+            "What we fear doing most is usually what we most need to do.",
+            "It’s not whether you get knocked down, it’s whether you get up.",
+            "The only way to do great work is to love what you do.",
+            "If you are not willing to risk it all, then you don’t want it bad enough.",
+            "You have to fight through some bad days to earn the best days of your life.",
+            "Sometimes you will never know the value of a moment until it becomes a memory.",
+            "Don’t count the days, make the days count.",
+            "It’s never too late to be what you might have been.",
+            "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+            "Life is either a daring adventure or nothing at all.",
+            "The best revenge is massive success.",
+            "Your limitation—it's only your imagination.",
+            "Push yourself, because no one else is going to do it for you.",
+            "Great things never come from comfort zones.",
+            "Dream it. Wish it. Do it.",
+            "Success doesn’t just find you. You have to go out and get it.",
+            "The harder you work for something, the greater you’ll feel when you achieve it.",
+            "Dream bigger. Do bigger.",
+            "Don’t stop when you’re tired. Stop when you’re done."
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.querySelector(".quote-input").value = quotes[randomIndex];
+        }
+    </script>
+</body>
+</html>
