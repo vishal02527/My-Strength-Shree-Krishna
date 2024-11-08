@@ -109,6 +109,19 @@ Feel free to explore, contribute, and enhance this platform! Let's work together
 [![Contributors](https://contrib.rocks/image?repo=vishal02527/My-Strength-Shree-Krishna)](https://github.com/vishal02527/My-Strength-Shree-Krishna/graphs/contributors)
 
 ---
+## Stargazers ❤️
+
+<div align='left'>
+
+[![Stargazers repo roster for @vishal02527/My-Strength-Shree-Krishna](https://reporoster.com/stars/dark/vishal02527/My-Strength-Shree-Krishna)](https://github.com/vishal02527/My-Strength-Shree-Krishna/stargazers)
+
+</div>
+
+## Forkers ❤️
+
+[![Forkers repo roster for @vishal02527/My-Strength-Shree-Krishna](https://reporoster.com/forks/dark/vishal02527/My-Strength-Shree-Krishna)](https://github.com/vishal02527/My-Strength-Shree-Krishna/network/members)
+
+---
 
 ## 📜 License
 
