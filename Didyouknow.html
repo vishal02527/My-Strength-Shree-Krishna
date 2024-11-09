@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .did-you-know {
+    background-color: #002f4b;
+    color: #ffd700;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+  }
+ 
+  
+  .fact-box p {
+    font-size: 20px; 
+    line-height: 1.5; 
+  }
+  
+  
+  .fact-box {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #003d66;
+    border: 2px solid #00cfff;
+    border-radius: 8px;
+    max-width: 80%;
+    box-shadow: 0px 0px 10px #00cfff;
+  }
+  
+  .fact-box img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .fact-box img {
+    width: 300px; /* Set width */
+    height: 280px; /* Set height */
+    object-fit: cover; /* Ensures images fill the specified area without stretching */
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .home-button {
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .home-button:hover {
+    background-color: #218838;
+  }
+  
+    </style>
+</head>
+<body>
+    <div class="did-you-know">
+        <h2>Did You Know?</h2>
+      
+        <div class="fact-box">
+          <img src="images/gandhari.jpg">
+          <p>Gandhari’s curse was the reason for Lord Krishna’s death.</p>
+        </div>
+      
+        <div class="fact-box">
+          <img src="images/ekalavya.jpg" alt="Eklavya's Story">
+          <p>Eklavya, who gave his thumb as gurudakshina to Drona, was later killed by Lord Krishna. He was reborn as Drishtadyumna and ultimately took vengeance on Drona.</p>
+        </div>
+      
+        <div class="fact-box">
+          <img src="images/pandavas.jpg" alt="Relation to the Pandavas">
+          <p>Lord Krishna was related to the Pandavas through their mother’s side. Kunti, the mother of the Pandavas, was the sister of Vasudev, Lord Krishna’s father.</p>
+        </div>
+      
+        <div class="fact-box">
+          <img src="images/arjun.jpg" alt="Arjun and the Yadavs">
+          <p>Arjun cremated all the Yadavs, including Vasudev.</p>
+        </div>
+      
+        <div class="fact-box">
+          <img src="images/Krishna.jpg" alt="Meaning of Krishna's Name">
+          <p>The name Krishna has a profound meaning. It is derived from the Sanskrit words 'Krish,' meaning 'to attract,' and 'na,' meaning 'supreme joy.' Thus, Krishna means 'one who attracts all with supreme joy.'</p>
+        </div>
+      
+        <button onclick="goHome()" class="home-button">Home</button>
+      </div>
+      <script>
+         function goHome() {
+            // Implement the home functionality (e.g., redirecting to home page)
+            window.location.href = "index.html"; // Replace with your home page URL
+        }
+      </script>
+      
+</body>
+</html>
