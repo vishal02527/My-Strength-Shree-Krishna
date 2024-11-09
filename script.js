@@ -197,11 +197,11 @@ document.querySelectorAll(".faq-question").forEach((button) => {
     const answer = button.nextElementSibling;
     const isExpanded = button.getAttribute("aria-expanded") === "true";
 
-    document.querySelectorAll(".faq-answer").forEach((a) => (a.style.display = "none"));
+    document.querySelectorAll(".faq-answer").forEach((a) => a.classList.add("hidden"));
     document.querySelectorAll(".faq-question").forEach((q) => q.setAttribute("aria-expanded", "false"));
 
     if (!isExpanded) {
-      answer.style.display = "block";
+      answer.classList.remove("hidden");
       button.setAttribute("aria-expanded", "true");
     }
   });

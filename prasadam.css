@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #bfcf82, #f0f8ff); /* Gradient background */
+    background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
 }
 
 /* Heading Section */
@@ -12,9 +12,6 @@ body {
     margin-top: 40px;
     margin-bottom: 30px;
     padding: 15px;
-    background-color: rgba(240, 248, 255, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .heading h1 {
@@ -23,10 +20,122 @@ body {
     font-family: 'Arial', sans-serif;
     letter-spacing: 2px;
     margin: 0;
-    background: -webkit-linear-gradient(#ff6f61, #ff9a85);
+    background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
+}
+
+.scriptMain {
+    text-align: center;
+    background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 6px 10px #ccc;
+}
+
+.navigation {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navigation .homeDiv {
+    margin-right: 20px;
+}
+
+.navigation .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.navigation .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: ease-in 0.3s;
+    border: 2px solid #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.navigation .navbar a:hover {
+    color: rgb(250, 219, 153);
+    border: 2px solid rgb(250, 219, 153);
+}
+
+#active {
+    color: rgb(250, 219, 153);
+    border: 2px solid rgb(250, 219, 153);
+}
+
+.navigation .navbar .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #1c3d5a;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 50px;
+}
+
+.navigation .navbar .dropdown a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+.navigation .navbar .dropdown a:hover {
+    background-color: #2980b9;
+}
+
+.navigation .navbar:hover .dropdown {
+    display: block;
+}
+
+.searchForm {
+    margin-top: 10px;
+}
+
+.searchInput {
+    box-sizing: border-box;
+    width: 300px;
+    height: 35px;
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: 0;
+}
+
+.searchInput:focus {
+    outline: 0;
+}
+
+.searchForm button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    position: relative;
+    top: 2px;
+    right: 55px;
+}
+
+#icon {
+    width: 30px;
+    cursor: pointer;
 }
 
 /* Prasadam Section */
@@ -34,7 +143,7 @@ body {
     text-align: center;
     padding: 60px;
     background-color: #ffffff;
-    background: linear-gradient(to right, #ffffff, #f9f9f9); /* Soft gradient for section */
+    background: linear-gradient(to right, #ffffff, #f9f9f9);
     border-radius: 20px;
     margin: 30px auto;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -43,95 +152,633 @@ body {
 
 /* Recipe Cards Layout */
 .recipe-container {
-    /* display: grid;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    justify-items: center;
-    padding: 0 20px; */
-    display: flex;
+    grid-gap: 25px;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin: 0 auto;
-    padding: 25px;
 }
 
-/* Recipe Cards */
 .recipe-card {
-    background-color: #9db683;
-    border-radius: 20px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    text-align: center;
-    width: 100%;
-    max-width: 280px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Image Styling within Recipe Cards */
-.recipe-card img {
-    width: 100%;                      /* Ensures the image takes full width of its container */
-    height: 200px;                    /* Sets a fixed height for all images */
-    object-fit: cover;                /* Ensures the image covers the entire area without stretching */
-    border-radius: 10px;              /* Adds rounded corners to the image */
-    margin-bottom: 15px;              /* Adds space below the image */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the image */
-}
-
-/* Recipe Cards Hover Effect */
 .recipe-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover effect for the image itself */
-.recipe-card img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.recipe-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: fill;
 }
 
-
-
-/* Card Titles */
 .recipe-card h3 {
-    color: #ff6f61;
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* Card Text */
-.recipe-card p {
-    color: #444;
+    margin: 10px;
     font-size: 18px;
-    line-height: 1.6;
+    font-weight: bold;
 }
 
+.recipe-card p {
+    margin: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+footer {
+    background-color: #1c3d5a;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+    min-width: 220px;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f0c43f;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fce4a6;
+}
+
+.statement .faith-statement {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #fff;
+    max-height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.read-more {
+    color: #f4d35e;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 26px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f0c43f;
+}
+
+.creatorDiv {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    padding: 10px;
+    border-top: 1px solid #ffffff44;
+}
+
+.creatorDiv p {
+    margin: 0;
+}
+#returnToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 2rem;
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    background-color: #07003a;
+    color: white;
+    padding: 10px;
+    border-radius: 20%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1000; /* Make sure it's on top */
+  }
+  
+  #returnToTop:hover {
+    background-color: #333;
+  }
+  .chatbot-container {
+    position: fixed;
+    bottom: 80px; /* Adjust as needed */
+    right: 25px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+
+  .chatbot-button {
+    border: none;
+    border-radius: 50%;
+    padding: 5px; /* Smaller padding */
+    cursor: pointer;
+    position: relative;
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
+  }
+
+  .chatbot-button img {
+    width: 30px; /* Adjusted image size */
+    height: 30px; /* Adjusted image size */
+  }
+
+  .tooltip-text {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 100%; /* Position above the button */
+    right: 50%;
+    transform: translateX(50%);
+    background-color: #333; /* Background color for tooltip */
+    color: #fff; /* Tooltip text color */
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+
+  .chatbot-button:hover .tooltip-text {
+    display: block; /* Show on hover */
+  }
 /* Responsive Design */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-wrap: wrap;
+@media (max-width: 992px) {
+    .heading h1 {
+        font-size: 36px;
+    }
+    .navigation{
+        flex-direction: column;
+    row-gap: 1rem;
+    }
+.navbar{
+    display: flex;
+    flex-direction: column;
+}
+    .navigation .navbar a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+.navbar-up {
+    display: flex;
+    flex-direction: column;
+}
+    .searchInput {
+        width: 250px;
+    }
+    .searchInput::placeholder{
+        font-size:small ;
+    }
+    .searchForm button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        position: relative;
+        top: 2px;
+        right: 32px;
+    }
+    .recipe-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .footer-section {
+        margin: 15px;
     }
 }
+
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation .homeDiv {
+        margin-bottom: 10px;
+    }
+
+    .navigation .navbar {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+    }
+
+    .navigation .navbar .dropdown {
+        display: block;
+        position: static;
+        background-color: transparent;
+        min-width: auto;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 10px;
+    }
+
+    .navigation .navbar .dropdown a {
+        color: #fff;
+        padding: 8px 12px;
+        text-align: center;
+    }
+.navbar-up{
+    display: flex;
+    flex-direction: column;
+}
+    .searchInput {
+        width: 200px;
+    }
+    .searchInput::placeholder{
+        font-size:x-small ;
+    }
+    .searchForm button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        position: relative;
+        top: 2px;
+        right: 32px;
+    }
+    .recipe-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        min-width: auto;
+    }
+    #returnToTop {
+        font-size: 20px;
+        padding: 8px;
+        bottom: 15px;
+        right: 15px;
+      }
+      .chatbot-container {
+        bottom: 70px; /* Adjust position */
+        right: 22px; /* Adjust position */
+      }
+    
+      .chatbot-button {
+        width: 45px; /* Smaller button size */
+        height: 45px;
+      }
+    
+      .chatbot-button img {
+        width: 25px; /* Adjust image size */
+        height: 25px;
+      }
+}
+
+/* dialogue box */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: modalOpen 0.3s ease-out;
+        }
+
+        @keyframes modalOpen {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-button {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-button:hover {
+            color: #000;
+            transform: scale(1.09);
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-details {
+            padding: 20px;
+           
+        }
+
+        .recipe-details img {
+            width: 100%;
+            max-width: 80vw;
+            height: 25rem;
+            margin: 15px auto 20px;
+            display: block;
+            border-radius: 8px;
+            object-fit: fill;
+            box-shadow: 5px 6px 10px 0px #0000007d ;
+            transition: transform 0.2s ease;
+        }
+        .recipe-details img:hover{
+            transform: scale(1.03);
+        }
+
+        .recipe-details h2 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0px;
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .recipe-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .prep-time, .cooking-time {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 15px ;
+            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+            object-fit:contain;
+            color: #fff9f9;
+            width: 200px !important; 
+            height: 4vh !important;
+            font-size: 15px !important;
+            border-radius: 2rem ;
+           align-content: center;
+           transition: transform 0.3s ease;
+        }
+        .ingredients:hover{
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+         .instructions:hover{
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 768px) {
+            .close-button:hover {
+                color: #000;
+                transform: scale(1.09);
+                transition: transform 0.3s ease;
+            }
+            .recipe-details img:hover{
+                transform: scale(1.03);
+            }
+            .recipe-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .ingredients, .instructions {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 5px 6px 10px 0px #0000007d ;
+            transition: transform 0.3s ease;
+        }
+
+        .ingredients h3, .instructions h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .ingredients ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .ingredients li, .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        .time-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .prep-time, .cooking-time {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 10px ;
+            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+            object-fit:contain;
+            color: #fff9f9;
+            width: 20vw;
+            height: 2vh;
+            font-size: 12px;
+            border-radius: 2rem ;
+           align-content: center;
+           transition: transform 0.3s ease;
+        }
+        .prep-time:hover{
+            transform: scale(1.15);
+            transition: transform 0.3s ease;
+            box-shadow: 5px 6px 10px 0px #0000007d ;
+        }
+        .cooking-time:hover{
+            transform: scale(1.15);
+            transition: transform 0.3s ease;
+            box-shadow: 5px 6px 10px 0px #0000007d ;
+        }
+
+        .prep-time i, .cooking-time i {
+            margin-right: 5px;
+            color: #ffffff;
+        }
+
+        .recipe-card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+        @media (max-width: 480px) {
+            .modal-content {
+              margin: 1% auto;
+              padding: 10px;
+            }
+          
+            .close-button {
+              font-size: 24px;
+              right: 10px;
+              top: 5px;
+            }
+            .close-button:hover {
+                color: #000;
+                transform: scale(1.09);
+                transition: transform 0.3s ease;
+            }
+          
+            .recipe-details {
+              padding: 10px;
+            }
+          
+            .recipe-details img {
+              height: 15rem;
+            }
+          
+            .recipe-details h2 {
+              font-size: 24px;
+              margin: 10px 0px;
+            }
+          
+            .prep-time, .cooking-time {
+              width: 45%;
+              margin: 5px;
+              padding: 10px;
+              font-size: 14px;
+            }
+          }
 
 @media (max-width: 480px) {
-    .recipe-card {
-        max-width: 100%;
+    .heading h1 {
+        font-size: 30px;
     }
+
+    .navigation .navbar a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .searchInput {
+        width: 150px;
+    }
+    .searchInput::placeholder{
+        font-size:x-small ;
+    }
+    .searchForm button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        position: relative;
+        top: 2px;
+        right: 32px;
+    }
+
+    .recipe-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .recipe-card img {
+        height: 120px;
+    }
+
+    .recipe-card h3 {
+        font-size: 16px;
+    }
+
+    .recipe-card p {
+        font-size: 12px;
+    }
+
+    .footer-section h3 {
+        font-size: 20px;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+
+    .social-icons a {
+        font-size: 22px;
+    }
+    #returnToTop {
+        font-size: 18px;
+        padding: 6px;
+        bottom: 10px;
+        right: 10px;
+      }
+      .chatbot-container {
+        bottom: 50px; /* Adjust position */
+        right: 15px; /* Adjust position */
+      }
+    
+      .chatbot-button {
+        width: 40px; /* Smaller button size */
+        height: 40px;
+      }
+    
+      .chatbot-button img {
+        width: 20px; /* Adjust image size */
+        height: 20px;
+      }
+    
+      .tooltip-text {
+        font-size: 12px; /* Adjust tooltip text size */
+        padding: 4px;
+      }
+    
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    img {
-        max-width: 90%;            /* Reduces the size of the image on smaller screens */
-    }
-}
 
- #homeBtn {
-    background-color: #4caf50; /* Green button */
+#homeBtn {
+    background: none;
     border: none;
-    padding: 15px 30px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
@@ -141,15 +788,13 @@ body {
 }
 
 #homeBtn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #46464689;
+    border-radius: 50%;
 }
 
-/* Additional styles for mobile responsiveness */
 @media (max-width: 600px) {
-            
-#homeBtn{
-    font-size: 16px;
-    padding: 10px;
+    #homeBtn {
+        font-size: 16px;
+        padding: 10px;
     }
 }
-    
