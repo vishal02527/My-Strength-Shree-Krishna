@@ -81,6 +81,480 @@
           margin-left: 90px;
         }
       }
+    <title>Contact Us</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS Styles */
+      body {
+        font-family: "Poppins", sans-serif; /* Changed font */
+        background-color: var(--primary-color); /* Light blue background */
+        color: #2e4a7e; /* Dark blue text */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column; /* Column layout for footer positioning */
+        justify-content: center; /* Centering vertically */
+        align-items: center; /* Centering horizontally */
+        min-height: 100vh; /* Full height for vertical centering */
+        background-image: var(--primary-color); /* Gradient background */
+      }
+      body {
+        background-image: var(--bg-color);
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      .header {
+        text-align: center;
+        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0px 6px 10px #ccc;
+        width: 100%;
+      }
+
+      .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navigation .homeDiv #homeBtn {
+        align-items: center;
+        background-image: linear-gradient(
+          144deg,
+          #af40ff,
+          #5b42f3 50%,
+          #00ddeb
+        );
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: flex;
+        font-family: Phantomsans, sans-serif;
+        justify-content: center;
+        line-height: 0.8em;
+        max-width: 100%;
+        min-width: 110px;
+        padding: 3px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .navigation .homeDiv #homeBtn:active,
+      .navigation .homeDiv #homeBtn:hover {
+        outline: 0;
+      }
+
+      .navigation .homeDiv #homeBtn a {
+        background-color: rgb(5, 6, 45);
+        color: #fff;
+        font-size: 16px;
+        padding: 16px 24px;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+        text-decoration: none;
+      }
+
+      .navigation .homeDiv #homeBtn:hover a {
+        background: none;
+      }
+      .navigation {
+        justify-content: space-between;
+      }
+      .navigation .navbar {
+        display: flex;
+        /* margin-right: 350px !important; */
+      }
+      .navigation .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: ease-in 0.3s;
+        border: 2px solid #fff;
+        padding: 10px 15px;
+        border-radius: 20px;
+      }
+      .navigation .navbar a:hover {
+        color: rgb(250, 219, 153);
+        border: 2px solid rgb(250, 219, 153);
+      }
+
+      .searchInput {
+        box-sizing: border-box;
+        width: 280px;
+        height: 35px;
+        padding: 5px 20px;
+        border-radius: 50px;
+        border: 0;
+      }
+      .searchInput:focus {
+        outline: 0;
+      }
+      .searchForm button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        position: relative;
+        top: 2px;
+        right: 55px;
+      }
+      .searchForm button i {
+        color: #555;
+        padding: 9px 15px;
+
+        font-size: 16px;
+        cursor: pointer;
+        transition: linear 0.16s;
+      }
+      .searchForm button i:hover {
+        color: #23d1c8;
+      }
+      .container {
+        flex: 1; /* Allows the container to take up the remaining space */
+        width: 400px;
+        margin: 40px; /* Reduced margin for responsiveness */
+        padding: 40px; /* Increased padding */
+        background-color: var(--secondary-color); /* White background */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+        position: relative;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        text-align: center;
+        color: #3f51b5; /* Krishna's blue */
+        font-size: 2.5em; /* Increased font size */
+        margin-bottom: 20px;
+        text-transform: uppercase; /* Uppercase letters */
+        letter-spacing: 1px; /* Spacing between letters */
+      }
+
+      label {
+        font-weight: 600; /* Bold label */
+        margin: 15px 0 5px; /* Adjusted margin */
+        display: block;
+        color: #ab9353;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 12px; /* Increased padding */
+        margin: 5px 0 15px; /* Adjusted margin */
+        border: 1px solid #9fa8da; /* Gray border */
+        border-radius: 8px; /* Rounded edges */
+        transition: border-color 0.3s;
+        font-size: 1em; /* Consistent font size */
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        border-color: #3f51b5; /* Krishna's blue */
+        outline: none;
+        box-shadow: 0 0 5px rgba(63, 81, 181, 0.5); /* Focus shadow */
+      }
+
+      button {
+        background-color: #1a2a6c; /* button */
+        color: #ffff; /* Dark blue text */
+        border: none;
+        border-radius: 8px; /* Rounded button */
+        padding: 12px 20px; /* Increased padding */
+        cursor: pointer;
+        font-size: 1.1em; /* Increased font size */
+        display: block;
+        width: 100%;
+        font-weight: 600; /* Bold button text */
+      }
+
+      button:hover {
+        background-color: #3a4ba3; /* Light yellow on hover */
+        transform: translateY(-2px); /* Hover lift effect */
+      }
+
+      footer {
+        padding: 10px 0; /* Added padding for spacing */
+        text-align: center;
+        color: #3f51b5; /* Krishna's blue */
+        font-size: 0.9em;
+      }
+
+      .hidden {
+        display: none; /* Honeypot */
+      }
+
+      .home-button {
+        margin-bottom: 20px; /* Spacing below the button */
+        padding: 10px 20px; /* Padding for the button */
+        font-size: 1.1em; /* Font size */
+        color: #fff; /* White text */
+        background-color: #3f51b5; /* Krishna's blue */
+        border: none;
+        border-radius: 8px; /* Rounded button */
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s; /* Hover effects */
+      }
+
+      .home-button:hover {
+        background-color: #303f9f; /* Darker blue on hover */
+        transform: translateY(-2px); /* Hover lift effect */
+      }
+      #icon {
+        width: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 50px;
+        top: 50px;
+      }
+      :root {
+  --primary-color: #f0f8ff; /* Default theme */
+  --secondary-color: #ffffff; /* Default theme */
+}
+
+.dark-theme {
+  --primary-color: #121212; /* Dark theme primary background */
+  --secondary-color: #1E1E1E; /* Dark theme secondary background */
+}
+
+body.dark-theme {
+  background-color: var(--primary-color); /* Dark primary background */
+  color: #E0E0E0; /* Light gray text for dark theme */
+}
+
+.container.dark-theme {
+  background-color: var(--secondary-color); /* Dark secondary background */
+  color: #E0E0E0; /* Consistent text color */
+}
+
+button.dark-theme {
+  background-color: #3F51B5; /* Deep blue for buttons */
+  color: #FFFFFF; /* White text on buttons */
+}
+
+
+input.dark-theme, textarea.dark-theme {
+  background-color: #2C2C2C; /* Darker input fields */
+  color: #FFFFFF; /* White text inside inputs */
+  border: 1px solid #444; /* Subtle border */
+}
+
+/* Adjusting headings */
+h1.dark-theme, h2.dark-theme, h3.dark-theme {
+  color: #E0E0E0; /* Lighter headings */
+}
+
+
+      footer {
+        background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        color: #ffffff;
+        padding: 40px 0; /* Increased padding for more space */
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        width: 100%;
+      }
+
+      #icon {
+        margin-top: 80px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between; /* Spread items evenly across the footer */
+        align-items: flex-start;
+        flex-wrap: wrap; /* Ensure responsiveness */
+        padding: 0 50px;
+        max-width: 1200px; /* Limit max width to keep it centered */
+        margin: 0 auto;
+      }
+
+      .footer-section {
+        flex: 1;
+        margin: 20px; /* Add margin for spacing between sections */
+        min-width: 220px; /* Minimum width for smaller screens */
+      }
+
+      .footer-section h3 {
+        font-size: 24px; /* Increased the heading size */
+        margin-bottom: 15px;
+        color: #f0c43f; /* Gold color */
+      }
+
+      /* Quick Links Styling */
+      .footer-links {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px; /* Spacing between links */
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px; /* Increased font size for better readability */
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #fce4a6; /* Lighter gold on hover */
+      }
+
+      /* Faith Statement Section */
+      .statement .faith-statement {
+        line-height: 1.6;
+        margin-bottom: 10px;
+        color: #fff;
+        max-height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      .read-more {
+        color: #f4d35e;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      /* Social Icons Styling */
+      .social-icons {
+        display: flex;
+      }
+
+      .social-icons a {
+        color: #ffffff;
+        font-size: 26px; /* Increased icon size */
+        margin-right: 15px; /* Spacing between icons */
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #f0c43f;
+      }
+
+      /* Footer Bottom Section */
+      .creatorDiv {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+        padding: 10px;
+        border-top: 1px solid #ffffff44; /* Subtle border for separation */
+      }
+
+      .creatorDiv p {
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          padding: 0 20px;
+        }
+
+        .footer-section {
+          text-align: center;
+          margin: 15px 0;
+        }
+      }
+
+      /* For screens wider than 768px but less than 1024px */
+    
+
+      @media (max-width: 768px) {
+        .container {
+          width: 60%; /* Just to test if it's working */
+        }
+
+        .navigation {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .navbar {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+      }
+
+      /* For screens wider than 1024px */
+      @media (min-width: 1025px) {
+        .container {
+          width: 45%; /* Wider for large screens */
+        }
+      }
+      .social-icons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        background-color: transparent;
+        border: 0.2rem solid #000000;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        margin: 0.1rem 0.2rem 0.1rem 0;
+        transition: 0.3s ease;
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .social-icons {
+        margin-left: 70px;
+      }
+
+      .social-icons a:hover {
+        color: rgb(255, 255, 255);
+        transform: scale(1.3) translateY(-5px);
+        background-color: #ac905c;
+        box-shadow: 0 0 25px #f0eaea;
+      }
+      .creatorDiv {
+        margin-top: 10px;
+      }
+      .creatorDiv p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      .feedback-heading {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 34px;
+        font-weight: 900;
+        background: linear-gradient(to right, #30cfd0 20%, #330867 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .content h1::selection,
+      p::selection,
+      h2::selection {
+        background-color: rgb(237, 204, 133);
+        color: #000;
+      }
       .header {
         text-align: center;
         background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
@@ -105,6 +579,7 @@
         margin: 100px auto;
         padding: 20px 40px;
         background-color: #fff;
+        background-color: var(--primary-color);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
@@ -118,6 +593,7 @@
         border: 0;
         padding: 15px 25px;
         color: #fff;
+        color: #ffffff;
         background-image: linear-gradient(
           to right,
           #314755 0%,
@@ -134,6 +610,53 @@
       .navigation {
         display: flex;
         justify-content: space-evenly;
+      .indexMain p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #444;
+      }
+
+      h1,
+      h2 {
+        color: #ab9353;
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          padding: 10px;
+        }
+        .indexMain .headDiv h1 {
+          font-size: 20px;
+        }
+        .content {
+          width: 90%;
+          margin: 80px auto;
+          padding: 10px 15px;
+        }
+        #translateBtnDiv {
+          left: 3px;
+          width: 200px;
+        }
+
+        #translateBtn {
+          padding: 12px 20px;
+          font-size: 14px;
+          margin: 10px;
+        }
+        .content p {
+          font-size: 14px;
+        }
+        h1 {
+          font-size: 22px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+      }
+
+      .navigation {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
         justify-content: center;
       }
@@ -188,6 +711,7 @@
       .navigation .navbar {
         display: flex;
         margin-right: 350px !important;
+        /* margin-right: 350px !important; */
       }
       .navigation .navbar a {
         color: #fff;
@@ -242,6 +766,12 @@
         text-align: center;
         position: relative;
         bottom: 0;
+        background-color: #1c3d5a;
+        color: #ffffff;
+        padding: 40px 0; /* Increased padding for more space */
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        width: 100%;
       }
 
       .footer-content {
@@ -265,6 +795,104 @@
         font-size: 16px;
         margin-top: 0;
         margin-bottom: 0;
+        justify-content: space-between; /* Spread items evenly across the footer */
+        align-items: flex-start;
+        flex-wrap: wrap; /* Ensure responsiveness */
+        padding: 0 50px;
+        max-width: 1200px; /* Limit max width to keep it centered */
+        margin: 0 auto;
+      }
+
+      .footer-section {
+        flex: 1;
+        margin: 20px; /* Add margin for spacing between sections */
+        min-width: 220px; /* Minimum width for smaller screens */
+      }
+
+      .footer-section h3 {
+        font-size: 24px; /* Increased the heading size */
+        margin-bottom: 15px;
+        color: #f0c43f; /* Gold color */
+      }
+
+      /* Quick Links Styling */
+      .footer-links {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px; /* Spacing between links */
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px; /* Increased font size for better readability */
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #fce4a6; /* Lighter gold on hover */
+      }
+
+      /* Faith Statement Section */
+      .statement .faith-statement {
+        line-height: 1.6;
+        margin-bottom: 10px;
+        color: #fff;
+        max-height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      .read-more {
+        color: #f4d35e;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      /* Social Icons Styling */
+      .social-icons {
+        display: flex;
+      }
+
+      .social-icons a {
+        color: #ffffff;
+        font-size: 26px; /* Increased icon size */
+        margin-right: 15px; /* Spacing between icons */
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #f0c43f;
+      }
+
+      /* Footer Bottom Section */
+      .creatorDiv {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+        padding: 10px;
+        border-top: 1px solid #ffffff44; /* Subtle border for separation */
+      }
+
+      .creatorDiv p {
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          padding: 0 20px;
+        }
+
+        .footer-section {
+          text-align: center;
+          margin: 15px 0;
+        }
       }
 
       .social-icons a {
@@ -455,6 +1083,45 @@
     </style>
 
   </head>
+      #content-english p {
+        color: var(--secondary-color);
+      }
+      #content-hindi p {
+        color: var(--secondary-color);
+      }
+
+      #icon {
+        width: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 50px;
+        top: 50px;
+      }
+      :root {
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+        --ternary-color: #f7f7f7;
+      }
+      .dark-theme {
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+        --ternary-color: rgba(32, 26, 26, 0.785);
+      }
+    </style>
+  </head>
+
+  <script
+    src="https://kit.fontawesome.com/d74f12bccc.js"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
   <body>
     <div class="header">
       <div class="navigation">
@@ -497,6 +1164,59 @@
         <div class="footer-section">
           <h3>About Us</h3>
           <p>Your description about the website and its purpose.</p>
+            <a href="avatars.html">Avatars</a>
+            <img src="images/moon.png" id="icon" />
+          </div>
+        </div>
+        <form class="searchForm">
+          <input
+            type="text"
+            class="searchInput"
+            placeholder="Search all the content"
+          />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Home Button -->
+    <div class="container">
+      <h1 class="feedback-heading">Contact Us</h1>
+
+        <!-- Contact Inputs -->
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section statement">
+          <h3>Statement on Faith</h3>
+          <p class="faith-statement">
+            Faith isn't just about something we believe; it is integral to our
+            very existence, it's about how we live...
+          </p>
+          <a href="devotional-resources.html" class="read-more">Read More</a>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scriptures.html">Scriptures</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
+            <li>
+              <a href="devotional-resources.html">Devotional Resources</a>
+            </li>
+          </ul>
         </div>
 
         <div class="footer-section">
@@ -539,5 +1259,19 @@
       }
 
     </script>
+        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+      </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load',()=>  {
+          const year= document.getElementById('cyear');
+          year.innerHTML=new Date().getFullYear();
+        });
+      </script>
+     
+    
+
+    <script src="script.js"></script>
   </body>
 </html>

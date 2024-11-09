@@ -55,24 +55,24 @@
         display: block; /* Show on hover */
       }
       body {
-        background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        background-image: var(--bg-color);
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
         overflow-x: hidden;
       }
       .scroll-top-btn {
-        position: fixed; 
-        bottom: 30px; 
-        right: 30px; 
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
         background-color: #330867;
         color: white;
         border: none;
         padding: 10px 15px;
         cursor: pointer;
         border-radius: 5px;
-        display: none; 
-        z-index: 1000; 
+        display: none;
+        z-index: 1000;
       }
 
       .scroll-top-btn:hover {
@@ -113,7 +113,7 @@
         max-width: 900px;
         margin: 100px auto;
         padding: 20px 40px;
-        background-color: #fff;
+        background-color: var(--primary-color);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
@@ -126,7 +126,7 @@
       #translateBtn {
         border: 0;
         padding: 15px 25px;
-        color: #fff;
+        color: #ffffff;
         background-image: linear-gradient(
           to right,
           #314755 0%,
@@ -141,10 +141,10 @@
         background-position: right center;
       }
       .krishna-image {
-        margin: 10px 0px 10px 550px;
+        margin: 10px 0px 10px 450px;
         width: 27%;
-        height: 480px;
-        border-radius: 15px;
+        height: 450px;
+        border-radius: 20px;
         transition: opacity 5s ease-in-out;
       }
       .krishna-image.fade {
@@ -186,7 +186,7 @@
         .krishna-image {
           margin: 10px 0px 0px 22px;
           width: 85%;
-          height: 350px;
+          height: 300px;
         }
         .content p {
           font-size: 14px;
@@ -197,6 +197,8 @@
         h2 {
           font-size: 20px;
         }
+        
+
       }
 
       .navigation {
@@ -253,26 +255,70 @@
       .navigation {
         justify-content: space-between;
       }
-      .navigation .navbar {
+      .navigation .navbar.visible-items{
         display: flex;
-        margin-right: 350px !important;
+        flex-direction: row;
+        flex-wrap: nowrap; 
+        justify-content: center; /* Center the items */
+        align-items: center;
+        /* margin-right: 350px !important; */
       }
+
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
         margin: 0 5px;
-        font-size: 16px;
+        font-size: 0.9rem;
         font-weight: 500;
         transition: ease-in 0.3s;
         border: 2px solid #fff;
-        padding: 10px 15px;
+        padding: 10px 15px; 
         border-radius: 20px;
+        
       }
+      /* Hamburger menu button */
+      .hamburger-menu {
+        display: flex;
+        align-items: center;
+        
+      }
+      .hamburger-menu.open {
+        display: flex;
+        position: relative;
+      }
+      .hamburger-btn {
+        font-size: 1.5rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    /* Hidden items (hamburger menu), initially hidden */
+    .hamburger-menu .hidden-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 1;
+    }
+    
+    /* Show hidden items when menu is open */
+    .hamburger-menu.open .hidden-items {
+        display: flex;
+    }
       .navigation .navbar a:hover {
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
       }
-
+    #icon {
+      margin-top: -30px;
+      margin-right: -20px;
+    }
       .searchInput {
         box-sizing: border-box;
         width: 280px;
@@ -304,35 +350,114 @@
         color: #23d1c8;
       }
       footer {
-        background-color: #2c3e50;
-        color: #ecf0f1;
-        padding: 20px;
-        text-align: center;
+        background-color: #1c3d5a;
+        color: #ffffff;
+        padding: 40px 0; /* Increased padding for more space */
+        font-family: "Poppins", sans-serif;
         position: relative;
-        bottom: 0;
+        width: 100%;
       }
 
       .footer-content {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 0px 10px 0px 60px;
+        justify-content: space-between; /* Spread items evenly across the footer */
+        align-items: flex-start;
+        flex-wrap: wrap; /* Ensure responsiveness */
+        padding: 0 50px;
+        max-width: 1200px; /* Limit max width to keep it centered */
+        margin: 0 auto;
       }
 
       .footer-section {
-        margin-bottom: 20px;
+        flex: 1;
+        margin: 20px; /* Add margin for spacing between sections */
+        min-width: 220px; /* Minimum width for smaller screens */
       }
 
       .footer-section h3 {
-        margin-bottom: 10px;
-        color: #f39c12;
+        font-size: 24px; /* Increased the heading size */
+        margin-bottom: 15px;
+        color: #f0c43f; /* Gold color */
       }
 
-      .footer-section p {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
+      /* Quick Links Styling */
+      .footer-links {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px; /* Spacing between links */
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px; /* Increased font size for better readability */
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #fce4a6; /* Lighter gold on hover */
+      }
+
+      /* Faith Statement Section */
+      .statement .faith-statement {
+        line-height: 1.6;
+        margin-bottom: 10px;
+        color: #fff;
+        max-height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      .read-more {
+        color: #f4d35e;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      /* Social Icons Styling */
+      .social-icons {
+        display: flex;
+      }
+
+      .social-icons a {
+        color: #ffffff;
+        font-size: 26px; /* Increased icon size */
+        margin-right: 15px; /* Spacing between icons */
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #f0c43f;
+      }
+
+      /* Footer Bottom Section */
+      .creatorDiv {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+        padding: 10px;
+        border-top: 1px solid #ffffff44; /* Subtle border for separation */
+      }
+
+      .creatorDiv p {
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          padding: 0 20px;
+        }
+
+        .footer-section {
+          text-align: center;
+          margin: 15px 0;
+        }
       }
 
       .social-icons a {
@@ -378,9 +503,9 @@
           justify-content: center;
         }
         .navigation .navbar {
-          display: flex;
+          /*display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: space-between;*/
           margin-top: 20px;
           margin-right: 0 !important;
         }
@@ -402,6 +527,7 @@
         .footer-content {
           flex-direction: column;
           align-items: center;
+
           margin: 0px 40px 0px 0px;
         }
         .footer-section p {
@@ -411,6 +537,7 @@
           font-size: 22px;
           margin: 5px;
         }
+
         .footer-section {
           margin-bottom: 0;
         }
@@ -456,7 +583,7 @@
           align-items: center;
         }
         .navigation .navbar {
-          display: flex;
+          /*display: flex; */
           flex-direction: column;
           margin-top: 20px;
         }
@@ -523,59 +650,78 @@
       /* FAQ seciton css */
 
       /* faq section */
-      .faq-section {
+          .faq-section {
         max-width: 900px;
         margin: 50px auto;
         padding: 20px;
-        background-color: #fff;
+        background-color: var(--primary-color);
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
-
+      
       .faq-heading {
         font-size: 24px;
         text-align: center;
         margin-bottom: 20px;
         color: #ab9353;
       }
-
+      
       .faq-container {
         width: 100%;
       }
-
+      
       .faq-item {
         margin-bottom: 15px;
         border-bottom: 1px solid #ddd;
         padding-bottom: 10px;
       }
-
+      
       .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        padding: 15px;
+        padding: 10px;
         text-align: left;
-        background-color: #f7f7f7;
+        background-color: var(--ternary-color);
         border: none;
         font-size: 18px;
         font-weight: bold;
-        color: #333;
+        color: var(--secondary-color);
         cursor: pointer;
         outline: none;
         transition: background-color 0.3s ease;
       }
-
+      
+      .arrow {
+        width: 12px;
+        height: 12px;
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        transition: transform 0.3s ease;
+      }
+      
+      [aria-expanded="true"] .arrow {
+        transform: rotate(-135deg); /* Rotation when expanded */
+      }
+      
       .faq-question:hover {
         background-color: #e6e6e6;
       }
-
+      
       .faq-answer {
-        display: none;
         padding: 10px 15px;
         font-size: 16px;
         color: #555;
       }
-
+      
       .faq-answer p {
         line-height: 1.6;
+      }
+      
+      .hidden {
+        display: none;
       }
 
       /* Responsive Design */
@@ -592,7 +738,50 @@
           font-size: 20px;
         }
       }
+      @media (max-width: 390px) {
+        .navigation .navbar.visible-items{
+          margin-left: -50px;
+        }
+        .navigation .navbar a {
+          font-size: 0.4rem;
+          padding: 10px; 
+        }
+        .hamburger-btn {
+          margin-top: -40px;
+          margin-left: 345px;
+        }
+        #icon {
+          margin-top: 78px;
+        }
+      }
       /* faq css end */
+
+      #content-english p {
+        color: var(--secondary-color);
+      }
+      #content-hindi p {
+        color: var(--secondary-color);
+      }
+
+      #icon {
+        width: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 50px;
+        top: 50px;
+      }
+      :root {
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+        --primary-color: #fff;
+        --secondary-color: #0e0e0e;
+        --ternary-color: #f7f7f7;
+      }
+      .dark-theme {
+        --bg-color: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+        --primary-color: #0e0e0e;
+        --secondary-color: #fff;
+        --ternary-color: rgba(32, 26, 26, 0.785);
+      }
     </style>
   </head>
   <body>
@@ -604,13 +793,32 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-        <div class="navbar">
-          <div class="navbar-up">
+        <!-- Visible items on the home page -->
+        <div class="navbar visible-items">
             <a href="scriptures.html">Scriptures</a>
             <a href="gallery.html">Gallery</a>
             <a href="#" onclick="showLoginForm()">Discussion Forum</a>
             <a href="devotional-resources.html">Devotional Resources</a>
-          </div>
+            <a href="prasadam.html">Prasadam Section</a>
+            <a href="contact.html">Contact Us</a>
+            <img src="images/moon.png" id="icon" />
+
+            <img src="images/moon.png" id="icon" />
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger-menu">
+          <button class="hamburger-btn">&#9776;</button>
+            <div class="navbar hidden-items">
+              <a href="quiz.html">Quiz</a>
+              <a href="DIgital.html">Digital Resources</a>
+              <a href="Personalized.html">ToDoList</a>
+              <a href="Feedback.html">Feedbackform</a>
+              <a href="partner.html">Partner</a>
+              <a href="avatars.html">Avatars</a>
+              
+              
+            </div>
         </div>
         <form class="searchForm">
           <input
@@ -973,34 +1181,37 @@
       <h2 class="faq-heading">Frequently Asked Questions</h2>
       <div class="faq-container">
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="answer1">
             Who is Lord Sri Krishna?
+            <span class="arrow"></span>
           </button>
-          <div class="faq-answer">
+          <div id="answer1" class="faq-answer hidden">
             <p>
               Sri Krishna is a major deity in Hinduism, worshipped as the eighth
               avatar of Vishnu and the supreme god.
             </p>
           </div>
         </div>
-
+    
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="answer2">
             What are the teachings of Sri Krishna in the Bhagavad Gita?
+            <span class="arrow"></span>
           </button>
-          <div class="faq-answer">
+          <div id="answer2" class="faq-answer hidden">
             <p>
               The teachings include concepts of duty (dharma), devotion
               (bhakti), and the nature of reality.
             </p>
           </div>
         </div>
-
+    
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="answer3">
             What is the significance of the name ‘Krishna’?
+            <span class="arrow"></span>
           </button>
-          <div class="faq-answer">
+          <div id="answer3" class="faq-answer hidden">
             <p>
               The name ‘Krishna’ means ‘all-attractive.’ It signifies the
               supreme personality of God, who attracts all living beings with
@@ -1008,13 +1219,14 @@
             </p>
           </div>
         </div>
-
+    
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="answer4">
             How can we incorporate the teachings of Lord Krishna into our daily
             life?
+            <span class="arrow"></span>
           </button>
-          <div class="faq-answer">
+          <div id="answer4" class="faq-answer hidden">
             <p>
               Incorporating Lord Krishna's teachings into daily life involves
               practicing devotion, selflessness, and detachment from material
@@ -1024,12 +1236,13 @@
             </p>
           </div>
         </div>
-
+    
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="answer5">
             What is the significance of the Krishna Janmashtami festival?
+            <span class="arrow"></span>
           </button>
-          <div class="faq-answer">
+          <div id="answer5" class="faq-answer hidden">
             <p>
               Krishna Janmashtami celebrates the birth of Lord Krishna. It is a
               major festival in Hinduism, observed with fasting, prayers, and
@@ -1038,12 +1251,13 @@
             </p>
           </div>
         </div>
-
+    
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="answer6">
             What is the concept of Krishna Leela?
+            <span class="arrow"></span>
           </button>
-          <div class="faq-answer">
+          <div id="answer6" class="faq-answer hidden">
             <p>
               Krishna Leela refers to the playful activities and divine pastimes
               of Lord Krishna. These stories are depicted in various forms of
@@ -1058,9 +1272,25 @@
 
     <footer>
       <div class="footer-content">
+        <div class="footer-section statement">
+          <h3>Statement on Faith</h3>
+          <p class="faith-statement">
+            Faith isn't just about something we believe; it is integral to our
+            very existence, it's about how we live...
+          </p>
+          <a href="devotional-resources.html" class="read-more">Read More</a>
+        </div>
         <div class="footer-section">
-          <h3>About Us</h3>
-          <p>Your description about the website and its purpose.</p>
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scriptures.html">Scriptures</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#" onclick="showLoginForm()">Discussion Forum</a></li>
+            <li>
+              <a href="devotional-resources.html">Devotional Resources</a>
+            </li>
+          </ul>
         </div>
 
         <div class="footer-section">
@@ -1087,12 +1317,40 @@
         </div>
       </div>
       <div class="creatorDiv">
-        <p>&copy; All rights reserved 2023, Created by Vishal.</p>
+        <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
+    <script>
+      document.querySelector('.hamburger-btn').addEventListener('click', function() {
+      document.querySelector('.hamburger-menu').classList.toggle('open');
+  });
+  </script>
+    <script>
+      window.addEventListener('load',()=>  {
+        const year= document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+    </script>
     <script src="script.js"></script>
+    <script>
+      window.addEventListener('load',()=>  {
+        const year= document.getElementById('cyear');
+        year.innerHTML=new Date().getFullYear();
+      });
+    </script>
 
     <script>
+      var icon = document.getElementById("icon");
+
+      icon.onclick = function () {
+        document.body.classList.toggle("dark-theme");
+        if (document.body.classList.contains("dark-theme")) {
+          icon.src = "images/sun.png";
+        } else {
+          icon.src = "images/moon.png";
+        }
+      };
+
       window.onscroll = function () {
         toggleScrollTopButton();
       };
@@ -1114,5 +1372,26 @@
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
       };
     </script>
+
+
+    <script>
+        // Function to redirect to quiz.html
+        document.getElementById('quiz-button').onclick = function() {
+            window.location.href = 'challenges/index.html'; // Adjust the path if necessary
+        };
+    </script>
+
+    <br /><br />
+    <link rel="stylesheet" href="visi.css">
+    <!-- ############### Footer ############### -->
+    <div class="visitor-counter">
+    <div>Visitor</div>
+    <div class="website-counter"></div>
+    </div>
+    <script src="path/to/visitorCounter.js"></script>
+    <script src="./assets/css/visitors.css"></script>
+    <script src="visi.js"></script>
+    
+
   </body>
 </html>
