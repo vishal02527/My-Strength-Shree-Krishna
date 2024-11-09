@@ -173,8 +173,12 @@
         background: none;
       }
 
-      .navigation .navbar {
+      .navigation .navbar.visible-items {
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; 
+        justify-content: center; /* Center the items */
+        align-items: center;
       }
 
       .navigation .navbar a {
@@ -196,12 +200,50 @@
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
       }
+      /* Hamburger menu button */
+      .hamburger-menu {
+        display: flex;
+        align-items: center;
 
+      }
+      .hamburger-menu.open {
+        display: flex;
+        position: relative;
+      }
+      .hamburger-btn {
+        font-size: 1.5rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Hidden items (hamburger menu), initially hidden */
+    .hamburger-menu .hidden-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 1;
+    }
+
+    /* Show hidden items when menu is open */
+    .hamburger-menu.open .hidden-items {
+        display: flex;
+    }
+      #icon {
+        margin-top: -30px;
+        margin-right: -20px;
+      }
       .searchInput {
         box-sizing: border-box;
-        width: 300px;
-        height: 35px;
-        padding: 5px 20px;
+        width: 280px;
+        height: 30px;
+        padding: 5px 12px;
         border-radius: 50px;
         border: 0;
       }
@@ -368,15 +410,6 @@
   margin: 0;
 }
 
-
-
-
-
-
-
-
-   
-
       .social-icons a {
         display: inline-flex;
         justify-content: center;
@@ -409,7 +442,28 @@
         margin: 0;
       }
       /* Mobile Responsive Styles */
-      @media (max-width: 980px) {
+      @media(max-width:1280px){
+        .navigation .navbar a {
+          font-size: 14px;
+        }
+      }
+      @media (max-width: 390px) {
+        .navigation .navbar.visible-items{
+          margin-left: -50px;
+        }
+        .navigation .navbar a {
+          font-size: 0.4rem;
+          padding: 10px; 
+        }
+        .hamburger-btn {
+          margin-top: -40px;
+          margin-left: 345px;
+        }
+        #icon {
+          margin-top: 78px;
+        }
+      }
+      @media (max-width: 668px) {
         .content {
           padding: 20px 15px;
         }
@@ -443,6 +497,15 @@
         top: -34px;
         right: -10px;
       }
+      .searchInput {
+        box-sizing: border-box;
+        width: 280px;
+        height: 30px;
+        padding: 5px 12px;
+        border-radius: 50px;
+        border: 0;
+        font-size: 12px;
+      }
       .searchForm{
         margin-top: 10px;
         margin-bottom: -35px;
@@ -460,14 +523,13 @@
           align-items: center;
         }
         .navigation .navbar {
-          display: flex;
           flex-direction: column;
           margin-top: 20px;
           margin-right: 0 !important;
         }
         .navigation .navbar a {
-          margin: 10px 0;
-          font-size: 14px;
+          margin:  0;
+          font-size: 11px;
         }
         .navigation .homeDiv #homeBtn {
           min-width: 80px;
@@ -505,6 +567,9 @@
       #icon{
           width: 30px;
           cursor: pointer;
+          position: absolute;
+          right: 50px;
+          top: 50px;
       }
       :root{
         --bg-color: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
@@ -533,16 +598,32 @@
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
 
-        <div class="navbar">
-          <div class="navbar-up">
-            <a href="scriptures.html" id="active">Scriptures</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="signup.html">Discussion Forum</a>
-            <a href="devotional-resources.html">Devotional Resources</a>
-            <a href="avatars.html">Avatars</a>
-            <img src="images/moon.png" id="icon">
+        <!-- Visible items on the home page -->
+        <div class="navbar visible-items">
+          <a href="scriptures.html" id="active">Scriptures</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="avatars.html">Avatars</a>
+          <a href="devotional-resources.html">Devotional Resources</a>
+          <a href="prasadam.html">Prasadam Section</a>
+
+          <img src="images/moon.png" id="icon" />
+      </div>
+
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger-menu">
+        <button class="hamburger-btn">&#9776;</button>
+          <div class="navbar hidden-items">
+            <a href="quiz.html">Quiz</a>
+            <a href="DIgital.html">Digital Resources</a>
+            <a href="Personalized.html">ToDoList</a>
+            <a href="Feedback.html">Feedbackform</a>
+            <a href="partner.html">Partner</a>
+            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+            
+            
+            
           </div>
-        </div>
+      </div>
         <form class="searchForm">
           <input
             type="text"
@@ -774,6 +855,11 @@
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
       };
     </script>
+    <script>
+      document.querySelector('.hamburger-btn').addEventListener('click', function() {
+      document.querySelector('.hamburger-menu').classList.toggle('open');
+  });
+  </script>
 
   </body>
 </html>
