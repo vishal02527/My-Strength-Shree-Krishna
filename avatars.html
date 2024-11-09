@@ -88,16 +88,19 @@
       .navigation {
         justify-content: space-between;
       }
-      .navigation .navbar {
+      .navigation .navbar.visible-items {
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; 
+        justify-content: center; /* Center the items */
+        align-items: center;
         /* margin-right: 350px !important; */
       }
       .navigation .navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 5px;
-        font-size: 16px;
         font-weight: 500;
+        margin: 0 5px;
         transition: ease-in 0.3s;
         border: 2px solid #fff;
         padding: 10px 15px;
@@ -107,7 +110,13 @@
         color: rgb(250, 219, 153);
         border: 2px solid rgb(250, 219, 153);
       }
-
+      #icon {
+        margin-top: -30px;
+        margin-right: -20px;
+        position: absolute;
+        right: 50px;
+        top: 50px;
+      }
       .searchInput {
         box-sizing: border-box;
         width: 280px;
@@ -145,6 +154,41 @@
   font-family: 'Poppins', sans-serif;
   position: relative;
   width: 100%;
+}
+ /* Hamburger menu button */
+.hamburger-menu {
+  display: flex;
+  align-items: center;
+
+}
+.hamburger-menu.open {
+  display: flex;
+  position: relative;
+}
+.hamburger-btn {
+  font-size: 1.5rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hidden items (hamburger menu), initially hidden */
+.hamburger-menu .hidden-items {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+/* Show hidden items when menu is open */
+.hamburger-menu.open .hidden-items {
+  display: flex;
 }
 
 .footer-content {
@@ -239,7 +283,22 @@
       margin-bottom: 0;
       font-size: 14px;
       }
-
+      @media (max-width: 390px) {
+        .navigation .navbar.visible-items{
+          margin-left: -50px;
+        }
+        .navigation .navbar a {
+          font-size: 0.4rem;
+          padding: 10px; 
+        }
+        .hamburger-btn {
+          margin-top: -40px;
+          margin-left: 345px;
+        }
+        #icon {
+          margin-top: 78px;
+        }
+      }
 </style>
 </head>
 <body>
@@ -251,15 +310,31 @@
         <div class="homeDiv">
           <button id="homeBtn"><a href="./index.html">Home</a></button>
         </div>
-        <div class="navbar">
-          <div class="navbar-up">
+        
+          <!-- Visible items on the home page -->
+          <div class="navbar visible-items">
             <a href="scriptures.html">Scriptures</a>
             <a href="gallery.html">Gallery</a>
-            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+            <a href="avatars.html" id="active">Avatars</a>
             <a href="devotional-resources.html">Devotional Resources</a>
-            <a href="avatars.html">Avatars</a>
-            <img src="images/moon.png" id="icon">
-          </div>
+            <a href="prasadam.html" >Prasadam Section</a>
+
+            <img src="images/moon.png" id="icon" />
+        </div>
+  
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger-menu">
+          <button class="hamburger-btn">&#9776;</button>
+            <div class="navbar hidden-items">
+              <a href="quiz.html">Quiz</a>
+              <a href="DIgital.html">Digital Resources</a>
+              <a href="Personalized.html">ToDoList</a>
+              <a href="Feedback.html">Feedbackform</a>
+              <a href="partner.html">Partner</a>
+            <a href="#" onclick="showLoginForm()">Discussion Forum</a>
+              
+              
+            </div>
         </div>
         <form class="searchForm">
           <input
@@ -414,6 +489,11 @@
         <p>&copy; All rights reserved <span  id="cyear"></span>, Created by Vishal.</p>
       </div>
     </footer>
+    <script>
+      document.querySelector('.hamburger-btn').addEventListener('click', function() {
+      document.querySelector('.hamburger-menu').classList.toggle('open');
+  });
+  </script>
     <script>
       window.addEventListener('load',()=>  {
         const year= document.getElementById('cyear');
