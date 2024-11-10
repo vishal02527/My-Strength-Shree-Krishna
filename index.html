@@ -99,6 +99,7 @@
         z-index: 100;
         box-shadow: 0px 6px 10px #ccc;
       }
+
       .indexMain .headDiv h1 {
         margin-top: 40px;
         text-align: center;
@@ -782,6 +783,8 @@
         --secondary-color: #fff;
         --ternary-color: rgba(32, 26, 26, 0.785);
       }
+
+        
     </style>
   </head>
   <body>
@@ -800,8 +803,6 @@
             <a href="avatars.html">Avatars</a>
             <a href="devotional-resources.html">Devotional Resources</a>
             <a href="prasadam.html">Prasadam Section</a>
-            
-            <img src="images/moon.png" id="icon" />
 
             <img src="images/moon.png" id="icon" />
         </div>
@@ -1342,20 +1343,17 @@
     </script>
 
     <script>
-      var icon = document.getElementById("icon");
+            
+       var icon = document.getElementById("icon");
 
-      icon.onclick = function () {
-        document.body.classList.toggle("dark-theme");
-        if (document.body.classList.contains("dark-theme")) {
-          icon.src = "images/sun.png";
-        } else {
-          icon.src = "images/moon.png";
-        }
-      };
-
-      window.onscroll = function () {
-        toggleScrollTopButton();
-      };
+        icon.onclick = function() {
+          document.body.classList.toggle("dark-theme");
+          if (document.body.classList.contains("dark-theme")) {
+            icon.src = "images/sun.png";
+          } else {
+            icon.src = "images/moon.png";
+          }
+        };  
 
       const scrollTopBtn = document.getElementById("scrollTopBtn");
 
