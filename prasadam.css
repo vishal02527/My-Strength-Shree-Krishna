@@ -49,11 +49,13 @@ body {
     margin-right: 20px;
 }
 
-.navigation .navbar {
+.navigation .navbar.visible-items {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    justify-content: center; /* Center the items */
+    align-items: center;
 }
 
 .navigation .navbar a {
@@ -68,6 +70,42 @@ body {
     border-radius: 20px;
 }
 
+      /* Hamburger menu button */
+      .hamburger-menu {
+        display: flex;
+        align-items: center;
+
+      }
+      .hamburger-menu.open {
+        display: flex;
+        position: relative;
+      }
+      .hamburger-btn {
+        font-size: 1.5rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Hidden items (hamburger menu), initially hidden */
+    .hamburger-menu .hidden-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 1;
+    }
+
+    /* Show hidden items when menu is open */
+    .hamburger-menu.open .hidden-items {
+        display: flex;
+    }
+    
 .navigation .navbar a:hover {
     color: rgb(250, 219, 153);
     border: 2px solid rgb(250, 219, 153);
@@ -113,9 +151,9 @@ body {
 
 .searchInput {
     box-sizing: border-box;
-    width: 300px;
-    height: 35px;
-    padding: 5px 20px;
+    width: 280px;
+    height: 30px;
+    padding: 5px 12px;
     border-radius: 50px;
     border: 0;
 }
@@ -136,6 +174,13 @@ body {
 #icon {
     width: 30px;
     cursor: pointer;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+#icon {
+    margin-top: -135px;
+    margin-right: -20px;
 }
 
 /* Prasadam Section */
@@ -340,7 +385,23 @@ footer {
     display: block; /* Show on hover */
   }
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 390px) {
+    .navigation .navbar.visible-items{
+      margin-left: -50px;
+    }
+    .navigation .navbar a {
+      font-size: 0.4rem;
+      padding: 10px; 
+    }
+    .hamburger-btn {
+      margin-top: -40px;
+      margin-left: 345px;
+    }
+    #icon {
+      margin-top: 78px;
+    }
+  }
+@media (max-width: 668px) {
     .heading h1 {
         font-size: 36px;
     }
@@ -362,6 +423,15 @@ footer {
 }
     .searchInput {
         width: 250px;
+    }
+    .searchInput {
+        box-sizing: border-box;
+        width: 280px;
+        height: 30px;
+        padding: 5px 12px;
+        border-radius: 50px;
+        border: 0;
+        font-size: 12px;
     }
     .searchInput::placeholder{
         font-size:small ;
@@ -397,7 +467,6 @@ footer {
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
-        position: static;
     }
 
     .navigation .navbar .dropdown {
@@ -468,8 +537,232 @@ footer {
       }
 }
 
+/* dialogue box */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow-y: auto;
+        }
 
+        .modal-content {
+            background-image: url(https://www.hitaambrish.com/stat/img/home/quotes-bg.jpg);
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: modalOpen 0.3s ease-out;
+        }
 
+        @keyframes modalOpen {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-button {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-button:hover {
+            color: #000;
+            transform: scale(1.09);
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-details {
+            padding: 20px;
+           
+        }
+
+        .recipe-details img {
+            width: 100%;
+            max-width: 80vw;
+            height: 25rem;
+            margin: 15px auto 20px;
+            display: block;
+            border-radius: 8px;
+            object-fit: fill;
+            box-shadow: 5px 6px 10px 0px #0000007d ;
+            transition: transform 0.2s ease;
+        }
+        .recipe-details img:hover{
+            transform: scale(1.03);
+        }
+
+        .recipe-details h2 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0px;
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .recipe-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .prep-time, .cooking-time {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 15px ;
+            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+            object-fit:contain;
+            color: #fff9f9;
+            width: 200px !important; 
+            height: 4vh !important;
+            font-size: 15px !important;
+            border-radius: 2rem ;
+           align-content: center;
+           transition: transform 0.3s ease;
+        }
+        .ingredients:hover{
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+         .instructions:hover{
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 768px) {
+            .close-button:hover {
+                color: #000;
+                transform: scale(1.09);
+                transition: transform 0.3s ease;
+            }
+            .recipe-details img:hover{
+                transform: scale(1.03);
+            }
+            .recipe-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .ingredients, .instructions {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 5px 6px 10px 0px #0000007d ;
+            transition: transform 0.3s ease;
+        }
+
+        .ingredients h3, .instructions h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .ingredients ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .ingredients li, .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        .time-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .prep-time, .cooking-time {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 10px ;
+            background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
+            object-fit:contain;
+            color: #fff9f9;
+            width: 20vw;
+            height: 2vh;
+            font-size: 12px;
+            border-radius: 2rem ;
+           align-content: center;
+           transition: transform 0.3s ease;
+        }
+        .prep-time:hover{
+            transform: scale(1.15);
+            transition: transform 0.3s ease;
+            box-shadow: 5px 6px 10px 0px #0000007d ;
+        }
+        .cooking-time:hover{
+            transform: scale(1.15);
+            transition: transform 0.3s ease;
+            box-shadow: 5px 6px 10px 0px #0000007d ;
+        }
+
+        .prep-time i, .cooking-time i {
+            margin-right: 5px;
+            color: #ffffff;
+        }
+
+        .recipe-card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+        @media (max-width: 480px) {
+            .modal-content {
+              margin: 1% auto;
+              padding: 10px;
+            }
+          
+            .close-button {
+              font-size: 24px;
+              right: 10px;
+              top: 5px;
+            }
+            .close-button:hover {
+                color: #000;
+                transform: scale(1.09);
+                transition: transform 0.3s ease;
+            }
+          
+            .recipe-details {
+              padding: 10px;
+            }
+          
+            .recipe-details img {
+              height: 15rem;
+            }
+          
+            .recipe-details h2 {
+              font-size: 24px;
+              margin: 10px 0px;
+            }
+          
+            .prep-time, .cooking-time {
+              width: 45%;
+              margin: 5px;
+              padding: 10px;
+              font-size: 14px;
+            }
+          }
 
 @media (max-width: 480px) {
     .heading h1 {
@@ -477,8 +770,9 @@ footer {
     }
 
     .navigation .navbar a {
-        font-size: 12px;
-        padding: 6px 10px;
+        font-size: 10px;
+        /* padding: 6px 10px; */
+        margin: 0;
     }
 
     .searchInput {

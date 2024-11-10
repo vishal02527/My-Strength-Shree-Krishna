@@ -34,7 +34,9 @@
     border-radius: 7px;
 }
 .row h1{
-    color: var(--ternary-color);   
+    color: var(--ternary-color);  
+    color: var(--ternary-color); 
+    text-align: center;  
 }
 
 .row p{
@@ -52,6 +54,7 @@
     background-color: rgb(7, 8, 74);
     padding: 10px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    margin-left: 180px;
 }
 .row button:hover{
     background-image: linear-gradient(144deg,
@@ -168,7 +171,7 @@
       margin-top: 20px;
     }
     .navigation .navbar a {
-      margin: 0;
+      margin: 0 !important;
       font-size: 12px;
     }
     .navbar .navbar-up {
