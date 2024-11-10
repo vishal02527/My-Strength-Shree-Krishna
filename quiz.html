@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    
+    
+<style>
         /* CSS Styles */
         body {
             font-family: Arial, sans-serif;
@@ -14,12 +16,17 @@
             margin: 0;
             padding: 20px;
             text-align: center;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; */
         }
 
         h1 {
             color: var(--heading-color); /* Krishna's blue */
             margin: 20px 0;
             font-size: 36px; /* Larger heading */
+            /* text-align: center; */
         }
 
         #quizContainer {
@@ -34,6 +41,8 @@
 
         p {
             font-size: 24px; /* Larger question text */
+            /* color: #b0bec5;
+            margin-bottom: 20px; */
         }
 
         .optionBtn {
@@ -45,7 +54,7 @@
             cursor: pointer;
             font-size: 18px; /* Larger font size */
             margin: 10px auto; /* Center buttons */
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
             width: 100%; /* Full width */
         }
 
@@ -62,6 +71,7 @@
         #score {
             font-size: 22px; /* Larger score text */
             color: var(--score-color); /* Dark blue */
+            /* margin-top: 20px; */
         }
 
         #homeBtn {
@@ -73,6 +83,7 @@
             font-size: 18px;
             margin-top: 20px;
             color: white;
+            /* transition: background-color 0.3s; */
         }
 
         #homeBtn:hover {
@@ -89,6 +100,7 @@
             margin-top: 20px;
             color: white;
             display: none; /* Initially hidden */
+            /* transition: background-color 0.3s; */
         }
 
         #nextBtn:hover {
@@ -141,24 +153,30 @@
         --incorrect-color: red !important;
         --result-color: #3f51b5;
         --score-color: #2e4a7e;
-      }
-      .dark-theme{
+        }
+
+        /* =================================================================================== */
+        /* General Body */
+
+
+        /* ==================================================================================== */
+        .dark-theme{
         background-image: url(https://www.hitaambrish.com/stat/img/home/Gallery_Bg.jpg);
         --heading-color: gold;
         --quizContainer-color: transparent;
         --question-color: gold;
         --result-color: gold;
         --score-color: aqua;
-      }
+        }
 
 
       /* customization for some borders */
-      .dark-theme #quizContainer{
+        .dark-theme #quizContainer{
         border: 2px solid aqua;
         box-shadow: 0px 0px 10px 3px aqua;
-      }
+        }
 
-      .dark-theme .optionBtn {
+        .dark-theme .optionBtn {
         background-color: rgb(28, 59, 137) !important; 
         /* light mode colors becoming higher specifity so important is required */
         border: 2px solid aqua;
@@ -170,24 +188,48 @@
         background-color: rgb(21, 46, 109) !important;
     }
 
-    </style>
+    /* ============================================ */
+
+    .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    }
+
+    .quiz-header h1 {
+    color: var(--heading-color); /* Krishna's blue */
+    color: var(--heading-color); /* Krishna's blue */
+            margin: 20px 0;
+            font-size: 36px;
+    font-size: 2rem;
+    /* color: #4b72e0; */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #cdd6f3;
+    }
+</style>
 </head>
 <body>
     <img src="images/moon.png" id="icon">
-    <h1>Krishna Quiz</h1>
+    <!-- <h1>Krishna Quiz</h1> -->
     <div id="quizContainer">
+        <header class="quiz-header">
+            <h1>Krishna Quiz</h1>
+        </header>
         <p id="question"></p>
         <button class="optionBtn" id="option1" onclick="checkAnswer('option1')"></button>
         <button class="optionBtn" id="option2" onclick="checkAnswer('option2')"></button>
         <button class="optionBtn" id="option3" onclick="checkAnswer('option3')"></button>
         <button class="optionBtn" id="option4" onclick="checkAnswer('option4')"></button>
-    </div>
+    
     <div id="result"></div>
     <div id="score"></div>
+    <div class="navigation-buttons">
     <button id="nextBtn" onclick="nextQuestion()">Next</button>
-    <br>
+    <!-- <br> -->
     <button id="homeBtn" onclick="goHome()">Home</button>
-
+    </div>
+    </div>
     <script>
         // JavaScript for quiz functionality
         const quizData = [
@@ -276,9 +318,9 @@
             // Update result message
             if (selectedAnswer === correctAnswer) {
                 score++;
-                document.getElementById("result").innerText = "Correct! The answer is: " + correctAnswer;
+                document.getElementById("result").innerText = "✔️ Correct! The answer is: " + correctAnswer;
             } else {
-                document.getElementById("result").innerText = "Wrong! The correct answer is: " +        correctAnswer;
+                document.getElementById("result").innerText = "❌ Wrong! The correct answer is: " + correctAnswer;
             }
         
             // Show Next button
@@ -312,4 +354,4 @@
     </script>
     <script src="script.js"></script>
 </body>
-</html>
+</html>  
