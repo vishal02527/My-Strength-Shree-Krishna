@@ -99,11 +99,32 @@
             margin-top: 30px;
         }
 
-        .section img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-top: 20px;
+          .section img {
+            width: 30%;
+         height: 140px; 
+            object-fit:contain;
+            overflow :hidden;
         }
+           .event-image{
+            /* border:dodgerblue 5px solid; */
+          border-radius:30px;
+            box-shadow: 10px 20px 20px #e3f2fd;
+           
+           }
+           .event-image:hover{
+            animation: rotateImage 5s infinite linear; /* Apply the rotation animation */
+          
+           }
+           @keyframes rotateImage {
+  from {
+    transform: rotate(0deg); /* Start from 0 degrees */
+    margin:auto;
+  }
+  to {
+    transform: rotate(360deg); /* Rotate to 360 degrees */
+    margin:415px 0 545px 0;
+  }
+}
     </style>
 </head>
 <body>
