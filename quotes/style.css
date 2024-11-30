@@ -1,0 +1,84 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+  }
+  
+  /* Quote Generator Section */
+  .quote-generator {
+    background: linear-gradient(135deg, #ffcccc, #ffe6e6);
+    padding: 2em;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    margin: 20px;
+    transition: transform 0.2s;
+  }
+  
+  .quote-generator:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Heading */
+  .quote-generator h2 {
+    color: #333;
+    font-size: 1.6em;
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+  
+  /* Quote Display */
+  .quote-display {
+    font-size: 1.2em;
+    color: #555;
+    font-style: italic;
+    margin: 1em 0;
+    line-height: 1.4;
+    min-height: 80px;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+  }
+  
+  /* Button Styling */
+  .new-quote-btn {
+    background-color: #ff6666;
+    color: white;
+    padding: 0.6em 1.5em;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .new-quote-btn:hover {
+    background-color: #ff4d4d;
+    transform: scale(1.05);
+  }
+  
+  /* Keyframes for Fade-In Effect */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .quote-generator {
+      padding: 1.5em;
+    }
+    .quote-generator h2 {
+      font-size: 1.2em;
+    }
+    .new-quote-btn {
+      padding: 0.5em 1.2em;
+    }
+  }
+  
