@@ -228,6 +228,14 @@
         }
 
         window.onload = loadMedia; // Call loadMedia on window load
+        window.onscroll = function () {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        };
     </script>
 </head>
 <body>
